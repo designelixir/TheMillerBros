@@ -42,7 +42,7 @@ h2 {
   padding: 0; margin: 0; 
 }
 
-
+// subheader for a short paragraph
 h3 {
   font-size: 1.25rem;
   font-weight: 700;
@@ -51,7 +51,15 @@ h3 {
   background-image: url("../assets/blue-textured-line.svg"); background-size: contain; background-repeat: no-repeat; background-position: 0 bottom;
 }
 
+// short description 
 
+h5 {
+  font-size: 1rem; 
+  font-weight: 300; 
+  font-style: italic;
+  line-height: 1.25rem;
+  margin: 15px 0px;
+}
 
 // HEADER / navigation
 //####################################################################################################
@@ -71,7 +79,7 @@ h3 {
 
 .site-navigation-container {border: 2px solid yellow;}
 
-#header-logo {height: 80px; width: auto;}
+#header-logo {height: 80px; width: auto; z-index: 30;}
 #header-logo:hover {transform: scale(1.05)}
 // .site-navigation { }
 
@@ -159,10 +167,13 @@ h3 {
   // PROJECT CASE STUDY WINDOW 
   //###############################################
 
-  .project-case-study-window {width: 100vw; height: 100vh; position: fixed; z-index: 2; background: black; top: 0; left: 0;}
-  .project-case-study-wrapper {width: 100%; height: 100%;  border: 4px solid white;}
+  .project-case-study-window {width: 100vw; height: 100vh; position: fixed; z-index: 2; border: 10px solid black; background: pink; top: 0; left: 0; display: flex; padding-top: 125px; justify-content: center;}
+  .project-case-study-wrapper {width: 100%; max-width: 978px; background: teal;}
+  .case-study-iframe {width: 100%; height: 550px; border: 3px solid yellow; display: block; z-index: 2;}
 
-  .project-case-study-details {z-index: 3; background: black; width: 100%; }
+  .project-case-study-summary {padding: 25px; max-width: 978px;  }
+
+  .project-case-study-details {padding: 25px; max-width: 978px;   background: pink;}
   // ABOUT SUMMARY (homepage)
   // ##############################
 
