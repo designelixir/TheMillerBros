@@ -30,8 +30,73 @@ h1 {
   padding: 0; margin: 0; 
 
 }
-// FEATURED PROJECT COLLECTION 
 
+// HEADER / navigation
+//####################################################################################################
+
+.logo-img img{max-height: 90px;}
+
+.site-header {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0) 100%);
+ background-size: cover; background-repeat: no-repeat;  background-position: bottom;
+  padding: 2vh 2vw;
+  height: 100px;
+  width: 100vw;
+  z-index: 3;
+}
+
+
+.site-logo:hover {transform: scale(1.05)}
+// .site-navigation { }
+
+.site-navigation-list {
+  display: inline-block;
+  text-align: right;
+  width: 100%;
+}
+
+.site-navigation-item {
+  display: inline-flex;
+  margin: 0 0 0 10px;
+  justify-content: space-evenly;
+  align-self: right;
+
+  a {
+    color: #F8FAFA;
+    text-decoration: none;
+    text-shadow: #111;
+    margin: 5px;
+
+    &:hover {
+      color: #F9E6C8;
+      transform: scale(1.05);
+    }
+  }
+
+  &.active-link > a {
+    padding: 10px 0px;
+    color: #EEBF70;
+    background-image: url("../assets/textured-underline.svg");
+    background-size: 100% 100%; background-repeat: no-repeat;  background-position: bottom;
+    
+  }
+
+}
+
+.site-title-heading {
+
+  .site-title-link {
+    color: #111;
+    font-weight: 400;
+    text-decoration: none;
+  }
+}
+
+// FEATURED PROJECT COLLECTION 
+//####################################################################################################
 .project-iframe {
   width: 100vw; height: 95vh; border: 3px solid lime; position: absolute; display: flex; align-items: center; justify-content: center; top: 0; left: 0; background: rgba(1,255,255,0.2); z-index: -2;
 }
@@ -79,3 +144,5 @@ h1 {
   // ##############################
 
   footer {width: 100vw; height: 400px; position: relative; background:pink;}
+
+

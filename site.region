@@ -12,9 +12,18 @@
 
     <div class="site-container">
 
-      <header class="site-header">
+      <header class="site-header box-shadow">
+      <!-- site title or logo -->
+        <div class="site-logo fade-in">
+          <a href="/"><img id="header-logo" style="max-height: 90px; padding: 5px;" src="assets/miller-bros-logo-white.svg" alt="The Miller Bros Logo"/></a>
+        </div>
+        
         <!-- site navigation -->
-        <squarespace:navigation navigationId="siteNav" template="site-navigation" />        
+        <div class="site-navigation-container fade-in">
+           <squarespace:navigation navigationId="siteNav" template="site-navigation" />
+        </div>
+        
+        
       </header>
 
       <!-- cms content injection point -->
@@ -37,3 +46,19 @@
 
   </body>
 </html>
+
+<script>
+function mediaQuery(x) {
+  if (x.matches) { 
+    document.body.style.backgroundColor = "black";
+    var headerLogo = document.getElementById("header-logo");
+  } else {
+    document.body.style.backgroundColor = "white";
+  }
+}
+
+var x = window.matchMedia("(max-width: 600px)")
+mediaQuery(x) // Call listener function at run time
+x.addListener(mediaQuery) // Attach listener function on state changes
+
+</script>

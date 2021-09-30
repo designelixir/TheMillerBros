@@ -1,9 +1,4 @@
 <nav class="site-navigation">
-{.section website}
-          <h1 class="site-title-heading" data-content-field="site-title">
-            <!-- <a href="/" class="site-title-link">{siteTitle}</a> -->
-          </h1>
-        {.end}
   <ul class="site-navigation-list">
     {.repeated section items}
 
