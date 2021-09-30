@@ -181,21 +181,24 @@ p {
   //###############################################
 
   .project-case-study-window {width: 100vw; height: 100vh; position: fixed; z-index: 2; border: 1px solid black; background: pink; top: 0; left: 0; display: block; }
-  .project-case-study-window-nav {width: 100%; height: 125px; background: black; display: inline-flex; justify-content: space-evenly; border: 2px solid magenta;
-    span {width: 32%; border: 1px solid white;}}
+  .project-case-study-window-nav {width: 100%; height: 125px; padding: 25px; background: black; display: inline-flex; justify-content: space-between; border: 2px solid magenta;
+    span { height: 100%; border: 1px solid white;  display: flex; align-items: center; color: white;
+      button {border: none; margin-left: 15px; width: 50px; height: 100%;  background-color: transparent; background-image: url('../assets/blue-textured-circle.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
+    }
+  }
 
-  .project-case-study-wrapper {width: 100%; border: 2px solid red; display: flex; justify-content: center;}
+  .project-case-study-wrapper {width: 100%; border: 2px solid red; display: flex; justify-content: center; margin-top: 10px;}
   .case-study-iframe {width: 978px; height: 550px; border: 3px solid yellow; display: block; z-index: 2; overflow: hidden;}
 
-  .project-case-study-info { width: 100%; max-width: 1078px;  position: absolute; top: 620px;  z-index: 3;
+  .project-case-study-info { width: 100%; max-width: 1078px;  position: absolute; top: 80%;  z-index: 3;
 
   }
 
   
 
-  #project-summary {background-image: url('../assets/black-textured-box.svg'); background-size: contain; width: 100%; padding: 50px; border-radius: 8px;
+  #project-summary {background-image: url('../assets/black-textured-box.svg'); background-size: contain; width: 100%; padding: 25px; border-radius: 8px;
     h5 {color: white;}  
-    h1 {font-size: 4rem; text-shadow: 2px 2px tan; line-height: 4rem; border-radius: 4px; border-left: 8px solid tan; padding-left: 25px; margin-right: 10%; overflow: hidden;}
+    h1 {font-size: 3rem; text-shadow: 2px 2px tan; line-height: 3rem; border-radius: 4px; border-left: 8px solid tan; padding-left: 25px; margin-right: 10%; overflow: hidden;}
   }
 
   #project-details {background-color: tan; padding: 50px; display: inline-flex; justify-content: space-between;
@@ -211,6 +214,10 @@ p {
   }
 
 
+  #project-bts {width: 100%; border: 3px solid red; padding: 25px; display: inline-flex;  background-image: url('../assets/black-textured-box.svg'); background-size: contain;
+    .bts-img {height: 100px; width: 250px; background: teal; margin: 5px;}
+
+  }
 
   // ABOUT SUMMARY (homepage)
   // ##############################

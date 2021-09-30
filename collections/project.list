@@ -31,15 +31,14 @@ console.log({@|json-pretty})
 </div>
 
 <div class="project-case-study-window">
-    <div class="project-case-study-window-nav">
+    <div class="project-case-study-window-nav fade-in">
         <span>
-            <button> HI </button>
+            <img style="height: 75px" src="../assets/miller-bros-lettermark.svg"/>
         </span>
+
         <span>
-            <button> HI </button>
-        </span>
-        <span>
-             <button> HI </button>
+            <span style="width: 125px; text-align: right; float: right;"><h4>Back to <br> Homepage</h4></span>
+            <span style="width: 75px"> <button> <h3>X</h3> </button></span>
         </span>
     </div>
 
@@ -51,11 +50,11 @@ console.log({@|json-pretty})
         <div class="project-case-study-info" >
             
             <span id="project-text" class="box-shadow">
-                <span id="project-summary">
+                <span id="project-summary" class="fade-in">
                     <h1 >This would be a really big title</h1>
                     <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
                 </span>
-                <span id="project-details">
+                <span id="project-details" class="fade-in">
                     <span id="project-details-left">
                         <h4>Project Summary </h4>
                         
@@ -74,14 +73,29 @@ console.log({@|json-pretty})
                     </span>
                 </span>
 
-            
+                <span id="project-bts">
+                    <span class='bts-img' style="background-image: url('{fullURL}?format=original');"></span>
+                    <span class='bts-img' style="background-image: url('{fullURL}?format=original');"></span>
+                    <span class='bts-img' style="background-image: url('{fullURL}?format=original');"></span>
+                    <span class='bts-img' style="background-image: url('{fullURL}?format=original');"></span>
 
-                
+                </span>
+
             <span>
         </div>
     </div>
     
 </div>
+<div class="project-case-study-window-nav">
+                    <span>
+                        <img style="height: 75px" src="../assets/miller-bros-lettermark.svg"/>
+                    </span>
+
+                    <span>
+                        <span style="width: 125px; text-align: right; float: right;"><h4>Back to <br> Homepage</h4></span>
+                        <span style="width: 75px"> <button> <h3>X</h3> </button></span>
+                    </span>
+                </div>
 
 
 
