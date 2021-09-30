@@ -26,14 +26,35 @@
 
 {#  about section  }
 
-<div class="box-shadow standard-block" style="background: black;">
-    <div class="about-summary">
-        <span class="about-summary-image">{#  camden and spencer image as background here  }</span>
-        <span style="width: 100%; height: 50%;  border: 2px solid purple;">
-                
-                <span class="about-summary-text">
-                    <p>From the moment we first stole Mom’s VHS tape recorder, we were hooked. Camden & Spencer knew they were destined to tell stories together. Through decades of honing their craft, they find themselves directing and producing both original and commercial films with purpose-driven partners who aren't afraid to challenge the narrative. </p>
-                <span>
-            </span>
-    </div>
+<div class="box-shadow standard-block" style="display: block; z-index: -2">
+   <span style=" width: 100vw; height: 95vh; border: 3px solid lime; position: absolute; display: flex; top: 95vh; left: 0; z-index: -1 ">
+    <span class="about-summary-image">
+       {#  camden and spencer image here  }
+       
+    </span>
+    </span>
+    <span class="about-summary-text">
+            <p>From the moment we first stole Mom’s VHS tape recorder, we were hooked. Camden & Spencer knew they were destined to tell stories together. Through decades of honing their craft, they find themselves directing and producing both original and commercial films with purpose-driven partners who aren't afraid to challenge the narrative. </p>
+        </span>
+    
 </div>
+
+
+<script>
+function mediaQuery(x) {
+  if (x.matches) { 
+    document.body.style.backgroundColor = "black";
+    $('.about-summary-image').css("background-size", "300%", "height", "60%");
+   
+  } else {
+    document.body.style.backgroundColor = "white";
+     $('.about-summary-image').css("background-size", "cover", "height", "80%") 
+
+  }
+}
+
+var x = window.matchMedia("(max-width: 550px)")
+mediaQuery(x) 
+x.addListener(mediaQuery) 
+
+</script>
