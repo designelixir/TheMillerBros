@@ -26,20 +26,14 @@
 
 {#  about section  }
 
-<div class="box-shadow standard-block" >
+<div class="box-shadow standard-block" style="background: black;">
     <div class="about-summary">
-        <span class="about-summary-content">
-            <span class="standard-block-half">
-            
-            </span>
-            <span class="standard-block-half">
-                <span style="height: 55%; width: 100%;  background: pink;">
-                stuff
-                </span>
-                <span style="background-image: url('assets/textured-square.svg') ">
+        <span class="about-summary-image">{#  camden and spencer image as background here  }</span>
+        <span style="width: 100%; height: 50%;  border: 2px solid purple;">
+                
+                <span class="about-summary-text">
                     <p>From the moment we first stole Mom’s VHS tape recorder, we were hooked. Camden & Spencer knew they were destined to tell stories together. Through decades of honing their craft, they find themselves directing and producing both original and commercial films with purpose-driven partners who aren't afraid to challenge the narrative. </p>
                 <span>
             </span>
-        </span>
     </div>
 </div>
