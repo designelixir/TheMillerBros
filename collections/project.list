@@ -1,3 +1,9 @@
+<script>
+
+console.log({@|json-pretty})
+
+</script>
+
 <div class="project-iframe" >
     <div class='embed-container' style="background-image: url('{fullURL}?format=original');">
         <iframe id="backgroundiframe" src="" frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
@@ -18,9 +24,11 @@
 
 
         <span class="toggle-counter">
-        stuff
+        .....
         </span>
-
+    </span>
+    <span class="scroll-peek">
+        <h1>V</h1>
     </span>
 </div>
 
