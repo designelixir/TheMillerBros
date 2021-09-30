@@ -1,7 +1,11 @@
+
+{.repeated section items}
+
 <script>
     console.log({@|json-pretty})
 </script>
 
+{.end}
 <div class="project-iframe">
     <div class='embed-container' style="background-image: url('{fullURL}?format=original');">
         <iframe id="backgroundiframe" src="" frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
@@ -16,11 +20,11 @@
     </span>
 
     <span class="project-tag">
-        <span class="project-title">
-            <h1 class="hover-indication">Title </h1>
-           
+        <span class="project-title hover-indication" id="toggle-open-project">
+            <h1>Title </h1>
+            <span><button class="wide-button-black"><h4>CASE STUDY</h4></button></span>
         </span>
-         <span style="width: 100%; border: 2px solid purple; height: 20px;"></span>
+         
        
 
 
@@ -35,7 +39,7 @@
     </span>
 </div>
 
-<div class="project-case-study-window" style="display: none;">
+<div class="project-case-study-window fade-in" style="display: none;">
     <div class="project-case-study-window-nav fade-in" id="toggle-close-project">
         <span>
             <img style="height: 100%; width: auto;" src="../assets/miller-bros-lettermark.svg"/>
@@ -43,7 +47,7 @@
 
         <span class="hover-indication" >
             <span><h4 style="font-size: 14px; text-align: right;">Back to <br> Homepage</h4></span>
-            <span style="width: 75px"> <button> <h3>X</h3> </button></span>
+            <span style="width: 75px"> <button class="circle-button-blue"> <h3>X</h3> </button></span>
         </span>
     </div>
 
@@ -151,6 +155,10 @@ x.addListener(mediaQuery)
 
 $('#toggle-close-project').click(function(){
     $('.project-case-study-window').css("display", "none")
+})
+
+$('#toggle-open-project').click(function(){
+    $('.project-case-study-window').css("display", "block")
 })
 
 </script>

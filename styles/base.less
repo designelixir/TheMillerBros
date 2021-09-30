@@ -148,7 +148,7 @@ p {
 .toggle-counter {border: 2px solid blue; width: 25%; height: 100%; padding: 0 25px; display: inline-flex; align-items: flex-end}
 
 .project-interactives {width: 100vw; height: calc(95vh - 100px);  border: 2px solid orange;}
-.project-tag {width: 100%; height: 45%; border: 2px solid aqua; display: inline-flex; justify-content: space-between; align-items: flex-end}
+.project-tag {width: 100%; height: 45%; border: 2px solid aqua; padding: 25px; display: inline-flex; justify-content: space-between; align-items: flex-end}
 
 .project-details {border: 2px solid teal; width: 75%; padding: 0 25px; height: 100%; display: inline-flex; align-items: flex-end}
 
@@ -184,6 +184,10 @@ p {
   // PROJECT CASE STUDY WINDOW 
   //###############################################
 
+  button {border: none; background-color: transparent; }
+  .circle-button-blue { width: 50px; height: 50px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
+  .wide-button-black {width: 210px; margin-top: 17px; height: 60px; display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: cover;}
+
   .project-case-study-window {width: 100vw; height: 100vh; position: fixed; z-index: 2; border: 1px solid black; background: pink; top: 0; left: 0; display: block; }
   .project-case-study-window-nav {width: 100%; height: 125px; padding: 25px; background: black; display: inline-flex; justify-content: space-between; border: 2px solid magenta;
     span { height: 100%; display: flex; align-items: center; color: white;
@@ -192,7 +196,9 @@ p {
     }
   }
 
-  .project-title {font-size: 3rem; text-shadow: 2px 2px tan; line-height: 3rem; border-radius: 4px; border-left: 8px solid tan; padding-left: 17px; margin-right: 10%; overflow: hidden;}
+  .project-title {overflow: hidden; color: white;
+    h1 {font-size: 3rem; text-shadow: 2px 2px tan; line-height: 3rem; border-left: 8px solid tan; border-radius: 4px; padding-left: 17px;}
+  }
   .project-case-study-wrapper {width: 100%; border: 2px solid red; display: flex; justify-content: center; margin-top: 10px;}
   .case-study-iframe {width: 978px; height: 550px; border: 3px solid yellow; display: block; z-index: 2; overflow: hidden;}
 
@@ -243,3 +249,12 @@ p {
   footer {width: 100vw; height: 400px; position: relative; background:pink; text-align: center;}
 
 
+/* ANIMATIONS
+***************************************************/
+
+.fade-in{-webkit-animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both}
+@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+
+.fade-out{-webkit-animation:fade-out 1s ease-out both;animation:fade-out 1s ease-out both}
+@-webkit-keyframes fade-out{0%{opacity:1}100%{opacity:0}}@keyframes fade-out{0%{opacity:1}100%{opacity:0}}
+/* Homepage
