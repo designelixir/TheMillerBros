@@ -50,20 +50,33 @@ console.log({@|json-pretty})
 
         <div class="project-case-study-info" >
             
-            <span id="project-details" class="box-shadow">
+            <span id="project-text" class="box-shadow">
                 <span id="project-summary">
                     <h1 >This would be a really big title</h1>
                     <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
                 </span>
-            
-           
-                <span id="project-details-left">
-                    <h4>Project Summary </h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-                </div>
+                <span id="project-details">
+                    <span id="project-details-left">
+                        <h4>Project Summary </h4>
+                        
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <br>
+                        <span id="testimonial">
+                            <span><h1>"</h1></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            <span><h1>"</h1></span>
+                        </span>
+                    </span>
 
-                <span id="project-details-right">
-                </div>
+                    <span id="project-details-right">
+                    <h4> Credits </h4>
+
+                    </span>
+                </span>
+
+            
+
+                
             <span>
         </div>
     </div>
@@ -105,6 +118,10 @@ function mediaQuery(x) {
     document.body.style.backgroundColor = "black";
     $('.about-summary-image').css("background-size", "300%", "height", "60%");
     $('.about-summary-text-wrapper').css("width", "100%");
+    $('#project-details').css("display", "inline-block");
+    $('#project-details-left').css("width", "100%");
+    $('#project-details-right').css("width", "100%");
+
 
 
    
@@ -112,6 +129,9 @@ function mediaQuery(x) {
     document.body.style.backgroundColor = "white";
      $('.about-summary-image').css("background-size", "cover", "height", "80%") 
      $('.about-summary-text-wrapper').css("width", "60%");
+     $('#project-details').css("display", "inline-flex");
+    $('#project-details-left').css("width", "60%");
+    $('#project-details-right').css("width", "35%");
   }
 }
 
