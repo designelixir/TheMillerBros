@@ -26,6 +26,9 @@
 
 {#  about section  }
 
-<div class="about-summary box-shadow" style="height: calc(100vh - 5vh - 100px); z-index: -1;">
-    stuff
+<div class="box-shadow standard-block" >
+    <div class="about-summary">
+        <span class="about-summary-img">
+        </span>
+    </div>
 </div>
