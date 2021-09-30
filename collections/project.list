@@ -5,7 +5,7 @@
     </div>
 </div>
 
-<div class="project-interactives" style="width: 100vw; height: calc(95vh - 100px);  border: 10px solid orange;   ">
+<div class="project-interactives box-shadow" style="width: 100vw; height: calc(95vh - 100px); ">
     <span class="toggle-bar">
         <button class="toggle"> left </button>
         <button class="toggle"> right </button>
@@ -26,6 +26,6 @@
 
 {#  about section  }
 
-<div class="about-summary">
-
+<div class="about-summary box-shadow" style="height: calc(100vh - 5vh - 100px); z-index: -1;">
+    stuff
 </div>
