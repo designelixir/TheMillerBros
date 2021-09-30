@@ -31,19 +31,38 @@ console.log({@|json-pretty})
 </div>
 
 <div class="project-case-study-window">
+    <div class="project-case-study-window-nav">
+        <span>
+            <button> HI </button>
+        </span>
+        <span>
+            <button> HI </button>
+        </span>
+        <span>
+             <button> HI </button>
+        </span>
+    </div>
     <div class="project-case-study-wrapper">
-    <div class="case-study-iframe">
-        <iframe src="https://player.vimeo.com/video/554972589?h=1e1bc75483&autoplay=1&title=0&byline=0&portrait=0" width="978" height="550" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-    </div>
+        <div class="case-study-iframe">
+            <iframe src="https://player.vimeo.com/video/554972589?h=1e1bc75483&autoplay=1&title=0&byline=0&portrait=0" width="978" height="550" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
 
-    <div class="project-case-study-summary">
-        <h1>Title</h1>
-        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
-    </div>
-    <div class="project-case-study-details">
-        <h2> Project Summary </h2>
+        <div class="project-case-study-info" >
+            <span id="project-summary" class="box-shadow">
+                <h1>Title</h1>
+                <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+            </span>
+            <span id="project-details">
+                <span id="project-details-left">
+                    <h4>Project Summary </h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                </div>
 
-    </div>
+                <span id="project-details-right">
+                </div>
+            <span>
+        </div>
+      
 
 
     </div>

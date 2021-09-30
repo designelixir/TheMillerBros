@@ -54,11 +54,19 @@ h3 {
 // short description 
 
 h5 {
-  font-size: 1rem; 
+  font-size: 1.25rem; 
   font-weight: 300; 
   font-style: italic;
-  line-height: 1.25rem;
+  line-height: 1.5rem;
   margin: 15px 0px;
+}
+
+p {
+  font-size: 1rem; 
+  font-weight: 300;
+  line-height: 1.25rem;
+  margin: 10px 0px; 
+  line-height: 1.5rem;
 }
 
 // HEADER / navigation
@@ -167,13 +175,21 @@ h5 {
   // PROJECT CASE STUDY WINDOW 
   //###############################################
 
-  .project-case-study-window {width: 100vw; height: 100vh; position: fixed; z-index: 2; border: 10px solid black; background: pink; top: 0; left: 0; display: flex; padding-top: 125px; justify-content: center;}
-  .project-case-study-wrapper {width: 100%; max-width: 978px; background: teal;}
-  .case-study-iframe {width: 100%; height: 550px; border: 3px solid yellow; display: block; z-index: 2;}
+  .project-case-study-window {width: 100vw; height: 100vh; position: fixed; z-index: 2; border: 1px solid black; background: pink; top: 0; left: 0; display: block; }
+  .project-case-study-window-nav {width: 100%; height: 125px; background: black; display: inline-flex; justify-content: space-evenly; border: 2px solid magenta;
+    span {width: 32%; border: 1px solid white;}}
+  .project-case-study-wrapper {width: 100%; max-width: 978px; background: teal; margin-top: 130px; display: inline-block; justify-items: center; }
+  .case-study-iframe {width: 95%; margin: 0 25px; height: 550px; border: 3px solid yellow; display: block; z-index: 2;}
 
-  .project-case-study-summary {padding: 25px; max-width: 978px;  }
+  .project-case-study-info {padding: 25px; width: 100%; max-width: 978px;  position: absolute; top: 580px;    }
 
-  .project-case-study-details {padding: 25px; max-width: 978px;   background: pink;}
+  #project-summary {background-image: url('../assets/black-textured-box.svg'); background-size: cover; padding: 25px;}
+  #project-details {background: tan; padding: 25px;}
+
+
+
+
+
   // ABOUT SUMMARY (homepage)
   // ##############################
 
@@ -185,6 +201,7 @@ h5 {
   .about-summary-text-wrapper {border: 10px solid tan; padding: 0 15px; width: 100%; max-width: 800px; height: 100%; bottom: 0; display: flex; align-items: flex-end; justify-content: flex-end; z-index: 2; bottom: 0; }
   .about-summary-text {background-image: url('../assets/textured-square.svg'); background-size: cover; background-repeat: no-repeat; padding: 25px 35px;}
   
+
     // FOOTERS 
   // ##############################
 
