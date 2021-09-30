@@ -1,9 +1,0 @@
-{
- “title” : “Featured Projects”,
- “folder”: true,
- “index”: true,
- “addText”: “Add New Project”,
- “acceptTypes”: [ “page” ],
- “indexType”: “stacked”,
- “fullData”: true
-}
