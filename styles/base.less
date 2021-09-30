@@ -1,11 +1,11 @@
 
-// @font-face {
-//   font-family: 'TimberWolf-Regular';
-//   src: url('../assets/fonts/TimberWolf-Regular.woff') format('woff');
-//   font-weight: normal;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: 'TimberWolf-Regular';
+  src: url('../assets/fonts/TimberWolf-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 .standard-block {width: 100vw; height: 95vh; border: 4px solid red;}
 .standard-block-half {width: 50%; height: 100%; border: 2px solid lime;   }
@@ -71,6 +71,11 @@ h5 {
   font-style: italic;
   line-height: 1.25rem;
   margin: 15px 0px;
+}
+
+h6 {
+  font-family: 'TimberWolf-Regular';
+
 }
 
 p {
@@ -217,11 +222,12 @@ section {width: 100vw; border: 2px solid yellowgreen; }
     }
   }
 
+  .case-study-video {border: 3px solid lime; height: 70vh; position: relative; width: 100%; }
   
   .project-case-study-wrapper {width: 100%; border: 2px solid red; display: flex; justify-content: center; margin-top: 10px;}
   .case-study-iframe {width: 978px; height: 550px; border: 3px solid yellow; display: block; z-index: 2; overflow: hidden;}
 
-  .project-case-study-info { width: 100%; max-width: 1078px;  position: absolute; top: 750px;  z-index: 3;
+  .project-case-study-info { width: 100%; max-width: 1078px;  position: absolute; top: 80vh;  z-index: 3;
 
   }
 
@@ -245,22 +251,23 @@ section {width: 100vw; border: 2px solid yellowgreen; }
   }
 
 
-  #project-bts {width: 100%; border: 3px solid red; padding: 25px; display: inline-flex;  background-image: url('../assets/black-textured-box.svg'); background-size: contain;
+  #project-bts {width: 100%; border: 3px solid red; padding: 25px; display: inline-flex;  background-image: url('../assets/black-textured-box.svg'); background-size: contain; 
     .bts-img {height: 100px; width: 250px; background: teal; margin: 5px;}
 
   }
 
   // ABOUT SUMMARY (homepage)
   // ##############################
+  #about {box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0); background: url('../assets/textured.png'); background-color: black; background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: -3 }
+.about-wrapper {border: 3px solid aqua; height:70vh; display: flex; align-items: center; justify-content: center; margin: 10vh 5vw;}
+.about-wrapper-image {background-image: url('../assets/imgs/camden-spencer.jpg'); background-size: cover; background-repeat: no-repeat; background-position: 69% top; width: 100%; height: 100%; overflow: hidden;}
 
-  #about-section {z-index: -2; min-height: 900px;}
-  .about-summary-image-wrapper {width: 100vw; height: 95vh; border: 3px solid lime; position: absolute; display: flex; top: 95vh; left: 0; z-index: 0;  }
-  .about-summary-image {width: 90%; height: 75%; margin: 100px; border: 2px solid red; 
-    background-image: url('../assets/imgs/camden-spencer.jpg'); background-position: 69% top; background-size: cover; background-repeat: no-repeat; }
-  
-  .about-summary-text-wrapper { border: 2px solid tan; padding: 0 15px; width: 100%; max-width: 800px; height: 95%;  display: flex; align-items: flex-end; justify-content: flex-end;  bottom: 0; }
-  .about-summary-text {background-image: url('../assets/textured-square.svg'); background-size: cover; background-repeat: no-repeat; padding: 50px; }
-  
+.about-text-wrapper {
+  border: 2px solid yellow; height: 100%;  margin-left: -5vw; margin-top: 7.5vh; z-index: 3; display: inline-flex; align-items: flex-end;
+}
+.about-text-bg {position: absolute;  width: 70%; background-image: url('../assets/textured-square.png'); background-size: 98% 98%; background-position: 50% 50%; background-repeat: no-repeat;}
+
+
 
     // FOOTERS 
   // ##############################

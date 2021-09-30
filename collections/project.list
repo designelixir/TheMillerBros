@@ -40,8 +40,14 @@
     </div>
 
     <div class="project-case-study-wrapper" >
-        <div class="case-study-iframe">
+        {#  <div class="case-study-iframe">
             <iframe src="" id="casestudy-iframe" width="978" height="550" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>  }
+        <div class="case-study-video">
+        <div class="vimeo-wrapper" style="background-image: url('{fullURL}?format=original');">
+            <iframe id="backgroundiframe" src="https://player.vimeo.com/video/612955052"
+            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
         </div>
 
         <div class="project-case-study-info">
@@ -93,25 +99,24 @@
 
 
 {#  about section  }
-<section style="background: url('../assets/textured.png'); background-color: black; background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: -3">
+<section id="about">
     <div class="scroll-preview">
         <p> go down </p>
     </div>
-    <div style="border: 3px solid aqua; height: 85vh; display: flex; align-items: center; justify-content: center; margin: 10vh 10vw;">
-        <div style="background: red; width: 100%; height: 100%;">
-            <div style="width: 50%; border: 23px solid yellow; height: 100%; margin-left: -5vw; z-index: 3;">
-                <div style="position: absolute; border: 2px solid lime;">
-                    <img src="../assets/textured-square.svg">
+    <div class="about-wrapper">
+        <div class="about-wrapper-image">
+            <div class="about-text-wrapper">
+                <h6>OUR STORY</h6>
+                <div class="about-text-bg">
+                    <span style="padding: 45px;">
+                        <h3>A LIFETIME OF PARTNERSHIP </h3>
+                        <span class="blue-line"></span>
+                        <p > From the moment we first stole Mom’s VHS tape recorder, we were hooked. Camden & Spencer knew they were destined to tell stories together. Through decades of honing their craft, they find themselves directing and producing both original and commercial films with purpose-driven partners who aren't afraid to challenge the narrative.  </p>
+                    </span>
                 </div>
             </div> 
         </div>
     </div>
-    
-    
-    
-</div>
-
-
 </section>
 
 <script>
@@ -119,8 +124,7 @@
 function mediaQuery(x) {
   if (x.matches) { 
     document.body.style.backgroundColor = "black";
-    $('.about-summary-image').css("background-size", "300%", "height", "60%");
-    $('.about-summary-text-wrapper').css("width", "100%");
+    $('.about-text-bg').css("width", "97.5%");
     $('#project-details').css("display", "inline-block");
     $('#project-details-left').css("width", "100%");
     $('#project-details-right').css("width", "100%", "padding-top", "25px");
@@ -128,9 +132,8 @@ function mediaQuery(x) {
 
   } else {
     document.body.style.backgroundColor = "white";
-     $('.about-summary-image').css("background-size", "cover", "height", "80%") 
-     $('.about-summary-text-wrapper').css("width", "60%");
-     $('#project-details').css("display", "inline-flex");
+    $('.about-text-bg').css("width", "70%");
+    $('#project-details').css("display", "inline-flex");
     $('#project-details-left').css("width", "60%");
     $('#project-details-right').css("width", "35%", "padding-top", "0");
   }
