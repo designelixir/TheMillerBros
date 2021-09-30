@@ -93,10 +93,23 @@
 
 
 {#  about section  }
-<section style="background-color: black;">
+<section style="background: url('../assets/textured.png'); background-color: black; background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: -3">
     <div class="scroll-preview">
-
+        <p> go down </p>
     </div>
+    <div style="border: 3px solid aqua; height: 85vh; display: flex; align-items: center; justify-content: center; margin: 10vh 10vw;">
+        <div style="background: red; width: 100%; height: 100%;">
+            <div style="width: 50%; border: 23px solid yellow; height: 100%; margin-left: -5vw; z-index: 3;">
+                <div style="position: absolute; border: 2px solid lime;">
+                    <img src="../assets/textured-square.svg">
+                </div>
+            </div> 
+        </div>
+    </div>
+    
+    
+    
+</div>
 
 
 </section>
