@@ -13,13 +13,16 @@
 .box-shadow {-webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
   box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);}
 
+.linear-gradient {background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15) 10%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.15) 90%, rgba(0,0,0,0) 100%);}
 * {box-sizing: border-box; scroll-behavior: smooth; margin: 0; padding: 0; overflow-x: hidden;}
 
 .hover-indication {padding: 10px;}
 .hover-indication:hover {transform:scale(1.1); cursor: pointer}
 
-body {
+header {position: absolute; top: 0; left: 0; z-index: 3; }
 
+body {
+  margin-top: 100px; border: 3px solid salmon;
   font-family: museo-sans-rounded, sans-serif;
   font-size: 100%;
   font-weight: normal;
@@ -140,14 +143,54 @@ p {
 
 // FEATURED PROJECT COLLECTION 
 //####################################################################################################
+section {width: 100vw; border: 2px solid yellowgreen; }
+.project {width: 100%; max-height: 95vh; height: 100%; border: 1px solid blue; position: absolute; top: 0; left: 0; display: block;}
+  .project-navigation {width: 100%; height: 50%; border: 2px solid yellow; display: inline-flex; justify-content: space-between; align-items: flex-end; z-index: 5; }
+  .project-toggle {border: 2px solid lime; width: 100%; display: inline-flex; justify-content: space-between;}
+
+  .project-title {overflow: hidden; color: white; padding: 25px;
+    h1 {font-size: 3rem; text-shadow: 2px 2px tan; line-height: 3rem; border-left: 8px solid tan; border-radius: 4px; padding-left: 17px; overflow-y: hidden;}
+    h4 {padding-left: 25px;}
+  }
+  .project-counter {width: 50px;}
+
+  .scroll-preview {width: 100vw; height: 100px; border: 2px solid orange;}
+
+
+
+
+
+
+.vimeo-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+.vimeo-wrapper iframe {
+  width: 100vw;
+  height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */
+  min-height: 100vh;
+  min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
 .project-iframe {
-  width: 100vw; height: 95vh; border: 3px solid lime; position: absolute; display: flex; align-items: center; justify-content: center; top: 0; left: 0; background: rgba(1,255,255,0.2); z-index: -2;
+  width: 100vw; height: 95vh; background: lime; position: absolute; display: flex; align-items: center; justify-content: center; top: 0; left: 0; background: rgba(1,255,255,0.2); z-index: -2;
 }
 
 .toggle-bar {width: 100%; height: 50%; border: 2px solid magenta; padding: 0 25px; display: inline-flex; justify-content: space-between; align-items: flex-end;}
-.toggle-counter {border: 2px solid blue; width: 25%; height: 100%; padding: 0 25px; display: inline-flex; align-items: flex-end}
+.toggle-counter {border: 2px solid blue; width: 15%; height: 100%; padding: 0 25px; display: inline-flex; align-items: flex-end}
 
-.project-interactives {width: 100vw; height: calc(95vh - 100px);  border: 2px solid orange;}
+.project-interactives {width: 100vw; height: calc(100vh - 100px);  border: 2px solid orange;}
 .project-tag {width: 100%; height: 45%; border: 2px solid aqua; padding: 25px; display: inline-flex; justify-content: space-between; align-items: flex-end}
 
 .project-details {border: 2px solid teal; width: 75%; padding: 0 25px; height: 100%; display: inline-flex; align-items: flex-end}
@@ -159,28 +202,6 @@ p {
 .slide-video {border: 9px solid yellow; width: 100%; height: 100%; left: 0; top: 0; z-index: -2;}
 .featured-info {width: 100%;  bottom: 10%; background: orange; z-index: 20;}
 
-.embed-container {
-  position: relative;
-  top: 0;
-  height: 100%;
-  overflow: hidden;
-  background-repeat: no-repeat; 
-  background-size: cover;
-  // transform: scale(2);  
-}
-
-  .embed-container iframe,
-  .embed-container object,
-  .embed-container embed {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100%;
-      overflow: hidden!important;
-      // transform: scale(1.76);
-  }
-
   // PROJECT CASE STUDY WINDOW 
   //###############################################
 
@@ -188,7 +209,7 @@ p {
   .circle-button-blue { width: 50px; height: 50px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
   .wide-button-black {width: 210px; margin-top: 17px; height: 60px; display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: cover;}
 
-  .project-case-study-window {width: 100vw; height: 100vh; position: fixed; z-index: 2; border: 1px solid black; background: pink; top: 0; left: 0; display: block; }
+  .project-case-study-window {width: 100vw; height: 100vh; position: fixed; z-index: 4; border: 1px solid black; background: pink; top: 0; left: 0; display: block; }
   .project-case-study-window-nav {width: 100%; height: 125px; padding: 25px; background: black; display: inline-flex; justify-content: space-between; border: 2px solid magenta;
     span { height: 100%; display: flex; align-items: center; color: white;
       button {border: none; margin-left: 15px; width: 50px; height: 100%;  background-color: transparent; background-image: url('../assets/blue-textured-circle.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
@@ -196,13 +217,11 @@ p {
     }
   }
 
-  .project-title {overflow: hidden; color: white;
-    h1 {font-size: 3rem; text-shadow: 2px 2px tan; line-height: 3rem; border-left: 8px solid tan; border-radius: 4px; padding-left: 17px;}
-  }
+  
   .project-case-study-wrapper {width: 100%; border: 2px solid red; display: flex; justify-content: center; margin-top: 10px;}
   .case-study-iframe {width: 978px; height: 550px; border: 3px solid yellow; display: block; z-index: 2; overflow: hidden;}
 
-  .project-case-study-info { width: 100%; max-width: 1078px;  position: absolute; top: 80%;  z-index: 3;
+  .project-case-study-info { width: 100%; max-width: 1078px;  position: absolute; top: 70%;  z-index: 3;
 
   }
 
