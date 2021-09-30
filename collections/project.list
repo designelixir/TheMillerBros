@@ -1,8 +1,8 @@
 <script>
-console.log({@|json-pretty})
+    console.log({@|json-pretty})
 </script>
 
-<div class="project-iframe" >
+<div class="project-iframe">
     <div class='embed-container' style="background-image: url('{fullURL}?format=original');">
         <iframe id="backgroundiframe" src="" frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
         {#  https://player.vimeo.com/video/554972589?h=1e1bc75483?autoplay=1&loop=1&background=1  }
@@ -15,43 +15,49 @@ console.log({@|json-pretty})
         <button class="toggle"> right </button>
     </span>
 
-    <span class="project-info">
-        <span class="project-details">
-            <h1>Title </h1>
+    <span class="project-tag">
+        <span class="project-title">
+            <h1 class="hover-indication">Title </h1>
+           
         </span>
+         <span style="width: 100%; border: 2px solid purple; height: 20px;"></span>
+       
 
 
         <span class="toggle-counter">
         .....
         </span>
     </span>
+
+    {#  scroll down preview  }
     <span class="scroll-peek">
         <h1>V</h1>
     </span>
 </div>
 
-<div class="project-case-study-window">
-    <div class="project-case-study-window-nav fade-in">
+<div class="project-case-study-window" style="display: none;">
+    <div class="project-case-study-window-nav fade-in" id="toggle-close-project">
         <span>
-            <img style="height: 75px" src="../assets/miller-bros-lettermark.svg"/>
+            <img style="height: 100%; width: auto;" src="../assets/miller-bros-lettermark.svg"/>
         </span>
 
-        <span>
-            <span style="width: 125px; text-align: right; float: right;"><h4>Back to <br> Homepage</h4></span>
+        <span class="hover-indication" >
+            <span><h4 style="font-size: 14px; text-align: right;">Back to <br> Homepage</h4></span>
             <span style="width: 75px"> <button> <h3>X</h3> </button></span>
         </span>
     </div>
 
     <div class="project-case-study-wrapper">
         <div class="case-study-iframe">
-            <iframe src="https://player.vimeo.com/video/554972589?h=1e1bc75483&autoplay=1&title=0&byline=0&portrait=0" width="978" height="550" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        {#  https://player.vimeo.com/video/554972589?h=1e1bc75483&autoplay=1&title=0&byline=0&portrait=0  }
+            <iframe src="" width="978" height="550" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>
 
         <div class="project-case-study-info" >
             
             <span id="project-text" class="box-shadow">
                 <span id="project-summary" class="fade-in">
-                    <h1 >This would be a really big title</h1>
+                    <h1 class="project-title">This would be a really big title</h1>
                     <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
                 </span>
                 <span id="project-details" class="fade-in">
@@ -86,16 +92,8 @@ console.log({@|json-pretty})
     </div>
     
 </div>
-<div class="project-case-study-window-nav">
-                    <span>
-                        <img style="height: 75px" src="../assets/miller-bros-lettermark.svg"/>
-                    </span>
 
-                    <span>
-                        <span style="width: 125px; text-align: right; float: right;"><h4>Back to <br> Homepage</h4></span>
-                        <span style="width: 75px"> <button> <h3>X</h3> </button></span>
-                    </span>
-                </div>
+
 
 
 
@@ -117,7 +115,7 @@ console.log({@|json-pretty})
         
         <span class="about-summary-text">
         <h3>A LIFETIME OF PARTNERSHIP </h3>
-        <br>
+        <span class="blue-line"></span>
         <p>From the moment we first stole Mom’s VHS tape recorder, we were hooked. Camden & Spencer knew they were destined to tell stories together. Through decades of honing their craft, they find themselves directing and producing both original and commercial films with purpose-driven partners who aren't afraid to challenge the narrative. </p>
         </span>
     </span>
@@ -134,23 +132,25 @@ function mediaQuery(x) {
     $('.about-summary-text-wrapper').css("width", "100%");
     $('#project-details').css("display", "inline-block");
     $('#project-details-left').css("width", "100%");
-    $('#project-details-right').css("width", "100%");
+    $('#project-details-right').css("width", "100%", "padding-top", "25px");
+    $('#project-case-study-window-nav h4').css("font-size","14px")
 
-
-
-   
   } else {
     document.body.style.backgroundColor = "white";
      $('.about-summary-image').css("background-size", "cover", "height", "80%") 
      $('.about-summary-text-wrapper').css("width", "60%");
      $('#project-details').css("display", "inline-flex");
     $('#project-details-left').css("width", "60%");
-    $('#project-details-right').css("width", "35%");
+    $('#project-details-right').css("width", "35%", "padding-top", "0");
   }
 }
 
 var x = window.matchMedia("(max-width: 550px)")
 mediaQuery(x) 
 x.addListener(mediaQuery) 
+
+$('#toggle-close-project').click(function(){
+    $('.project-case-study-window').css("display", "none")
+})
 
 </script>
