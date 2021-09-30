@@ -21,7 +21,9 @@
 
     <span class="project-tag">
         <span class="project-title hover-indication" id="toggle-open-project">
+        {#  INSERT title + brand }
             <h1>Title </h1>
+            <h2></h2> 
             <span><button class="wide-button-black"><h4>CASE STUDY</h4></button></span>
         </span>
          
