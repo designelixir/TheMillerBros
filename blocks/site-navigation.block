@@ -21,3 +21,9 @@
     {.end}
   </ul>
 </nav>
+
+<nav class="mobile-navigation" style="display: none;">
+<div style="background: white; width: 75px; height: 75px;">
+    <p style="font-size: 15px"> mobile menu </p>
+  </div>
+</nav>

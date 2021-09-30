@@ -51,14 +51,20 @@
 function mediaQuery(x) {
   if (x.matches) { 
     document.body.style.backgroundColor = "black";
-    var headerLogo = document.getElementById("header-logo");
+    $('#header-logo').attr("src", "assets/miller-bros-lettermark.svg")
+    $('.site-navigation').css("display", "none")
+    $('.mobile-navigation').css("display", "block");    
   } else {
     document.body.style.backgroundColor = "white";
+        $('#header-logo').attr("src", "assets/miller-bros-logo-white.svg");
+        $('.site-navigation').css("display", "block")
+        $('.mobile-navigation').css("display", "none");    
+
   }
 }
 
-var x = window.matchMedia("(max-width: 600px)")
-mediaQuery(x) // Call listener function at run time
-x.addListener(mediaQuery) // Attach listener function on state changes
+var x = window.matchMedia("(max-width: 550px)")
+mediaQuery(x) 
+x.addListener(mediaQuery) 
 
 </script>

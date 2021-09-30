@@ -34,7 +34,6 @@ h1 {
 // HEADER / navigation
 //####################################################################################################
 
-.logo-img img{max-height: 90px;}
 
 .site-header {
   display: flex; 
@@ -48,8 +47,10 @@ h1 {
   z-index: 3;
 }
 
+.site-navigation-container {border: 2px solid yellow;}
 
-.site-logo:hover {transform: scale(1.05)}
+#header-logo {height: 80px; width: auto;}
+#header-logo:hover {transform: scale(1.05)}
 // .site-navigation { }
 
 .site-navigation-list {
@@ -69,6 +70,8 @@ h1 {
     text-decoration: none;
     text-shadow: #111;
     margin: 5px;
+    font-size:  18px;
+    text-transform: uppercase;
 
     &:hover {
       color: #F9E6C8;
@@ -77,7 +80,7 @@ h1 {
   }
 
   &.active-link > a {
-    padding: 10px 0px;
+    padding: 20px 0px;
     color: #EEBF70;
     background-image: url("../assets/textured-underline.svg");
     background-size: 100% 100%; background-repeat: no-repeat;  background-position: bottom;
@@ -86,14 +89,7 @@ h1 {
 
 }
 
-.site-title-heading {
 
-  .site-title-link {
-    color: #111;
-    font-weight: 400;
-    text-decoration: none;
-  }
-}
 
 // FEATURED PROJECT COLLECTION 
 //####################################################################################################
@@ -137,7 +133,6 @@ h1 {
       // transform: scale(1.76);
   }
 
-  header {background: rgba(255,2,252,0.3); height: 100px;}
 
 
   // FOOTERS 
