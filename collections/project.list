@@ -1,7 +1,5 @@
 <script>
-
 console.log({@|json-pretty})
-
 </script>
 
 <div class="project-iframe" >
@@ -32,12 +30,29 @@ console.log({@|json-pretty})
     </span>
 </div>
 
+<div class="project-case-study-window">
+    <div class="project-case-study-wrapper">
+        <div class='embed-container' style="background-image: url('{fullURL}?format=original');">
+            <iframe id="backgroundiframe" src="https://player.vimeo.com/video/554972589?h=1e1bc75483?autoplay=1&title=0&byline=0&portrait=0" frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+        </div>
+    </div>
+    <div class="project-case-study-details">
+
+    </div>
+</div>
+
+
+
+
+
+
+
 {#  about section  }
 
 <div class="box-shadow standard-block" style="display: block; z-index: -2">
    <span class="about-summary-image-wrapper">
         <span class="about-summary-image">
-        {#  camden and spencer image here  }
+        {#  camden and spencer image here as background  }
         </span>
     </span>
     <span class="about-summary-text-wrapper">
