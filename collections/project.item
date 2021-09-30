@@ -1,7 +1,7 @@
 <h1> Here is some stuff. </h1>
 
 {.section item}
-
+<script>console.log({@|json-pretty})</script>
   <!--WRAPPER-->
   <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
 
