@@ -23,6 +23,7 @@
 
     <!--BLOG INJECTION-->
     {postItemInjectCode}
+    
     <squarespace:block-field id="blockField1" columns="12" lock-layout="true"/>
 
 
