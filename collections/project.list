@@ -1,47 +1,26 @@
-
-<div class="homepage-wrapper">
-
-<!-- item loop -->
-{.repeated section items}
-<script>
-
-console.log({@|json-pretty})
-console.log("da code is " + {customContent.vimeocode})
-
-{#  generates background video  }
-var vimeoIframe = 'https://player.vimeo.com/video/';
-var vimeoCode = {customContent.vimeocode};
-var vimeoAutoplay = '?autoplay=1&loop=1&background=1';
-
-document.getElementById('backgroundiframe').src = vimeoIframe + vimeoCode + vimeoAutoplay;
-
-</script>
-
-
-
-<div class="featured-wrapper">
-    <div class="slide-video" >
-
-        <div class='embed-container' id="post-{id}" class="portfolio-item {@|item-classes}" data-item-id="{id}" style="background-image: url('{fullURL}?format=original'); background-repeat: no-repeat;">
-            <iframe id="backgroundiframe" src="" frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
-        </div>
-
+<div class="project-iframe" >
+    <div class='embed-container' style="background-image: url('{fullURL}?format=original');">
+        <iframe id="backgroundiframe" src="" frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> 
+        {#  https://player.vimeo.com/video/554972589?h=1e1bc75483?autoplay=1&loop=1&background=1  }
     </div>
-
-    <div class="featured-info">
-        <h1>{title}</h1>
-    </div>
-
 </div>
-    
 
-{.or}
+<div class="project-interactives" style="width: 100vw; height: calc(95vh - 100px);  border: 10px solid orange;   ">
+    <span class="toggle-bar">
+        <button class="toggle"> left </button>
+        <button class="toggle"> right </button>
+    </span>
 
-  <!-- no items -->
-  <p><em>No blog posts yet.</em></p>
+    <span class="project-info">
+        <span class="project-details">
+            <h1>Title </h1>
+        </span>
 
-{.end}
 
+        <span class="toggle-counter">
+        stuff
+        </span>
 
+    </span>
 </div>
-<script src="https://player.vimeo.com/api/player.js"></script>
+

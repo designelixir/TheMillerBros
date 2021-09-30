@@ -22,16 +22,41 @@ body {
   
 }
 
-.homepage-wrapper {position: relative; top: 0; left: 0; width: 100vw; height: 90vh; border: 3px solid lime;}
-.featured-wrapper {width: 100%; height: 100%; border: 2px solid aqua; position: absolute; top: 0; left: 0; margin: 0; padding: 0; z-index: -5;}
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: white;
+  padding: 0; margin: 0; 
+
+}
+// FEATURED PROJECT COLLECTION 
+
+.project-iframe {
+  width: 100vw; height: 95vh; border: 3px solid lime; position: absolute; display: flex; align-items: center; justify-content: center; top: 0; left: 0; background: rgba(1,255,255,0.2); z-index: -2;
+}
+.project-interactives {width: 100vw; height: calc(95vh - 100px);  border: 10px solid orange;}
+.project-info {width: 100%; height: 45%; border: 2px solid lime; display: inline-flex; justify-content: space-between; align-items: flex-end}
+
+.toggle-bar {width: 100%; height: 50%; border: 2px solid magenta; display: inline-flex; justify-content: space-between; align-items: flex-end;}
+.toggle-counter {border: 2px solid blue; width: 25%; height: 100%; display: inline-flex; align-items: flex-end}
+
+
+.project-details {border: 2px solid teal; width: 75%; height: 100%; display: inline-flex; align-items: flex-end}
+
+
+.homepage-wrapper {position: relative; top: 0; left: 0; width: 100vw; height: 100vh;  border: 3px solid lime;}
+.featured-wrapper {width: 100%; position: relative; height: 100%; border: 2px solid aqua; top: 0; left: 0; margin: 0; padding: 0; z-index: -5;}
 .slide-video {border: 9px solid yellow; width: 100%; height: 100%; left: 0; top: 0; z-index: -2;}
-.featured-info {width: 100%; position: absolute; bottom: 10%; background: orange; z-index: 20;}
+.featured-info {width: 100%;  bottom: 10%; background: orange; z-index: 20;}
 
 .embed-container {
   position: relative;
   top: 0;
   height: 100%;
   overflow: hidden;
+  background-repeat: no-repeat; 
+  background-size: cover;
   // transform: scale(2);  
 }
 
@@ -44,9 +69,10 @@ body {
       width: 100vw;
       height: 100%;
       overflow: hidden!important;
-      transform: scale(1.76);
+      // transform: scale(1.76);
   }
 
+  header {background: rgba(255,2,252,0.3); height: 100px;}
 
 
   // FOOTERS 
