@@ -2,39 +2,60 @@
 
 <div class="portfolio-grid">
 {.repeated section items}
-<script>console.log({@|json-pretty})</script>
+<script>console.log({@|json-pretty})
+
+$(document).ready(function() {
+  function REMOVEANIMATION() {     
+    $(".portfolio-item").removeClass("tilt-in-tl");
+    $(".portfolio-item").removeClass("fade-in");
+
+ }
+ setTimeout(REMOVEANIMATION, 1000)
+});
 
 
+
+</script>
+
+{#  Click Video in Grid, Open Video  }
 <div class="portfolio-item-window fade-in" id="portfolio-{id}">
     <span class="portfolio-nav linear-gradient">
-        <span><h1> {title} </h1></span>
-        <span style="min-width: 110px; display: flex; justify-content: center; align-items: center; ">
+        <span><h1>{title}</h1></span>
+        <span style="min-width: 110px; display: flex; justify-content: center; align-items: center;">
             <button id="toggle-fullscreen-{id}" class="expand-button hover-indication" aria-label="Toggle Full Screen Video Window"></button>
            <button class="circle-button-blue hover-indication" id="toggle-close-{id}" aria-label="Close Portfolio Video Window"></button>
         </span>
     </span>
-    <span style="margin-bottom: 25px;"> <h4 style="color: white; padding: 0px 25px;">Here is a potential spot for a short sentence if you'd like it. </h4></span>
+    <span style="margin-bottom: 25px;"> <h4 style="color: white; padding: 0px 25px;">Here is a potential spot for a short sentence. </h4></span>
 
 
-<div style="padding:56.25% 0 0 0;position:relative;">
-<iframe id="portfolio-iframe-{id}" src="https://player.vimeo.com/video/457595632?h=155f54ce15&autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+    <div id="iframe-container" style="padding:56.25% 25px 0 0; position:relative; background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original'); background-size: cover; background-repeat: no-repeat;"> 
+      <img id="play-prompt-{id}" src="../assets/play.svg" alt="Play" style=" position: absolute; margin: auto; z-index: 12; top: 0; left: 0; right: 0; bottom: 0;"/>
 
-
+      <iframe id="portfolio-iframe-{id}" src="" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
 
 </div>
-
-  <div id="post-{id}" class="portfolio-item tilt-in-tl fade-in {@|item-classes}" data-item-id="{id}" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original'); ">
-  
+{#  individual grid item  }
+  <div id="post-{id}" class="portfolio-item fade-in tilt-in-tl {@|item-classes}" data-item-id="{id}" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original'); ">
     <div class="portfolio-item-title" >
         <h3 class="title" data-content-field="title">{title}</h3>
-        <button class="post-{id}" class="portfolio-item-play fade-in">PLAY</button>
+        <button class="post-{id}" class="portfolio-item-play fade-in" style="display: none;"><h6>PLAY</h6></button>
     </div>
   </div>
 
     <script> 
 
+
+    
+
+    $('#iframe-container').click(function(){
+      console.log("hello???")
+      $('#play-prompt h6').css("display", "none")
+    })
+
     $( "#toggle-fullscreen-{id}" ).click (function(){
-    $( "#portfolio-iframe-{id}" )[0].src= 'https://player.vimeo.com/video/'+ '433465561?h=88909a821c' + '&autoplay=1&title=0&byline=0&portrait=0';
+    $( "#portfolio-iframe-{id}" )[0].src= 'https://player.vimeo.com/video/'+ '{customContent.vimeocode}' + '&autoplay=1&title=0&byline=0&portrait=0';
     requestFullscreen($( "#portfolio-iframe-{id}" )[0]);
 
     });
@@ -53,12 +74,13 @@
 
     $('#post-{id}').bind('click', function(){
         $('#portfolio-{id}').css('display', 'block');
-        $('body').css("overflow", "hidden");
-        $('#portfolio-{id}.iframe').attr("src", oembed.url)
+        $('html').css("overflow", "hidden");
+        var vimeoURL = 'https://player.vimeo.com/video/'+ '{customContent.vimeocode}' + '?=&title=0&byline=0&portrait=0';
+        $('#portfolio-iframe-{id}').attr('src', vimeoURL)
     })
 
     $('#toggle-close-{id}').bind('click', function(){
-       $('body').css("overflow", "scroll");
+       $('html').css("overflow", "scroll");
       $('#portfolio-{id}').css('display', 'none');
     })
 
@@ -75,7 +97,7 @@
 
 {.or}
 
-<p>no videos.</p>
+<p>:-( no videos.</p>
 
 {.end}
 </div>
