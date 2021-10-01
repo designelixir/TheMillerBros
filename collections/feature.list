@@ -8,27 +8,24 @@
 <div class="portfolio-item-window fade-in" id="portfolio-{id}">
     <span class="portfolio-nav linear-gradient">
         <span><h1> {title} </h1></span>
-        <span class="hover-indication" style="min-width: 100px;">
-            <button id="toggle-fullscreen-{id}"> EXPAND </button>
-           <button class="circle-button-blue" id="toggle-close-{id}"> <h3>X</h3> </button>
+        <span style="min-width: 110px; display: flex; justify-content: center; align-items: center; ">
+            <button id="toggle-fullscreen-{id}" class="expand-button hover-indication" aria-label="Toggle Full Screen Video Window"></button>
+           <button class="circle-button-blue hover-indication" id="toggle-close-{id}" aria-label="Close Portfolio Video Window"></button>
         </span>
     </span>
-    <span> <h4 style="color: white; padding: 0px 25px;">Here is a potential spot for a short sentence if you'd like it. </h4>
+    <span style="margin-bottom: 25px;"> <h4 style="color: white; padding: 0px 25px;">Here is a potential spot for a short sentence if you'd like it. </h4></span>
 
 
 <div style="padding:56.25% 0 0 0;position:relative;">
 <iframe id="portfolio-iframe-{id}" src="https://player.vimeo.com/video/457595632?h=155f54ce15&autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
-      
 
-    <button class="fadeOver">hi </button>
-    
 
 
 </div>
 
-  <div id="post-{id}" class="portfolio-item {@|item-classes}" data-item-id="{id}">
+  <div id="post-{id}" class="portfolio-item tilt-in-tl fade-in {@|item-classes}" data-item-id="{id}" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original'); ">
   
-    <div class="portfolio-item-title" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original'); ">
+    <div class="portfolio-item-title" >
         <h3 class="title" data-content-field="title">{title}</h3>
         <button class="post-{id}" class="portfolio-item-play fade-in">PLAY</button>
     </div>
@@ -56,11 +53,12 @@
 
     $('#post-{id}').bind('click', function(){
         $('#portfolio-{id}').css('display', 'block');
+        $('body').css("overflow", "hidden");
         $('#portfolio-{id}.iframe').attr("src", oembed.url)
     })
 
     $('#toggle-close-{id}').bind('click', function(){
-      console.log("ya fycj");
+       $('body').css("overflow", "scroll");
       $('#portfolio-{id}').css('display', 'none');
     })
 
