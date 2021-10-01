@@ -1,5 +1,5 @@
 {#  container for videos  }
-<section style="height: calc(95vh - 100px);">
+<section id="featured" style="height: calc(95vh - 100px);">
 {.repeated section items}
     <div class="project" >
         {#  background vimeo  }
@@ -28,7 +28,7 @@
     {#  FULL CASE STUDY  }
 
 <div class="project-case-study-window fade-in" style="display: none;">
-    <div class="project-case-study-window-nav fade-in" id="toggle-close-project">
+    <div class="project-case-study-window-nav fade-in" id="toggle-close-project-{id}">
         <span>
             <img style="height: 100%; width: auto;" src="../assets/miller-bros-lettermark.svg"/>
         </span>
@@ -45,7 +45,7 @@
         </div>  }
         <div class="case-study-video">
         <div class="vimeo-wrapper" style="background-image: url('{fullURL}?format=original');">
-            <iframe id="backgroundiframe" src="https://player.vimeo.com/video/612955052"
+            <iframe src="https://player.vimeo.com/video/612955052"
             frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
         </div>
@@ -72,7 +72,7 @@
 
                     <span id="project-details-right">
                     <h4> Credits </h4>
-
+                    <span>{customContent.credits}</span>
                     </span>
                 </span>
 
