@@ -8,23 +8,19 @@
 <div class="portfolio-item-window fade-in" id="portfolio-{id}">
     <span class="portfolio-nav linear-gradient">
         <span><h1> {title} </h1></span>
-        <span class="hover-indication" style="min-width: 50px;">
+        <span class="hover-indication" style="min-width: 100px;">
+            <button id="toggle-fullscreen-{id}"> EXPAND </button>
            <button class="circle-button-blue" id="toggle-close-{id}"> <h3>X</h3> </button>
         </span>
     </span>
     <span> <h4 style="color: white; padding: 0px 25px;">Here is a potential spot for a short sentence if you'd like it. </h4>
-    <span>
 
-      
-      
-      <div class="portfolio-video">
-        <div class="vimeo-wrapper">
-            <iframe id="portfolio-{id}" src="https://player.vimeo.com/video/433465561?h=88909a821c&autoplay=1&title=0&byline=0&portrait=0"
-            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </div>
-        </div>
 
-    <span>
+<div style="padding:56.25% 0 0 0;position:relative;">
+<iframe id="portfolio-iframe-{id}" src="https://player.vimeo.com/video/457595632?h=155f54ce15&autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>
+      
+
+    <button class="fadeOver">hi </button>
     
 
 
@@ -39,6 +35,25 @@
   </div>
 
     <script> 
+
+    $( "#toggle-fullscreen-{id}" ).click (function(){
+    $( "#portfolio-iframe-{id}" )[0].src= 'https://player.vimeo.com/video/'+ '433465561?h=88909a821c' + '&autoplay=1&title=0&byline=0&portrait=0';
+    requestFullscreen($( "#portfolio-iframe-{id}" )[0]);
+
+    });
+
+    function requestFullscreen(el){
+        if (el.requestFullscreen) {
+                el.requestFullscreen();
+            } else if (el.msRequestFullscreen) {
+                el.msRequestFullscreen();
+            } else if (el.mozRequestFullScreen) {
+                el.mozRequestFullScreen();
+            } else if (el.webkitRequestFullscreen) {
+                el.webkitRequestFullscreen();
+            }
+        }
+
     $('#post-{id}').bind('click', function(){
         $('#portfolio-{id}').css('display', 'block');
         $('#portfolio-{id}.iframe').attr("src", oembed.url)
