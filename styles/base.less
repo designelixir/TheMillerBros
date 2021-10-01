@@ -225,6 +225,8 @@ section {width: 100vw; border: 2px solid yellowgreen; }
   }
 
   .case-study-video {border: 3px solid lime; height: 70vh; position: relative; width: 100%; }
+  .portfolio-video {border: 3px solid lime; top: 100px; height: 90vh; position: relative; width: 90vw; }
+
   
   .project-case-study-wrapper {width: 100%; border: 2px solid red; display: flex; justify-content: center; margin-top: 10px;}
   .case-study-iframe {width: 978px; height: 550px; border: 3px solid yellow; display: block; z-index: 2; overflow: hidden;}
@@ -316,6 +318,11 @@ section {width: 100vw; border: 2px solid yellowgreen; }
 @media only screen and (max-width: 600px) {.portfolio-item {width: 49%; height: calc(100% / 4); }}
 @media only screen and (min-width: 1950px) {.portfolio-item {width: 24%; height: calc(100% / 3); max-width: 25%;}}
 
+.portfolio-item-window {
+  display: none; backdrop-filter: blur(10px); width: 100%; height: 100%; background: rgba(0,0,0,0.25); position: absolute; z-index: 5; top: 0; left: 0; overflow: hidden;
+  .portfolio-nav {position: absolute; width: 100%;   display: inline-flex; align-items: center; justify-content: space-between; top: 0; left: 0; border: 3px solid lime; padding: 0 25px;}
+}
+
 .portfolio-item-title {width: 100%; height: 100%; background-color: rgba(0,0,0,0.25); 
   display: flex; align-items: center; justify-content: center; color: white; padding: 25px; 
   text-transform: uppercase; background-repeat: no-repeat; background-size: cover; background-position: center center;
@@ -329,6 +336,3 @@ section {width: 100vw; border: 2px solid yellowgreen; }
   .portfolio-item-play {display: block; position: absolute;}
 }
 
-.portfolio-item-window {
-  display: none; backdrop-filter: blur(10px); width: 100vw; height: 100vh; background: rgba(0,0,0,0.25); position: absolute; z-index: 5; top: 0; left: 0;
-}
