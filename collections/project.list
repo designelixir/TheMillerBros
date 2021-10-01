@@ -23,7 +23,8 @@ $('#backgroundiframe-{id}').attr('src', vimeobgURL);
         <div class="vimeo-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
             <iframe id="backgroundiframe-{id}" src="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
-<div class="toggle">
+        
+        <div class="toggle">
 
         </div>
         <div class="project-contents">
@@ -34,9 +35,14 @@ $('#backgroundiframe-{id}').attr('src', vimeobgURL);
 
         <div class="project-contents linear-gradient">
             <span id="summary-title">
-                <span><h1>{title}</h1>
-                <h4>{customContent.brand}</h4> </span>
-           </span>
+                <span>
+                    <h1>{title}</h1>
+                    <h4>{customContent.brand}</h4> 
+                </span>
+                <span>
+                    <img style="height: 3rem;" src="../assets/arrow.svg"/>
+                </span>
+            </span>
            
             <span id="project-counter">
                 <img src="../assets/tan-textured-circle.svg" class="counter">
