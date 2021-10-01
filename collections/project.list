@@ -24,7 +24,7 @@ $('#backgroundiframe-{id}').attr('src', vimeobgURL);
             <iframe id="backgroundiframe-{id}" src="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
         
-        <div class="toggle">
+        <div class="toggle" id="toggle-bar">
 
         </div>
         <div class="project-contents">
@@ -35,12 +35,12 @@ $('#backgroundiframe-{id}').attr('src', vimeobgURL);
 
         <div class="project-contents linear-gradient">
             <span id="summary-title">
-                <span>
+                <span class="hover-indication">
                     <h1>{title}</h1>
                     <h4>{customContent.brand}</h4> 
                 </span>
-                <span>
-                    <img style="height: 3rem;" src="../assets/arrow.svg"/>
+                <span class="hover-indication" style="height: 70px;">
+                    <img id="open-project-{id}" class="project-arrow" style="height: 35px; margin-left: 25px;" src="../assets/arrow.svg"/>
                 </span>
             </span>
            
@@ -121,12 +121,10 @@ $('#backgroundiframe-{id}').attr('src', vimeobgURL);
 </div>
 <script>
 
-
+console.log("there are this many slides "+slideCounter)
 
 if (slideCounter === 1){
     $('.counter').attr("src", "../assets/black-textured-circle.svg");
-
-    console.log("ya ")
     $('#portfolio-{id}.project').css('display', 'block');
 } else { $('#portfolio-{id}').css("display", "none");}
 
@@ -136,10 +134,6 @@ if (slideCounter === 1){
 </script>
 {.end}
 </section>
-
-
-
-
 
 {#  about section  }
 <section id="about">
@@ -164,9 +158,16 @@ if (slideCounter === 1){
 
 <script>
 
+{#  when you click toggle bar go to next thing  }
+$('#toggle-bar').click(function(){
+    console.log("got em")
+})
+
+
 function mediaQuery(x) {
   if (x.matches) { 
-
+    $('#summary-title').css('width', '100%', 'font-size', '50%');  
+    $('#project-counter').css('width', '100%');
     $('.about-text-bg').css("width", "97.5%");
     $('#project-details').css("display", "inline-block");
     $('#project-details-left').css("width", "100%");
@@ -190,11 +191,15 @@ $('#toggle-close-project').click(function(){
     $('.project-case-study-window').css("display", "none")
 })
 
+{#  opens FULL case study window  }
 $('#toggle-open-project').click(function(){
-    console.log('clicky')
     $('.project-case-study-window').css("display", "block")
 })
 
+{#  make an animated something for this hover to encourage people to click  }
+$("#summary-title span").hover(function(){
+  $(".project-arrow").css("background-color", "yellow");
+});
 
 
 </script>
