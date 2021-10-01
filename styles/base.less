@@ -284,4 +284,61 @@ section {width: 100vw; border: 2px solid yellowgreen; }
 
 .fade-out{-webkit-animation:fade-out 1s ease-out both;animation:fade-out 1s ease-out both}
 @-webkit-keyframes fade-out{0%{opacity:1}100%{opacity:0}}@keyframes fade-out{0%{opacity:1}100%{opacity:0}}
-/* Homepage
+/* 
+
+// PORTFOLIO PAGE 
+
+
+
+.portfolio-grid {
+  min-height: 950px;
+  height: calc(90.5vh);
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 2px solid lime;
+  z-index: 0;
+  
+}
+
+.portfolio-item {
+  flex-grow: 1; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 32%;
+  margin: 2px;
+  height: calc(100% / 3);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.portfolio-item-title {width: 100%; height: 100%; background-color: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center; color: white; padding: 2.5%; text-transform: uppercase;}
+.portfolio-item-play {display: none;}
+
+.portfolio-item:hover{transform: scale(1.1); 
+
+  .portfolio-item-title {background-color: rgba(0,0,0,0.25);}
+  .title {animation:fade-out 0.25s ease-out both; display: none;}
+  .portfolio-item-play {display: block; position: absolute;}
+}
+
+
+.portfolio-item-window {width: 100%; height: 100%; position: fixed;  top: 0; left: 0; filter: backdrop-blur(2px); border: 8px solid blue; rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center;}
+.portfolio-item-wrapper {width: 100%; z-index: 300; height: 90%; margin-top: 100px; display: flex; justify-content: center; border: 2px solid orange;}
+
+  .portfolio-item-close {position: fixed; display: flex; align-items: center; justify-content: center; top: 0; left: 0; z-index: 200; width: 100vw; height: 10vh; border: 3px solid lime;}
+
+  @media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+    .portfolio-item {width: 49%; height: calc(100% / 4); }
+  }
+
+  @media only screen and (min-width: 1950px) {
+    
+    .portfolio-item {width: 24%; height: calc(100% / 3); max-width: 25%;}
+  }
