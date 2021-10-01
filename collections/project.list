@@ -2,19 +2,39 @@
 {#  container for videos  }
 <section id="featured" style="height: calc(95vh - 100px);">
 <script>
-    var slideCounter = 0; 
+console.log({@|json-pretty})
+    {#  initialize  }
+    var myArray = []; 
+    var myVimeoArray = [];
+    var activeSlide;
 </script>
 
 {.repeated section items}
 
 <script>
-slideCounter++;
-$("#project-counter").append($(".counter").last().clone(true));
-
-console.log({@|json-pretty})
 
 var vimeobgURL = 'https://player.vimeo.com/video/' + '{customContent.vimeocode}' + '?background=1&autoplay=1&loop=1&byline=0&title=0';
-$('#backgroundiframe-{id}').attr('src', vimeobgURL);
+myVimeoArray.push(vimeobgURL);
+
+myArray.push('{customContent.vimeocode}');
+console.log("array: " + myArray)
+
+$("#project-counter").append($(".counter").last().clone(true));
+
+
+var activate = myArray[0];
+console.log("activate" + activate)
+var bg = myVimeoArray[0];
+
+$('.project:eq('+0+')').css('display', 'block');
+$('.vimeo-wrapper iframe').attr('src',bg);
+
+$('.that-title:eq('+0+')').click(function(){
+    console.log("fuckiery");
+    $('.project-case-study-window#case-study-{id}').css('display', 'block');
+
+})
+
 
 </script>
 
@@ -36,11 +56,11 @@ $('#backgroundiframe-{id}').attr('src', vimeobgURL);
         <div class="project-contents linear-gradient">
             <span id="summary-title">
                 <span class="hover-indication">
-                    <h1>{title}</h1>
+                    <h1 class="that-title" id="open-{id}">{title}</h1>
                     <h4>{customContent.brand}</h4> 
                 </span>
                 <span class="hover-indication" style="height: 70px;">
-                    <img id="open-project-{id}" class="project-arrow" style="height: 35px; margin-left: 25px;" src="../assets/arrow.svg"/>
+                    <img  class="project-arrow" style="height: 35px; margin-left: 25px;" src="../assets/arrow.svg"/>
                 </span>
             </span>
            
@@ -57,7 +77,7 @@ $('#backgroundiframe-{id}').attr('src', vimeobgURL);
 
     {#  FULL CASE STUDY  }
 
-<div class="project-case-study-window fade-in" style="display: none;">
+<div class="project-case-study-window fade-in" style="display: none;" id="case-study-{id}" >
     <div class="project-case-study-window-nav fade-in" id="toggle-close-project-{id}">
         <span>
             <img style="height: 100%; width: auto;" src="../assets/miller-bros-lettermark.svg"/>
@@ -69,13 +89,13 @@ $('#backgroundiframe-{id}').attr('src', vimeobgURL);
         </span>
     </div>
 
-    <div class="project-case-study-wrapper" >
+    <div class="project-case-study-wrapper-{id}" >
         {#  <div class="case-study-iframe">
             <iframe src="" id="casestudy-iframe" width="978" height="550" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>  }
         <div class="case-study-video">
         <div class="vimeo-wrapper" style="background-image: url('{fullURL}?format=original');">
-            <iframe src="https://player.vimeo.com/video/612955052"
+            <iframe src=""
             frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
         </div>
@@ -107,10 +127,10 @@ $('#backgroundiframe-{id}').attr('src', vimeobgURL);
                 </span>
 
                 <span id="project-bts">
-                    <span class='bts-img' style="background-image: url('{fullURL}?format=original');"></span>
-                    <span class='bts-img' style="background-image: url('{fullURL}?format=original');"></span>
-                    <span class='bts-img' style="background-image: url('{fullURL}?format=original');"></span>
-                    <span class='bts-img' style="background-image: url('{fullURL}?format=original');"></span>
+                    <span class='bts-img' style="background-image: url('{items[0].customContent.behindthescenes[0].assetUrl}?format=original');"></span>
+                    <span class='bts-img' style="background-image: url('{items[1].customContent.behindthescenes[1].assetUrl}?format=original');"></span>
+                    <span class='bts-img' style="background-image: url('{items[2].customContent.behindthescenes[2].assetUrl}?format=original');"></span>
+                    <span class='bts-img' style="background-image: url('{items[3].customContent.behindthescenes[3].assetUrl}?format=original');"></span>
 
                 </span>
 
@@ -119,19 +139,7 @@ $('#backgroundiframe-{id}').attr('src', vimeobgURL);
     </div>
     
 </div>
-<script>
 
-console.log("there are this many slides "+slideCounter)
-
-if (slideCounter === 1){
-    $('.counter').attr("src", "../assets/black-textured-circle.svg");
-    $('#portfolio-{id}.project').css('display', 'block');
-} else { $('#portfolio-{id}').css("display", "none");}
-
-    var vimeobgURL = 'https://player.vimeo.com/video/' + '{customContent.vimeocode}' + '?background=1&autoplay=1&loop=1&byline=0&title=0';
-    $('#backgroundiframe-{id}').attr('src', vimeobgURL);
-
-</script>
 {.end}
 </section>
 
@@ -157,17 +165,21 @@ if (slideCounter === 1){
 </section>
 
 <script>
+{#  populating arrays is done - now fill pages   }
+
+
+
 
 {#  when you click toggle bar go to next thing  }
 $('#toggle-bar').click(function(){
-    console.log("got em")
+    console.log("slide counter: " + slideCounter + "this is a project: " + $('.project').eq(slideCounter));
+    $('#portfolio-{id}.project').css('display', 'none');
 })
 
 
 function mediaQuery(x) {
   if (x.matches) { 
-    $('#summary-title').css('width', '100%', 'font-size', '50%');  
-    $('#project-counter').css('width', '100%');
+
     $('.about-text-bg').css("width", "97.5%");
     $('#project-details').css("display", "inline-block");
     $('#project-details-left').css("width", "100%");
