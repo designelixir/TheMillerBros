@@ -31,7 +31,13 @@ $('.vimeo-wrapper iframe').attr('src',bg);
 
 $('.that-title:eq('+0+')').click(function(){
     console.log("fuckiery");
-    $('.project-case-study-window#case-study-{id}').css('display', 'block');
+    $('.project-case-study-window:eq('+0+')').css('display', 'block');
+
+})
+
+$('.toggle').click(function(){
+    console.log('CLICKING@@@@!~!!!')
+    $('.project-case-study-window:eq('+0+')').css('display', 'none');
 
 })
 
@@ -89,7 +95,7 @@ $('.that-title:eq('+0+')').click(function(){
         </span>
     </div>
 
-    <div class="project-case-study-wrapper-{id}" >
+    <div class="project-case-study-wrapper" >
         {#  <div class="case-study-iframe">
             <iframe src="" id="casestudy-iframe" width="978" height="550" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
         </div>  }
@@ -100,7 +106,7 @@ $('.that-title:eq('+0+')').click(function(){
         </div>
         </div>
 
-        <div class="project-case-study-info">
+        <div class="project-case-study-info" id="case-study-info-{id}">
             
             <span id="project-text" class="box-shadow">
                 <span id="project-summary" class="fade-in">
@@ -108,10 +114,10 @@ $('.that-title:eq('+0+')').click(function(){
                     <h5>{customContent.shortdescription}</h5>
                 </span>
                 <span id="project-details" class="fade-in">
-                    <span id="project-details-left">
+                    <span class="project-details-left" id="project-details-left-{id}">
                         <h4>Project Summary </h4>
                         
-                        <p>{body}</p>
+                        <p style="background: red;">{body}</p>
                         <br>
                         <span id="testimonial">
                             <span><h1>"</h1></span>
@@ -120,17 +126,17 @@ $('.that-title:eq('+0+')').click(function(){
                         </span>
                     </span>
 
-                    <span id="project-details-right">
+                    <span class="project-details-right" id="project-details-right-{id}">
                     <h4> Credits </h4>
-                    <span>{customContent.credits}</span>
+                    <span>{customContent.testimonial}</span>
                     </span>
                 </span>
 
                 <span id="project-bts">
-                    <span class='bts-img' style="background-image: url('{items[0].customContent.behindthescenes[0].assetUrl}?format=original');"></span>
-                    <span class='bts-img' style="background-image: url('{items[1].customContent.behindthescenes[1].assetUrl}?format=original');"></span>
-                    <span class='bts-img' style="background-image: url('{items[2].customContent.behindthescenes[2].assetUrl}?format=original');"></span>
-                    <span class='bts-img' style="background-image: url('{items[3].customContent.behindthescenes[3].assetUrl}?format=original');"></span>
+                    <span class='bts-img' style="background-image: url('{customContent.behindthescenes.assetUrl}?format=original');"></span>
+                    <span class='bts-img' style="background-image: url('{customContent.behindthescenes.assetUrl}?format=original');"></span>
+                    <span class='bts-img' style="background-image: url('{customContent.behindthescenes.assetUrl}?format=original');"></span>
+                    <span class='bts-img' style="background-image: url('{customContent.behindthescenes.assetUrl}?format=original');"></span>
 
                 </span>
 
