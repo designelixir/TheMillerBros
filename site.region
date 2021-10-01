@@ -15,7 +15,7 @@
       <header class="site-header">
       <!-- site title or logo -->
         <div class="site-logo fade-in">
-          <a href="/"><img id="header-logo" style="max-height: 90px; padding: 5px;" src="assets/miller-bros-logo-white.svg" alt="The Miller Bros Logo"/></a>
+          <a href="/"><img id="header-logo" style="height: 80px; width: auto;  margin: 10px 5px;" src="assets/miller-bros-logo-white.svg" alt="The Miller Bros Logo"/></a>
         </div>
         
         <!-- site navigation -->

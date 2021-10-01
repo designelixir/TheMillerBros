@@ -1,28 +1,52 @@
+
 {#  container for videos  }
 <section id="featured" style="height: calc(95vh - 100px);">
+<script>
+    var slideCounter = 0; 
+</script>
+
 {.repeated section items}
-    <div class="project" >
-        {#  background vimeo  }
-        <div class="vimeo-wrapper" style="background-image: url('{fullURL}?format=original');">
-            <iframe id="backgroundiframe" src="https://player.vimeo.com/video/612955052?background=1&autoplay=1&loop=1&byline=0&title=0"
-            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+<script>
+slideCounter++;
+$("#project-counter").append($(".counter").last().clone(true));
+
+console.log({@|json-pretty})
+
+var vimeobgURL = 'https://player.vimeo.com/video/' + '{customContent.vimeocode}' + '?background=1&autoplay=1&loop=1&byline=0&title=0';
+$('#backgroundiframe-{id}').attr('src', vimeobgURL);
+
+</script>
+
+    <div class="project" id="portfolio-{id}" >
+        {#  background vimeo - sample: https://player.vimeo.com/video/612955052?background=1&autoplay=1&loop=1&byline=0&title=0}
+        <div class="vimeo-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
+            <iframe id="backgroundiframe-{id}" src="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+<div class="toggle">
+
+        </div>
+        <div class="project-contents">
+            
         </div>
 
-        <div class="project-navigation">
-            <span class="project-toggle">
-                <button class="toggle" id="FUCK"> left </button>
-                <button class="toggle"> right </button>
+        
+
+        <div class="project-contents linear-gradient">
+            <span id="summary-title">
+                <span><h1>{title}</h1>
+                <h4>{customContent.brand}</h4> </span>
+           </span>
+           
+            <span id="project-counter">
+                <img src="../assets/tan-textured-circle.svg" class="counter">
             </span>
+           
+
         </div>
-        <div class="project-navigation linear-gradient">
-           <span class="project-title hover-indication" id="toggle-open-project">
-                <h1>{title}</h1>
-                <h4>{customContent.brand}</h4> 
-            </span>
-            <span class="project-counter">
-                FFFFF
-            </span>
-        </div>
+
+    
+  
     </div>
 
     {#  FULL CASE STUDY  }
@@ -89,12 +113,25 @@
     </div>
     
 </div>
+<script>
 
+
+
+if (slideCounter === 1){
+    $('.counter').attr("src", "../assets/black-textured-circle.svg");
+
+    console.log("ya ")
+    $('#portfolio-{id}.project').css('display', 'block');
+} else { $('#portfolio-{id}').css("display", "none");}
+
+    var vimeobgURL = 'https://player.vimeo.com/video/' + '{customContent.vimeocode}' + '?background=1&autoplay=1&loop=1&byline=0&title=0';
+    $('#backgroundiframe-{id}').attr('src', vimeobgURL);
+
+</script>
 {.end}
 </section>
 
-<script> console.log($('.project'))
-</script>
+
 
 
 
@@ -123,7 +160,7 @@
 
 function mediaQuery(x) {
   if (x.matches) { 
-    document.body.style.backgroundColor = "black";
+
     $('.about-text-bg').css("width", "97.5%");
     $('#project-details').css("display", "inline-block");
     $('#project-details-left').css("width", "100%");
@@ -131,7 +168,7 @@ function mediaQuery(x) {
     $('#project-case-study-window-nav h4').css("font-size","14px")
 
   } else {
-    document.body.style.backgroundColor = "white";
+
     $('.about-text-bg').css("width", "70%");
     $('#project-details').css("display", "inline-flex");
     $('#project-details-left').css("width", "60%");
@@ -152,9 +189,6 @@ $('#toggle-open-project').click(function(){
     $('.project-case-study-window').css("display", "block")
 })
 
- $('#FUCK').click(function(){
-        console.log("SUCK A DICK!!!")
-    })
 
 
 </script>
