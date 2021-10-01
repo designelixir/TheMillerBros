@@ -23,6 +23,7 @@ header {position: absolute; top: 0; left: 0; z-index: 3; }
 
 body {
   margin-top: 100px; border: 3px solid salmon;
+  width: 100vw;
   font-family: museo-sans-rounded, sans-serif;
   font-size: 100%;
   font-weight: normal;
@@ -285,3 +286,39 @@ section {width: 100vw; border: 2px solid yellowgreen; }
 .fade-out{-webkit-animation:fade-out 1s ease-out both;animation:fade-out 1s ease-out both}
 @-webkit-keyframes fade-out{0%{opacity:1}100%{opacity:0}}@keyframes fade-out{0%{opacity:1}100%{opacity:0}}
 
+// PORTFOLIO 
+
+.portfolio-grid {
+  min-height: 950px;
+  height: calc(90.5vh);
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  border: 2px solid lime;
+  z-index: 0;
+  
+}
+
+.portfolio-item {
+  flex-grow: 1; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 32%;
+  margin: 2px;
+  height: calc(100% / 3);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.portfolio-item-title {width: 100%; height: 100%; background-color: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: center; color: white; padding: 2.5%; text-transform: uppercase;}
+.portfolio-item-play {display: none;}
+
+.portfolio-item:hover{transform: scale(1.1); 
+
+  .portfolio-item-title {background-color: rgba(0,0,0,0.25);}
+  .title {animation:fade-out 0.25s ease-out both; display: none;}
+  .portfolio-item-play {display: block; position: absolute;}
+}

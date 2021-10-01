@@ -1,17 +1,3 @@
-
-<div class="portfolio-item-window fade-in {@|item-classes}" data-item-id="{id}" style="display: none;">
-    <div class="portfolio-item-wrapper">
-
-        
-            <h1 class="portfolio-item-window-title"> some shit : <span>replace</span></h1>
-        
-        
-    </div>
-  </div> 
-
-<!-- item loop -->
-
-
 <div class="portfolio-grid">
 {.repeated section items}
   <div id="post-{id}" class="portfolio-item {@|item-classes}" data-item-id="{id}" style="background-image: url('{fullURL}?format=original'); background-repeat: no-repeat;">
@@ -38,13 +24,4 @@
 <p>no videos.</p>
 
 {.end}
-
-<script>$('.portfolio-item-play').bind('click', function(){
-        $('.portfolio-item-window').css('display', 'block');
-        $('.portfolio-item-window-button').css('display', 'block');
-
-    })
-</script>  
-<script src="https://player.vimeo.com/api/player.js"></script>
-
-
+</div>
