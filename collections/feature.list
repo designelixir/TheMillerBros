@@ -6,19 +6,20 @@
 
 
 <div class="portfolio-item-window fade-in" id="portfolio-{id}">
-    <span class="portfolio-nav">
+    <span class="portfolio-nav linear-gradient">
         <span><h1> {title} </h1></span>
         <span class="hover-indication" style="min-width: 50px;">
            <button class="circle-button-blue" id="toggle-close-{id}"> <h3>X</h3> </button>
         </span>
     </span>
-    <span style="width: 100%; border: 2px solid orange; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <span> <h4 style="color: white; padding: 0px 25px;">Here is a potential spot for a short sentence if you'd like it. </h4>
+    <span>
 
       
       
       <div class="portfolio-video">
-        <div class="vimeo-wrapper" style="background-image: url('{fullURL}?format=original');">
-            <iframe src="https://player.vimeo.com/video/612955052"
+        <div class="vimeo-wrapper">
+            <iframe id="portfolio-{id}" src="https://player.vimeo.com/video/433465561?h=88909a821c&autoplay=1&title=0&byline=0&portrait=0"
             frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
         </div>
@@ -39,8 +40,8 @@
 
     <script> 
     $('#post-{id}').bind('click', function(){
-      console.log('clicked' + '{id}')
         $('#portfolio-{id}').css('display', 'block');
+        $('#portfolio-{id}.iframe').attr("src", oembed.url)
     })
 
     $('#toggle-close-{id}').bind('click', function(){

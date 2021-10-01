@@ -190,6 +190,7 @@ section {width: 100vw; border: 2px solid yellowgreen; }
 }
 
 
+
 .project-iframe {
   width: 100vw; height: 95vh; background: lime; position: absolute; display: flex; align-items: center; justify-content: center; top: 0; left: 0; background: rgba(1,255,255,0.2); z-index: -2;
 }
@@ -225,7 +226,6 @@ section {width: 100vw; border: 2px solid yellowgreen; }
   }
 
   .case-study-video {border: 3px solid lime; height: 70vh; position: relative; width: 100%; }
-  .portfolio-video {border: 3px solid lime; top: 100px; height: 90vh; position: relative; width: 90vw; }
 
   
   .project-case-study-wrapper {width: 100%; border: 2px solid red; display: flex; justify-content: center; margin-top: 10px;}
@@ -319,9 +319,14 @@ section {width: 100vw; border: 2px solid yellowgreen; }
 @media only screen and (min-width: 1950px) {.portfolio-item {width: 24%; height: calc(100% / 3); max-width: 25%;}}
 
 .portfolio-item-window {
-  display: none; backdrop-filter: blur(10px); width: 100%; height: 100%; background: rgba(0,0,0,0.25); position: absolute; z-index: 5; top: 0; left: 0; overflow: hidden;
-  .portfolio-nav {position: absolute; width: 100%;   display: inline-flex; align-items: center; justify-content: space-between; top: 0; left: 0; border: 3px solid lime; padding: 0 25px;}
+  display: none; backdrop-filter: blur(10px); width: 100vw; height: 100vh; background: rgba(0,0,0,0.25); position: fixed; z-index: 5; top: 0; left: 0; 
+  .portfolio-nav { width: 100%; display: inline-flex; align-items: center; justify-content: space-between; padding: 0 25px;}
 }
+
+.portfolio-video { height: 90vh; position: relative; width: 100vw;  overflow-y: hidden;
+  .vimeo-wrapper {background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: 5!important; box-shadow: 5px 5px 15px 5px #000000; -webkit-box-shadow: 5px 5px 15px 5px #000000;}
+}
+.portfolio-video iframe {min-width: 100%; min-height: 100%; padding: 2%;}
 
 .portfolio-item-title {width: 100%; height: 100%; background-color: rgba(0,0,0,0.25); 
   display: flex; align-items: center; justify-content: center; color: white; padding: 25px; 
@@ -331,7 +336,7 @@ section {width: 100vw; border: 2px solid yellowgreen; }
 
 .portfolio-item:hover{transform: scale(1.1); 
 
-  .portfolio-item-title {background-color: rgba(0,0,0,0.25);}
+  .portfolio-item-title {background-color: rgba(0,0,0,0.25); background-size: cover; background-repeat: no-repeat;}
   .title {animation:fade-out 0.25s ease-out both; display: none;}
   .portfolio-item-play {display: block; position: absolute;}
 }
