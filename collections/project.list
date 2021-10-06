@@ -6,6 +6,7 @@ console.log({@|json-pretty})
     {#  initialize  }
     var myArray = []; 
     var myVimeoArray = [];
+    var myVimeofsArray = [];
     var activeSlide;
 </script>
 
@@ -13,12 +14,15 @@ console.log({@|json-pretty})
 
 <script>
 
+{#  slide video URL generator  }
 var vimeobgURL = 'https://player.vimeo.com/video/' + '{customContent.vimeocode}' + '?background=1&autoplay=1&loop=1&byline=0&title=0';
 myVimeoArray.push(vimeobgURL);
 
-myArray.push('{customContent.vimeocode}');
-console.log("array: " + myArray)
+{#  case study video URL generator  }
+var vimeofullscreenURL = 'https://player.vimeo.com/video/' + '{customContent.vimeocode}' + '&autoplay=1&title=0&byline=0&portrait=0';
+myVimeofsArray.push(vimeofullscreenURL);
 
+{#  add dots to counter for every project  }
 $("#project-counter").append($(".counter").last().clone(true));
 
 
@@ -29,7 +33,7 @@ var bg = myVimeoArray[0];
 $('.project:eq('+0+')').css('display', 'block');
 $('.vimeo-wrapper iframe').attr('src',bg);
 
-$('.that-title:eq('+0+')').click(function(){
+$('.active-title:eq('+0+')').click(function(){
     console.log("fuckiery");
     $('.project-case-study-window:eq('+0+')').css('display', 'block');
 
@@ -43,38 +47,35 @@ $('.toggle').click(function(){
 
 
 </script>
-
+    {#  SLIDE PAGE   }
     <div class="project" id="portfolio-{id}" >
-        {#  background vimeo - sample: https://player.vimeo.com/video/612955052?background=1&autoplay=1&loop=1&byline=0&title=0}
-        <div class="vimeo-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
+        <div class="vimeo-wrapper fade-in" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
             <iframe id="backgroundiframe-{id}" src="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
         
-        <div class="toggle" id="toggle-bar">
-
+        <div class="toggle linear-gradient" id="toggle-bar">
+            <span id="toggle-bar-wrapper">
+                <img src="../assets/arrow-point-to-right.png" alt="navigation arrow" width="40px"/>
+            </span>
         </div>
+
         <div class="project-contents">
-            
+            {#  empty structure div  }
         </div>
 
         
-
+        {#  slide title and buttons  }
         <div class="project-contents linear-gradient">
             <span id="summary-title">
-                <span class="hover-indication">
-                    <h1 class="that-title" id="open-{id}">{title}</h1>
+                <span class="hover-indication" id="open-case-study">
+                    <h1 class="active-title" id="open-{id}">{title}</h1>
                     <h4>{customContent.brand}</h4> 
-                </span>
-                <span class="hover-indication" style="height: 70px;">
-                    <img  class="project-arrow" style="height: 35px; margin-left: 25px;" src="../assets/arrow.svg"/>
                 </span>
             </span>
            
             <span id="project-counter">
                 <img src="../assets/tan-textured-circle.svg" class="counter">
             </span>
-           
-
         </div>
 
     
@@ -89,22 +90,20 @@ $('.toggle').click(function(){
             <img style="height: 100%; width: auto;" src="../assets/miller-bros-lettermark.svg"/>
         </span>
 
-        <span class="hover-indication" >
+        <span class="hover-indication" id="exit-case-study">
             <span><h4 style="font-size: 14px; text-align: right;">Back to <br> Homepage</h4></span>
             <span style="width: 75px"> <button class="circle-button-blue"> <h3>X</h3> </button></span>
         </span>
     </div>
 
     <div class="project-case-study-wrapper" >
-        {#  <div class="case-study-iframe">
-            <iframe src="" id="casestudy-iframe" width="978" height="550" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-        </div>  }
-        <div class="case-study-video">
-        <div class="vimeo-wrapper" style="background-image: url('{fullURL}?format=original');">
-            <iframe src=""
-            frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-        </div>
-        </div>
+       
+       <div class="project-case-study-iframe" style="border: 3px solid orange; width: 100vw; ">
+            <div style="padding:56.25% 0 0 0; position:relative; height: 80%; overflow-y: hidden;">
+                <iframe src="https://player.vimeo.com/video/493958216?h=d4146e6249&autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:110%;height:110%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+       </div>
 
         <div class="project-case-study-info" id="case-study-info-{id}">
             
@@ -135,8 +134,8 @@ $('.toggle').click(function(){
                 <span id="project-bts">
                     <span class='bts-img' style="background-image: url('{customContent.behindthescenes.assetUrl}?format=original');"></span>
                     <span class='bts-img' style="background-image: url('{customContent.behindthescenes.assetUrl}?format=original');"></span>
-                    <span class='bts-img' style="background-image: url('{customContent.behindthescenes.assetUrl}?format=original');"></span>
-                    <span class='bts-img' style="background-image: url('{customContent.behindthescenes.assetUrl}?format=original');"></span>
+                    <span class='bts-img' ></span>
+                    <span class='bts-img' ></span>
 
                 </span>
 
@@ -185,7 +184,6 @@ $('#toggle-bar').click(function(){
 
 function mediaQuery(x) {
   if (x.matches) { 
-
     $('.about-text-bg').css("width", "97.5%");
     $('#project-details').css("display", "inline-block");
     $('#project-details-left').css("width", "100%");
@@ -193,7 +191,6 @@ function mediaQuery(x) {
     $('#project-case-study-window-nav h4').css("font-size","14px")
 
   } else {
-
     $('.about-text-bg').css("width", "70%");
     $('#project-details').css("display", "inline-flex");
     $('#project-details-left').css("width", "60%");
@@ -205,19 +202,22 @@ var x = window.matchMedia("(max-width: 550px)")
 mediaQuery(x) 
 x.addListener(mediaQuery) 
 
-$('#toggle-close-project').click(function(){
-    $('.project-case-study-window').css("display", "none")
-})
-
 {#  opens FULL case study window  }
-$('#toggle-open-project').click(function(){
+$('#open-case-study').click(function(){
     $('.project-case-study-window').css("display", "block")
 })
+
+$('#exit-case-study').click(function(){
+    $('.project-case-study-window').delay(3000).css("display", "none");
+});
 
 {#  make an animated something for this hover to encourage people to click  }
 $("#summary-title span").hover(function(){
   $(".project-arrow").css("background-color", "yellow");
 });
+
+
+
 
 
 </script>

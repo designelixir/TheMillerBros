@@ -15,7 +15,8 @@
       <header class="site-header">
       <!-- site title or logo -->
         <div class="site-logo fade-in">
-          <a href="/"><img id="header-logo" style="height: 80px; width: auto;  margin: 10px 5px;" src="assets/miller-bros-logo-white.svg" alt="The Miller Bros Logo"/></a>
+          
+          <a href="/"><img id="header-logo" style="height: 80px; width: auto;  margin: 10px 5px;" src="{squarespace.siteLogo}" alt="The Miller Bros Logo"/></a>
         </div>
         
         <!-- site navigation -->
@@ -33,7 +34,8 @@
 
       <!--Footer with open block field -->
       <footer class="site-footer">
-        <squarespace:block-field id="footerBlocks" columns="12" />
+        <img src="assets/miller-bros-lettermark.svg" style="height: 90%;"/>
+        <squarespace:block-field id="footerBlocks" columns="3" />
       </footer>
 
     </div>
