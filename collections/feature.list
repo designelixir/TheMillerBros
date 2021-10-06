@@ -8,7 +8,6 @@ $(document).ready(function() {
   function REMOVEANIMATION() {     
     $(".portfolio-item").removeClass("tilt-in-tl");
     $(".portfolio-item").removeClass("fade-in");
-
  }
  setTimeout(REMOVEANIMATION, 1000)
 });
