@@ -2,12 +2,30 @@
 <div style="display: inline-flex; border: 2px solid salmon; height: calc(100vh - 125px); width: 100vw;">
 <div style="border: 2px solid green; height: 100%; width: calc(100% - 50px); display: inline-flex;">
 
+<script>
+
+console.log({@|json-pretty})
+
+var active = 0;
+var myVimeoArray = [];
+</script>
+
 {.repeated section items}
 
+<script>
+
+
+
+
+
+
+
+
+</script>
 
     <div class="projectv1" style="width: 100%; border: 2px solid blue">
-        <div class="vimeo-wrapper fade-in" id="that" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
-            <iframe id="backgroundiframe-{id}" src="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <div class="vimeo-wrapper" id="vimeo-wrapper-{id}" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
+            <iframe class="backgroundiframe-{id}" src="'{sourceUrl}?background=1&autoplay=1&loop=1&byline=0&title=0'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
         <h1 id="open-{id}">{title}</h1>
 
@@ -19,7 +37,7 @@
 {.end}
 </div>
 <div class="height: 100%; border: 1px solid teal; width: 50px" id="next-slide">
- stuff
+    stuff
 </div>
 </div>
 
@@ -31,31 +49,39 @@
 var theseProjects = document.getElementsByClassName('projectv1');
 console.log(theseProjects)
 
-var active = 1;
 var counter = theseProjects.length;
 console.log("we count: " + counter);
 
-$('#next-slide').click(function(){
-    $('.projectv1:eq('+active+')').css("display", "none")
 
-     if(active >= counter - 1){
-         console.log('too far, '+ active);
-         active = 0;
-     } else {
-     active = active + 1;
-        console.log("adding one ")
-     }
+
+$('#next-slide').click(function(){
+  $('.projectv1:eq('+active+')').css({"display": "none"})  
+     if(active >= counter - 1){active = 0;} 
+     else {active = active + 1;}
     $('.projectv1:eq('+active+')').css("display", "block")
 
-     console.log("go next, active is: " + active)
-
+    clearInterval(timerID);
 })
+{#  delayed slides  }
+var timerID = 
+    setInterval(function() {
+    $('.projectv1:eq('+active+')').css("display", "none")
+        if(active >= counter - 1){active = 0;} 
+        else {active = active + 1;}
+    $('.projectv1:eq('+active+')').css("display", "block");
+    
+    }, 5000);
+
 
 
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded');
+  {#  initial load of projects and clearing  }
   $('.projectv1').css('display', 'none');
   $('.projectv1:eq('+active+')').css("display", "block")
+
+  
+
 });
 
 
