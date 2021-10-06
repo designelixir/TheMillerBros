@@ -47,7 +47,7 @@
         <span id="footer-right">
           <span>
           
-            <squarespace:block-field id="blockField2" columns="12"/>
+            <squarespace:block-field id="blockField2" columns="12" lock-layout="true"/>
 
           </span>
           <span> 
