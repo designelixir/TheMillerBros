@@ -39,16 +39,14 @@
           </span>
           
           <span>
-            <p>Telling stories from the path less traveled.</p>
+            <squarespace:block-field id="blockField1" columns="12"/>
           </span>
 
         </span>
 
         <span id="footer-right">
-          <span>
-            <h4>Find Us</h4>
-            <span class="blue-line"> </span>
-            <p>3 S. Black Street, <br> Bozeman, MT, 59715 </p>
+          <span style="padding: 25px;">
+          
             <squarespace:block-field id="blockField1" columns="12"/>
 
           </span>
