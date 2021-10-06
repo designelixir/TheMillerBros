@@ -23,8 +23,6 @@
         <div class="site-navigation-container fade-in">
            <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </div>
-        
-        
       </header>
 
       <!-- cms content injection point -->
@@ -34,8 +32,34 @@
 
       <!--Footer with open block field -->
       <footer class="site-footer">
-        <img src="assets/miller-bros-lettermark.svg" style="height: 90%;"/>
-        <squarespace:block-field id="footerBlocks" columns="3" />
+      <div id="upper-footer-wrapper">
+        <span id="footer-left">
+          <span> 
+            <img src="assets/miller-bros-lettermark.svg" style="height: 125px;"/> 
+          </span>
+          
+          <span>
+            <p>Telling stories from the path less traveled.</p>
+          </span>
+
+        </span>
+
+        <span id="footer-right">
+          <span>
+            <h4>Find Us</h4>
+            <span class="blue-line"> </span>
+            <p>3 S. Black Street, <br> Bozeman, MT, 59715 </p>
+          </span>
+          
+        </span>      
+      </div>
+      <div id="lower-footer-wrapper">
+        <p>Copyright The Miller Bros LLC &copy; 2021 </p>
+
+        <a class="hover-indication" href="https://designelixir.studio" target="_blank" style='font-size: 12px;'> Made with &hearts; by Design Elixir</a>
+      </div>
+
+
       </footer>
 
     </div>
