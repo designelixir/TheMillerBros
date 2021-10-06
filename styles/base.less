@@ -196,11 +196,13 @@ section {width: 100vw; }
 
   // PROJECT CASE STUDY WINDOW 
   //###############################################
-  .sqs-block-button-element { background-color: transparent!important;}
-  .sqs-block-button-element--small { margin: 5px; width: 60px; height: 60px; display: block; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white; }
-  .sqs-block-button-element--medium {width: 210px; margin-top: 17px; height: 60px; display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: cover;}
-  .sqs-block-button-element--large {width: 210px; margin-top: 17px; height: 60px; display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-blue-button.svg"); background-size: cover;}
+  .sqs-block-button-element { background-color: transparent!important; font-family: museo-sans-rounded, sans-serif!important; font-size: 16px; background-position: 50% 50%; background-repeat: no-repeat; color: white; margin: 0!important; padding: 5px; }
+  .sqs-block-button-element--small { margin: 5px; width: 60px; height: 60px; display: block; background-image: url('../assets/blue-textured-circle-close.svg');  background-size: contain;  }
+  .sqs-block-button-element--medium { display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: contain;  }
+  .sqs-block-button-element--large { display: flex; align-items: center; justify-content: center; background-image: url("../assets/blue-button.png"); background-size: 90% 90%; }
   
+  .sqs-block-button-element:hover {transform: scale(1.01); font-size: 22px!important; opacity: 1!important;}
+
   button {border: none; background-color: transparent; }
   .circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
   .wide-button-black {width: 210px; margin-top: 17px; height: 60px; display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: cover;}
@@ -269,12 +271,12 @@ section {width: 100vw; }
 footer {width: 100vw;  background: black; position: relative; text-align: center; 
 }
 #upper-footer-wrapper {width: 100%; height: 100%; border: 1px solid salmon; display: inline-flex;}
-#footer-left {width: 60%; height: 300px; border: 2px solid red; padding: 25px; display: inline-flex; align-items: center;
+#footer-left {width: 60%;  border: 2px solid red; padding: 25px; display: inline-flex; align-items: center;
   span {border: 1px solid white; color: white; width: 50%; display: inline-block; justify-content: space-evenly; }
 
 }
-#footer-right {width: 40%; height: 300px; border: 2px solid yellow; background-image: url('../assets/vans.png'); background-size: cover; background-position: center center;
-  span {padding: 25px; color: white; text-align: left;}
+#footer-right {width: 40%;  border: 2px solid yellow; background-image: url('../assets/vans.png'); background-size: cover; background-position: center center;
+  span {margin: 25px 50px; border: 2px solid green; color: white; text-align: left;}
   
 }
 
