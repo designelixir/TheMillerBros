@@ -8,7 +8,7 @@
 }
 
 .sqs-block {
-  padding: 0px 17px 0px 17px!important;
+  padding: 5px 17px 5px 17px!important;
   margin: 0!important;
   width: 100%; height: 100%;
   
@@ -43,7 +43,7 @@ body {
   color: rgba(0,0,0,0);
   background-color: rgba(0,0,0,0);
   height: 10px;
-  margin: 2.5px 0;
+  margin: 0;
   background-image: url("../assets/blue-textured-line.svg"); background-size: contain; background-repeat: no-repeat; background-position: 0 bottom;
 }
 span {display: block;}
@@ -211,12 +211,12 @@ section {width: 100vw; }
 
   // PROJECT CASE STUDY WINDOW 
   //###############################################
-  .sqs-block-button-element { background-color: transparent!important; font-family: museo-sans-rounded, sans-serif!important; font-size: 16px; background-position: 50% 50%; background-repeat: no-repeat; color: white; margin: 0!important; padding: 5px; }
+  .sqs-block-button-element { background-color: transparent!important; font-family: museo-sans-rounded, sans-serif!important; font-weight: 500!important; font-size: 16px; background-position: 50% 50%; background-repeat: no-repeat; color: white; margin: 0!important; padding: 15px 25px!important; }
   .sqs-block-button-element--small { margin: 5px; width: 60px; height: 60px; display: block; background-image: url('../assets/blue-textured-circle-close.svg');  background-size: contain;  }
   .sqs-block-button-element--medium { display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: contain;  }
   .sqs-block-button-element--large { display: flex; align-items: center; justify-content: center; background-image: url("../assets/blue-button.png"); background-size: 90% 90%; }
   
-  .sqs-block-button-element:hover {transform: scale(1.01); font-size: 22px!important; opacity: 1!important;}
+  .sqs-block-button-element:hover {transform: scale(1.01);  opacity: 1!important; font-weight: 700!important;}
 
   button {border: none; background-color: transparent; }
   .circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
@@ -233,7 +233,7 @@ section {width: 100vw; }
   .case-study-video {border: 3px solid lime; height: 70vh; position: relative; width: 100%; }
 
   
-  .project-case-study-wrapper {width: 100%; border: 2px solid red;}
+  .project-case-study-wrapper {width: 100%; }
   .case-study-iframe {width: 978px; height: 550px; border: 3px solid yellow; display: block; z-index: 2; overflow: hidden;}
 
   .project-case-study-info { width: 90%;  margin: -2.5% 4% 4% 4%;  position: relative;  z-index: 3;
@@ -282,20 +282,20 @@ section {width: 100vw; }
 
 // FOOTERS 
 // ##############################
+.texture {background-image: url("../assets/texture.png"); background-size: cover;}
+.inset-bottom {box-shadow: inset 0px -9px 36px -4px #000000  ;}
 
-footer {width: 100vw;  background: black; position: relative; text-align: center; 
+footer {width: 100vw; position: relative; text-align: center; display: inline-block;
 }
-#upper-footer-wrapper {width: 100%; height: 100%; border: 1px solid salmon; display: inline-flex;}
-#footer-left {width: 60%;  border: 2px solid red; display: inline-flex; align-items: center;
-  span {border: 1px solid white; color: white; width: 50%; display: inline-block; justify-content: space-evenly; }
+#upper-footer-wrapper {width: 100%; background-color: tan; height: 100%;  display: inline-flex; justify-content: center; align-items: center;}
 
+#footer-left {width: 60%; height: 300px; padding: 25px; display: inline-flex; align-items: center; justify-content: space-evenly; color: black;
 }
-#footer-right {width: 40%;  border: 2px solid yellow; background-image: url('../assets/vans.png'); background-size: cover; background-position: center center;
-  span {margin: 25px 50px; border: 2px solid green; color: white; text-align: left;}
-  
+#footer-right {width: 40%; height: 300px; background-color: rgba(0,0,0,0.5); background-image: url('../assets/vans.png'); background-size: cover; background-position: center center;
+  span {margin: 25px 50px; color: white; text-align: left;}
 }
 
-#lower-footer-wrapper {width: 100%; height: 100px; border: 2px solid red; padding: 25px; color: white;
+#lower-footer-wrapper {width: 100%; height: 100px; padding: 25px; background-color: black; color: white;
   a {color: white; text-decoration: none; font-size: 12px;}
 }
 
