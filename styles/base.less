@@ -14,6 +14,14 @@
   
 }
 
+.sqs-block-button-element { background-color: transparent!important; font-family: museo-sans-rounded, sans-serif!important; font-weight: 500!important; font-size: 16px; background-position: 50% 50%; background-repeat: no-repeat; color: white; margin: 0!important; padding: 15px 25px!important; }
+  .sqs-block-button-element--small { margin: 5px; width: 60px; height: 60px; display: block; background-image: url('../assets/blue-textured-circle-close.svg');  background-size: contain;  }
+  .sqs-block-button-element--medium { display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: contain;  }
+  .sqs-block-button-element--large { display: flex; align-items: center; justify-content: center; background-image: url("../assets/blue-button.png"); background-size: 90% 90%; }
+  
+  .sqs-block-button-element:hover {transform: scale(1.01);  opacity: 1!important; font-weight: 700!important;}
+
+
 .standard-block {width: 100vw; height: 95vh; border: 4px solid red;}
 .standard-block-half {width: 50%; height: 100%; border: 2px solid lime;   }
 
@@ -112,19 +120,20 @@ p {
   justify-content: space-between;
   background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 10%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.1) 90%, rgba(0,0,0,0) 100%);
  background-size: cover; background-repeat: no-repeat;  background-position: bottom;
-  padding: 2vh 2vw;
+  padding: 25px;
   height: 125px;
   width: 100vw;
   z-index: 3;
 }
 
-#header-logo {height: 100px; width: auto; z-index: 30;}
+#header-logo {height: 100px; width: auto; }
 #header-logo:hover {transform: scale(1.05)}
 // .site-navigation { }
 
 .site-navigation-list {
   display: inline-block;
   text-align: right;
+  padding-right: 25px;
   width: 100%;
 }
 
@@ -162,30 +171,39 @@ p {
 
 // FEATURED PROJECT COLLECTION 
 //####################################################################################################
-section {width: 100vw; }
+section {width: ~'calc(100vw - 50px)'; float: left; z-index: 2;}
 
-.project {width: 100%; max-height: 95vh; height: 100%; border: 5px solid blue; position: absolute; top: 0; left: 0; display: none; align-items: center; justify-content: center;}
+.project {width: 100%; border: 2px solid blue; height: 100%;}
 
 .vimeo-wrapper {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-position: center center;}
 .vimeo-wrapper iframe {width: 100vw; height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */ min-height: 100vh; min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 
 .project-contents {width: ~"calc(100% - 50px)"; height: 50%; border: 10px solid lime; display: inline-flex; align-items: flex-end; }
 
-#summary-title { height: 100%; width: 100%; padding: 25px; border: 2px solid pink; display: inline-flex; align-items: flex-end;
+#summary-title { height: 50%; width: 100%; padding: 25px; border: 2px solid pink; display: inline-flex; justify-items: flex-start; align-items: flex-end;
   h1 {font-size: 48px; text-shadow: 2px 2px tan; line-height: 3rem; border-left: 8px solid tan; border-radius: 4px; padding-left: 17px; overflow-y: hidden;}
   h4 {padding-left: 25px; color: white;}
 }
 
-#project-counter { display: inline-flex; align-items: center; justify-content: flex-end; padding: 25px 0; border: 4px solid orange; width: 200px; height: 50px; z-index: -1; position: absolute; right: 50px;
-  .counter { margin: 0 10px; height: 10px; }
-}
+
 
 #toggle-bar {width: 50px; border: 2px solid teal; float: right; height: 100%;  display: flex; align-items: center; justify-content: center;
 }
 #toggle-bar-wrapper {width: 100%; height: ~'calc(100% - 125px)'; margin-top: 25px; border: 1px solid yellow; display: flex; align-items: center; justify-content: center; }
 #toggle-bar-wrapper:hover {border: 2px solid lime; img {width: 50px;}}
 
+// UPDATED FEATURED PROJECT CSS -----------------------------
 
+#next-slide {background-image: url('../assets/textured-strip.png'); background-size: cover; background-position: top right; float: right;
+  height: ~'calc(100vh - 18px)'; width: 50px; position: absolute; right: 0; top: 0;  display: flex; align-items: center; justify-content: center;
+  img {margin-left: 20px;}
+}
+
+#next-slide:hover {transform: scale(1.1)}
+
+#project-counter {border: 1px solid orange; width: 200px; height: 50px;  position: absolute; right: 25px; bottom: 18px; display: inline-flex; align-items: flex-end; justify-content: flex-end; padding: 25px;
+  .counter { margin: 0 10px; height: 10px; }
+}
 
 
 
@@ -211,13 +229,7 @@ section {width: 100vw; }
 
   // PROJECT CASE STUDY WINDOW 
   //###############################################
-  .sqs-block-button-element { background-color: transparent!important; font-family: museo-sans-rounded, sans-serif!important; font-weight: 500!important; font-size: 16px; background-position: 50% 50%; background-repeat: no-repeat; color: white; margin: 0!important; padding: 15px 25px!important; }
-  .sqs-block-button-element--small { margin: 5px; width: 60px; height: 60px; display: block; background-image: url('../assets/blue-textured-circle-close.svg');  background-size: contain;  }
-  .sqs-block-button-element--medium { display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: contain;  }
-  .sqs-block-button-element--large { display: flex; align-items: center; justify-content: center; background-image: url("../assets/blue-button.png"); background-size: 90% 90%; }
   
-  .sqs-block-button-element:hover {transform: scale(1.01);  opacity: 1!important; font-weight: 700!important;}
-
   button {border: none; background-color: transparent; }
   .circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
   .wide-button-black {width: 210px; margin-top: 17px; height: 60px; display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: cover;}
@@ -263,7 +275,7 @@ section {width: 100vw; }
 
 
   #project-bts {width: 100%; border: 3px solid red; padding: 25px; display: inline-flex;  background-image: url('../assets/black-textured-box.svg'); background-size: contain; 
-    .bts-img {height: 200px; width: 150px; border: 2px solid teal; margin: 5px; background-size: cover;}
+    .bts-img {height: 200px; width: 150px; border: 2px solid teal; margin: 5px; background-size: cover; background-position: 50% 50%;}
 
   }
 

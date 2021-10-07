@@ -1,84 +1,172 @@
-<section>
-<div style="display: inline-flex; border: 2px solid salmon; height: calc(100vh - 125px); width: 100vw;">
-<div style="border: 2px solid green; height: 100%; width: calc(100% - 50px); display: inline-flex;">
+
+<section class="box-shadow">
+    <div style="display: inline-flex; border: 3px solid salmon; height: calc(100vh - 125px); width: 100%">
+    <div style="border: 2px solid green; height: 100%; width: 100%; display: inline-flex;">
 
 <script>
 
-console.log({@|json-pretty})
+    console.log({@|json-pretty})    
 
-var active = 0;
-var myVimeoArray = [];
 </script>
 
 {.repeated section items}
 
-<script>
-
-
-
-
-
-
-
-
-</script>
-
-    <div class="projectv1" style="width: 100%; border: 2px solid blue">
-        <div class="vimeo-wrapper" id="vimeo-wrapper-{id}" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
-            <iframe class="backgroundiframe-{id}" src="'{sourceUrl}?background=1&autoplay=1&loop=1&byline=0&title=0'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+{#  PROJECT SLIDE ---------------------------------------------------  }
+    <div class="project">
+        <div class="vimeo-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
+            <iframe class="backgroundiframe" src='' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
-        <h1 id="open-{id}">{title}</h1>
+        <span style="height: 50%; border: 2px solid yellow"></span>
+        <span id="summary-title">
 
+            
+                <h1 class="project-title">{title}</h1>
+                <h4>{customContent.brand}</h4> 
+            </span>
+
+        
     </div>
+
+{#  PROJECT CASE STUDY ---------------------------------------------------  }
+
+    <div class="project-case-study-window fade-in" style="display: none;" id="case-study-{id}" >
+    <div class="project-case-study-window-nav fade-in" id="toggle-close-project-{id}">
+        <span>
+            <img style="height: 100%; width: auto;" src="../assets/miller-bros-lettermark.svg"/>
+        </span>
+
+        <span class="hover-indication exit-case-study">
+            <span><h4 style="font-size: 14px; text-align: right;">Back to <br> Homepage</h4></span>
+            <span style="width: 75px"> <button class="circle-button-blue"> <h3>X</h3> </button></span>
+        </span>
+    </div>
+
+    <div class="project-case-study-wrapper" >
+       
+       <div class="project-case-study-iframe" style="border: 3px solid orange; width: 100vw; ">
+            <div style="padding:56.25% 0 0 0; position:relative; height: 80%; overflow-y: hidden;">
+                <iframe src="https://player.vimeo.com/video/493958216?h=d4146e6249&autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:110%;height:110%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
+       </div>
+
+        <div class="project-case-study-info" id="case-study-info-{id}">
+            
+            <span id="project-text" class="box-shadow">
+                <span id="project-summary" class="fade-in">
+                    <h1 class="project-title">{title}</h1>
+                    <h5>{customContent.shortdescription}</h5>
+                </span>
+                <span id="project-details" class="fade-in">
+                    <span class="project-details-left" id="project-details-left-{id}">
+                        <h4>Project Summary </h4>
+                        
+                        <p style="background: red;">{body}</p>
+                        <br>
+                        <span id="testimonial">
+                            <span><h1>"</h1></span>
+                            <p>{customContent.testimonial}</p>
+                            <span><h1>"</h1></span>
+                        </span>
+                    </span>
+
+                    <span class="project-details-right" id="project-details-right-{id}">
+                    <h4> Credits </h4>
+                    <span>{customContent.testimonial}</span>
+                    </span>
+                </span>
+
+                <span id="project-bts-{id}">
+                
+                 stuff and things go here? 
+
+                </span>
+
+            <span>
+        </div>
+    </div>
+    
+</div>
 
 
 
 
 {.end}
 </div>
-<div class="height: 100%; border: 1px solid teal; width: 50px" id="next-slide">
-    stuff
-</div>
+
 </div>
 
+
+ <span id="project-counter">
+    <img src="../assets/tan-textured-circle.svg" class="counter">
+</span>
 
 </section>
 
+<div id="next-slide">
+    <img src="../assets/nav-arrow.svg" />
+   
+</div>
+
+
 <script>
 
-var theseProjects = document.getElementsByClassName('projectv1');
-console.log(theseProjects)
 
+
+
+
+{#  count number of slides  }
+var theseProjects = document.getElementsByClassName('project');
+var active = 0;
 var counter = theseProjects.length;
-console.log("we count: " + counter);
 
+{#  add indexing dots  }
+for (let i = 1; i < counter; i++) {
+$("#project-counter").append($(".counter").last().clone(true));
+}
 
-
+{#  change slide  }
 $('#next-slide').click(function(){
-  $('.projectv1:eq('+active+')').css({"display": "none"})  
+    $('.project:eq('+active+')').css({"display": "none"})
+    $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
+
      if(active >= counter - 1){active = 0;} 
      else {active = active + 1;}
-    $('.projectv1:eq('+active+')').css("display", "block")
+    $('.project:eq('+active+')').css("display", "block");
+    $('.counter:eq('+active+')').attr("src", "../assets/black-textured-circle.svg")  
 
     clearInterval(timerID);
 })
 {#  delayed slides  }
 var timerID = 
     setInterval(function() {
-    $('.projectv1:eq('+active+')').css("display", "none")
+    $('.project:eq('+active+')').css("display", "none");
+    $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
+
         if(active >= counter - 1){active = 0;} 
         else {active = active + 1;}
-    $('.projectv1:eq('+active+')').css("display", "block");
-    
+    $('.project:eq('+active+')').css("display", "block");
+        $('.counter:eq('+active+')').attr("src", "../assets/black-textured-circle.svg")  
+
     }, 5000);
+
+{#  open respective case study window  }
+$('.project-title').click(function(){
+    $('.project-case-study-window:eq('+active+')').css({"display": "block"})  
+})
+
+{#  close case study window  }
+$('.exit-case-study').click(function(){
+    $('.project-case-study-window').css({"display": "none"})  
+})
 
 
 
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded');
-  {#  initial load of projects and clearing  }
-  $('.projectv1').css('display', 'none');
-  $('.projectv1:eq('+active+')').css("display", "block")
+  $('.project').css('display', 'none');
+$('.project:eq('+active+')').css("display", "block")
+$('.counter:eq('+active+')').attr("src", "../assets/black-textured-circle.svg")  
 
   
 
