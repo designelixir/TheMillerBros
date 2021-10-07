@@ -59,7 +59,7 @@ span {display: block;}
 }
 img {margin: 5px;}
 h1 {
-  font-size: 3rem;
+  font-size: 48px;
   font-weight: 900;
   text-transform: uppercase;
   color: white;
@@ -171,19 +171,21 @@ p {
 
 // FEATURED PROJECT COLLECTION 
 //####################################################################################################
-section {width: ~'calc(100vw - 50px)'; float: left; z-index: 2;}
+section {width: ~'calc(100vw - 50px)'; float: left; z-index: 2; border: 2px solid salmon;}
 
-.project {width: 100%; border: 2px solid blue; height: 100%;}
+.project {width: 100%; border: 2px solid blue; height: 100%; display: none;}
 
 .vimeo-wrapper {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-position: center center;}
 .vimeo-wrapper iframe {width: 100vw; height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */ min-height: 100vh; min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 
 .project-contents {width: ~"calc(100% - 50px)"; height: 50%; border: 10px solid lime; display: inline-flex; align-items: flex-end; }
 
-#summary-title { height: 50%; width: 100%; padding: 25px; border: 2px solid pink; display: inline-flex; justify-items: flex-start; align-items: flex-end;
-  h1 {font-size: 48px; text-shadow: 2px 2px tan; line-height: 3rem; border-left: 8px solid tan; border-radius: 4px; padding-left: 17px; overflow-y: hidden;}
+#summary-title { height: 50%; width: 100%; padding: 50px 25px; border: 2px solid pink; display: inline-flex; justify-items: flex-start; align-items: flex-end;
+  
   h4 {padding-left: 25px; color: white;}
 }
+
+.project-title {font-size: 48px; text-shadow: 2px 2px tan; border-left: 8px solid tan; border-radius: 4px; padding-left: 17px; }
 
 
 
@@ -205,7 +207,10 @@ section {width: ~'calc(100vw - 50px)'; float: left; z-index: 2;}
   .counter { margin: 0 10px; height: 10px; }
 }
 
+#behindthescenes-grid {border: 2px solid red;}
 
+.column {flex: 30%; max-width: 100%; display: inline-flex; justify-content: space-evenly; flex-wrap: wrap; flex-direction: row-reverse;}
+.column img {width: 30%; vertical-align: middle;}
 
 
 .project-iframe {

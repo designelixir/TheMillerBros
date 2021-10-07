@@ -28,6 +28,7 @@
     <squarespace:block-field id="blockField1" columns="12" lock-layout="true"/>
 
 
+
     <!--CATEGORIES-->
     {.repeated section categories}
       <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},

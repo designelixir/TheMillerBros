@@ -3,25 +3,21 @@
     <div style="display: inline-flex; border: 3px solid salmon; height: calc(100vh - 125px); width: 100%">
     <div style="border: 2px solid green; height: 100%; width: 100%; display: inline-flex;">
 
-<script>
-
-    console.log({@|json-pretty})    
-
-</script>
 
 {.repeated section items}
 
 {#  PROJECT SLIDE ---------------------------------------------------  }
-    <div class="project">
+    <div class="project" data-item-id="{id}">
         <div class="vimeo-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
             <iframe class="backgroundiframe" src='' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
-        <span style="height: 50%; border: 2px solid yellow"></span>
+        <span style="height: 50%"></span>
         <span id="summary-title">
-
+            <span>
             
                 <h1 class="project-title">{title}</h1>
                 <h4>{customContent.brand}</h4> 
+                </span>
             </span>
 
         
@@ -76,11 +72,22 @@
                     </span>
                 </span>
 
-                <span id="project-bts-{id}">
+                <div id="behindthescenes-grid">
                 
-                 stuff and things go here? 
+                
+                    <div class="column">
+                   {.repeated section customContent.behindthescenes}
+                    
+                        <img src="{assetUrl}"/>
+                    
+                       
 
-                </span>
+                    {.end}
+                    </div>
+                
+                    
+
+                </div>
 
             <span>
         </div>
@@ -161,16 +168,46 @@ $('.exit-case-study').click(function(){
 })
 
 
-
+{#  initial setup  }
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded');
-  $('.project').css('display', 'none');
 $('.project:eq('+active+')').css("display", "block")
 $('.counter:eq('+active+')').attr("src", "../assets/black-textured-circle.svg")  
 
   
 
 });
+
+function mediaQuery(x) {
+  if (x.matches) { 
+    $('h1').css({"font-size": "36px"})
+    $('section').css('width', 'calc(100vw - 35px)')
+    $('#next-slide').css("width", "35px")
+    $('#next-slide img').css("margin", "0")
+    $('.about-text-bg').css("width", "97.5%");
+    $('#project-details').css("display", "inline-block");
+    $('#project-details-left').css("width", "100%");
+    $('#project-details-right').css("width", "100%", "padding-top", "25px");
+    $('#project-case-study-window-nav h4').css("font-size","14px")
+    $('.column').css({"flex":"100%", "max-width":"100%", "-ms-flex":"100%"})
+
+  } else {
+    $('h1').css("font-size", "48px")
+    $('section').css('width', 'calc(100vw - 50px)')
+    $('#next-slide').css("width", "50px")
+    $('#next-slide img').css("margin-left", "20px")
+    $('.about-text-bg').css("width", "70%");
+    $('#project-details').css("display", "inline-flex");
+    $('#project-details-left').css("width", "60%");
+    $('#project-details-right').css("width", "35%", "padding-top", "0");
+    $('.column').css({"flex":"100%", "max-width":"100%", "-ms-flex":"100%"})
+
+  }
+}
+
+var x = window.matchMedia("(max-width: 550px)")
+mediaQuery(x) 
+x.addListener(mediaQuery) 
 
 
 
