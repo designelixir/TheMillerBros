@@ -25,7 +25,7 @@
 
 {#  PROJECT CASE STUDY ---------------------------------------------------  }
 
-    <div class="project-case-study-window fade-in" style="display: none;" id="case-study-{id}" >
+    <div class="project-case-study-window fade-in" style="display: none;"  >
     <div class="project-case-study-window-nav fade-in" id="toggle-close-project-{id}">
         <span>
             <img style="height: 100%; width: auto;" src="../assets/miller-bros-lettermark.svg"/>
@@ -37,59 +37,49 @@
         </span>
     </div>
 
-    <div class="project-case-study-wrapper" >
-       
+    <div class="project-case-study-wrapper">
        <div class="project-case-study-iframe" style="border: 3px solid orange; width: 100vw; ">
             <div style="padding:56.25% 0 0 0; position:relative; height: 80%; overflow-y: hidden;">
-                <iframe src="https://player.vimeo.com/video/493958216?h=d4146e6249&autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:110%;height:110%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
+                <iframe src="https://player.vimeo.com/video/{customContent.vimeocode}?h=d4146e6249&autoplay=1&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:110%;height:110%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
                 </iframe>
             </div>
        </div>
 
-        <div class="project-case-study-info" id="case-study-info-{id}">
-            
-            <span id="project-text" class="box-shadow">
-                <span id="project-summary" class="fade-in">
-                    <h1 class="project-title">{title}</h1>
-                    <h5>{customContent.shortdescription}</h5>
-                </span>
-                <span id="project-details" class="fade-in">
-                    <span class="project-details-left" id="project-details-left-{id}">
-                        <h4>Project Summary </h4>
+        <div class="project-case-study-info">
+            <div class="case-study-title">
+                <h1 class="project-title">{title}</h1>
+                <h5>{customContent.shortdescription}</h5>
+            </div>
+            <div class="case-study-text texture">
+                <span class="case-study-summary">
+                        <h4>Project Summary </h4>   
+                        <span class="blue-line"></span>
+                        <p>{body}</p>
                         
-                        <p style="background: red;">{body}</p>
-                        <br>
-                        <span id="testimonial">
-                            <span><h1>"</h1></span>
-                            <p>{customContent.testimonial}</p>
-                            <span><h1>"</h1></span>
-                        </span>
-                    </span>
-
-                    <span class="project-details-right" id="project-details-right-{id}">
-                    <h4> Credits </h4>
-                    <span>{customContent.testimonial}</span>
-                    </span>
                 </span>
 
-                <div id="behindthescenes-grid">
-                
-                
-                    <div class="column">
-                   {.repeated section customContent.behindthescenes}
-                    
-                        <img src="{assetUrl}"/>
-                    
-                       
+                <span class="case-study-credits">
+                    <h4> Credits </h4>
+                    <span class="blue-line"></span>
+                    <p>{customContent.credits.html}</p>
+                </span>
+            </div>
+            <div class="case-study-testimonial texture">
+                <span id="testimonial">
+                    <span><h1>"</h1></span>
+                    <p>{customContent.testimonial}</p>
+                    <span><h1>"</h1></span>
+                </span>
+            </div>
 
-                    {.end}
-                    </div>
-                
-                    
+               
+            <div id="behindthescenes-grid">
+                {.repeated section customContent.behindthescenes}
+                    <img class="fade-in" src="{assetUrl}"/>
+                {.end}
+            </div>
 
-                </div>
-
-            <span>
+            
         </div>
     </div>
     
@@ -183,24 +173,24 @@ function mediaQuery(x) {
     $('h1').css({"font-size": "36px"})
     $('section').css('width', 'calc(100vw - 35px)')
     $('#next-slide').css("width", "35px")
-    $('#next-slide img').css("margin", "0")
-    $('.about-text-bg').css("width", "97.5%");
-    $('#project-details').css("display", "inline-block");
-    $('#project-details-left').css("width", "100%");
-    $('#project-details-right').css("width", "100%", "padding-top", "25px");
-    $('#project-case-study-window-nav h4').css("font-size","14px")
-    $('.column').css({"flex":"100%", "max-width":"100%", "-ms-flex":"100%"})
+    $('#next-slide img').css("margin-left", "0");
+    $('.case-study-text').css({"display":"block"})
+    $('.case-study-summary').css({"width":"100%"});
+    $('.case-study-credits').css({"width":"100%", "margin-top": "25px"})
+
+    {#  case study  }
+   
 
   } else {
     $('h1').css("font-size", "48px")
     $('section').css('width', 'calc(100vw - 50px)')
     $('#next-slide').css("width", "50px")
     $('#next-slide img').css("margin-left", "20px")
-    $('.about-text-bg').css("width", "70%");
-    $('#project-details').css("display", "inline-flex");
-    $('#project-details-left').css("width", "60%");
-    $('#project-details-right').css("width", "35%", "padding-top", "0");
-    $('.column').css({"flex":"100%", "max-width":"100%", "-ms-flex":"100%"})
+
+    {#  case study  }
+    $('.case-study-text').css({"display":"inline-flex"})
+    $('.case-study-summary').css({"width":"60%"});
+    $('.case-study-credits').css({"width":"35%", "margin-top":"0px"})
 
   }
 }
