@@ -171,8 +171,9 @@ p {
 
 // FEATURED PROJECT COLLECTION 
 //####################################################################################################
-section {width: ~'calc(100vw - 50px)'; float: left; z-index: 2; }
+#featured-project-slider {width: 100vw; float: left; z-index: 2; }
 
+section {border: 3px solid green; width: 100vw; display: inline-flex; margin: 0; }
 .project {width: 100%; height: 100%; display: none;}
 
 .vimeo-wrapper {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-position: center center;}
@@ -194,12 +195,12 @@ section {width: ~'calc(100vw - 50px)'; float: left; z-index: 2; }
 
 // UPDATED FEATURED PROJECT CSS -----------------------------
 
-#next-slide {background-image: url('../assets/textured-strip.png'); background-size: cover; background-position: top right; float: right;
-  height: ~'calc(100vh - 18px)'; width: 50px; position: absolute; right: 0; top: 0;  display: flex; align-items: center; justify-content: center;
+#next-slide {background-image: url('../assets/textured-strip.png'); background-size: 100%; background-position: top right; float: right;
+  height: ~'calc(100% - 25px)'; width: 50px; position: absolute; right: 0; top: 0; z-index: 1;  display: flex; align-items: center; justify-content: center;
   img {margin-left: 20px;}
 }
 
-#next-slide:hover {transform: scale(1.1)}
+#next-slide:hover {background-size: 105%; cursor: pointer;}
 
 #project-counter { width: 200px; height: 50px;  position: absolute; right: 25px; bottom: 18px; display: inline-flex; align-items: flex-end; justify-content: flex-end; padding: 25px;
   .counter { margin: 0 10px; height: 10px; }
@@ -231,7 +232,7 @@ section {width: ~'calc(100vw - 50px)'; float: left; z-index: 2; }
   .circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
   .wide-button-black {width: 210px; margin-top: 17px; height: 60px; display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: cover;}
 
-  .project-case-study-window {width: 100vw; height: 100vh; position: fixed; z-index: 4; border: 1px solid black; background: pink; top: 0; left: 0; }
+  .project-case-study-window {width: 100vw; height: 100vh; transform: scale(0.01); position: fixed; opacity: 0; z-index: 10; border: 1px solid black; background: pink; top: 0; left: 0; }
   .project-case-study-window-nav {width: 100%; height: 125px; padding: 25px; background: black; display: inline-flex; justify-content: space-between; border: 2px solid magenta;
     span { height: 100%; display: flex; align-items: center; color: white;
       button {border: none; margin-left: 15px; width: 50px; height: 100%;  background-color: transparent; background-image: url('../assets/blue-textured-circle.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
@@ -317,6 +318,12 @@ footer {width: 100vw; position: relative; text-align: center; display: inline-bl
 @-webkit-keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
 .bg-sizeup {animation: bg-sizeup 1s cubic-bezier(0.075, 0.82, 0.165, 1) reverse}
 
+.scale-up-bottom{-webkit-animation:scale-up-bottom .4s cubic-bezier(.39,.575,.565,1.000) both;animation:scale-up-bottom .4s cubic-bezier(.39,.575,.565,1.000) both}
+@-webkit-keyframes scale-up-bottom{0%{-webkit-transform:scale(.5);transform:scale(.5);-webkit-transform-origin:50% 100%;transform-origin:50% 100%}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 100%;transform-origin:50% 100%}}@keyframes scale-up-bottom{0%{-webkit-transform:scale(.5);transform:scale(.5);-webkit-transform-origin:50% 100%;transform-origin:50% 100%}100%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 100%;transform-origin:50% 100%}}
+
+.scale-out-bottom{-webkit-animation:scale-out-bottom .5s cubic-bezier(.55,.085,.68,.53) both;animation:scale-out-bottom .5s cubic-bezier(.55,.085,.68,.53) both}
+@-webkit-keyframes scale-out-bottom{0%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 100%;transform-origin:50% 100%;opacity:1}100%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:50% 100%;transform-origin:50% 100%;opacity:1}}@keyframes scale-out-bottom{0%{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:50% 100%;transform-origin:50% 100%;opacity:1}100%{-webkit-transform:scale(0);transform:scale(0);-webkit-transform-origin:50% 100%;transform-origin:50% 100%;opacity:1}}
+
 @keyframes bg-sizeup
 {0%{background-size: 100%}
 100%{background-size: 115%}}
@@ -362,10 +369,10 @@ footer {width: 100vw; position: relative; text-align: center; display: inline-bl
   .portfolio-nav { width: 100%; display: inline-flex; align-items: center; justify-content: space-between; padding: 25px 25px 0 25px; }
 }
 
-.portfolio-video { height: 90vh; position: relative; width: 100vw;  overflow-y: hidden;
-  .vimeo-wrapper {background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: 5!important; -webkit-box-shadow: 5px 13px 40px 16px #000000; 
-    box-shadow: 5px 13px 40px 16px #000000;}
-}
+
+  .vimeo-wrapper {background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: -1!important;
+   height: ~'calc(100vh - 25px)'}
+
 .portfolio-video iframe {min-width: 100%; min-height: 100%; padding: 2%; cursor: pointer;}
 
 .portfolio-item-title {width: 100%; height: 100%; background-color: rgba(0,0,0,0.25);
