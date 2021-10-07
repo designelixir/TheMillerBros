@@ -1,7 +1,7 @@
 
 <section class="box-shadow">
-    <div style="display: inline-flex; border: 3px solid salmon; height: calc(100vh - 125px); width: 100%">
-    <div style="border: 2px solid green; height: 100%; width: 100%; display: inline-flex;">
+    <div style="display: inline-flex; height: calc(100vh - 125px); width: 100%">
+    <div style=" height: 100%; width: 100%; display: inline-flex;">
 
 
 {.repeated section items}
@@ -9,13 +9,18 @@
 {#  PROJECT SLIDE ---------------------------------------------------  }
     <div class="project" data-item-id="{id}">
         <div class="vimeo-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
-            <iframe class="backgroundiframe" src='' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <iframe class="backgroundiframe" src='https://player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
         <span style="height: 50%"></span>
-        <span id="summary-title">
+        <span class="summary-title linear-gradient">
             <span>
             
-                <h1 class="project-title">{title}</h1>
+                <span style="display: inline-flex;">
+                    <h1 class="project-title">{title}</h1>
+                    <span class="case-study-toggle-arrow">
+                        <img style="padding-left: 10px; height: 24px"src="../assets/arrow.svg"/>
+                    </span>
+                </span>
                 <h4>{customContent.brand}</h4> 
                 </span>
             </span>
@@ -26,7 +31,7 @@
 {#  PROJECT CASE STUDY ---------------------------------------------------  }
 
     <div class="project-case-study-window fade-in" style="display: none;"  >
-    <div class="project-case-study-window-nav fade-in" id="toggle-close-project-{id}">
+    <div class="project-case-study-window-nav fade-in">
         <span>
             <img style="height: 100%; width: auto;" src="../assets/miller-bros-lettermark.svg"/>
         </span>
@@ -65,11 +70,14 @@
                 </span>
             </div>
             <div class="case-study-testimonial texture">
+            
                 <span id="testimonial">
-                    <span><h1>"</h1></span>
+                    <h6>"</h6>
                     <p>{customContent.testimonial}</p>
-                    <span><h1>"</h1></span>
+                    <h6>"</h6>
                 </span>
+                <p>-{customContent.testimonial-name}</p>
+            
             </div>
 
                
@@ -145,7 +153,7 @@ var timerID =
     $('.project:eq('+active+')').css("display", "block");
         $('.counter:eq('+active+')').attr("src", "../assets/black-textured-circle.svg")  
 
-    }, 5000);
+    }, 10000);
 
 {#  open respective case study window  }
 $('.project-title').click(function(){
@@ -155,6 +163,16 @@ $('.project-title').click(function(){
 {#  close case study window  }
 $('.exit-case-study').click(function(){
     $('.project-case-study-window').css({"display": "none"})  
+})
+
+$('.summary-title').on("mouseover",function(){
+    console.log("moused")
+    $('.case-study-toggle-arrow').css("background-image","url('../assets/blue-textured-circle.svg')");
+})
+
+$('.summary-title').on("mouseout",function(){
+    console.log("moused away")
+    $('.case-study-toggle-arrow').css("background-image","none");
 })
 
 
