@@ -182,7 +182,7 @@ $('.exit-case-study').click(function(){
 
 $('.summary-title').on("mouseover",function(){
     console.log("moused")
-    $('.case-study-toggle-arrow').css("background-image","url('../assets/blue-textured-circle.svg')");
+    $('.case-study-toggle-arrow').css("background-image","url('../assets/case-study.svg')");
 })
 
 $('.summary-title').on("mouseout",function(){
