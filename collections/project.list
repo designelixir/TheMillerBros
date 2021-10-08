@@ -35,7 +35,7 @@
                             <div class="project-case-study-wrapper">
                                 {# CASE STUDY VIDEO   }
                             <div class="project-case-study-iframe" style="border: 3px solid orange; width: 100vw; ">
-                                <div style="padding:42.55% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.vimeocode}h=a043554fa8&color=4ebe09&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>                                    
+                                <div style="padding:42.55% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.vimeocode-iframe}h=a043554fa8&color=4ebe09&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>                                    
                             </div>
                                 {#  CASE STUDY INFORMATION  }
                                 <div class="project-case-study-info">
@@ -90,7 +90,7 @@
                         </div>
                     </span>
                 </span>
-                <h4>{customContent.brand}</h4> 
+                <h4 style="color: white; padding-left: 25px;">{customContent.brand}</h4> 
                 </span>
             </span>
 
@@ -121,9 +121,20 @@
 <section class="texture" style="background: black; width: 100vw!important; padding: 25px;">
 
 <span style="width: 100%; height: 25px; border: 2px solid yellow; color: white; text-align: center;"> COME ON DOWN! </span>
+
+<div class="about">
+    <div class="about-photo">
+            <squarespace:block-field id="about-image" columns="12"/>
+
+    </div>
+    <div class="about-text">
+    <squarespace:block-field id="about-text" columns="12"/>
+
+    </div>
+</div>
+
 </section>
 
-    <squarespace:block-field id="blockField3" columns="12"/>
 
 
 <script>
