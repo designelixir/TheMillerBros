@@ -1,7 +1,6 @@
 
 <div id="featured-project-slider">
-    <div style="display: inline-flex; height: calc(100vh - 125px); width: 100%">
-    <div style=" height: 100%; width: 100%; display: inline-flex;">
+    <div style=" height: calc(100vh - 125px); width: 100%; border: 3px solid magenta;">
 
 
 {.repeated section items}
@@ -11,105 +10,106 @@
         <div class="vimeo-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
             <iframe class="backgroundiframe" src='https://player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
-        <span style="height: 50%"></span>
-        <span class="summary-title">
-            <span>
-            
-                <span style="display: inline-flex;">
+        <span style="height: 25%; border: 2px solid blue;"></span>
+        <span class="summary-title radial-gradient">
+            <span id="summary-title-button-wrapper" style="border: 2px solid white; display: inline-flex; align-items: center; ">
+
+                <span style="border: 1px solid yellow; width: 90%;">
                     <h1 class="project-title">{title}</h1>
-                    <span class="case-study-toggle-arrow">
-                        <img style="padding-left: 10px; height: 24px"src="../assets/arrow.svg"/>
-                        <div class="project-case-study-window">
-                            {#  CASE STUDY NAVIGATION  }
-                            <div class="project-case-study-window-nav fade-in">
-                                <span>
-                                    <img style="height: 100%; width: auto;" src="../assets/miller-bros-lettermark.svg"/>
-                                </span>
-
-                                <span class="hover-indication exit-case-study">
-                                    <span><h4 style="font-size: 14px; text-align: right;">Back to <br> Homepage</h4></span>
-                                    <span style="width: 75px"> <button class="circle-button-blue"> <h3>X</h3> </button></span>
-                                </span>
-                            </div>
-                            {#  CASE STUDY  }
-                            <div class="project-case-study-wrapper">
-                                {# CASE STUDY VIDEO   }
-                            <div class="project-case-study-iframe" style="border: 3px solid orange; width: 100vw; ">
-                                <div style="padding:42.55% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.vimeocode-iframe}h=a043554fa8&color=4ebe09&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>                                    
-                            </div>
-                                {#  CASE STUDY INFORMATION  }
-                                <div class="project-case-study-info">
-                                    <div class="case-study-title">
-                                        <h1 class="project-title">{title}</h1>
-                                        <h5>{customContent.shortdescription}</h5>
-                                    </div>
-                                    <div class="case-study-text texture">
-                                        <span class="case-study-summary">
-                                                <h4>Project Summary </h4>   
-                                                <span class="blue-line"></span>
-                                                <p>{body}</p>
-                                        </span>
-                                        <span class="case-study-credits">
-                                            <h4> Credits </h4>
-                                            <span class="blue-line"></span>
-                                            <span>{customContent.credits.html}</span>
-                                        </span>
-                                    </div>
-                                    {#  TESTIMONIAL  }
-                                    <div class="case-study-testimonial texture">
-                                        {.if customContent.testimonial}
-                                            <span id="testimonial">
-                                                <p>{customContent.testimonial}</p>
-                                            </span>
-                                            <p>-{customContent.testimonial-name}</p>
-                                        {.or}
-                                        
-                                        {.end}
-                                            
-                                    </div>
-                                    <div style="background: salmon; width: 100%; display: inline-flex;">
-                                    {.if customContent.additional-video1}
-                                        <iframe id="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additional-video1}?h=d4146e6249&autoplay=0&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;height: 200px;" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen>
-                                        </iframe>
-                                    {.or}
-                                    {.end}
-
-                                    </div>
-                                    {#  BEHIND THE SCENES  }
-                                    <div id="behindthescenes-grid">
-                                        <div class="bts-row">
-                                            {.repeated section customContent.behindthescenes}
-                                                <img class="bts-img" src="{assetUrl}"/>
-                                            {.end}
-                                        </div>
-                                    </div> 
-
-                                </div>
-                            </div>
-
-                        </div>
-                    </span>
+                    <h4 style="color: white; margin-left: 39px;">{customContent.brand}</h4> 
                 </span>
-                <h4 style="color: white; padding-left: 25px;">{customContent.brand}</h4> 
+                <span class="case-study-toggle-arrow">
+                    <span id="case-study-toggle-arrow-wrapper">
+                        <img style="padding-left: 10px; width: 50%;"src="../assets/arrow.svg"/>
+                    </span>
+                            <div class="project-case-study-window">
+                                {#  CASE STUDY NAVIGATION  }
+                                <div class="project-case-study-window-nav fade-in">
+                                    <span>
+                                        <img style="height: 100%; width: auto;" src="../assets/miller-bros-lettermark.svg"/>
+                                    </span>
+
+                                    <span class="hover-indication exit-case-study">
+                                        <span><h4 style="font-size: 14px; text-align: right;">Back to <br> Homepage</h4></span>
+                                        <span style="width: 75px"> <button class="circle-button-blue"> <h3>X</h3> </button></span>
+                                    </span>
+                                </div>
+                                {#  CASE STUDY  }
+                                <div class="project-case-study-wrapper">
+                                    {# CASE STUDY VIDEO   }
+                                <div class="project-case-study-iframe" style="border: 3px solid orange; width: 100vw; ">
+                                    <div style="padding:42.55% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.vimeocode-iframe}h=a043554fa8&color=4ebe09&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>                                    
+                                </div>
+                                    {#  CASE STUDY INFORMATION  }
+                                    <div class="project-case-study-info">
+                                        <div class="case-study-title">
+                                            <h1 class="project-title">{title}</h1>
+                                            <h5>{customContent.shortdescription}</h5>
+                                        </div>
+                                        <div class="case-study-text texture">
+                                            <span class="case-study-summary">
+                                                    <h4>Project Summary </h4>   
+                                                    <span class="blue-line"></span>
+                                                    <p>{body}</p>
+                                            </span>
+                                            <span class="case-study-credits">
+                                                <h4> Credits </h4>
+                                                <span class="blue-line"></span>
+                                                <span>{customContent.credits.html}</span>
+                                            </span>
+                                        </div>
+                                        {#  TESTIMONIAL  }
+                                        <div class="case-study-testimonial texture">
+                                            {.if customContent.testimonial}
+                                                <span id="testimonial">
+                                                    <p>{customContent.testimonial}</p>
+                                                </span>
+                                                <p>-{customContent.testimonial-name}</p>
+                                            {.or}
+                                            
+                                            {.end}
+                                                
+                                        </div>
+                                        <div style="background: salmon; width: 100%; display: inline-flex;">
+                                        {.if customContent.additional-video1}
+                                            <iframe id="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additional-video1}?h=d4146e6249&autoplay=0&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;height: 200px;" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen>
+                                            </iframe>
+                                        {.or}
+                                        {.end}
+
+                                        </div>
+                                        {#  BEHIND THE SCENES  }
+                                        <div id="behindthescenes-grid">
+                                            <div class="bts-row">
+                                                {.repeated section customContent.behindthescenes}
+                                                    <img class="bts-img" src="{assetUrl}"/>
+                                                {.end}
+                                            </div>
+                                        </div> 
+
+                                    </div>
+                                </div>
+
+                            </div>
                 </span>
             </span>
-
-        
+        </span>
     </div>
 
 {#  PROJECT CASE STUDY ---------------------------------------------------  }
 
 
 {.end}
+        <span id="project-counter">
+            <img src="../assets/tan-textured-circle.svg" class="counter">
+        </span>
     </div>
 
 </div>
 
 
-        <span id="project-counter">
-            <img src="../assets/tan-textured-circle.svg" class="counter">
-        </span>
-</div>
+        
+
 
     <div id="next-slide">
         <img src="../assets/nav-arrow.svg" />
@@ -118,19 +118,18 @@
 
 
 
-<section class="texture" style="background: black; width: 100vw!important; padding: 25px;">
+<section class="texture inset-box-shadow" style="background: #241E1F; width: 100vw!important; border: 1px solid red;   ">
 
-<span style="width: 100%; height: 25px; border: 2px solid yellow; color: white; text-align: center;"> COME ON DOWN! </span>
+        <span style="background: #241E1F; display: flex; align-items: center; justify-content: center; width: 100%;"> <img src="../assets/nav-arrow.svg" style="transform: rotate(90deg); width: 10px; "/> </span>
 
 <div class="about">
-    <div class="about-photo">
-            <squarespace:block-field id="about-image" columns="12"/>
-
+    <div class="about-header">
+        <h6 style="font-size: 48px;"> Telling stories from the  </h6>
+        <h6 style="padding-left: 10%; font-size: 72px; margin-top: -25px;">road less traveled </h6>
+        <span style="margin-left: 10%; margin-top: -10px; z-index: 3;" class="yellow-line"></span>
     </div>
-    <div class="about-text">
-    <squarespace:block-field id="about-text" columns="12"/>
 
-    </div>
+    
 </div>
 
 </section>
@@ -161,7 +160,7 @@ $('#next-slide').click(function(){
      if(active >= counter - 1){active = 0;} 
      else {active = active + 1;}
     $('.project:eq('+active+')').css("display", "block");
-    $('.counter:eq('+active+')').attr("src", "../assets/black-textured-circle.svg")  
+    $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
 
     clearInterval(timerID);
 })
@@ -174,7 +173,7 @@ var timerID =
         if(active >= counter - 1){active = 0;} 
         else {active = active + 1;}
     $('.project:eq('+active+')').css("display", "block");
-        $('.counter:eq('+active+')').attr("src", "../assets/black-textured-circle.svg")  
+        $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
 
     }, 10000);
 
@@ -198,20 +197,17 @@ $('.exit-case-study').click(function(){
 
 $('.summary-title').on("mouseover",function(){
     console.log("moused")
-    $('.case-study-toggle-arrow').css("background-image","url('../assets/case-study.svg')");
+    $('#case-study-toggle-arrow-wrapper').css("background-image","url('../assets/case-study-circle.svg')");
 })
 
-$('.summary-title').on("mouseout",function(){
-    console.log("moused away")
-    $('.case-study-toggle-arrow').css("background-image","none");
-})
+
 
 
 {#  initial setup  }
 window.addEventListener('load', (event) => {
   console.log('page is fully loaded');
 $('.project:eq('+active+')').css("display", "block")
-$('.counter:eq('+active+')').attr("src", "../assets/black-textured-circle.svg")  
+$('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
 
   
 

@@ -7,12 +7,18 @@
   font-display: swap;
 }
 
+.texture {background-image: url("../assets/texture.png"); background-size: cover;}
+.inset-box-shadow {    box-shadow: inset 0 0 10px #000000; -moz-box-shadow: inset 0 0 10px #000000; -webkit-box-shadow: inset 0 0 10px #000000;}
+.radial-gradient {background: radial-gradient(circle, rgba(0,0,0,0.08587184873949583) 50%, rgba(0,0,0,0.04385504201680668) 100%);
+}
+
 .sqs-block {
   padding: 5px 17px 5px 17px!important;
   margin: 0!important;
   width: 100%; height: 100%;
   
 }
+
 
 .sqs-block-button-element { background-color: transparent!important; font-family: museo-sans-rounded, sans-serif!important; font-weight: 500!important; font-size: 16px; background-position: 50% 50%; background-repeat: no-repeat; color: white; margin: 0!important; padding: 15px 25px!important; }
   .sqs-block-button-element--small { margin: 5px; width: 60px; height: 60px; display: block; background-image: url('../assets/blue-textured-circle-close.svg');  background-size: contain;  }
@@ -57,6 +63,10 @@ body {
 span {display: block;}
 .blue-line { width: 250px; height: 10px; background-image: url("../assets/blue-textured-line.svg"); background-size: contain; background-repeat: no-repeat; background-position: 0 bottom;
 }
+
+.yellow-line { width:100%; height: 10px; background-image: url("../assets/yellow-textured-line.svg"); background-size: contain; background-repeat: no-repeat; background-position: 0 bottom;
+}
+
 img {margin: 5px;}
 h1 {
   font-size: 48px;
@@ -171,26 +181,28 @@ p {
 
 // FEATURED PROJECT COLLECTION 
 //####################################################################################################
-#featured-project-slider {width: 100vw; float: left; z-index: 2; }
+#featured-project-slider {width: 100vw; float: left; z-index: 2;  border: 3px solid lime; }
 
 
-.project {width: 100%; height: 100%; display: none;}
+.project {width: 100%; height: ~'calc(100% - 25px)'; display: none; border: 2px solid yellowgreen}
 
 .vimeo-wrapper {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-position: center center;}
 .vimeo-wrapper iframe {width: 100vw; height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */ min-height: 100vh; min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
 
 .project-contents {width: ~"calc(100% - 50px)"; height: 50%;  display: inline-flex; align-items: flex-end; }
 
-.summary-title { height: 50%; width: 100%; padding: 50px 25px; display: inline-flex; justify-items: flex-start; align-items: flex-end;
+.summary-title { width: ~"calc(100% - 25px)"; height: 75%;  border: 3px solid salmon; display: flex; align-items: flex-end;
 }
 
 
 
 .summary-title:hover {cursor: pointer;}
 
-.case-study-toggle-arrow {border: 2px solid magenta; display: flex; align-items: flex-end; justify-content: center; width: 100px; height: 75px; background-size: contain; background-repeat: no-repeat; margin-left: 15px;}
+.case-study-toggle-arrow {border: 1px solid magenta;  background-image: url('../assets/yellow-textured-circle.svg'); background-color: rgba(197, 132, 61,0); background-size: contain; background-position: center center; background-repeat: no-repeat; width: 125px; height: 125px; margin-left: 15px; display: flex; align-items: center; justify-content: center;}
+#case-study-toggle-arrow-wrapper {border: 1px solid purple; display: flex; align-items: center; justify-content: center; width: 90%; height: 90%; background-size: 90%; background-position: center center; background-image: none; background-repeat: no-repeat;}
+#case-study-toggle-arrow-wrapper:hover {background-image: url('../assets/case-study-circle.svg'); width: 95%; height: 95%; background-size: 90%;}
 
-.project-title {font-size: 48px; text-shadow: 2px 2px tan; border-left: 8px solid tan; border-radius: 4px; padding-left: 17px; }
+.project-title {font-size: 48px; text-shadow: 2px 2px #C5843D; border-left: 8px solid #C5843D; border-radius: 4px; padding-left: 7px; margin-left: 25px; }
 
 
 
@@ -203,7 +215,7 @@ p {
 
 #next-slide:hover {background-size: 105%; cursor: pointer;}
 
-#project-counter { width: 200px; height: 50px;  position: absolute; right: 25px; bottom: 18px; display: inline-flex; align-items: flex-end; justify-content: flex-end; padding: 25px;
+#project-counter { width: ~"calc(100% - 50px)";  height: 25px; display: inline-flex; align-items: center; justify-content: flex-end;
   .counter { margin: 0 10px; height: 10px; }
 }
 
@@ -243,7 +255,7 @@ p {
 
 
   
-  .project-case-study-wrapper {width: 100%; border: 2px solid lime;  }
+  .project-case-study-wrapper {width: 100%; border: 2px solid lime; display: block;  }
   .project-case-study-info { width: 90%; margin: -5% 5%;  position: relative;  z-index: 3; border: 2px solid slateblue; color: white;}
 
   .case-study-title {background-image: url('../assets/black-textured-box.svg'); background-size: contain; width: 100%; padding: 15px 25px; }
@@ -272,14 +284,17 @@ p {
   // ABOUT SUMMARY (homepage)
   // ##############################
 
-  .about {width: 70%; color: red; height: 400;}
-
-
+  .about {width: 100%;  padding: 25px; height: 90vh;} 
+  .about-header {border: 2px solid yellow;  width: 100%; z-index: 3!important;}
+    .about h6 {color: white; font-size: 72px; padding: -10px; margin: 0;}
+  
+    .about-content {border: 2px solid lime; width: 100%; display: inline-flex; align-items: flex-end; margin-top: -25px; z-index: 0!important;}
+  .about-photo {width: 90%; z-index: 1; margin-left: 10%;}
+  .about-text {background-image: url('../assets/textured-square.png'); background-size: cover; margin-right: -50%; z-index: 2; padding: 50px; width: 50%; height: 100%;  }
+  #about-image {z-index: 0;}
 
 // FOOTERS 
 // ##############################
-.texture {background-image: url("../assets/texture.png"); background-size: cover;}
-.inset-bottom {box-shadow: inset 0px -9px 36px -4px #000000  ;}
 
 footer {width: 100vw; position: relative; text-align: center; display: inline-block;
 }
