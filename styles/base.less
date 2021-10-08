@@ -19,7 +19,7 @@
   
 }
 
-
+button {border: none; background-color: transparent; }
 .sqs-block-button-element { background-color: transparent!important; font-family: museo-sans-rounded, sans-serif!important; font-weight: 500!important; font-size: 16px; background-position: 50% 50%; background-repeat: no-repeat; color: white; margin: 0!important; padding: 15px 25px!important; }
   .sqs-block-button-element--small { margin: 5px; width: 60px; height: 60px; display: block; background-image: url('../assets/blue-textured-circle-close.svg');  background-size: contain;  }
   .sqs-block-button-element--medium { display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: contain;  }
@@ -136,7 +136,7 @@ p {
   z-index: 3;
 }
 
-#header-logo {height: 100px; width: auto; }
+#header-logo {height: 75px; width: auto; }
 #header-logo:hover {transform: scale(1.05)}
 // .site-navigation { }
 
@@ -241,47 +241,67 @@ p {
 
   // PROJECT CASE STUDY WINDOW 
   //###############################################
-  
-  button {border: none; background-color: transparent; }
   .circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
-  .wide-button-black {width: 210px; margin-top: 17px; height: 60px; display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: cover;}
-
-  .project-case-study-window {width: 100vw; height: 100vh;   border: 1px solid black; background: pink; top: 0; left: 0;  }
-  .project-case-study-window-nav {width: 100%; height: 125px; padding: 25px; background: black; display: inline-flex; justify-content: space-between; border: 2px solid magenta;
-    span { height: 100%; display: flex; align-items: center; color: white;
-      button {border: none; margin-left: 15px; width: 50px; height: 100%;  background-color: transparent; background-image: url('../assets/blue-textured-circle.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
-      
-    }
-  }
 
 
+  .project-case-study-window {width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 10; background: #241E1F;}
+
+  .case-study-nav {width: 100%; height: 75px; display: flex; align-items: center; justify-content: center;}
+  .case-study-nav span {width: 50%; padding: 25px; display: flex; align-items: center;}
+  .case-study-nav span img {height: 50px; width: auto;}
+
+  .case-study-title {background-image: url('../assets/black-textured-box.svg'); background-size: contain; width: 100%; padding: 15px 25px; color: white; }
+  .case-study-title h1 {font-size: 36px!important; text-shadow: 2px 2px #C5843D; border-left: 8px solid #C5843D; border-radius: 4px; padding-left: 7px;}
   
-  .project-case-study-wrapper {width: 100%; border: 2px solid lime; display: block;  }
-  .project-case-study-info { width: 90%; margin: -5% 5%;  position: relative;  z-index: 3; border: 2px solid slateblue; color: white;}
+  .case-study-block {width: 100%; justify-content: space-between; border: 2px solid lime;}
 
-  .case-study-title {background-image: url('../assets/black-textured-box.svg'); background-size: contain; width: 100%; padding: 15px 25px; }
-  .case-study-text {background-color: tan; padding: 25px; display: inline-flex; justify-content: space-evenly; color: black;
+  .case-study-text {background-color: tan;  width: 100%; border: 2px solid red; padding: 25px; color: black;
     .case-study-summary {width: 60%; border: 2px solid teal;}
     .case-study-credits {width: 35%; border: 2px solid teal;}
     strong {font-weight: 400;}
+    a {background-image: url('../assets/textured-black-button.svg'); color: white; text-transform: uppercase; text-decoration: none; background-size: contain; padding: 25px ; margin: 10px 0; background-position: center center; background-repeat: no-repeat;}
   }
 
-  .case-study-testimonial {width: 100%; border: 2px solid slateblue; background: tan; text-align: center; padding: 25px;}
+  .case-study-credits strong { text-transform: uppercase; font-weight: 700;}
+  .case-study-credits br { border-top: 1px solid gray;}
+
+    
+  .case-study-testimonial {width: 100%;   text-align: center; padding: 25px;
+    h5 {opacity: 50%;}
+  }
 
   #testimonial {text-align: center; font-style: italic; display: inline-flex; justify-content: space-evenly; width: 100%; background-image: url('../assets/quotes.svg'); background-size: cover; background-repeat: no-repeat;
-      p { font-size: 24px; font-weight: 100; padding: 50px; line-height: 32px;}
-      h6 {font-size: 50px; padding: 0; margin: 0; color: #62ABD0; width: 50px;}
+      p { font-size: 24px; font-weight: 100; padding: 25px; line-height: 32px; }
+      
+}
 
-  }
+.extra-video {width: 48%; border: 2px solid red; float: left; margin: 1%}
 
-  .case-study-block {background: red; height: 100vh; width: 100vw; transform: scale(0)}
 
   #behindthescenes-grid { color: white; text-align: center; padding: 25px;  margin-top: -5px; padding-bottom: 100px; border: 2px solid salmon; background-image: url('../assets/black-textured-box.svg'); background-size: cover;
-   
+   h6 {font-size: 36px; padding: 25px;}
   }
 
-  .bts-row {width: 100; border: 2px solid peachpuff; height: 100%; display: inline-flex; flex-wrap: wrap; justify-content: space-evenly; }
-  .bts-img {height: auto;  background-size: cover; width: 31%; background-repeat: no-repeat; background-position: center center;}
+
+  #photos {
+    /* Prevent vertical gaps */
+    line-height: 0;
+    -webkit-column-count: 4;
+    -webkit-column-gap:   10px;
+    -moz-column-count:    4;
+    -moz-column-gap:      10px;
+    column-count:         4;
+    column-gap:           10px;  
+  }
+
+  #photos img {
+    /* Just in case there are inline attributes */
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  // .bts-row {width: 100; border: 2px solid peachpuff; height: 100%; display: inline-flex; flex-wrap: wrap; justify-content: space-evenly; }
+  // .bts-img {height: auto;  background-size: cover; width: 31%; background-repeat: no-repeat; background-position: center center;}
 
   // ABOUT SUMMARY (homepage)
   // ##############################
@@ -344,7 +364,7 @@ footer {width: 100vw; position: relative; text-align: center; display: inline-bl
 
 // PORTFOLIO 
 
-.expand-button {background-image: url('../assets/expand.png'); background-size: contain; float: left; margin: 5px 15px 5px 5px; width: 40px; height: 40px;}
+.expand-button {background-image: url('../assets/expand.png'); background-size: contain; background-repeat: no-repeat; background-position: center center; float: left; margin: 5px 15px 5px 5px; width: 50px; height: 50px;}
 
 .portfolio-grid {
   min-height: 950px;
