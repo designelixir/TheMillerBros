@@ -6,13 +6,13 @@
 {.repeated section items}
 
 {#  PROJECT SLIDE ---------------------------------------------------  }
-    <div class="project" data-item-id="{id}">
-        <div class="vimeo-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
+    <div class="project " data-item-id="{id}">
+        <div class="vimeo-wrapper slide-in-right" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
             <iframe class="backgroundiframe" src='https://player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
         <span style="height: 25%; border: 2px solid blue;"></span>
-        <span class="summary-title radial-gradient">
-            <span id="summary-title-button-wrapper" style="border: 2px solid white; display: inline-flex; align-items: center; ">
+        <span class="summary-title radial-gradient fade-in">
+            <span id="summary-title-button-wrapper" style="border: 2px solid white;">
 
                 <span style="border: 1px solid yellow; width: 90%;">
                     <h1 class="project-title">{title}</h1>
@@ -21,84 +21,17 @@
                 <span class="case-study-toggle-arrow">
                     <span id="case-study-toggle-arrow-wrapper">
                         <img style="padding-left: 10px; width: 50%;"src="../assets/arrow.svg"/>
-                    </span>
-                            <div class="project-case-study-window">
-                                {#  CASE STUDY NAVIGATION  }
-                                <div class="project-case-study-window-nav fade-in">
-                                    <span>
-                                        <img style="height: 100%; width: auto;" src="../assets/miller-bros-lettermark.svg"/>
-                                    </span>
-
-                                    <span class="hover-indication exit-case-study">
-                                        <span><h4 style="font-size: 14px; text-align: right;">Back to <br> Homepage</h4></span>
-                                        <span style="width: 75px"> <button class="circle-button-blue"> <h3>X</h3> </button></span>
-                                    </span>
-                                </div>
-                                {#  CASE STUDY  }
-                                <div class="project-case-study-wrapper">
-                                    {# CASE STUDY VIDEO   }
-                                <div class="project-case-study-iframe" style="border: 3px solid orange; width: 100vw; ">
-                                    <div style="padding:42.55% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.vimeocode-iframe}h=a043554fa8&color=4ebe09&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>                                    
-                                </div>
-                                    {#  CASE STUDY INFORMATION  }
-                                    <div class="project-case-study-info">
-                                        <div class="case-study-title">
-                                            <h1 class="project-title">{title}</h1>
-                                            <h5>{customContent.shortdescription}</h5>
-                                        </div>
-                                        <div class="case-study-text texture">
-                                            <span class="case-study-summary">
-                                                    <h4>Project Summary </h4>   
-                                                    <span class="blue-line"></span>
-                                                    <p>{body}</p>
-                                            </span>
-                                            <span class="case-study-credits">
-                                                <h4> Credits </h4>
-                                                <span class="blue-line"></span>
-                                                <span>{customContent.credits.html}</span>
-                                            </span>
-                                        </div>
-                                        {#  TESTIMONIAL  }
-                                        <div class="case-study-testimonial texture">
-                                            {.if customContent.testimonial}
-                                                <span id="testimonial">
-                                                    <p>{customContent.testimonial}</p>
-                                                </span>
-                                                <p>-{customContent.testimonial-name}</p>
-                                            {.or}
-                                            
-                                            {.end}
-                                                
-                                        </div>
-                                        <div style="background: salmon; width: 100%; display: inline-flex;">
-                                        {.if customContent.additional-video1}
-                                            <iframe id="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additional-video1}?h=d4146e6249&autoplay=0&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;height: 200px;" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen>
-                                            </iframe>
-                                        {.or}
-                                        {.end}
-
-                                        </div>
-                                        {#  BEHIND THE SCENES  }
-                                        <div id="behindthescenes-grid">
-                                            <div class="bts-row">
-                                                {.repeated section customContent.behindthescenes}
-                                                    <img class="bts-img" src="{assetUrl}"/>
-                                                {.end}
-                                            </div>
-                                        </div> 
-
-                                    </div>
-                                </div>
-
-                            </div>
+                    </span>                            
                 </span>
             </span>
+             {#  PROJECT CASE STUDY ---------------------------------------------------  }
+                    
         </span>
     </div>
-
-{#  PROJECT CASE STUDY ---------------------------------------------------  }
-
-
+<div class="case-study-block" >
+    
+</div>
+{#  PROJECT END ---------------------------------------------------  }
 {.end}
         <span id="project-counter">
             <img src="../assets/tan-textured-circle.svg" class="counter">
@@ -106,17 +39,9 @@
     </div>
 
 </div>
-
-
-        
-
-
-    <div id="next-slide">
-        <img src="../assets/nav-arrow.svg" />
-    </div>
-
-
-
+<div id="next-slide">
+    <img src="../assets/nav-arrow.svg" />
+</div>
 
 <section class="texture inset-box-shadow" style="background: #241E1F; width: 100vw!important; border: 1px solid red;   ">
 
@@ -138,7 +63,21 @@
 
 <script>
 
+{#  open respective case study window  }
+$('.summary-title').click(function(){
+        clearInterval(timerID);
+    console.log("clicked", $('.project-case-study-window:eq('+active+')'))
+    $('.case-study-block').css({"animation":"scale-up-bottom .4s cubic-bezier(.39,.575,.565,1.000) both", "position":"fixed", "top":"0", "left": "0", "z-index": "10"})
+})
 
+
+{#  close case study window  }
+$('.exit-case-study').click(function(){
+    $('#case-study-iframe').attr("src", $('#case-study-iframe').attr("src"));
+    $('.project-case-study-window:eq('+active+')').hide("slow", function(){
+        $('.project-case-study-window:eq('+active+')').css({"animation": "scale-out-bottom .5s cubic-bezier(.55,.085,.68,.53) both", "opacity": "0"})  
+    })
+})
 
 
 
@@ -154,7 +93,7 @@ $("#project-counter").append($(".counter").last().clone(true));
 
 {#  change slide  }
 $('#next-slide').click(function(){
-    $('.project:eq('+active+')').css({"display": "none"})
+    $('.project:eq('+active+')').delay(100).fadeOut(300)
     $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
 
      if(active >= counter - 1){active = 0;} 
@@ -177,28 +116,7 @@ var timerID =
 
     }, 10000);
 
-{#  open respective case study window  }
-$('.project-title').click(function(){
-        clearInterval(timerID);
 
-    $('.project-case-study-window:eq('+active+')').show("slow", function(){
-        $('.project-case-study-window:eq('+active+')').css({"opacity": "1", "animation":"scale-up-bottom .4s cubic-bezier(.39,.575,.565,1.000) both"})  
-    })
-})
-
-
-{#  close case study window  }
-$('.exit-case-study').click(function(){
-    $('#case-study-iframe').attr("src", $('#case-study-iframe').attr("src"));
-    $('.project-case-study-window:eq('+active+')').hide("slow", function(){
-        $('.project-case-study-window:eq('+active+')').css({"animation": "scale-out-bottom .5s cubic-bezier(.55,.085,.68,.53) both", "opacity": "0"})  
-    })
-})
-
-$('.summary-title').on("mouseover",function(){
-    console.log("moused")
-    $('#case-study-toggle-arrow-wrapper').css("background-image","url('../assets/case-study-circle.svg')");
-})
 
 
 

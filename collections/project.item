@@ -1,84 +1,61 @@
-<h1> Here is some stuff. </h1>
-
 {.section item}
-<script>console.log({@|json-pretty})</script>
-  <!--WRAPPER-->
-  <article id="post-{id}" class="{@|item-classes}" data-item-id="{id}">
+<div class="project-case-study-window">
 
-    <!--POST TILE-->
-    <h1 class="title" data-content-field="title">
-      {.passthrough?}
-        <a href="{sourceUrl}" target="_blank">{title}</a>
-      {.or}
-        {title}
-      {.end}
-    </h1>
+        {#  CASE STUDY  }
+        <div class="project-case-study-wrapper">
+            {# CASE STUDY VIDEO   }
+        <div class="project-case-study-iframe" style="border: 3px solid orange; width: 100vw; ">
+            <div style="padding:42.55% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.vimeocode-iframe}h=a043554fa8&color=4ebe09&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>                                    
+        </div>
+            {#  CASE STUDY INFORMATION  }
+            <div class="project-case-study-info">
+                <div class="case-study-title">
+                    <h1 class="project-title">{title}</h1>
+                    <h5>{customContent.shortdescription}</h5>
+                </div>
+                <div class="case-study-text texture">
+                    <span class="case-study-summary">
+                            <h4>Project Summary </h4>   
+                            <span class="blue-line"></span>
+                            <p>{body}</p>
+                    </span>
+                    <span class="case-study-credits">
+                        <h4> Credits </h4>
+                        <span class="blue-line"></span>
+                        <span>{customContent.credits.html}</span>
+                    </span>
+                </div>
+                {#  TESTIMONIAL  }
+                <div class="case-study-testimonial texture">
+                    {.if customContent.testimonial}
+                        <span id="testimonial">
+                            <p>{customContent.testimonial}</p>
+                        </span>
+                        <p>-{customContent.testimonial-name}</p>
+                    {.or}
+                    
+                    {.end}
+                        
+                </div>
+                <div style="background: salmon; width: 100%; display: inline-flex;">
+                {.if customContent.additional-video1}
+                    <iframe id="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additional-video1}?h=d4146e6249&autoplay=0&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;height: 200px;" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen>
+                    </iframe>
+                {.or}
+                {.end}
 
-    <!--AUTHOR AND DATE-->
-    <p class="meta">
-      <a href="{fullUrl}" class="permalink"><time datetime="{addedOn|date %F}">{addedOn|date %B %d, %Y}</time></a> by <a href="{collection.fullUrl}?author={author.id}">{author.displayName}</a>
-    </p>
+                </div>
+                {#  BEHIND THE SCENES  }
+                <div id="behindthescenes-grid">
+                    <div class="bts-row">
+                        {.repeated section customContent.behindthescenes}
+                            <img class="bts-img" src="{assetUrl}"/>
+                        {.end}
+                    </div>
+                </div> 
 
-    <!--MAIN CONTENT-->
-    {body}
+            </div>
+        </div>
 
-    <!--BLOG INJECTION-->
-    {postItemInjectCode}
-    
-    <squarespace:block-field id="blockField1" columns="12" lock-layout="true"/>
-
-
-
-    <!--CATEGORIES-->
-    {.repeated section categories}
-      <a class="category" href="{collection.fullUrl}?category={@|url-encode}">{@}</a>{.alternates with},
+    </div>
     {.end}
-
-    <!--TAGS-->
-    {.repeated section tags}
-      <a class="tag" href="{collection.fullUrl}?tag={@|url-encode}">{@}</a>{.alternates with},
-    {.end}
-
-    <!--SHARE AND LIKE-->
-    {@|like-button}
-    {@|social-button}
-
-
-    <!--LOCATION-->
-    {.section location}
-      {.section addressTitle}
-        {addressTitle}
-        {addressLine1}
-        {addressLine2}
-        {addressCountry}
-      {.end}
-    {.end}
-
-    <!--COMMENTS-->
-    {@|comments}
-
-  </article>
-
-{.end}
-
-
-<!--PAGINATION-->
-{.section pagination}
-  <nav class="blog-item-pagination">
-
-    <!--NEWER PAGE-->
-    {.section prevItem}
-      <a href="{fullUrl}">Newer</a>
-    {.or}
-      <a class="disabled">Newer</a>
-    {.end}
-
-    <!--OLDER PAGE-->
-    {.section nextItem}
-      <a href="{fullUrl}">Older</a>
-    {.or}
-      <a class="disabled">Older</a>
-    {.end}
-
-  </nav>
-{.end}
