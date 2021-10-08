@@ -29,7 +29,9 @@
         </span>
     </div>
 <div class="case-study-block" >
-    
+
+
+
 </div>
 {#  PROJECT END ---------------------------------------------------  }
 {.end}
@@ -66,8 +68,8 @@
 {#  open respective case study window  }
 $('.summary-title').click(function(){
         clearInterval(timerID);
-    console.log("clicked", $('.project-case-study-window:eq('+active+')'))
     $('.case-study-block').css({"animation":"scale-up-bottom .4s cubic-bezier(.39,.575,.565,1.000) both", "position":"fixed", "top":"0", "left": "0", "z-index": "10"})
+    $('body').css("overflow: hidden;")
 })
 
 
@@ -76,6 +78,7 @@ $('.exit-case-study').click(function(){
     $('#case-study-iframe').attr("src", $('#case-study-iframe').attr("src"));
     $('.project-case-study-window:eq('+active+')').hide("slow", function(){
         $('.project-case-study-window:eq('+active+')').css({"animation": "scale-out-bottom .5s cubic-bezier(.55,.085,.68,.53) both", "opacity": "0"})  
+
     })
 })
 
@@ -136,12 +139,10 @@ function mediaQuery(x) {
     $('h1').css({"font-size": "36px"})
     $('#next-slide').css("width", "35px")
     $('#next-slide img').css("margin-left", "0");
-    $('.case-study-text').css({"display":"block"})
+    $('#summary-credits-block').css({"display":"block"})
     $('.case-study-summary').css({"width":"100%"});
     $('.case-study-credits').css({"width":"100%", "margin-top": "25px"})
-    $('.bts-img').css("width", "45%")
-    {#  case study  }
-   
+    $('#bts-photos-grid').css('column-count', '1')
 
   } else {
     $('h1').css("font-size", "48px")
@@ -149,10 +150,10 @@ function mediaQuery(x) {
     $('#next-slide img').css("margin-left", "20px")
 
     {#  case study  }
-    $('.case-study-text').css({"display":"inline-flex"})
+    $('#summary-credits-block').css({"display":"inline-flex"})
     $('.case-study-summary').css({"width":"60%"});
-    $('.case-study-credits').css({"width":"35%", "margin-top":"0px"})
-    $('.bts-img').css("width", "31%")
+    $('.case-study-credits').css({"width":"38%", "margin-top":"0px"})
+    $('#bts-photos-grid').css('column-count', '3')
 
   }
 }
@@ -161,6 +162,19 @@ var x = window.matchMedia("(max-width: 550px)")
 mediaQuery(x) 
 x.addListener(mediaQuery) 
 
+
+
+$('.back-to-top').click(function(){
+  $('.project-case-study-window').scrollTop(0);
+})
+
+$('.expand-button').click(function() {
+  console.log('ya')
+    let elem = document.getElementById("fullcut-iframe");
+
+  elem.requestFullscreen()
+
+})
 
 
 </script>
