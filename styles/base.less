@@ -239,69 +239,48 @@ p {
 .slide-video {width: 100%; height: 100%; left: 0; top: 0; z-index: -2;}
 .featured-info {width: 100%;  bottom: 10%;  z-index: 20;}
 
-  // PROJECT CASE STUDY WINDOW 
-  //###############################################
-  .circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
 
 
-  .project-case-study-window {width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 10; background: #241E1F;}
+// PROJECT CASE STUDY PAGE 
+//#############################################################################################################################################
+.project-case-study-window {width: 100vw; height: 100vh; position: absolute; top: 0; left: 0; z-index: 10; background: #241E1F;}
 
-  .case-study-nav {width: 100%; height: 75px; display: flex; align-items: center; justify-content: center;}
-  .case-study-nav span {width: 50%; padding: 25px; display: flex; align-items: center;}
-  .case-study-nav span img {height: 50px; width: auto;}
+.case-study-nav {width: 100%; height: 75px; display: flex; align-items: center; justify-content: center;}
+.case-study-nav span {width: 50%; padding: 25px; display: flex; align-items: center;}
+.case-study-nav span img {height: 50px; width: auto;}
+.circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
 
-  .case-study-title {background-image: url('../assets/black-textured-box.svg'); background-size: contain; width: 100%; padding: 15px 25px; color: white; }
-  .case-study-title h1 {font-size: 36px!important; text-shadow: 2px 2px #C5843D; border-left: 8px solid #C5843D; border-radius: 4px; padding-left: 7px;}
-  
-  .case-study-block {width: 100%; justify-content: space-between; border: 2px solid lime;}
-
-  .case-study-text {background-color: tan;  width: 100%; border: 2px solid red; padding: 25px; color: black;
-    .case-study-summary {width: 60%; border: 2px solid teal;}
-    .case-study-credits {width: 35%; border: 2px solid teal;}
-    strong {font-weight: 400;}
-    a {background-image: url('../assets/textured-black-button.svg'); color: white; text-transform: uppercase; text-decoration: none; background-size: contain; padding: 25px ; margin: 10px 0; background-position: center center; background-repeat: no-repeat;}
+.case-study-title {background-image: url('../assets/black-textured-box.svg'); background-size: contain; width: 100%; padding: 15px 25px; color: white; 
+  h1 {font-size: 36px!important; text-shadow: 2px 2px #C5843D; border-left: 8px solid #C5843D; border-radius: 4px; padding-left: 7px;}
+}
+.case-study-text {background-color: tan;  width: 100%; padding: 25px; color: black;
+  strong {font-weight: 400;}
+  a {background-image: url('../assets/textured-black-button.svg'); color: white; text-transform: uppercase; text-decoration: none; background-size: contain; padding: 25px ; margin: 10px 0; background-position: center center; background-repeat: no-repeat;}
+}
+.case-study-block {width: 100%; justify-content: space-between; }
+.case-study-summary {width: 60%; }
+.case-study-credits {width: 38%;
+  span {font-size: 12px;}
   }
-
-  .case-study-credits strong { text-transform: uppercase; font-weight: 700;}
-  .case-study-credits br { border-top: 1px solid gray;}
-
-    
-  .case-study-testimonial {width: 100%;   text-align: center; padding: 25px;
-    h5 {opacity: 50%;}
-  }
-
-  #testimonial {text-align: center; font-style: italic; display: inline-flex; justify-content: space-evenly; width: 100%; background-image: url('../assets/quotes.svg'); background-size: cover; background-repeat: no-repeat;
-      p { font-size: 24px; font-weight: 100; padding: 25px; line-height: 32px; }
-      
+.case-study-credits strong { text-transform: uppercase; font-weight: 700;}    
+.case-study-testimonial {width: 100%; text-align: center; padding: 25px;
+  h5 {opacity: 50%;}
+}
+#testimonial {text-align: center; font-style: italic; display: inline-flex; justify-content: space-evenly; width: 100%; background-image: url('../assets/quotes.svg'); background-size: cover; background-repeat: no-repeat;
+    p { font-size: 24px; font-weight: 100; padding: 25px; line-height: 32px; }
 }
 
-.extra-video {width: 48%; border: 2px solid red; float: left; margin: 1%}
+.extra-video {width: 48%;float: left; margin: 1%}
 
-
-  #behindthescenes-grid { color: white; text-align: center; padding: 25px;  margin-top: -5px; padding-bottom: 100px; border: 2px solid salmon; background-image: url('../assets/black-textured-box.svg'); background-size: cover;
-   h6 {font-size: 36px; padding: 25px;}
+#bts { width: 100%; padding: 25px;
+  h6 {font-size: 36px; padding: 25px; color: white; text-align: center;}
   }
+#bts-photos-grid {-webkit-column-count: 3; -moz-column-count: 3; column-count: 3; column-gap: none;}
+#bts-photos-grid img { width: 100% !important; height: auto !important; margin: 5px;}
 
+//end of case study page css
+//#############################################################################################################################################
 
-  #photos {
-    /* Prevent vertical gaps */
-    line-height: 0;
-    -webkit-column-count: 4;
-    -webkit-column-gap:   10px;
-    -moz-column-count:    4;
-    -moz-column-gap:      10px;
-    column-count:         4;
-    column-gap:           10px;  
-  }
-
-  #photos img {
-    /* Just in case there are inline attributes */
-    width: 100% !important;
-    height: auto !important;
-  }
-
-  // .bts-row {width: 100; border: 2px solid peachpuff; height: 100%; display: inline-flex; flex-wrap: wrap; justify-content: space-evenly; }
-  // .bts-img {height: auto;  background-size: cover; width: 31%; background-repeat: no-repeat; background-position: center center;}
 
   // ABOUT SUMMARY (homepage)
   // ##############################

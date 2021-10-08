@@ -1,8 +1,8 @@
 {.section item}
-<div class="project-case-study-window texture" style="border: 2px solid yellow;">
-  <div class="project-case-study-wrapper" style="border: 2px solid magenta">
+<div class="project-case-study-window texture">
+  <div class="project-case-study-wrapper">
     {#  project navigation  }
-    <div class="case-study-nav" style="border: 1px solid magenta; ">
+    <div class="case-study-nav inset-box-shadow">
       <span>               
         <img src="../assets/miller-bros-lettermark.svg" alt="Miller Bros Lettermark Logo" />
       </span>
@@ -20,7 +20,7 @@
 
 
       {#  project details  }
-      <div class="case-study-title">
+      <div class="case-study-title inset-box-shadow">
           <h1>{title}</h1>
           <h5>{customContent.shortdescription}</h5>
       </div>
@@ -75,22 +75,17 @@
           </span>
       </div>
       {#  BEHIND THE SCENES  }
-        <div id="behindthescenes-grid">
+        <div id="bts" class="case-study-block inset-box-shadow fade-into-view-animation">
         <h6> Behind the Scenes </h6>
-           
-          <div id="photos" >
-
-          
+          <div id="bts-photos-grid" >
             {.repeated section customContent.behindthescenes}
                 <img class="bts-img" src="{assetUrl}"/>
               {.end}
-           
           </div>
-           
-            <span style="display: flex; align-items: center; justify-content: center; padding-top: 25px;">
+            <span style="display: flex; align-items: center; justify-content: center; padding: 50px; color: white;">
               <span>
               <h4 class="hover-indication back-to-top" > BACK TO TOP </h4>
-                <button class="circle-button-blue hover-indication" id="toggle-close-{id}" aria-label="Close Portfolio Video Window"></button>
+                <button class="circle-button-blue hover-indication" id="toggle-close-{id}" style="width: 100%;" aria-label="Close Portfolio Video Window"></button>
               </span>
             </span>
         </div> 
@@ -99,7 +94,6 @@
     {.end}
 
 
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
 <script>
 
@@ -110,7 +104,7 @@ function mediaQuery(x) {
     $('#summary-credits-block').css({"display":"block"})
     $('.case-study-summary').css({"width":"100%"});
     $('.case-study-credits').css({"width":"100%", "margin-top": "25px"})
-    $('.bts-img').css("width", "45%")
+    $('#bts-photos-grid').css('column-count', '1')
 
    
 
@@ -119,8 +113,8 @@ function mediaQuery(x) {
     $('#summary-credits-block').css({"display":"inline-flex"})
 
     $('.case-study-summary').css({"width":"60%"});
-    $('.case-study-credits').css({"width":"35%", "margin-top":"0px"})
-    $('.bts-img').css("width", "31%")
+    $('.case-study-credits').css({"width":"38%", "margin-top":"0px"})
+    $('#bts-photos-grid').css('column-count', '3')
 
   }
 }
