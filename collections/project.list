@@ -29,7 +29,7 @@
         </span>
     </div>
 
-<div class="case-study-window" style="display: none" >
+<div class="case-study-window fade-in" style="display: none" >
                <div class="case-study-wrapper fade-in" style="display: none">
                 {#  case study navigation  }
                 <div class="case-study-nav inset-box-shadow">
