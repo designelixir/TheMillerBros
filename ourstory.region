@@ -23,11 +23,72 @@
            <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </div>
       </header>
+      <body style="height: 100%; width: 100vw;">
 
-      <!-- cms content injection point -->
-      <main class="content-container" role="main" data-content-field="main-content">
-       {squarespace.main-content}
-      </main>
+
+        <div style="width: 100vw; height: 50vh; border: 3px solid red; position: absolute; top: 0; left: 0; z-index: -1;" >
+            <div class="vimeo-wrapper">
+            <iframe src="https://player.vimeo.com/video/487056905?background=1&autoplay=1&loop=1&byline=0&title=0"
+                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            
+        </div>
+        <div style="width:100%; border: 10px solid yellow; margin-top: 30vh; ">
+
+        </div>
+        <div style="width: 100vw; height: 100%; border: 9px solid teal; padding: 100px;">
+
+            <div style="width: 100%; height: 100%; ">
+
+                <h1> Telling stories from the road less traveled </h1>
+                <p>Camden & Spencer have unique strengths and distinct differences as individuals. They perceive the world in many of the same ways and are passionate about similar issues. They don’t agree on everything, but their differences make them more balanced and powerful as an entity. They share an unspoken understanding of what needs to be done, and lean into each other's strengths to function as a dynamic team. As directors & producers with extensive experience in all facets of production, they offer a comprehensive approach to production. </p>
+            </div>
+            <div style="width: 100%; height: 100%; display: inline-flex; margin-top: 50px;">
+                <span style="margin: 5%;">
+                    <img style="width: 300px;" src="assets/camden-old.png"/>
+                    <h1> Camden Miller </h1>
+                    <p> Camden & Spencer have unique strengths and distinct differences as individuals. They perceive the world in many of the same ways and are passionate about similar issues. They don’t agree on everything, but their differences make them more balanced and powerful as an entity. They share an unspoken understanding of what needs to be done, and lean into each other's strengths to function as a dynamic team. As directors & producers with extensive experience in all facets </p>
+                </span>
+                <span style="margin: 5%;">
+                    <img style="width: 300px;" src="assets/spencer-old.png"/>
+                    <h1> Spencer Miller </h1>
+                    <p> Camden & Spencer have unique strengths and distinct differences as individuals. They perceive the world in many of the same ways and are passionate about similar issues. They don’t agree on everything, but their differences make them more balanced and powerful as an entity. They share an unspoken understanding of what needs to be done, and lean into each other's strengths to function as a dynamic team. As directors & producers with extensive experience in all facets </p>
+                </span>
+            </div>
+        </div>
+{#  extended family  }
+<span style="background-image: url(assets/textured-strip-wide.png); background-size: 100%;">.</span>
+        <div style="width: 100%;  background-color: #241E1F; padding: 100px; color: white;">
+            <h1> EXTENDED FAMILY </h1>
+            <p>Lorem ipsum dolor sit amet, ex ius tantas legendos, id per primis noster, duo dolore platonem interpretaris ne. Sea ex ocurreret vituperata interesset. Ea vivendum senserit quo. Scaevola molestiae definitionem ei est, mei dicta detraxit mediocritatem et, ad qui detraxit electram torquatos. Eum no viderer eligendi menandri, everti audire fabellas cum id, per ad noster placerat.</p>
+            
+            <br>
+            <div id="bts-photos-grid" >
+                <div class="bts-img"> 
+                    <img src="assets/spencer-old.png">
+                    <h2>First Name Last Name </h2>
+                    <p>Lorem ipsum dolor sit amet, ex ius tantas legendos, id per primis noster, duo dolore platonem interpretaris ne.</p>
+                </div>
+                <div class="bts-img"> 
+                    <img src="assets/spencer-old.png">
+                    <h2>First Name Last Name </h2>
+                    <p>Lorem ipsum dolor sit amet, ex ius tantas legendos, id per primis noster, duo dolore platonem interpretaris ne.</p>
+                </div>
+                <div class="bts-img"> 
+                    <img src="assets/spencer-old.png">
+                    <h2>First Name Last Name </h2>
+                    <p>Lorem ipsum dolor sit amet, ex ius tantas legendos, id per primis noster, duo dolore platonem interpretaris ne.</p>
+                </div>
+                
+            </div>
+        </div>
+    
+
+
+
+
+
+</body>
 
       <!--Footer with open block field -->
       <footer class="site-footer">
