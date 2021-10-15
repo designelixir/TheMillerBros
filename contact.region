@@ -26,22 +26,19 @@
       <body style="height: 100%; width: 100vw;">
 
 
-        <div class="contact-header-bg" >
-            <squarespace:block-field id="contact-background-image" columns="12"/>
+        <div class="contact-header-bg">
+          <div style="width: 100%; overflow: hidden; padding: 25px;">
+                  <h6 class="timberwolf-header" id="timberwolf-header-1" style="padding-left: 25px;"> Let's tell a</h6><h6 id="timberwolf-header-2" class="timberwolf-header" style="font-size: 4em; padding-bottom: 25px; overflow: hidden; "> story together</h6>
+                  <span style="margin-top: -25px;" class="yellow-line"></span>
+            </div>
         </div>
 
-        <div class="contact-header-wrapper" >
-          <div style="width: 100%; overflow: hidden; padding: 25px;">
-                <h6 class="timberwolf-header" id="timberwolf-header-1" style="padding-left: 25px;"> Let's tell a</h6><h6 id="timberwolf-header-2" class="timberwolf-header" style="font-size: 4em; padding-bottom: 25px; overflow: hidden; "> story together</h6>
-                <span style="margin-top: -25px;" class="yellow-line"></span>
-          </div>
-        </div>  
 
-        <div style="width: 100%; border: 2px solid lime; padding: 25px;">
-          <div style="width: 50%; border: 3px solid blue">
+        <div class="inset-box-shadow" style="width: 100%; border: 2px solid lime;  display: inline-flex; justify-content: space-between; margin-top: 67.5vh;">
+          <div style=" border: 3px solid blue; width: 40%; padding: 25px;">
               <squarespace:block-field id="contact-form" columns="12"/>
           </div>
-            <div style="width: 50%; border: 3px solid blue; background: teal;">
+            <div style="padding: 25px; border: 3px solid blue;">
               <squarespace:block-field id="contact-info" columns="12"/>
           </div>
         </div>
