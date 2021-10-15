@@ -168,7 +168,6 @@
             <h6 style="padding-left: 10%; font-size: 72px; margin-top: -25px;">road less traveled </h6>
             <span style="margin-left: 10%; margin-top: -10px; z-index: 3;" class="yellow-line"></span>
         </div>
-            <squarespace:block-field id="about-photo" columns="12"/>
             
 
 
