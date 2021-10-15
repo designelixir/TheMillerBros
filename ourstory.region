@@ -45,13 +45,13 @@
                 <h1 style="font-size: 190px">"</h1>
             </div>
             <div style="width: 100%; height: 100%; display: inline-flex; margin-top: 50px;">
-                <span style="margin: 5%;">
-                     <squarespace:block-field id="camden-photo" columns="12"/>
+                <span style="margin: 5%; width: 45%;">
+                    <span style="width: 100%; height: auto; max-height: 300px;"> <squarespace:block-field id="camden-photo" columns="12"/></span>
                     <h1> Camden Miller </h1>
                     <p> Camden & Spencer have unique strengths and distinct differences as individuals. They perceive the world in many of the same ways and are passionate about similar issues. They don’t agree on everything, but their differences make them more balanced and powerful as an entity. They share an unspoken understanding of what needs to be done, and lean into each other's strengths to function as a dynamic team. As directors & producers with extensive experience in all facets </p>
                 </span>
-                <span style="margin: 5%;">
-                  <squarespace:block-field id="spencer-photo" columns="12"/>
+                <span style="margin: 5%; width: 45%;">
+                  <span style="width: 100%; height: auto;">  <squarespace:block-field id="spencer-photo" columns="12"/></span>
                     <h1> Spencer Miller </h1>
                     <p> Camden & Spencer have unique strengths and distinct differences as individuals. They perceive the world in many of the same ways and are passionate about similar issues. They don’t agree on everything, but their differences make them more balanced and powerful as an entity. They share an unspoken understanding of what needs to be done, and lean into each other's strengths to function as a dynamic team. As directors & producers with extensive experience in all facets </p>
                 </span>
@@ -61,21 +61,27 @@
 <span style="background-image: url(assets/textured-strip-wide.png); background-size: 100%;">.</span>
         <div style="width: 100%;  background-color: #241E1F; padding: 100px; color: white;">
             <h1> EXTENDED FAMILY </h1>
-            <p>Lorem ipsum dolor sit amet, ex ius tantas legendos, id per primis noster, duo dolore platonem interpretaris ne. Sea ex ocurreret vituperata interesset. Ea vivendum senserit quo. Scaevola molestiae definitionem ei est, mei dicta detraxit mediocritatem et, ad qui detraxit electram torquatos. Eum no viderer eligendi menandri, everti audire fabellas cum id, per ad noster placerat.</p>
+            <p>As our storytelling has evolved, so has our team. Our headquarters, affectionately known as The Lab, is an entrepreneurial collective in the heart of downtown Bozeman, Montana. This creative powerhouse hosts an array of photographers, filmmakers, artists, designers, musicians, engineers, and more. Many of whom we frequently collaborate with on projects. We may be a family business at the core, but we define family more by behavior than by blood. We are proud to consider these partners part of our growing team.</p>
             
             <br>
-            <div id="bts-photos-grid" >
-                <div class="bts-img"> 
+            <div id="ext-fam-photos-grid" >
+                <div class="ext-fam"> 
+                    <img src="assets/spencer-old.png">
+                    <h2>Chase DeOpsomer </h2>
+                    <p style="font-style: italicize; font-weight: 400;">Director / Producer / Editor / VFX Artist</p>
+                    <p>Chase is a day-one partner and is the reason the extended family exists and continues to grow. He also happens to be the creative we trust most with our stories.</p>
+                </div>
+                <div class="ext-fam"> 
                     <img src="assets/spencer-old.png">
                     <h2>First Name Last Name </h2>
                     <p>Lorem ipsum dolor sit amet, ex ius tantas legendos, id per primis noster, duo dolore platonem interpretaris ne.</p>
                 </div>
-                <div class="bts-img"> 
+                <div class="ext-fam"> 
                     <img src="assets/spencer-old.png">
                     <h2>First Name Last Name </h2>
                     <p>Lorem ipsum dolor sit amet, ex ius tantas legendos, id per primis noster, duo dolore platonem interpretaris ne.</p>
                 </div>
-                <div class="bts-img"> 
+                <div class="ext-fam"> 
                     <img src="assets/spencer-old.png">
                     <h2>First Name Last Name </h2>
                     <p>Lorem ipsum dolor sit amet, ex ius tantas legendos, id per primis noster, duo dolore platonem interpretaris ne.</p>

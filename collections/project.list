@@ -1,6 +1,6 @@
 
 <script src="../scripts/project.js"></script>
-<div id="featured-project-slider radial-gradient" style="border: 10px solid red;">
+<div id="featured-project-slider radial-gradient" >
     <div id="featured-project-wrapper">
 
 
@@ -18,7 +18,7 @@
 
         {.equal? customContent.customType "LinkedSlider"} 
             <span class="linked-slider-title slide-in-right" style="10px solid teal;">
-                <a href='{customContent.clickthru}' style="text-decoration: none; "><span id="linked-slider-wrapper"  style="width: 50%;">
+                <a href='{customContent.clickthru}' style="text-decoration: none; "><span id="linked-slider-wrapper"  style="width: 70%;">
                     <h1 class="link-title">{title}</h1>
                     <h4 style="color: white; margin-left: 39px;">{body}</h4> 
                 </span></a>
@@ -159,7 +159,7 @@
     <img src="../assets/nav-arrow.svg" />
 </div>
 
-<section class="texture inset-box-shadow" style="background: #241E1F; width: 100vw!important; border: 1px solid red;   ">
+<section class="texture inset-box-shadow" style="background: #241E1F; width: 100vw!important;   ">
 
     <span style="background: #241E1F; display: flex; align-items: center; justify-content: center; width: 100%;"> <img src="../assets/nav-arrow.svg" style="transform: rotate(90deg); width: 10px; "/> </span>
     <div class="about">
@@ -168,6 +168,9 @@
             <h6 style="padding-left: 10%; font-size: 72px; margin-top: -25px;">road less traveled </h6>
             <span style="margin-left: 10%; margin-top: -10px; z-index: 3;" class="yellow-line"></span>
         </div>
+            <squarespace:block-field id="about-photo" columns="12"/>
+            
+
 
         
     </div>
