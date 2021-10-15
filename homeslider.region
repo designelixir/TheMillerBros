@@ -24,6 +24,118 @@
         </div>
       </header>
 
+
+
+<div class="portfolio-grid">
+{.repeated section items}
+<script>console.log({@|json-pretty})
+
+$(document).ready(function() {
+  function REMOVEANIMATION() {     
+    $(".portfolio-item").removeClass("tilt-in-tl");
+    $(".portfolio-item").removeClass("fade-in");
+ }
+ setTimeout(REMOVEANIMATION, 1000)
+});
+
+
+
+</script>
+
+{#  Click Video in Grid, Open Video  }
+<div class="portfolio-item-window fade-in" id="portfolio-{id}">
+    <span class="portfolio-nav linear-gradient">
+        <span><h1>{title}</h1></span>
+        <span style="min-width: 110px; display: flex; justify-content: center; align-items: center;">
+            <button id="toggle-fullscreen-{id}" class="expand-button hover-indication" aria-label="Toggle Full Screen Video Window"></button>
+           <button class="circle-button-blue hover-indication" id="toggle-close-{id}" aria-label="Close Portfolio Video Window"></button>
+        </span>
+    </span>
+    <span style="margin-bottom: 25px;"> <h4 style="color: white; padding: 0px 25px;">Here is a potential spot for a short sentence. </h4></span>
+
+
+    <div id="iframe-container" style="padding:56.25% 25px 0 0; position:relative; background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original'); background-size: cover; background-repeat: no-repeat;"> 
+      <img id="play-prompt-{id}" src="../assets/play.svg" alt="Play" style=" position: absolute; margin: auto; z-index: 12; top: 0; left: 0; right: 0; bottom: 0;"/>
+
+      <iframe id="portfolio-iframe-{id}" src="" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+</div>
+{#  individual grid item  }
+  <div id="post-{id}" class="portfolio-item fade-in tilt-in-tl {@|item-classes}" data-item-id="{id}" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original'); ">
+    <div class="portfolio-item-title" >
+        <h3 class="title" data-content-field="title">{title}</h3>
+        <button class="post-{id}" class="portfolio-item-play fade-in" style="display: none;"><h6>PLAY</h6></button>
+    </div>
+  </div>
+
+    <script> 
+
+
+    
+
+    $('#iframe-container').click(function(){
+      console.log("hello???")
+      $('#play-prompt h6').css("display", "none")
+    })
+
+    $( "#toggle-fullscreen-{id}" ).click (function(){
+    $( "#portfolio-iframe-{id}" )[0].src= 'https://player.vimeo.com/video/'+ '{customContent.vimeocode}' + '&autoplay=1&title=0&byline=0&portrait=0';
+    requestFullscreen($( "#portfolio-iframe-{id}" )[0]);
+
+    });
+
+    function requestFullscreen(el){
+        if (el.requestFullscreen) {
+                el.requestFullscreen();
+            } else if (el.msRequestFullscreen) {
+                el.msRequestFullscreen();
+            } else if (el.mozRequestFullScreen) {
+                el.mozRequestFullScreen();
+            } else if (el.webkitRequestFullscreen) {
+                el.webkitRequestFullscreen();
+            }
+        }
+
+    $('#post-{id}').bind('click', function(){
+        $('#portfolio-{id}').css('display', 'block');
+        $('html').css("overflow", "hidden");
+        var vimeoURL = 'https://player.vimeo.com/video/'+ '{customContent.vimeocode}' + '?=&title=0&byline=0&portrait=0';
+        $('#portfolio-iframe-{id}').attr('src', vimeoURL)
+    })
+
+    $('#toggle-close-{id}').bind('click', function(){
+       $('html').css("overflow", "scroll");
+      $('#portfolio-{id}').css('display', 'none');
+    })
+
+
+    $('#toggle-close-project').click(function(){
+        $('.project-case-study-window').css("display", "none")
+    })
+
+    $('#toggle-open-project').click(function(){
+        console.log('clicky')
+        $('.project-case-study-window').css("display", "block")
+    })
+    </script>
+
+{.or}
+
+<p>:-( no videos.</p>
+
+{.end}
+</div>
+
+
+
+
+
+
+
+
+
+
       <!-- cms content injection point -->
       <main class="content-container" role="main" data-content-field="main-content">
        {squarespace.main-content}
