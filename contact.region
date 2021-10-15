@@ -26,13 +26,13 @@
       <body style="height: 100%; width: 100vw;">
 
 
-        <div style="width: 100vw; height: 70vh; border: 3px solid red; position: absolute; top: 0; left: 0; z-index: -1;" >
+        <div style="width: 100vw; height: 70vh; border: 3px solid red; position: absolute; top: 0; left: 0; z-index: -1; " >
             <squarespace:block-field id="contact-background-image" columns="12"/>
         </div>
         {#  <div style="width:100%; border: 10px solid yellow; margin-top: 10vh; ">
 
         </div>  }
-        <div style="width: 100vw; height: 100%; border: 9px solid teal; padding: 100px;">
+        <div style="width: 100vw; height: 100%; border: 9px solid teal; padding: 100px; margin: 50px 0; ">
 
             <div style="width: 100%; height: 100%; ">
 
