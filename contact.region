@@ -38,8 +38,12 @@
         </div>  
 
         <div style="width: 100%; border: 2px solid lime; padding: 25px;">
+          <div style="width: 50%; border: 3px solid blue">
               <squarespace:block-field id="contact-form" columns="12"/>
-
+          </div>
+            <div style="width: 50%; border: 3px solid blue; background: teal;">
+              <squarespace:block-field id="contact-info" columns="12"/>
+          </div>
         </div>
        
 
