@@ -34,8 +34,8 @@
         </div>
 
 
-        <div class="inset-box-shadow" style="  display: inline-flex; justify-content: space-between; margin-top: calc(70vh + 25px);">
-          <div style="; width: 40%; padding: 25px;">
+        <div class="inset-box-shadow" style="width: 100vw;  display: inline-flex; justify-content: space-between; margin-top: calc(70vh + 25px);">
+          <div style=" width: 40%; padding: 25px;">
               <squarespace:block-field id="contact-form" columns="12"/>
           </div>
             <div style="padding: 25px; width: 50%; ">
