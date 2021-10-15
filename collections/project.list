@@ -1,15 +1,23 @@
 
+
 <div id="featured-project-slider radial-gradient">
     <div id="featured-project-wrapper">
 
 
 {.repeated section items}
+<script>console.log({@|json-pretty})</script>
 
 {#  PROJECT SLIDE ---------------------------------------------------  }
     <div class="project" data-item-id="{id}">
         <div class="vimeo-wrapper slide-in-right" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');" >
             <iframe class="backgroundiframe" src='https://player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
+
+
+{#  FOR LINKED SLIDERS   }
+        {.if customContent.customType} 
+        <script> console.log('ya!!!')</script>
+
         <span style="height: 25%;"></span>
         <span class="summary-title toggle-case-study slide-in-right">
             <span id="summary-title-button-wrapper">
@@ -27,7 +35,25 @@
              {#  PROJECT CASE STUDY ---------------------------------------------------  }
                     
         </span>
+
+        {.or}
+        <script> console.log('na!!!')</script>
+        <span style="width: 100%; height: 100%; border: 2px solid red;">
+            <span style="width: 100%; height: 25%; border: 2px solid lime;"></span>
+            <span style="width: 50%; height: 75%; border: 2px solid yellow; display: inline-flex; align-items: center; justify-content: flex-start;">
+            
+            <h6 style="font-size: 100px; color: white;">{title}</h6>
+            </span>
+
+
+
+        </span>
+        
+        
+          {.end}
     </div>
+
+  
 
 <div class="case-study-window fade-in" style="display: none" >
                <div class="case-study-wrapper fade-in" style="display: none">
