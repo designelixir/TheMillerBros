@@ -38,7 +38,7 @@
         </div>  
 
         <div style="width: 100%; border: 2px solid lime; padding: 25px;">
-              <squarespace:block-field id="contact-background-image" columns="12"/>
+              <squarespace:block-field id="contact-form" columns="12"/>
 
         </div>
        
