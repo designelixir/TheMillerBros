@@ -310,7 +310,7 @@ footer {width: 100vw; position: relative; text-align: center; display: inline-bl
 // HOMEPAGE FEATURED PROJECT SLIDER
 //####################################################################################################
 #featured-project-slider {width: 100vw; float: left; z-index: 2; background: #241E1F; }
-#featured-project-wrapper {height: ~"calc(100vh - 150px)"; width: 100%;}
+#featured-project-wrapper {height: ~"calc(100vh - 200px)"; width: 100%; }
 .project {width: 100%; height: ~'calc(100% - 50px)'; display: none; }
 .vimeo-wrapper {backdrop-filter: blur(10px); position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; overflow: hidden; background-size: cover; background-repeat: no-repeat; background-position: center center;}
 .backgroundiframe {width: 100vw; height: 56.25vw; /* Given a 16:9 aspect ratio, 9/16*100 = 56.25 */ min-height: 100vh; min-width: 177.77vh; /* Given a 16:9 aspect ratio, 16/9*100 = 177.77 */position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background-size: cover; background-repeat: no-repeat;}
@@ -328,10 +328,18 @@ footer {width: 100vw; position: relative; text-align: center; display: inline-bl
   img {margin-left: 20px;}
 }
 #next-slide:hover {background-size: 105%; cursor: pointer;}
-#project-counter { width: ~"calc(100% - 50px)";  height: 25px; display: inline-flex; align-items: center; justify-content: flex-end;
+#project-counter { width: ~"calc(100% - 50px)"; margin-top: -50px;  height: 25px; display: inline-flex; align-items: center; justify-content: flex-end;
   .counter { margin: 0 10px; height: 10px; }
 }
 
+//linked slider
+.linked-slider-title { width: ~"calc(100% - 50px)"; height: 75%; display: flex; align-items: flex-end; animation-delay: 250ms; padding: 25px;}
+#linked-slider-button-wrapper {display: inline-flex; align-items: center;}
+.link-title {font-size: 100px!important; line-height: 80px; color: white; font-family: 'TimberWolf-Regular';
+}
+.link-toggle-arrow { background-image: url('../assets/blue-textured-circle.svg');  background-size: contain; background-position: center center; background-repeat: no-repeat; width: 125px; height: 125px; margin: 0 25px 0 5px;  display: flex; align-items: center; justify-content: center;}
+.link-toggle-arrow-wrapper { display: flex; align-items: center; justify-content: center; width: 90%; height: 90%; background-image: url('../assets/case-study-circle.svg'); background-size: 90%; background-position: center center; background-repeat: no-repeat;}
+.link-toggle-arrow-wrapper:hover { width: 95%; height: 95%; background-size: 90%;}
 
   // PROJECT CASE STUDY PAGE 
 //#############################################################################################################################################
