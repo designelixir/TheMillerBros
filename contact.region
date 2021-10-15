@@ -34,11 +34,11 @@
         </div>
 
 
-        <div class="inset-box-shadow" style="width: 100%; border: 2px solid lime;  display: inline-flex; justify-content: space-between; margin-top: calc(70vh + 25px);">
-          <div style=" border: 3px solid blue; width: 40%; padding: 25px;">
+        <div class="inset-box-shadow" style="  display: inline-flex; justify-content: space-between; margin-top: calc(70vh + 25px);">
+          <div style="; width: 40%; padding: 25px;">
               <squarespace:block-field id="contact-form" columns="12"/>
           </div>
-            <div style="padding: 25px; width: 50%; border: 3px solid blue;">
+            <div style="padding: 25px; width: 50%; ">
               <squarespace:block-field id="contact-info" columns="12"/>
           </div>
         </div>
