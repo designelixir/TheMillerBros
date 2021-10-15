@@ -33,24 +33,25 @@
             </div>
             
         </div>
-        <div style="width:100%; border: 10px solid yellow; margin-top: 10vh; ">
-          <img src="assets/concept.png" style="width: 100%" />
+        <div style="width:100%; height: 50vh; margin-top: 17vh; display: flex; align-items: flex-end; justify-content: center; background-image: url('assets/concept.png'); background-size: cover; background-position: top center;">
+          <h6 style="font-size: 72px; padding: 25px; color: white; text-align: center;"> Telling stories from the road less traveled </h6>
         </div>
         <div style="width: 100vw; height: 100%; border: 9px solid teal; padding: 100px;">
 
-            <div style="width: 100%; height: 100%; ">
-
-                <h1> Telling stories from the road less traveled </h1>
-                <p>Camden & Spencer have unique strengths and distinct differences as individuals. They perceive the world in many of the same ways and are passionate about similar issues. They don’t agree on everything, but their differences make them more balanced and powerful as an entity. They share an unspoken understanding of what needs to be done, and lean into each other's strengths to function as a dynamic team. As directors & producers with extensive experience in all facets of production, they offer a comprehensive approach to production. </p>
+            <div style="width: 100%; height: 100%; display: inline-flex; align-items: center; justify-content: space-between; text-align: center; ">
+              <h1 style="font-size: 190px!important">"</h1>
+                
+                <p style="padding-top: 25px; font-size: 36px; font-weight: 100; font-style: italicize; line-height: 40px;">What is so important for the creative process with branded content is that you have true authenticity. Spencer & Camden are so thoughtful & passionate, their connection to the client goes beyond work, it’s personal. <br> <i>Deny Staggs, CEO Vision Hawk Films</i> </p>
+                <h1 style="font-size: 190px">"</h1>
             </div>
             <div style="width: 100%; height: 100%; display: inline-flex; margin-top: 50px;">
                 <span style="margin: 5%;">
-                    <img style="width: 300px;" src="assets/camden-old.png"/>
+                     <squarespace:block-field id="camden-photo" columns="12"/>
                     <h1> Camden Miller </h1>
                     <p> Camden & Spencer have unique strengths and distinct differences as individuals. They perceive the world in many of the same ways and are passionate about similar issues. They don’t agree on everything, but their differences make them more balanced and powerful as an entity. They share an unspoken understanding of what needs to be done, and lean into each other's strengths to function as a dynamic team. As directors & producers with extensive experience in all facets </p>
                 </span>
                 <span style="margin: 5%;">
-                    <img style="width: 300px;" src="assets/spencer-old.png"/>
+                  <squarespace:block-field id="spencer-photo" columns="12"/>
                     <h1> Spencer Miller </h1>
                     <p> Camden & Spencer have unique strengths and distinct differences as individuals. They perceive the world in many of the same ways and are passionate about similar issues. They don’t agree on everything, but their differences make them more balanced and powerful as an entity. They share an unspoken understanding of what needs to be done, and lean into each other's strengths to function as a dynamic team. As directors & producers with extensive experience in all facets </p>
                 </span>
