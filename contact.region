@@ -26,12 +26,8 @@
       <body style="height: 100%; width: 100vw;">
 
 
-        <div style="width: 100vw; height: 50vh; border: 3px solid red; position: absolute; top: 0; left: 0; z-index: -1;" >
-            <div class="vimeo-wrapper">
-            <iframe src="https://player.vimeo.com/video/487056905?background=1&autoplay=1&loop=1&byline=0&title=0"
-                    frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-            
+        <div style="width: 100vw; height: 70vh; border: 3px solid red; position: absolute; top: 0; left: 0; z-index: -1;" >
+            <squarespace:block-field id="contact-background-image" columns="12"/>
         </div>
         <div style="width:100%; border: 10px solid yellow; margin-top: 10vh; ">
           <img src="assets/concept.png" style="width: 100%" />
