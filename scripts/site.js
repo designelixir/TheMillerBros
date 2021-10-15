@@ -21,6 +21,12 @@
 
   function mediaQuery(x) {
     if (x.matches) { 
+      $('#upper-footer-wrapper').css("display", "block")
+      $('#footer-left').css({"width":"100%", "display":"block", "height": "225px"});
+      $('#footer-right').css("width","100%")
+      $('#header-logo').attr("src", "assets/miller-bros-lettermark.svg")
+      $('.site-navigation').css("display", "none")
+      $('.mobile-navigation').css("display", "block");    
       $('h1').css({"font-size": "36px"})
       $('#next-slide').css("width", "35px")
       $('#next-slide img').css("margin-left", "0");
@@ -33,6 +39,12 @@
     } 
     
      else {
+      $('#upper-footer-wrapper').css("display", "inline-flex")
+      $('#footer-left').css({"width":"60%", "display":"inline-flex" , "height": "300px"});
+      $('#footer-right').css("width", "40%")
+      $('#header-logo').attr("src", "assets/miller-bros-logo-white.svg");
+      $('.site-navigation').css("display", "block")
+      $('.mobile-navigation').css("display", "none");    
       $('h1').css("font-size", "48px")
       $('#next-slide').css("width", "50px")
       $('#next-slide img').css("margin-left", "20px")
