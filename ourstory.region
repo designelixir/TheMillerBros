@@ -33,8 +33,8 @@
             </div>
             
         </div>
-        <div style="width:100%; border: 10px solid yellow; margin-top: 30vh; ">
-
+        <div style="width:100%; border: 10px solid yellow; margin-top: 10vh; ">
+          <img src="assets/concept.png" style="width: 100%" />
         </div>
         <div style="width: 100vw; height: 100%; border: 9px solid teal; padding: 100px;">
 

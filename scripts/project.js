@@ -48,8 +48,6 @@ var timerID =
     }, 10000);
 
 
-//click linked slider 
-
 
 
 

@@ -1,11 +1,10 @@
 
-
+<script src="../scripts/project.js"></script>
 <div id="featured-project-slider radial-gradient" style="border: 10px solid red;">
     <div id="featured-project-wrapper">
 
 
 {.repeated section items}
-<script>console.log({@|json-pretty})</script>
 
 {#  SLIDE ---------------------------------------------------  }
 
@@ -177,4 +176,3 @@
 
 
 
-<script src="../scripts/project.js"></script>
