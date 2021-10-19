@@ -177,7 +177,9 @@
 
     <section class="inset-box-shadow">
         <div style="width: 100%; padding: 25px;">
-
+<main class="content-container inset-box-shadow" id="our-story-content" role="main" data-content-field="main-content" >
+       {squarespace.main-content}
+      </main>
 
 
         </div>
