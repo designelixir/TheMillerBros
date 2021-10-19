@@ -9,26 +9,49 @@
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
-    <div class="site-container">
+    
 
       <header class="site-header">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
 
-      <div class="site-header-image-container" style="background-image: url('{collection.mainImage.assetUrl}')">
+      <div class="site-header-image-container" style="border: 2px solid teal; background-image: url('{collection.mainImage.assetUrl}')">
         <div class="site-header-image-wrapper fade-in">
             <h6> Let's tell a <br><span class="yellow-line" id="contact-title-2" style="font-size: 6vw;"> story together</span></h6>
+        </div>
+      </div>
+
+      <div class="contact-card tan-texture" style=" transform: rotate(15deg); width: 600px; border-radius: 24px; height: 400px; position: absolute; right: -25px; top: 60vh; border: 10px solid #62abd0; background-color: #f9e6c8; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .5));">
+        <div class="contact-card-wrapper" style="width: 100%; height: 100%; padding: 15px; display: flex; align-items: center; justify-content: center;">
+
+          <div class="contact-card-column" style="width: 50%; height: 100%; display: flex; align-items: center; justify-content: center; border-right: 1px solid black;">
+          <span style="text-align: center;">
+            <h4>Spencer &amp; Camden </h4>
+            <h5 style="font-size: 18px;">The Miller Bros </h5>
+            <p><a style="color: black;" href="https://goo.gl/maps/7FHgvHbH9tMqpPpW6" target="_blank">3 S. Black Street, <br> Bozeman, MT</a> </p>
+            <div class="mobile-navigation-footer" style="padding-top: 25px">
+            <a href="https://vimeo.com/themillerbros" target="_blank"><img class="social-icon" src="../assets/social/vimeo.svg" alt="vimeo icon"/></a>
+            <a href="https://www.instagram.com/miller.bros/" target="_blank"><img class="social-icon" src="../assets/social/instagram.svg" alt="instagram icon"/></a>
+            <a href="mailto:stories@themillerbros.com" target="_blank"><img class="social-icon" src="../assets/social/email.svg" alt="email icon"/></a>
+        </div>
+          </span>
+          </div>
+          <div class="contact-card-column" style="width: 50%; height: 100%;  display: flex; align-items: center; justify-content: center; padding: 10%;">
+            <img src="assets/messy-icon.svg" style="width: 100%;"/>
+          </div>
+
 
         </div>
       </div>
 
 
       <!-- cms content injection point -->
-      <main class="content-container" role="main" data-content-field="main-content">
+      <main class="texture inset-box-shadow" role="main" data-content-field="main-content" id="contact-page-main-content" style='color: white; font-size: 1em;'>
+      <h1> Send us a message </h1>
        {squarespace.main-content}
       </main>
 
-    </div>
+    
 
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
@@ -44,7 +67,7 @@
     </div>
     <div class="footer-right">
         <div style="width: 50%; border: 1px solid red; text-align: center;">
-          <img style="height: 100px; margin: 5px;" src="../assets/Lab-Logo.svg"/>
+          <a href="https://www.instagram.com/bozemanlab/" target="_blank"><img style="height: 100px; margin: 5px;" src="../assets/Lab-Logo.svg"/></a>
           <p> A creative, collaborative studio.</p><br>
           <p>3 S. Black Street<br>Bozeman, MT</p>
 
