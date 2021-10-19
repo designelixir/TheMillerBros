@@ -5,73 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="https://use.typekit.net/ctq0biw.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- include system scripts, page meta, and header code injection -->
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" style="overflow-x: hidden;">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
 
     <div class="site-container">
 
       <header class="site-header">
-      <!-- site title or logo -->
-        <div class="site-logo fade-in">
-          <a href="/"><img id="header-logo" style="height: 80px; width: auto;  margin: 10px 5px;" src="{squarespace.siteLogo}" alt="The Miller Bros Logo"/></a>
-        </div>
-        
-        <!-- site navigation -->
-        <div class="site-navigation-container fade-in">
-           <squarespace:navigation navigationId="siteNav" template="site-navigation" />
-        </div>
+        <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
-      <body style="height: 100%; width: 100vw;">
 
+      <div class="site-header-image-container" style="background-image: url('{collection.mainImage.assetUrl}')">
+        <div class="site-header-image-wrapper fade-in">
+            <h6> Let's tell a <br><span class="yellow-line" id="contact-title-2" style="font-size: 6vw;"> story together</span></h6>
 
-        <div class="contact-header-bg">
-          <div style="width: 100%; overflow: hidden; padding: 25px;">
-                  <h6 class="timberwolf-header" id="timberwolf-header-1" style="padding-left: 25px;"> Let's tell a</h6><h6 id="timberwolf-header-2" class="timberwolf-header" style="font-size: 4em; padding-bottom: 25px; overflow: hidden; "> story together</h6>
-                  <span style="margin-top: -25px;" class="yellow-line"></span>
-            </div>
         </div>
+      </div>
 
 
-        <div class="inset-box-shadow" style="width: 100vw;  display: inline-flex; justify-content: space-between; margin-top: 70vh;">
-          <div style=" width: 40%; padding: 25px;">
-              <squarespace:block-field id="contact-form" columns="12"/>
-          </div>
-            <div style="padding: 25px; width: 50%; ">
-              <squarespace:block-field id="contact-info" columns="12"/>
-          </div>
-        </div>
-       
+      <!-- cms content injection point -->
+      <main class="content-container" role="main" data-content-field="main-content">
+       {squarespace.main-content}
+      </main>
 
-
-
-
-</body>
-
-      <!--Footer with open block field -->
-      <footer class="site-footer">
-        <div id="upper-footer-wrapper" class="texture">
-          <span id="footer-left" class="inset-bottom">
-              <img src="assets/miller-bros-lettermark-black.svg" style="height: 125px;" alt="the Miller Bros lettermark logo" />
-              <squarespace:block-field id="blockField1" columns="12"/>
-          </span>
-
-          <span id="footer-right">
-            <span>
-              <squarespace:block-field id="blockField2" columns="12"/>
-            </span>
-          <span> 
-      
-        </div>
-
-        {#  copyright and credits  }
-        <div id="lower-footer-wrapper" class="texture">
-          <p>Copyright The Miller Bros LLC &copy; 2021 </p>
-
-          <a class="hover-indication" href="https://designelixir.studio" target="_blank" style='font-size: 12px;'> Made with &hearts; by Design Elixir</a>
-        </div>
-      </footer>
     </div>
 
     <!-- combo and minify scripts when not logged in -->
@@ -81,25 +37,32 @@
     {squarespace-footers}
 
   </body>
+  <footer class="texture">
+    <div class="footer-wrapper tan-texture inset-box-shadow">
+    <div class="footer-left" >
+      <img  style="height: 100%; max-height: 100px;" src="../assets/Miller-Bros-Lettermark-Black.svg"/>
+    </div>
+    <div class="footer-right">
+        <div style="width: 50%; border: 1px solid red; text-align: center;">
+          <img style="height: 100px; margin: 5px;" src="../assets/Lab-Logo.svg"/>
+          <p> A creative, collaborative studio.</p><br>
+          <p>3 S. Black Street<br>Bozeman, MT</p>
+
+        </div>
+        <div style="width: 50%; border: 1px solid red; display: flex; flex-direction: column; ">
+          <squarespace:block-field id="footer-social-icons" columns="12"/>
+          <squarespace:block-field id="footer-button" columns="12"/>
+
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="footer-navigation-wrapper">
+        <p>Copyright The Miller Bros LLC &copy; 2021 </p>
+        <a href="https://designelixir.studio" target="_blank" style='font-size: 12px; color: white; opacity: 0.75'> Made with &hearts; by Design Elixir</a>
+  </div>
+  </footer>
+
 </html>
-
-<script>
-  function mediaQuery(x) {
-    if (x.matches) { 
-      $('#timberwolf-header-1').css("font-size", "1.5em");
-      $('#timberwolf-header-2').css("font-size", "2.5em");
-      $(".contact-header-wrapper").css({"height":"40vh"});
-    } else {
-      $('#timberwolf-header-1').css("font-size", "2em");
-      $('#timberwolf-header-2').css("font-size", "4em");
-      $('.contact-header-wrapper').css({"height":"60vh"})
-
-      
-    }
-  }
-  
-  var x = window.matchMedia("(max-width: 550px)")
-  mediaQuery(x) 
-  x.addListener(mediaQuery) 
-
-</script>
+<script>console.log({@|json-pretty})</script>
