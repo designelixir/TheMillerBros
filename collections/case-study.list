@@ -1,0 +1,81 @@
+
+<script src="../scripts/project.js"></script>
+<div id="featured-project-slider radial-gradient" >
+    <div id="featured-project-wrapper">
+
+
+{.repeated section items}
+
+{#  SLIDE ---------------------------------------------------  }
+
+    <div class="project" data-item-id="{id}">
+        <div class="vimeo-wrapper slide-in-right" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');" >
+            <iframe class="backgroundiframe" src='https://player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        </div>
+
+
+{#  LINKED SLIDERS  }
+
+        {.equal? customContent.customType "LinkedSlider"} 
+            <span class="linked-slider-title slide-in-right" style="10px solid teal;">
+                <a href='{customContent.clickthru}' style="text-decoration: none; "><span id="linked-slider-wrapper"  style="width: 70%;">
+                    <h1 class="link-title">{title}</h1>
+                    <h4 style="color: white; margin-left: 39px;">{body}</h4> 
+                </span></a>
+            </span>
+        {.or}
+       
+{#  CASE STUDY SLIDERS}
+
+        <span style="height: 10%; border: 3px solid teal;"></span>
+        <span class="summary-title toggle-case-study slide-in-right" style="border: 3px solid lime;">
+            <span id="summary-title-button-wrapper">
+
+                <span id="title-brand-wrapper"  style="width: 90%;">
+                    <h1 class="project-title">{title}</h1>
+                    <h4 style="color: white; margin-left: 39px;">{customContent.brand}</h4> 
+                </span>
+                <span class="case-study-toggle-arrow">
+                    <span class="case-study-toggle-arrow-wrapper">
+                        <img style="padding-left: 10px; width: 50%;"src="../assets/arrow.svg"/>
+                    </span>                            
+                </span>
+            </span>                    
+        </span>
+        {.end}
+    </div>
+
+
+
+{#  PROJECT END ---------------------------------------------------  }
+{.end}
+        
+    </div>
+</div>
+<span id="project-counter">
+    <img src="../assets/tan-textured-circle.svg" class="counter">
+</span>
+
+<div id="next-slide">
+    <img src="../assets/nav-arrow.svg" />
+</div>
+
+<section class="texture inset-box-shadow" style="background: #241E1F; width: 100vw!important;   ">
+
+    <span style="background: #241E1F; display: flex; align-items: center; justify-content: center; width: 100%;"> <img src="../assets/nav-arrow.svg" style="transform: rotate(90deg); width: 10px; "/> </span>
+    <div class="about">
+        <div class="about-header">
+            <h6 style="font-size: 48px;"> Telling stories from the  </h6>
+            <h6 style="padding-left: 10%; font-size: 72px; margin-top: -25px;">road less traveled </h6>
+            <span style="margin-left: 10%; margin-top: -10px; z-index: 3;" class="yellow-line"></span>
+        </div>
+            
+
+
+        
+    </div>
+
+</section>
+
+
+
