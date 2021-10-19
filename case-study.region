@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-    <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
+    <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture">
         <header class="site-header">
             <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </header>
@@ -56,9 +56,7 @@
                                             <h1 class="project-title">{title}</h1>
                                             <h4 class="project-brand">{customContent.brand}</h4> 
                                         </span>
-                                        <span class="case-study-toggle-arrow">
-                                            <img style="padding-left: 10px; width: 50%;"src="../assets/arrow.svg"/>                       
-                                        </span>
+                                        
                                     </span>                    
                                 </span>
                             </div>
@@ -100,7 +98,8 @@
                                 <span class="case-study-block" id="summary-credits-block">
                                     <span class="summary">
                                         <h4 style="padding-bottom: 10px; width: 50%;" class="yellow-line">Project Summary </h4>   
-                                        <p style="line-height: 14px;">{body}</p>
+                                        <script>var fixed = body.stringify(); console.log(fixed) </script>
+                                        <p>{body}</p>
                                     </span>
                                     <span class="credits">
                                         <h4 style="padding-bottom: 10px" class="yellow-line"> Credits </h4>
@@ -145,19 +144,16 @@
                                 </span>
                             </div>
                             {#  BEHIND THE SCENES  }
-                                <div id="bts" class="case-study-block inset-box-shadow fade-into-view-animation">
-                                <h6 style="text-align: center;"> Behind the Scenes </h6>
+                                <div id="bts" class="inset-box-shadow">
+                                    <h6 style="text-align: center;"> Behind the Scenes </h6>
 
-                                <div id="bts-photos-grid" >
-                                    {.repeated section customContent.behindthescenes}
-                                        <img class="bts-img" src="{assetUrl}"/>
-                                    {.end}
-                                </div>
+                                    <div id="bts-photos-grid" >
+                                        {.repeated section customContent.behindthescenes}
+                                            <img class="bts-img" src="{assetUrl}"/>
+                                        {.end}
+                                    </div>
                                     <span style="display: flex; align-items: center; justify-content: center; padding: 50px; color: white;">
-                                    <span>
-                                    <h4 class="hover-indication back-to-top" > BACK TO TOP </h4>
                                         <button class="circle-button-blue toggle-case-study" id="toggle-close-{id}" style="width: 100%;" aria-label="Close Portfolio Video Window"></button>
-                                    </span>
                                     </span>
                                 </div> 
                         </div>
@@ -174,16 +170,10 @@
         </div>
         
     </section>
-
-    <section class="inset-box-shadow">
-        <div style="width: 100%; padding: 25px;">
-<main class="content-container inset-box-shadow" id="our-story-content" role="main" data-content-field="main-content" >
-       {squarespace.main-content}
-      </main>
+  
 
 
-        </div>
-    </section>
+
 
     <footer class="texture">
     <div class="footer-wrapper tan-texture inset-box-shadow">
@@ -216,14 +206,146 @@
 
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-    <squarespace:script src="case-study.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
 
     <!-- other scripts, and footer code injection -->
     {squarespace-footers}
 
   </body>
 </html>
-<script>console.log({@|json-pretty})
+<script>
+
+
+var allSlides = document.getElementsByClassName('project');
+console.log(allSlides)
+var active = 0;
+var counter = allSlides.length;
+
+
+
+  $('.counter').click(function(){
+    console.log('something happened')
+  })
+  
+  $('#next-slide').click(function(){
+    $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
+    if(counter > active + 1){active++;} 
+    else {active = 0;}
+    var activate = allSlides[active];
+    activate.scrollIntoView();
+    activate.style.left = "0";
+    $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
+    clearInterval(timerID);
+  })
+  
+  var timerID = 
+  setInterval(function() {
+  $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
+      if(active >= counter - 1){active = 0;} 
+      else {active = active + 1;}
+      var activate = allSlides[active];
+      activate.scrollIntoView();
+      $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
+  }, 10000);
+
+
+$('.toggle-case-study').click(function(){
+  clearInterval(timerID);
+  var count = $('.toggle-case-study').data("count") || 0;
+  $('.toggle-case-study').data("count", ++count);
+  console.log("count is "+count)
+  if ((count % 2) != 0 ){
+    $('.case-study-window:eq('+active+')').slideDown(500);
+  } else {
+    $('.case-study-window:eq('+active+')').slideUp(500);
+    $('.case-study-iframe:eq('+active+')').attr("src", $('.case-study-iframe:eq('+active+')').attr("src"));
+    $('.additional-video-iframe-one:eq('+active+')').attr("src", $('.additional-video-iframe-one:eq('+active+')').attr("src"));
+    $('.additional-video-iframe-two:eq('+active+')').attr("src", $('.additional-video-iframe-two:eq('+active+')').attr("src"));
+  }
+});
+
+var sliderTop = $("#featured-projects").offset().top; //gets offset of header
+var sliderHeight = $("#featured-projects").outerHeight(); //gets height of header
+
+$(window).scroll(function(){
+    if($(window).scrollTop() > (sliderTop + sliderHeight)){
+      clearInterval(timerID);
+    }
+});
+
+
+// LOADING BAR 
+document.onreadystatechange = function(e){
+  if(document.readyState=="interactive"){
+    var all = document.getElementsByTagName("*");
+    for (var i=0, max=all.length; i < max; i++) {
+      set_ele(all[i]);
+    }
+  }
+}
+function check_element(ele){
+  var all = document.getElementsByTagName("*");
+  var totalele=all.length;
+  var per_inc=100/all.length;
+
+  if($(ele).on()){
+    var prog_width=per_inc+Number(document.getElementById("progress_width").value);
+    document.getElementById("progress_width").value=prog_width;
+    $("#bar1").animate({width:prog_width+"%"},10,function(){
+      if(document.getElementById("bar1").style.width=="100%")
+      {
+        $("header").fadeIn(1000);
+        $(".loader-wrapper").fadeOut(1000);
+        $(".loader-wrapper").css("display","none")
+        $('#next-slide').fadeIn(1000);
+        $('#project-counter').fadeIn(1000);
+        $(".loader-contents").css("display","none")
+        $(".title-container").css("animation","fade-in 1s cubic-bezier(.39,.575,.565,1.000) both");
+        $(".project-wrapper").fadeIn(1000);
+        $("iframe").fadeIn(1000);
+        $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
+
+      }			
+    });
+  }else{
+    set_ele(ele);}
+}
+function set_ele(set_element){check_element(set_element);}
+
+// //// //// //// //// //// //// //// //// //// //// //// //// //
+
+// counter dots
+  for (let i = 1; i < counter; i++) {
+    $("#project-counter").append($(".counter").last().clone(true));
+  }
+
+$('.back-to-top').click(function(){$('.project-case-study-window').scrollTop(0);})
+$('.expand-button').click(function() { let elem = document.getElementById("fullcut-iframe"); elem.requestFullscreen()})
+
+
+// MEDIA QUERY 
+function mediaQuery(x800) {
+  if (x800.matches) { 
+    $('.project-title').css({"font-size":"55px", "line-height":"55px"});
+    $('.link-title').css({"font-size":"55px" , "line-height":"55px"});
+    $('.case-study-block').css({"display":"block"})
+    $('.summary').css({"width":"100%"});
+    $('.credits').css({"width":"100%"});
+    $('.yellow-line').css("width", "75%");
+    $('#bts-photos-grid').css('column-count', '2')
+
+  } else {
+    $('.project-title').css({"font-size":"75px", "line-height":"75px"});
+    $('.link-title').css({"font-size":"75px", "line-height":"75px"});
+    $('.case-study-block').css({"display":"inline-flex"})
+    $('.summary').css({"width":"70%"});
+    $('.credits').css({"width":"30%"});
+    $('#bts-photos-grid').css('column-count', '3')
+    $('.yellow-line').css({"width":"50%", "min-width":"150px"});
+  }
+}
+var x800 = window.matchMedia("(max-width: 800px)")
+mediaQuery(x800) 
+x800.addListener(mediaQuery); 
 
 
 </script>
