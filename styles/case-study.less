@@ -1,0 +1,81 @@
+section { height: 95vh;  overflow: hidden; }
+
+#slide-container {height: 100%;  display: inline-flex; align-items: center; overflow-x: scroll;}
+.slide {height: 100%; width: 100vw; }
+.project { height: 100%; width: 100%;  display: flex; align-items: flex-start;}
+
+.vimeo-bg-wrapper {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background-size: cover; background-position: center center; background-repeat: no-repeat;}
+.vimeo-bg-iframe {width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+
+.title-container{position: absolute; width: 100%; bottom: 0; left: 0; height: 75%; z-index: 2; display: flex; align-items: flex; opacity: 0;}
+.title-wrapper {width: 100%;  margin: 0px 25px 25px 50px; display: flex; align-items: flex-end;}
+
+.link-title {font-size: 68px; text-shadow: 4px 4px #62abd0; border-left: 8px solid #62abd0; border-radius: 4px; padding-left: 7px;}
+
+.summary-title { width: 100%; height: 100%; display: flex; align-items: flex-end;}
+#summary-title-button-wrapper {display: inline-flex; align-items: flex-start;}
+.project-title {font-size: 75px; line-height: 75px; text-shadow: 4px 4px #C5843D; border-left: 8px solid #C5843D; border-radius: 4px; padding-left: 7px; }
+.project-brand {font-size: 35px; color: white; margin: 5px 0 0 19px; text-shadow: 2px 2px rgba(0,0,0,0.5)}
+.summary-title:hover {cursor: pointer;}
+
+.case-study-toggle-arrow { background-image: url('../assets/yellow-textured-circle.svg');  background-size: contain; background-position: center center; background-repeat: no-repeat; width: 75px; height: 75px; margin: 0 25px 0 25px;  display: flex; align-items: center; justify-content: center;}
+
+
+
+#next-slide {background-image: url('../assets/textured-strip.png'); background-size: 100%; background-position: top right; position: absolute; top: 0; right: 0;
+    height: 95vh; width: 40px; position: absolute; right: 0; top: 0; z-index: 5;  display: flex; align-items: center; justify-content: center;}
+#slide-arrow {margin-left: 10px; width: 15px;}
+#next-slide:hover {background-size: 105%; cursor: pointer;}
+
+
+  #project-counter { width: 100vw; padding: 0px 35px; position: absolute; bottom: 5vh; left: 0;  height: 50px; display: inline-flex; align-items: center; justify-content: flex-end;
+    .counter { margin: 0 10px; height: 20px; }
+  }
+
+
+
+// CASE STUDY WINDOW 
+
+.project-case-study-wrapper {overflow-y: scroll; width: 100%; height: 100%;}
+.case-study-nav {width: 100%; height: 75px; display: flex; align-items: center; justify-content: center; z-index: 9; padding: 0px 25px;}
+.case-study-nav span {width: 50%;  display: flex; align-items: center;}
+.case-study-nav span img {height: 50px; width: auto;}
+.circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
+.case-study-block {width: 100%; position: relative;}
+.case-study-title {background-image: url('../assets/black-textured-box.svg'); background-size: contain; width: 100%; padding:  25px; color: white; 
+  h1 {font-size: 36px!important; text-shadow: 2px 2px #C5843D; border-left: 8px solid #C5843D; border-radius: 4px; padding-left: 7px; margin: 15px 0}
+}
+.case-study-text {background-color: tan;  width: 100%; padding: 25px; color: black;
+  strong {font-weight: 400;}
+  a {background-image: url('../assets/textured-black-button.svg'); color: white; text-transform: uppercase; text-decoration: none; background-size: contain; padding: 25px ; margin: 10px 0; background-position: center center; background-repeat: no-repeat; overflow: hidden;}
+}
+.fullcut-iframe-container {background-size: 200%;   background-position: center center; overflow: hidden;}
+.fullcut-iframe-wrapper {backdrop-filter: blur(10px);}
+#summary-credits-wrapper {display: inline-flex; justify-content: space-between;}
+.case-study-window {width: 100vw; height: 100%; justify-content: space-between; position: fixed; top: 0; left: 0; z-index: 10;  }
+.case-study-wrapper {width: 100%; height: 100%; -webkit-animation:scale-up-bottom .75s cubic-bezier(.39,.575,.565,1.000) both;
+  animation:scale-up-bottom .75s cubic-bezier(.39,.575,.565,1.000) both; background: #241E1F; animation-delay: 100ms;}
+.case-study-block {width: 100%; display: inline-flex;}
+.summary {width: 70%; padding: 25px;}
+.credits {width: 30%; padding: 25px;}
+
+.case-study-credits strong { text-transform: uppercase; font-weight: 700;}    
+.case-study-testimonial {width: 100%; text-align: center; padding: 25px;
+  h5 {opacity: 50%;}
+}
+#testimonial {text-align: center; font-style: italic; display: inline-flex; justify-content: space-evenly; width: 100%; background-image: url('../assets/quotes.svg'); background-size: cover; background-repeat: no-repeat;
+    p { font-size: 24px; font-weight: 100; padding: 25px; line-height: 32px; }
+}
+.extra-video {width: 48%;float: left; margin: 1%}
+#bts { width: 100%; padding: 25px; 
+  h6 {font-size: 36px; padding: 25px; color: white; text-align: center;}
+  }
+#bts-photos-grid {-webkit-column-count: 3; -moz-column-count: 3; column-count: 3; column-gap: none;}
+#bts-photos-grid img { width: 100% !important; height: auto !important; margin: 5px;}
+
+
+@media only screen and (min-width: 1750px) {
+  .fullcut-iframe-container {max-height: 950px; height: 100%; }
+  .case-study-iframe {max-width: 1700px; max-height: 950px; margin: 0 ~"calc((100% - 1700px)/2)"}
+
+}

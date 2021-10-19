@@ -1,0 +1,48 @@
+
+main {padding: 0px; margin-top: 125px; height: ~'calc(100vh - 128px );'}
+
+.portfolio-grid {min-height: 950px; height: 99%; width: 100%; display: flex; flex-wrap: wrap; justify-content: space-around; z-index: 0;}
+.portfolio-nav { width: 100%; display: inline-flex; align-items: flex-start; justify-content: space-between; padding: 25px; }
+.portfolio-nav-title {width: ~'calc(100% - 150px)';}
+.portfolio-nav-controls {width: 150px; display: flex; justify-content: center; align-items: center;}
+.expand-button {background-image: url('../assets/expand.png'); background-size: contain; background-repeat: no-repeat; background-position: center center; float: left; margin: 5px 15px 5px 5px; width: 50px; height: 50px;}
+.circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
+
+// fullscreen iframe
+.fullcut-iframe-container {background-size: 200%; background-position: center center; overflow: hidden;}
+.fullcut-iframe-wrapper {backdrop-filter: blur(10px);}
+
+
+.portfolio-item {flex-grow: 1; display: flex;  justify-content: center; align-items: center; text-align: center; width: 32%; margin: 2px; height: calc(99% / 4); background-size: cover; background-repeat: no-repeat; overflow: hidden; cursor: pointer; background-position: center center; 
+    animation-delay: 5s; animation:slide-in-fwd-center 2s cubic-bezier(.25,.46,.45,.94) both; }
+.portfolio-item-title {width: 100%; height: 100%; background-color: rgba(0,0,0,0.4); backdrop-filter: blur(3px);
+    display: flex; align-items: center; justify-content: center; color: white; padding: 25px; 
+    text-transform: uppercase; background-repeat: no-repeat; background-size: cover; background-position: center center;
+}
+.title {font-weight: 300; animation: fade-in 3s cubic-bezier(.39,.575,.565,1.000) both}
+
+
+
+.portfolio-item-window {display: none; backdrop-filter: blur(15px); width: 100vw; height: 100vh; background: rgba(0,0,0,0.25); position: fixed; z-index: 15; top: 0; left: 0; }
+  .vimeo-wrapper {background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: -1!important;
+   height: ~'calc(100vh - 25px)'}
+
+.portfolio-video iframe {min-width: 100%; min-height: 100%; padding: 2%; cursor: pointer;}
+
+
+
+
+  @media only screen and (max-width: 600px) {.portfolio-item {width: 49%; height: calc(99% / 4); }}
+  @media only screen and (min-width: 1750px) {
+      .portfolio-item {width: 24%; height: calc(99% / 3); max-width: 25%;}
+      .fullcut-iframe-container {max-height: 950px; height: 100%;  }
+      #fullcut-iframe {margin-left: ~'calc((100% - 1688px)/2)'}
+      .portfolio-nav-title {text-align: center;}
+    }
+
+// ANIMATIONS 
+.slide-in-fwd-center{-webkit-animation:slide-in-fwd-center .4s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-fwd-center .4s cubic-bezier(.25,.46,.45,.94) both}
+@-webkit-keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
+
+.tilt-in-tl{-webkit-animation:tilt-in-tl 1s cubic-bezier(.25,.46,.45,.94) both; animation:tilt-in-tl 1s cubic-bezier(.25,.46,.45,.94) both}
+@-webkit-keyframes tilt-in-tl{0%{-webkit-transform:rotateY(35deg) rotateX(20deg) translate(-250px,-250px) skew(12deg,15deg);transform:rotateY(35deg) rotateX(20deg) translate(-250px,-250px) skew(12deg,15deg);opacity:0}100%{-webkit-transform:rotateY(0) rotateX(0deg) translate(0,0) skew(0deg,0deg);transform:rotateY(0) rotateX(0deg) translate(0,0) skew(0deg,0deg);opacity:1}}@keyframes tilt-in-tl{0%{-webkit-transform:rotateY(35deg) rotateX(20deg) translate(-250px,-250px) skew(12deg,15deg);transform:rotateY(35deg) rotateX(20deg) translate(-250px,-250px) skew(12deg,15deg);opacity:0}100%{-webkit-transform:rotateY(0) rotateX(0deg) translate(0,0) skew(0deg,0deg);transform:rotateY(0) rotateX(0deg) translate(0,0) skew(0deg,0deg);opacity:1}}
