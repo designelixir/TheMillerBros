@@ -1,29 +1,46 @@
-<nav class="site-navigation">
+<nav class="site-navigation fade-in">
+  
+  <a href="/"><img id="site-navigation-logo" style="height: 100%; max-height: 75px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="../assets/Miller-Bros-Logo-White.svg" alt="The Miller Bros Logo"/></a>
+
   <ul class="site-navigation-list">
     {.repeated section items}
 
+    {.equal? collection.navigationTitle "Home"}
+
+    <li id="home-link" class="site-navigation-item {.section active} active-link{.end}">
+      <a href="/"><img id="lil-bus" style="width: 45px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="../assets/Bus-Icon.svg"></a>
+    </li>
+
+    {.or} 
+
       <li class="site-navigation-item {.section active} active-link{.end}">
-
-        <!-- collection link -->
-        {.section collection}
-          <a href="{fullUrl}">{navigationTitle}</a>
-        {.end}
-
-        <!-- external link -->
-        {.section externalLink}
-          <a href="{url}"{.section newWindow} target="_blank"{.end}>
-            {title}
-          </a>
-        {.end}
-
+        {.section collection}<a href="{fullUrl}">{navigationTitle}</a>{.end}
       </li>
-
+      {.end}
     {.end}
   </ul>
-</nav>
 
-<nav class="mobile-navigation" style="display: none;">
-<div style="background: white; width: 75px; height: 75px;">
-    <p style="font-size: 15px"> mobile menu </p>
+  <button class="mobile-navigation-button"><img src="../assets/nav/Open-Mobile.svg" style="height:40px" /></button>
+  <div class="mobile-navigation-container inset-box-shadow texture" style="display: none;">
+      <div class="mobile-navigation-list">
+        <li><a href="/"><img style="height: 40px;" class="van-home-icon" src="../assets/nav/Bus-Home-Icon.svg"></a></li><br>
+          <ul>
+            {.repeated section items}
+              <li class="site-navigation-item {.section active} active-link{.end}">
+                {.section collection}<a href="{fullUrl}">{navigationTitle}</a>{.end}
+              </li><br>
+            {.end}
+          </ul>
+      </div>
+      <div class="mobile-navigation-footer">
+          <a href="https://vimeo.com/themillerbros" target="_blank"><img class="social-icon" src="../assets/social/vimeo.svg" alt="vimeo icon"/></a>
+          <a href="https://www.instagram.com/miller.bros/" target="_blank"><img class="social-icon" src="../assets/social/instagram.svg" alt="instagram icon"/></a>
+          <a href="mailto:stories@themillerbros.com" target="_blank"><img class="social-icon" src="../assets/social/email.svg" alt="email icon"/></a>
+      </div>
+    
   </div>
+
+  
 </nav>
+<script>console.log({@|json-pretty})</script>
+

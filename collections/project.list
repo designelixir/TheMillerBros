@@ -27,8 +27,8 @@
        
 {#  CASE STUDY SLIDERS}
 
-        <span style="height: 25%;"></span>
-        <span class="summary-title toggle-case-study slide-in-right">
+        <span style="height: 10%; border: 3px solid teal;"></span>
+        <span class="summary-title toggle-case-study slide-in-right" style="border: 3px solid lime;">
             <span id="summary-title-button-wrapper">
 
                 <span id="title-brand-wrapper"  style="width: 90%;">
