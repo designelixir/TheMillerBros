@@ -51,7 +51,7 @@
         {.end}
         </div>
 
-        <div class="section inset-box-shadow">
+        <div class="inset-box-shadow" style="width: 100%; padding: 100px 50px;">
             <squarespace:block-field id="team-description" columns="1"/>
         </div>
 

@@ -72,7 +72,7 @@ function mediaQuery(x800) {
     $('.mobile-navigation-button').css({"display":"block"})
     $('#contact-title-2').css("font-size", "11vw")
     $('.footer-left').css({"display":"none"})
-    $('.bio-container').css({"display":"block", "height":"1800px"});
+    $('.bio-container').css({"display":"block", "height":"900px"});
     $('.bio-wrapper').css("width", "100%")
  
 
