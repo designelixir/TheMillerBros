@@ -7,47 +7,53 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture inset-box-shadow">
-
-    
-
-      <header class="site-header">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture inset-box-shadow" style="width: 100vw;">
+      <header class="site-header" id="contact-header" >
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
-
-      <div class="site-header-image-container" style="border: 2px solid teal; background-image: url('{collection.mainImage.assetUrl}')">
-        <div class="site-header-image-wrapper fade-in">
-            <h6> Let's tell a <br><span class="yellow-line" id="contact-title-2" style="font-size: 6vw;"> story together</span></h6>
+      <div class="site-header-image-container" id="contact-header-image" style="background-image: url('{collection.mainImage.assetUrl}')"></div>
+      
+      <div class="contact-floating-container">
+        <div class="contact-floating-container-left">
+            <div class="contact-floating-container-left-half"  >
+                <span id="half-1">
+                <h6> Let's tell a <br><span id="contact-title-2" style="font-size: 62px; padding-bottom: 25px;"> story together</span></h6>
+                <img class="drop-shadow" src="assets/shapes/yellow-textured-line.svg"/>
+                </span>
+            </div>
+            <div class="contact-floating-container-left-half">
+                <squarespace:block-field id="contact-title" class="bold-paragraph" columns="1"/>
+            </div>
         </div>
-      </div>
+        {#  CARD SIDE  }
+        <div class="contact-floating-container-right">
+            <span id="contact-card-holder" style="border: 3px solid aqua;">
+              <div class="contact-card tan-texture">
+                <div class="contact-card-wrapper">
 
-      <div class="contact-card tan-texture" style=" transform: rotate(15deg); width: 500px; border-radius: 24px; height: 300px; position: absolute; right: -25px; top: 58vh; border: 10px solid #62abd0; background-color: #f9e6c8; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .5));">
-        <div class="contact-card-wrapper" style="width: 100%; height: 100%; padding: 15px; display: flex; align-items: center; justify-content: center;">
+                  <div class="contact-card-column" style="border-right: 1px solid black;">
+                    <span style="text-align: center;">
+                        <h4>Spencer &amp; Camden Miller </h4>
+                        <h5 style="font-size: 18px; padding-top: 5px;">The Miller Bros </h5>
+                        <div class="social-navigation-footer">
+                            <a href="https://vimeo.com/themillerbros" target="_blank" id="vimeo-f-a"><img class="social-icon " id="vimeo-f" src="../assets/social/vimeo-black.svg" alt="vimeo icon"/></a>
+                            <a href="https://www.instagram.com/miller.bros/" target="_blank" id="insta-f-a"><img class="social-icon " id="insta-f" src="../assets/social/instagram-black.svg" alt="instagram icon"/></a>
+                            <a href="mailto:stories@themillerbros.com" target="_blank" id="email-f-a"><img class="social-icon " id="email-f" src="../assets/social/email-black.svg" alt="email icon"/></a>
+                        </div>
+                    </span>
+                  </div>
+                  <div class="contact-card-column">
+                    <img src="assets/messy-icon.svg" style="width: 100%; padding: 25px;"/>
+                  </div>
 
-          <div class="contact-card-column" style="width: 50%; height: 100%; display: flex; align-items: center; justify-content: center; border-right: 1px solid black;">
-          <span style="text-align: center;">
-            <h4>Spencer &amp; Camden </h4>
-            <h5 style="font-size: 18px;">The Miller Bros </h5>
-            <p><a style="color: black;" href="https://goo.gl/maps/7FHgvHbH9tMqpPpW6" target="_blank">3 S. Black Street, <br> Bozeman, MT</a> </p>
-            <div class="mobile-navigation-footer" style="padding-top: 25px">
-            <a href="https://vimeo.com/themillerbros" target="_blank"><img class="social-icon" src="../assets/social/vimeo.svg" alt="vimeo icon"/></a>
-            <a href="https://www.instagram.com/miller.bros/" target="_blank"><img class="social-icon" src="../assets/social/instagram.svg" alt="instagram icon"/></a>
-            <a href="mailto:stories@themillerbros.com" target="_blank"><img class="social-icon" src="../assets/social/email.svg" alt="email icon"/></a>
+
+                </div>
+              </div>
+            <span>
+            <span id="map-holder" style="border: 2px solid orange;">
+                <img src="../assets/map.svg" style="width: 100%;"/>
+            </span>
         </div>
-          </span>
-          </div>
-          <div class="contact-card-column" style="width: 50%; height: 100%;  display: flex; align-items: center; justify-content: center; padding: 10%;">
-            <img src="assets/messy-icon.svg" style="width: 100%;"/>
-          </div>
-
-
-        </div>
-      </div>
-      <div style="width: 80%;">
-        <squarespace:block-field id="contact-title" columns="1"/>
-      </div>
-      <div style="width: 100%; margin-top: 200px; border: 2px solid teal; padding: 50px; color: white;">
-        <squarespace:block-field id="contact-form" columns="1"/>
       </div>
 
       <!-- cms content injection point -->
@@ -68,23 +74,5 @@
 
 
 </html>
-<script>
-function mediaQuery(x800) {
-  if (x800.matches) { 
-   $('.contact-card').css({"right":"0px", "top":"60vh"});
-   $('.site-header-image-wrapper').css("height","75%")
- 
 
-  } else {
-  $('.contact-card').css("right","-150px");
-  $('.site-header-image-wrapper').css("height","100%")
 
-   
-
-  }
-}
-var x800 = window.matchMedia("(max-width: 800px)")
-mediaQuery(x800) 
-x800.addListener(mediaQuery); 
-
-</script>
