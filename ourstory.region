@@ -8,12 +8,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} tan-texture">
 
     <div class="site-container">
       <header class="site-header">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
+
+      <div style="width: 100vw; height: 40vw; min-height: 400px; border: 2px solid magenta; background-image: url(assets/18.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+  {#  header photo  }
+      </div>
+
 
       <main class="content-container inset-box-shadow" id="our-story-content" role="main" data-content-field="main-content" >
        {squarespace.main-content}
