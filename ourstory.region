@@ -24,7 +24,7 @@
 
 
       <div id="intro-review" style="padding: 100px;">
-      <h1 class="yellow-text-shadow"><squarespace:block-field id="our-story-page-title" columns="1"/></h1> 
+      <h1 class="blue-text-shadow"><squarespace:block-field id="our-story-page-title" columns="1"/></h1> 
         <div id="review-wrapper">
             <h1>&rdquo;</h1>
             <squarespace:block-field id="our-story-review" columns="1"/>
@@ -57,7 +57,7 @@
         {.end}
         </div>
 
-        <div class="inset-box-shadow" style="width: 100%; padding: 200px 50px 100px 50px;">
+        <div class="inset-box-shadow" style="width: 100%; padding: 200px 50px 100px 50px; ">
             <squarespace:block-field id="team-description" class="bold-paragraph" columns="1"/>
         </div>
 
@@ -68,7 +68,7 @@
       <div class="extended-family-intro inset-border-box" style="display: flex; justify-content: right; overflow: hidden;">
       <span style="width: 90%; margin: 5%;">
           <h1 class="yellow-text-shadow"> Our Extended Family</h1>
-          <img src="assets/yellow-textured-line.svg" style="margin-bottom: 25px;"/>
+          <img src="assets/shapes/yellow-textured-line.svg" style="margin-bottom: 25px;"/>
           <squarespace:block-field id="extended-family-text" class="bold-paragraph" columns="1"/>
           </span>
           
@@ -106,8 +106,8 @@
           </div>
 
           <div style="padding: 100px; width: 100%; height: 100%; text-align: center;">
-            <h1 class="yellow-text-shadow"> Select Partners</h1>
-            <img src="assets/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
+            <h1 class="blue-text-shadow"> Select Partners</h1>
+            <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
             <squarespace:block-field id="select-partners" columns="1"/>
           </div>
           
