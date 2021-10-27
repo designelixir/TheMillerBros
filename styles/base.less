@@ -115,6 +115,7 @@ footer {width: 100vw; border: 1px solid magenta; margin-bottom: 0;}
 
 // OUR STORY PAGE 
 
+#our-story-content {width: 100%; height: auto;}
 .section {margin: 50px 25px;}
 
 
@@ -127,23 +128,25 @@ footer {width: 100vw; border: 1px solid magenta; margin-bottom: 0;}
 #review-name-wrapper {display: inline-flex; width: 100%;  align-items: center; justify-content: center; }
 
 .bio-container { display: inline-flex;}
-.bio-wrapper {width: 50%; height: 900px; background-size: cover;  background-position: center center; background-repeat: no-repeat;}
+.bio-wrapper {width: 50%; height: 900px; background-size: cover;  background-position: center center; background-repeat: no-repeat; display: flex; align-items: flex-end;}
 .bio-content-wrapper {width: 100%; height: 100%; display: flex; display: flex; align-items: flex-end;}
 .bio-content {background-image: url(../assets/yellow-smudge.png); text-align: center; width: 90%; margin: 2.5% 5%; background-size: 100% 100%; background-repeat: no-repeat; background-position: center center; padding: 25px 35px;}
 .signature-img {min-width: 200px; width: 40%;}
 
 #team-description p {font-size: 1.5em; line-height: 1.75em; color: white; text-align: center; font-weight: 100;}
 
-.our-story-gallery {width: 100%; height: 800px; border: 2px solid magenta;}
-
-.extended-family {width: 100%; display: inline-flex;}
+.our-story-gallery {width: 100%; max-height: 800px; min-height: 400px;}
 #extended-family-text {font-size: 1.5em; line-height: 1.75em; color: white; text-align: center; font-weight: 100;}
 
-.extended-family-grid {width: 100%; display: inline-flex; flex-direction: wrap;}
-.family-bio { border: 2px solid red; height: 800px; min-width: 400px;}
-.family-bio-text {padding: 25px;}
+.extended-family-grid {max-width: 100%; display: flex; flex-wrap: wrap;}
+.family-bio { height: 500px; flex: 1 1 350px;}
+.family-bio-text {display: inline-flex; align-items: flex-end; height: 100%;}
 .family-bio-text h6 {font-size: 5em;}
 .family-bio-text h2 {font-size: 1em; border-left: 8px solid #C5843D; border-radius: 4px; padding-left: 7px; }
 
-.bio-wrapper:hover {cursor: pointer; display: block; transform: scale(1.05); }
-.family-bio-text:hover > #family-bio-description {display: block;}
+.family-bio-description {height: 100%; padding: 25px; background-color: rgba(0, 0, 0, .35); backdrop-filter: blur(3px); width: 100%; border: 2px solid red; display: flex; align-items: center; text-align: center; justify-content: center;}
+
+
+.extended-family-intro {width: 100%; display: inline-flex; padding: 100px 50px;}
+
+.family-bio-text:hover > .family-bio-description {display: block;}

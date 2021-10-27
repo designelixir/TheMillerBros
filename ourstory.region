@@ -8,14 +8,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" style="overflow-x: hidden;">
 
     
       <header class="site-header">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
 
-      <div style="width: 100%; height: 60vh; min-height: 400px; border: 2px solid magenta; background-image: url(assets/18.jpg); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+      <div style="width: 100%; height: 60vh; min-height: 400px; border: 2px solid magenta; background-image: url('{collection.mainImage.assetUrl}'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
   {#  header photo  }
       </div>
       <div style="width: 100%; height: 40vh; border: 4px solid aqua; margin-top: -20vh; display: flex; align-items: flex-end; justify-content: center;  ">
@@ -64,60 +64,55 @@
             <squarespace:block-field id="our-story-gallery" columns="12"/>
         </div>
 
-      <div class="extended-family">
-          <span>
-            <img style="min-width: 300px; width: 100%; max-width: 500px" src="assets/lab-logo-white.svg"/>
-          </span>
-          
-          <span>
+      <div class="extended-family-intro inset-border-box" style="display: flex; justify-content: right; overflow: hidden;">
+      <span style="width: 100%; margin: 5%;">
           <h6 style="text-align: center; color: white; font-size: 3rem;"> Our Extended Family</h6>
           <squarespace:block-field id="extended-family-text" columns="1"/>
           </span>
+          <span style="background-image: url(assets/wood.jpg); overflow: hidden; background-size: cover; width: 400px; height: 250px; transform: rotate(15deg); margin: -200px -100px 0 0; z-index: 4; position: absolute;">
+            <img style=" width: 95%; margin: 2.5%; " src="assets/lab-sign.svg"/>
+          </span>
+          
+          
 
           
       </div>
+      
       <div class="extended-family-grid">
-          {.repeated section items}
-           {.if starred}
-            {.or}
+          {.repeated section items}{.if starred}{.or}
             <div class="bio-wrapper family-bio inset-box-shadow" id="bio-{id}" style="background-image: url({assetUrl}?format=original); background-position-x: {mediaFocalPoint.x}!important; background-position-y: {mediaFocalPoint.y}!important ">
-                <div style="width: 100%; height: 100%; border: 2px solid yellow; display: flex; align-items: flex-end;">
-                <div>
-                <script>console.log({mediaFocalPoint.x} +","+ {mediaFocalPoint.y})</script>
-                   <div class="family-bio-text drop-shadow gradient-shadow">
-                      <h6>{title}</h6>
-                      <h2>{customContent.jobtitle}</h2>
-                    
-                      <div id="family-bio-description" style="color: white; display: none;">
-                          {body}
-                          <span style="display: inline-flex;">
-                          {.if customContent.instagram}
-                            <a href="https://www.instagram.com/{customContent.instagram}/" target="_blank"><img class="social-icon" src="assets/social/instagram.svg"/></a>
-                          {.end}
-                          {.if customContent.instagram}
-                            <a href="{customContent.websiteurl}" target="_blank"><img class="social-icon" src="assets/social/globe.svg"/></a>
-                          {.end}
-                          </span>
-                      </div>
-                    </div>
+                
+                <span style=" height: 100%; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0) 72%, rgba(0,0,0,0) 100%);">
+                <div class="family-bio-text drop-shadow gradient-shadow">
+                  <span style="padding: 25px;">
+                    <h6>{title}</h6>
+                    <h2>{customContent.jobtitle}</h2>
+                  </span>
                 </div>
+                <div class="family-bio-description" style="color: white; display: none;">
+                  <span>
+                        <br>
+                        {body}
+                        <span style="display: inline-flex; width: 100%; align-items: center; justify-content: center;">
+                        {.if customContent.instagram}
+                          <a href="https://www.instagram.com/{customContent.instagram}/" target="_blank"><img class="social-icon" src="assets/social/instagram.svg"/></a>
+                        {.end}
+                        {.if customContent.instagram}
+                          <a href="{customContent.websiteurl}" target="_blank"><img class="social-icon" src="assets/social/globe.svg"/></a>
+                        {.end}
+                        </span>
+                      </span>
                 </div>
-               
+                </span>
             </div>
             {.end}
-
-
           {.end}
 
 
           </div>
 
 
-                    <span>
-                      <span class="hover-family-bio">
-                          {body}
-                      </span>
-                    <span>
+            
 
       <main class="content-container" id="our-story-content" role="main" data-content-field="main-content" >
        {squarespace.main-content}
@@ -131,4 +126,6 @@
 
   </body>
 </html>
+
+
 
