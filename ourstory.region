@@ -41,6 +41,8 @@
 
       <div class="bio-container">
         {.repeated section items}
+        <script>console.log({@|json-pretty})</script>
+        {.if starred}
         <div class="bio-wrapper inset-box-shadow" style="background-image: url({assetUrl}?format=original); ">
             <div class="bio-content-wrapper">
                 <span class="bio-content drop-shadow">
@@ -49,17 +51,29 @@
                 </span>
             </div>
         </div>
+        {.or}
+        {.end}
         {.end}
         </div>
 
         <div class="inset-box-shadow" style="width: 100%; padding: 100px 50px;">
             <squarespace:block-field id="team-description" columns="1" lock-layout="true"/>
         </div>
-        
+
         <div class="our-story-gallery">
             <squarespace:block-field id="our-story-gallery" columns="12"/>
         </div>
 
+      <div class="extended-family">
+          <span>
+            <img style="min-width: 300px; width: 100%; max-width: 500px" src="assets/lab-logo-white.svg"/>
+          </span>
+          
+          <span>
+          <h6 style="text-align: center; color: white; font-size: 3rem;"> Our Extended Family</h6>
+          <squarespace:block-field id="extended-family-text" columns="1"/>
+          </span>
+      </div>
 
 
 
