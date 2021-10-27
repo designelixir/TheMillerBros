@@ -25,13 +25,17 @@
 
       <div style="display: inline-flex; align-items: flex-start; justify-content: space-evenly; ">
           <div class="quote-mark"><h1>"</h1></div>
-          <squarespace:block-field id="our-story-review" columns="12"/>
+          <squarespace:block-field id="our-story-review" columns="1"/>
           <div class="quote-mark" style=" text-align: right;"><h1>"</h1></div>
       </div>
-      <div>
-          <squarespace:block-field id="our-story-reviewer" columns="12"/>
-          <squarespace:block-field id="our-story-reviewer-company" columns="12"/>
-
+      <div style="border: 1px solid yellow; display: inline-flex; width: 100vw; max-height: 100px; align-items: center; justify-content: center; ">
+      <div style="height: 100px; width: 100px;  border: 2px solid white; margin: 25px;">
+       <squarespace:block-field id="our-story-reviewer" columns="1"/>
+      </div>
+         <div style="display: block; width: 300px; max-height: 75px; border: 3px solid orange;">
+          <squarespace:block-field id="our-story-reviewer" columns="1"/>
+          <squarespace:block-field id="our-story-reviewer-company" columns="1"/>
+        <div>
       </div>
 
 
