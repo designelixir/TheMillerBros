@@ -74,7 +74,7 @@ function mediaQuery(x800) {
     $('.upper-footer-wrapper').css({"display":"block"})
     $('.footer-left').css({"width":"100%"})
     $('.footer-right').css({"width":"100%"})
-    $('.bio-container').css({"display":"block", "height":"1800px"});
+    $('.bio-container').css({"display":"block", "height":"2100px"});
     $('.bio-wrapper').css("width", "100%")
  
 
@@ -85,7 +85,7 @@ function mediaQuery(x800) {
     $('.mobile-navigation-container').css("display","none");
     $('.site-header').css({"background-color":"transparent"})
     $('.footer-left').css({"display":"flex"})
-    $('.bio-container').css({"display":"inline-flex", "height":"900px"});
+    $('.bio-container').css({"display":"inline-flex", "height":"1050px"});
     $('.bio-wrapper').css("width", "50%")
    
 

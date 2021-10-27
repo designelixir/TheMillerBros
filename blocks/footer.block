@@ -1,0 +1,25 @@
+<footer class="site-footer">
+      <div class="upper-footer-wrapper" class="texture">
+        <span class="footer-left tan-texture inset-box-shadow">
+            <img src="assets/miller-bros-lettermark-black.svg" style="height: 125px;" alt="the Miller Bros lettermark logo" />
+            
+        </span>
+
+        <span class="footer-right">
+          <span style="width: 100%;">
+            <squarespace:block-field id="footerField2" columns="1"/>
+          </span>
+          <span style="width: 100%;">
+            <squarespace:block-field id="footerField3" columns="1"/>
+          </span>
+
+        <span> 
+    
+      </div>
+
+      {#  copyright and credits  }
+      <div class="lower-footer-wrapper" class="texture inset-box-shadow">
+        <p>Copyright The Miller Bros LLC &copy; 2021 </p>
+        <a href="https://designelixir.studio" target="_blank" style='font-size: 12px;'> Made with &hearts; by Design Elixir</a>
+      </div>
+      </footer>

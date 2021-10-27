@@ -24,6 +24,7 @@
 
 
       <div id="intro-review" style="padding: 100px;">
+      <h1 class="yellow-text-shadow"><squarespace:block-field id="our-story-page-title" columns="1"/></h1> 
         <div id="review-wrapper">
             <h1>&rdquo;</h1>
             <squarespace:block-field id="our-story-review" columns="1"/>
@@ -56,7 +57,7 @@
         {.end}
         </div>
 
-        <div class="inset-box-shadow" style="width: 100%; padding: 100px 50px;">
+        <div class="inset-box-shadow" style="width: 100%; padding: 200px 50px 100px 50px;">
             <squarespace:block-field id="team-description" class="bold-paragraph" columns="1"/>
         </div>
 
@@ -66,7 +67,8 @@
 
       <div class="extended-family-intro inset-border-box" style="display: flex; justify-content: right; overflow: hidden;">
       <span style="width: 90%; margin: 5%;">
-          <h6 style="text-align: center; color: white; font-size: 3rem;"> Our Extended Family</h6><br>
+          <h1 class="yellow-text-shadow"> Our Extended Family</h1>
+          <img src="assets/yellow-textured-line.svg" style="margin-bottom: 25px;"/>
           <squarespace:block-field id="extended-family-text" class="bold-paragraph" columns="1"/>
           </span>
           
@@ -103,8 +105,9 @@
           {.end}
           </div>
 
-          <div style="padding: 100px; width: 100%; height: 100%;">
-            <h6 style="text-align: center; color: white; font-size: 3rem;"> Select Partners</h6><br>
+          <div style="padding: 100px; width: 100%; height: 100%; text-align: center;">
+            <h1 class="yellow-text-shadow"> Select Partners</h1>
+            <img src="assets/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
             <squarespace:block-field id="select-partners" columns="1"/>
           </div>
           
@@ -126,32 +129,7 @@
     {squarespace-footers}
 
   </body>
-  <footer class="site-footer">
-      <div class="upper-footer-wrapper" class="texture">
-        <span class="footer-left tan-texture inset-box-shadow">
-            <img src="assets/miller-bros-lettermark-black.svg" style="height: 125px;" alt="the Miller Bros lettermark logo" />
-            
-        </span>
-
-        <span class="footer-right">
-          <span style="width: 100%;">
-            <squarespace:block-field id="footerField2" columns="1"/>
-          </span>
-          <span style="width: 100%;">
-            <squarespace:block-field id="footerField3" columns="1"/>
-          </span>
-
-        <span> 
-    
-      </div>
-
-      {#  copyright and credits  }
-      <div class="lower-footer-wrapper" class="texture inset-box-shadow">
-        <p>Copyright The Miller Bros LLC &copy; 2021 </p>
-
-        <a class="hover-indication" href="https://designelixir.studio" target="_blank" style='font-size: 12px;'> Made with &hearts; by Design Elixir</a>
-      </div>
-      </footer>
+  
 </html>
 
 
