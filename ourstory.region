@@ -55,18 +55,9 @@
         <div class="inset-box-shadow" style="width: 100%; padding: 100px 50px;">
             <squarespace:block-field id="team-description" columns="1" lock-layout="true"/>
         </div>
-
-
-
-
-
-
-
-        <div class="our-story-gallery">
         
-                    <squarespace:block-field id="our-story-gallery" columns="12"/>
-
-          
+        <div class="our-story-gallery">
+            <squarespace:block-field id="our-story-gallery" columns="12"/>
         </div>
 
 
