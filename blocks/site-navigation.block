@@ -1,6 +1,6 @@
 <nav class="site-navigation fade-in">
   
-  <a href="/"><img id="site-navigation-logo" style="height: 100%; max-height: 75px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="../assets/Miller-Bros-Logo-White.svg" alt="The Miller Bros Logo"/></a>
+  <a href="/"><img id="site-navigation-logo" style="height: 100%; max-height: 75px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="{website.logoImageUrl}" alt="The Miller Bros Logo"/></a>
 
   <ul class="site-navigation-list">
     {.repeated section items}
