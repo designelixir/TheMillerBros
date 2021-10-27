@@ -71,7 +71,9 @@ function mediaQuery(x800) {
     $('.site-navigation-list').css({"display":"none"})
     $('.mobile-navigation-button').css({"display":"block"})
     $('#contact-title-2').css("font-size", "11vw")
-    $('.footer-left').css({"display":"none"})
+    $('.upper-footer-wrapper').css({"display":"block"})
+    $('.footer-left').css({"width":"100%"})
+    $('.footer-right').css({"width":"100%"})
     $('.bio-container').css({"display":"block", "height":"1800px"});
     $('.bio-wrapper').css("width", "100%")
  
