@@ -10,7 +10,7 @@
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture">
 
-    <div class="site-container">
+    
       <header class="site-header">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
@@ -24,27 +24,28 @@
 
 
     <div class="section">
-      <div id="review-wrapper">
-          <h1>&rdquo;</h1>
-          <squarespace:block-field id="our-story-review" columns="1"/>
-          <h1>&rdquo;</h1>
-      </div>
-        <div id="review-name-wrapper" >
+        <div id="review-wrapper">
+            <h1>&rdquo;</h1>
+            <squarespace:block-field id="our-story-review" columns="1"/>
+            <h1>&rdquo;</h1>
+        </div>
+        <div id="review-name-wrapper">
           <span style='width: 100px; height: 100px;'><squarespace:block-field id="our-story-review-img" columns="1"/></span>
           <span style="padding: 25px 0 0 10px;">
             <squarespace:block-field id="our-story-reviewer" columns="1"/>
             <squarespace:block-field id="our-story-reviewer-company" columns="1"/>
           </span>
+        </div>
       </div>
-      </div>
+    
 
       <div class="bio-container">
         {.repeated section items}
         <div class="bio-wrapper inset-box-shadow" style="background-image: url({assetUrl}?format=original); ">
             <div class="bio-content-wrapper">
                 <span class="bio-content drop-shadow">
-                {body}
-                <img class="signature-img" src="{customContent.signature.assetUrl}"/>
+                  {body}
+                  <img class="signature-img" src="{customContent.signature.assetUrl}"/>
                 </span>
             </div>
         </div>
@@ -52,14 +53,29 @@
         </div>
 
         <div class="inset-box-shadow" style="width: 100%; padding: 100px 50px;">
-            <squarespace:block-field id="team-description" columns="1"/>
+            <squarespace:block-field id="team-description" columns="1" lock-layout="true"/>
         </div>
+
+
+
+
+
+
+
+        <div class="our-story-gallery">
+          <div class="gallery">
+                    <squarespace:block-field id="our-story-gallery" columns="1" lock-layout="true"/>
+
+          </div>
+        </div>
+
+
 
 
       <main class="content-container" id="our-story-content" role="main" data-content-field="main-content" >
        {squarespace.main-content}
       </main>
-    </div>
+    
 
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
