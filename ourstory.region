@@ -129,19 +129,17 @@
       <div id="upper-footer-wrapper" class="texture">
         <span id="footer-left" class="inset-bottom">
             <img src="assets/miller-bros-lettermark-black.svg" style="height: 125px;" alt="the Miller Bros lettermark logo" />
-            <squarespace:block-field id="blockField1" columns="1"/>
+            
         </span>
 
         <span id="footer-right">
-          <span>
-            <squarespace:block-field id="blockField2" columns="1"/>
+          <span style="width: 50%;">
+            <squarespace:block-field id="footerField2" columns="1"/>
           </span>
-          <span>
-            <squarespace:block-field id="blockField3" columns="1"/>
+          <span style="width: 50%;">
+            <squarespace:block-field id="footerField3" columns="1"/>
           </span>
-          <span>
-            <squarespace:block-field id="blockField4" columns="1"/>
-          </span>
+
         <span> 
     
       </div>
