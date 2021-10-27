@@ -63,10 +63,10 @@
 
 
         <div class="our-story-gallery">
-          <div class="gallery">
-                    <squarespace:block-field id="our-story-gallery" columns="1" lock-layout="true"/>
+        
+                    <squarespace:block-field id="our-story-gallery" columns="12"/>
 
-          </div>
+          
         </div>
 
 
