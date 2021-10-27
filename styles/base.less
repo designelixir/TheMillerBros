@@ -18,7 +18,7 @@
 
 
 main { left: 0; width: 100vw; overflow-x: hidden; margin: 0; padding: 0;}
-body {font-family: museo-sans-rounded, sans-serif; width: 100vw; overflow-x: hidden; top: 0; left: 0;}
+body {font-family: museo-sans-rounded, sans-serif; width: 100vw; overflow-x: hidden!important; top: 0; left: 0;}
 
 
 p {font-weight: 300; font-size: 18px; line-height: 26px;}
@@ -40,7 +40,7 @@ button a:hover {transform: scale(1)}
 .drop-shadow {filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .35));}
 .yellow-text-shadow { font-size: 4rem; text-shadow: 4px 4px #C5843D;}
 .blue-text-shadow { font-size: 4rem; text-shadow: 2px 2px #47AAD5;}
-
+.gradient-shadow {background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0.039653361344537785) 100%);}
 .sqs-block-button-element { background-color: transparent!important; font-family: museo-sans-rounded, sans-serif!important; font-weight: 500!important; font-size: 16px; background-position: 50% 50%; background-repeat: no-repeat; color: white; margin: 0!important; padding: 15px 25px!important; }
   .sqs-block-button-element--small { display: flex; align-items: center; justify-content: center; background-image: url("../assets/shapes/textured-black-button.svg"); background-size: contain; background-repeat: no-repeat;  }
   .sqs-block-button-element--medium { display: flex; align-items: center; justify-content: center; background-image: url("../assets/shapes/textured-black-button.svg"); background-size: contain; background-repeat: no-repeat;  }
@@ -48,8 +48,12 @@ button a:hover {transform: scale(1)}
     a {padding: 10px 15px; color: white}}
 
   .sqs-block-button-element:hover {transform: scale(1.01);  opacity: 1!important; font-weight: 700!important;}
-
-
+  .sqs-system-button { display: flex; align-items: center; justify-content: center; background-image: url("../assets/shapes/blue-button.png"); background-size: 100% 100%; background-repeat: no-repeat; width: 100%; 
+     a {padding: 10px 25px; color: white}}
+  .sqs-editable-button { display: flex; align-items: center; justify-content: center; background-image: url("../assets/shapes/blue-button.png"); background-size: 100% 100%; background-repeat: no-repeat; 
+    a {padding: 10px 15px; width: 150px!important; color: white; font-family: museo-sans-rounded, sans-serif!important; text-transform: uppercase;}}
+  
+    .sqs-editable-button {background-color: transparent!important; font-family: museo-sans-rounded, sans-serif!important; text-transform: uppercase; }
 
 
 a {text-decoration: none; font-weight: 500; }
@@ -175,28 +179,32 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 
 // CONTACT PAGE 
 #contact-header-image { position: absolute; height: 50vh; z-index: -1;}
-.contact-floating-container {width: 100vw; margin-top: 35vh; top: 0; left: 0; z-index: 4; border:6px solid yellow; display: inline-flex; overflow-x: hidden;}
+.contact-floating-container {width: 100vw; margin-top: 35vh; top: 0; margin-left: 0; z-index: 4; display: inline-flex; overflow-x: hidden;}
 .contact-floating-container-left { width: 75%; }
-.contact-floating-container-left-half { width: 100%; border: 2px solid red; padding: 25px 50px 25px 50px; display: flex; align-items: center;}
+.contact-floating-container-left-half { width: 100%;  padding: 25px 50px 25px 50px; display: flex; align-items: center;}
 
-.contact-floating-container-right{width: 25vw; max-height: 550px; top: 0; overflow-x: hidden; display: flex; justify-content: flex-end;  }
+.contact-floating-container-right{width: 25vw;  max-height: 550px; margin-top: 0; overflow-x: hidden; display: flex; justify-content: flex-end;  }
 #contact-card-holder {position: absolute; left: 73vw; right: ~'calc(-(100vw /5))';  }
-#map-holder {width: 70%; left: 8vw; transform: rotate(-20deg); position: absolute; right: ~'calc(-(100vw /4))'; margin-top: -25%; display: flex; justify-content: flex-end; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .5)); }
+#map-holder {width: 70%; margin-right: 8vw; transform: rotate(-20deg); position: absolute; z-index: 2; margin-left: ~'calc(-(100vw /4))'; margin-top: -25%; display: flex; justify-content: flex-end; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .5)); }
 
 .contact-card:hover {transform: scale(0.99);}
 .contact-card {transform: rotate(15deg); width: 500px; border-radius: 24px; height: 300px;  border: 10px solid #62abd0; background-color: #f9e6c8; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .5));}
 .contact-card-wrapper {width: 100%; height: 100%; padding: 15px; display: flex; align-items: center; justify-content: center;}
 .contact-card-column {width: 50%; height: 100%; display: flex; align-items: center; justify-content: center;  padding: 15px;}
-#contact-page-main-content {padding: 25px 50px; width: 80%;}
+#contact-page-main-content {padding: 0px 50px 100px 50px; width: 100%; height: auto;}
+#contact-form {color: white; font-size: 12px; }
+#send-message-title {padding-bottom: 25px;}
 
 @media only screen and (max-width: 900px) {
-  .contact-floating-container {display: block; padding-bottom: 500px; }
+  body {width: 100vw; overflow-x: hidden!important;}
+  .contact-floating-container {display: block; padding-bottom: 325px; }
   .contact-floating-container-left {width: 100%;}
-  .contact-floating-container-right {margin-top: 25px; width: 100vw; left: 0;  justify-content: center;}
-  #contact-card-holder {left: 4vw;}
-  .contact-card {transform: rotate(8deg);}
-  #map-holder {transform: rotate(-10deg); margin-top: -20%; width: 50%; right: 0; left: 55vw;}
-  #contact-page-main-content {width: 100%}
+  .contact-floating-container-right {margin-top: 25px; width: 60vw; right: -25vw; left: 0;  justify-content: center!important; overflow-x: hidden;}
+
+  .contact-card {transform: rotate(8deg) scale(0.8); overflow-x: hidden;}
+  #map-holder {transform: rotate(-10deg); margin-top: -20%; width: 50%; margin-right: 0; margin-left: 60vw;}
+  #contact-page-main-content {width: 100vw; margin-top: 50px; overflow-x: hidden;}
+  #send-message-title {max-width: 50%; height: 100%; padding-bottom: 25px; font-size: 2rem!important; }
 
   
 }

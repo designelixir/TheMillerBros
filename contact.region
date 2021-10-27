@@ -7,11 +7,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture inset-box-shadow" style="width: 100vw;">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" style="width: 100vw;">
       <header class="site-header" id="contact-header" >
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
-      <div class="site-header-image-container" id="contact-header-image" style="background-image: url('{collection.mainImage.assetUrl}')"></div>
+      <div class="site-header-image-container" id="contact-header-image" style="background-image: url('{collection.mainImage.assetUrl}')"><span style="height: 100%; width: 100%;" class="gradient-shadow"></span></div>
       
       <div class="contact-floating-container">
         <div class="contact-floating-container-left">
@@ -22,12 +22,13 @@
                 </span>
             </div>
             <div class="contact-floating-container-left-half">
+            
                 <squarespace:block-field id="contact-title" class="bold-paragraph" columns="1"/>
             </div>
         </div>
         {#  CARD SIDE  }
         <div class="contact-floating-container-right">
-            <span id="contact-card-holder" style="border: 3px solid aqua;">
+            <span id="contact-card-holder">
               <div class="contact-card tan-texture">
                 <div class="contact-card-wrapper">
 
@@ -50,14 +51,15 @@
                 </div>
               </div>
             <span>
-            <span id="map-holder" style="border: 2px solid orange;">
+            <span id="map-holder">
                 <img src="../assets/map.svg" style="width: 100%;"/>
             </span>
         </div>
       </div>
 
       <!-- cms content injection point -->
-      <main class="content-container" id="contact-page-main-content" role="main" data-content-field="main-content" >
+      <main class="content-container " id="contact-page-main-content" role="main" data-content-field="main-content" >
+        <h1 id="send-message-title" class="blue-text-shadow">Ask us anything!</h1>
         <squarespace:block-field id="contact-form" columns="1"/>
 
        {squarespace.main-content}
