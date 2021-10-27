@@ -36,6 +36,8 @@ button:hover {transform: scale(1.05); cursor: pointer}
 button a {color: white;}
 button a:hover {transform: scale(1)}
 
+.drop-shadow {filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .35));}
+
 .sqs-block-button-element { background-color: transparent!important; font-family: museo-sans-rounded, sans-serif!important; font-weight: 500!important; font-size: 16px; background-position: 50% 50%; background-repeat: no-repeat; color: white; margin: 0!important; padding: 15px 25px!important; }
   .sqs-block-button-element--small { display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: contain; background-repeat: no-repeat;  }
   .sqs-block-button-element--medium { display: flex; align-items: center; justify-content: center; background-image: url("../assets/textured-black-button.svg"); background-size: contain; background-repeat: no-repeat;  }
@@ -118,11 +120,14 @@ footer {width: 100vw; border: 1px solid magenta; margin-bottom: 0;}
 
 #review-wrapper {width: 100%; display: inline-flex; align-items: flex-start; justify-content: space-evenly;}
 #review-wrapper h1 {font-size: 5rem; color: white; text-shadow: -3px -3px #62abd0; padding: 0; margin: 0;}
-
 #our-story-review p {font-size: 1.5rem; font-weight: 100; font-style: italic; line-height: 2.25rem; padding: 50px; color: white; text-align: center; padding: 0; margin: 15px; }
 #our-story-reviewer p {font-size: 2rem; font-family: "Sacramento-Regular", serif; color: white;}
 #our-story-reviewer-company p {color: white; font-size: 1rem;  font-weight: 100; margin-top: -10px;}
-
 #our-story-review-img {max-width: 100px; margin: -20px 0 0 0; padding: 0!important;}
 #review-name-wrapper {display: inline-flex; width: 100%;  align-items: center; justify-content: center; }
-#review-image-wrapper {height: 100px; width: 100px; text-align: center; margin: 0; padding: 0;}
+
+.bio-container {height: 900px; display: inline-flex;}
+.bio-wrapper {width: 50%; height: 100%; background-size: cover; background-position: center top; background-repeat: no-repeat;}
+.bio-content-wrapper {width: 100%; height: 100%; display: flex; display: flex; align-items: flex-end;}
+.bio-content {background-image: url(../assets/yellow-smudge.png); text-align: center; width: 90%; margin: 2.5% 5%; background-size: 100% 100%; background-repeat: no-repeat; background-position: center center; padding: 25px 35px;}
+.signature-img {min-width: 200px; width: 40%;}

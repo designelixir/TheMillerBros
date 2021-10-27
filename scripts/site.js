@@ -72,6 +72,9 @@ function mediaQuery(x800) {
     $('.mobile-navigation-button').css({"display":"block"})
     $('#contact-title-2').css("font-size", "11vw")
     $('.footer-left').css({"display":"none"})
+    $('.bio-container').css("display","block");
+    $('.bio-wrapper').css("width", "100%")
+ 
 
   } else {
     $('.site-navigation-list').css({"display":"inline-flex"})
@@ -80,6 +83,9 @@ function mediaQuery(x800) {
     $('.mobile-navigation-container').css("display","none");
     $('.site-header').css({"background-color":"transparent"})
     $('.footer-left').css({"display":"flex"})
+    $('.bio-container').css("display","inline-flex");
+    $('.bio-wrapper').css("width", "50%")
+   
 
   }
 }
