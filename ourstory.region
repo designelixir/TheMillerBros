@@ -22,8 +22,15 @@
         <h6 style="text-align: center; color: white; font-size: 3rem;"> Telling stories from the path less traveled.</h6>
       </div>
 
-      <div>
+
+      <div style="display: inline-flex; align-items: flex-start; justify-content: space-evenly; ">
+          <div class="quote-mark"><h1>"</h1></div>
           <squarespace:block-field id="our-story-review" columns="12"/>
+          <div class="quote-mark" style=" text-align: right;"><h1>"</h1></div>
+      </div>
+      <div>
+          <squarespace:block-field id="our-story-reviewer" columns="12"/>
+          <squarespace:block-field id="our-story-reviewer-company" columns="12"/>
 
       </div>
 
@@ -40,4 +47,8 @@
 
   </body>
 </html>
-<script>console.log({@|json-pretty})</script>
+<script>
+
+
+
+</script>
