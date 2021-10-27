@@ -125,6 +125,34 @@
     {squarespace-footers}
 
   </body>
+  <footer class="site-footer">
+      <div id="upper-footer-wrapper" class="texture">
+        <span id="footer-left" class="inset-bottom">
+            <img src="assets/miller-bros-lettermark-black.svg" style="height: 125px;" alt="the Miller Bros lettermark logo" />
+            <squarespace:block-field id="blockField1" columns="1"/>
+        </span>
+
+        <span id="footer-right">
+          <span>
+            <squarespace:block-field id="blockField2" columns="1"/>
+          </span>
+          <span>
+            <squarespace:block-field id="blockField3" columns="1"/>
+          </span>
+          <span>
+            <squarespace:block-field id="blockField4" columns="1"/>
+          </span>
+        <span> 
+    
+      </div>
+
+      {#  copyright and credits  }
+      <div id="lower-footer-wrapper" class="texture inset-box-shadow">
+        <p>Copyright The Miller Bros LLC &copy; 2021 </p>
+
+        <a class="hover-indication" href="https://designelixir.studio" target="_blank" style='font-size: 12px;'> Made with &hearts; by Design Elixir</a>
+      </div>
+      </footer>
 </html>
 
 

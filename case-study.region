@@ -168,39 +168,34 @@
         <div id="next-slide">
             <img id="slide-arrow" src="../assets/nav-arrow.svg" alt="next slide arrow" />
         </div>
-        
     </section>
   
 
 
 
 
-    <footer class="texture">
-    <div class="footer-wrapper tan-texture inset-box-shadow">
-    <div class="footer-left" >
-      <img  style="height: 100%; max-height: 100px;" src="../assets/Miller-Bros-Lettermark-Black.svg"/>
-    </div>
-    <div class="footer-right">
-        <div style="width: 50%; border: 1px solid red; text-align: center;">
-          <img style="height: 100px; margin: 5px;" src="../assets/Lab-Logo.svg"/>
-          <p> A creative, collaborative studio.</p><br>
-          <p>3 S. Black Street<br>Bozeman, MT</p>
+    <footer class="site-footer">
+      <div id="upper-footer-wrapper" class="texture">
+        <span id="footer-left" class="inset-bottom">
+            <img src="assets/miller-bros-lettermark-black.svg" style="height: 125px;" alt="the Miller Bros lettermark logo" />
+            <squarespace:block-field id="blockField1" columns="1"/>
+        </span>
 
-        </div>
-        <div style="width: 50%; border: 1px solid red; display: flex; flex-direction: column; ">
-          <squarespace:block-field id="footer-social-icons" columns="12"/>
-          <squarespace:block-field id="footer-button" columns="12"/>
+        <span id="footer-right">
+          <span>
+            <squarespace:block-field id="blockField2" columns="1"/>
+          </span>
+        <span> 
+    
+      </div>
 
-          
-        </div>
-    </div>
-  </div>
-
-  <div class="footer-navigation-wrapper">
+      {#  copyright and credits  }
+      <div id="lower-footer-wrapper" class="texture">
         <p>Copyright The Miller Bros LLC &copy; 2021 </p>
-        <a href="https://designelixir.studio" target="_blank" style='font-size: 12px; color: white; opacity: 0.75'> Made with &hearts; by Design Elixir</a>
-  </div>
-  </footer>
+
+        <a class="hover-indication" href="https://designelixir.studio" target="_blank" style='font-size: 12px;'> Made with &hearts; by Design Elixir</a>
+      </div>
+      </footer>
 
 
 
