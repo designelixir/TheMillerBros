@@ -1,25 +1,84 @@
-<footer class="site-footer">
-      <div class="upper-footer-wrapper" class="texture">
-        <span class="footer-left tan-texture inset-box-shadow">
-            <img src="assets/miller-bros-lettermark-black.svg" style="height: 125px;" alt="the Miller Bros lettermark logo" />
+<footer class="inset-box-shadow tan-texture">
+    <div>
+    <div class="footer-wrapper">
+        <div class="footer-left"><div>
+            <img class="drop-shadow" style="height: 150px; padding: 15px; " src="../assets/miller-bros-stacked-black.svg" alt="The Miller Bros Lettermark Logo"/>
+            <span class="footer-nav-wrapper">
+                <a href="/">Home </a><span>&nbsp;|&nbsp;</span>
+                <a href="/our-story"> Our Story </a><span>&nbsp;|&nbsp;</span>
+                <a href="/portfolio">Portfolio </a><span>&nbsp;|&nbsp;</span>
+                <a href="/contact-us">Contact Us</a>
+            </span>
+            <div class="social-navigation-footer">
+                <a href="https://vimeo.com/themillerbros" target="_blank" id="vimeo-f-a"><img class="social-icon " id="vimeo-f" src="../assets/social/vimeo-black.svg" alt="vimeo icon"/></a>
+                <a href="https://www.instagram.com/miller.bros/" target="_blank" id="insta-f-a"><img class="social-icon " id="insta-f" src="../assets/social/instagram-black.svg" alt="instagram icon"/></a>
+                <a href="mailto:stories@themillerbros.com" target="_blank" id="email-f-a"><img class="social-icon " id="email-f" src="../assets/social/email-black.svg" alt="email icon"/></a>
+            </div>
             
-        </span>
+        </div></div>
 
-        <span class="footer-right">
-          <span style="width: 100%;">
-            <squarespace:block-field id="footerField2" columns="1"/>
-          </span>
-          <span style="width: 100%;">
-            <squarespace:block-field id="footerField3" columns="1"/>
-          </span>
+        <div class="footer-right inset-box-shadow">
+            <span class="footer-right-text">
+                <h3>Find Us at the Lab </h3>
+                <img style="width: 80%; transform: rotate(180deg);" src="../assets/shapes/blue-textured-line.svg"/><br>
+                <a style="color: white;" href="https://www.google.com/maps/dir//3+S+Black+Ave,+Bozeman,+MT+59715/@42.7897208,-112.40251,6z/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x5345445a168d9681:0x515932edd2633723" target="_blank"><p>3 S. Black Street, <br> Bozeman, MT, 59715</p></a>
+                <span class="footer-right-button-wrapper">
+                    
+                    <a class="sqs-block-button-element--large drop-shadow" href="contact-us" style="padding: 10px 15px; color: white; ">Let's Chat</a>
+                </span>
+                
+                
+            </span>
+            <span class="footer-right-logo" >
+                <span><a href="https://instagram.com/bozemanlab/" target="_blank"><img id="lab-logo" style="height: 125px" src="../assets/lab-circle.svg"/></a></span>
+                
+            </span>
+        </div>
+    </div>
+    </div>
+    <div class="lower-footer-wrapper texture inset-box-shadow">
+        <p style="font-size: 14px; font-weight: 300; color: white;">Copyright The Miller Bros LLC &copy; 2021 </p>
+        <a href="https://designelixir.studio" target="_blank" style='font-size: 12px; opacity: 0.75; padding: 0; margin: 0; color: white;'> Made with &hearts; by Design Elixir</a>
+    </div>
 
-        <span> 
     
-      </div>
+</footer>
 
-      {#  copyright and credits  }
-      <div class="lower-footer-wrapper" class="texture inset-box-shadow">
-        <p>Copyright The Miller Bros LLC &copy; 2021 </p>
-        <a href="https://designelixir.studio" target="_blank" style='font-size: 12px;'> Made with &hearts; by Design Elixir</a>
-      </div>
-      </footer>
+
+<script>
+
+$('#vimeo-f-a').hover(
+    function(){$('#vimeo-f').attr("src", "../assets/social/vimeo-blue.svg")}, 
+    function(){$('#vimeo-f').attr("src", "../assets/social/vimeo-black.svg")}
+)
+
+$('#insta-f-a').hover(
+    function(){$('#insta-f').attr("src", "../assets/social/instagram-blue.svg")}, 
+    function(){$('#insta-f').attr("src", "../assets/social/instagram-black.svg")}
+)
+
+$('#email-f-a').hover(
+    function(){$('#email-f').attr("src", "../assets/social/email-blue.svg")}, 
+    function(){$('#email-f').attr("src", "../assets/social/email-black.svg")}
+)
+
+function mediaQuery(x900) {
+  if (x900.matches) { 
+      $('.footer-wrapper').css({"display": "block"});
+      $('.footer-right').css({"width": "100%"});
+      $('.footer-left').css("width", "100%")
+
+  } else {
+    $('.footer-wrapper').css({"display": "inline-flex"});
+    $('.footer-right').css("width", "40%");
+    $('.footer-left').css("width", "60%")
+   
+
+  }
+}
+var x900 = window.matchMedia("(max-width: 900px)")
+mediaQuery(x900) 
+x900.addListener(mediaQuery); 
+
+
+</script>
