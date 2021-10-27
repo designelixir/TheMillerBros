@@ -72,7 +72,7 @@ function mediaQuery(x800) {
     $('.mobile-navigation-button').css({"display":"block"})
     $('#contact-title-2').css("font-size", "11vw")
     $('.footer-left').css({"display":"none"})
-    $('.bio-container').css("display","block");
+    $('.bio-container').css({"display":"block", "height":"1800px"});
     $('.bio-wrapper').css("width", "100%")
  
 
@@ -83,7 +83,7 @@ function mediaQuery(x800) {
     $('.mobile-navigation-container').css("display","none");
     $('.site-header').css({"background-color":"transparent"})
     $('.footer-left').css({"display":"flex"})
-    $('.bio-container').css("display","inline-flex");
+    $('.bio-container').css({"display":"inline-flex", "height":"900px"});
     $('.bio-wrapper').css("width", "50%")
    
 
