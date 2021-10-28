@@ -2,13 +2,13 @@
     <div>
     <div class="footer-wrapper">
         <div class="footer-left"><div>
-            <img class="drop-shadow" style="height: 150px; padding: 15px; " src="../assets/miller-bros-stacked-black.svg" alt="The Miller Bros Lettermark Logo"/>
-            <span class="footer-nav-wrapper">
+            <img class="drop-shadow hoverthis" onclick="location.href='/';" style="height: 150px; padding: 15px;" src="../assets/miller-bros-stacked-black.svg" alt="The Miller Bros Lettermark Logo"/>
+            {#  <span class="footer-nav-wrapper">
                 <a href="/">Home </a><span>&nbsp;|&nbsp;</span>
                 <a href="/our-story"> Our Story </a><span>&nbsp;|&nbsp;</span>
                 <a href="/portfolio">Portfolio </a><span>&nbsp;|&nbsp;</span>
                 <a href="/contact-us">Contact Us</a>
-            </span>
+            </span>  }
             <div class="social-navigation-footer">
                 <a href="https://vimeo.com/themillerbros" target="_blank" id="vimeo-f-a"><img class="social-icon " id="vimeo-f" src="../assets/social/vimeo-black.svg" alt="vimeo icon"/></a>
                 <a href="https://www.instagram.com/miller.bros/" target="_blank" id="insta-f-a"><img class="social-icon " id="insta-f" src="../assets/social/instagram-black.svg" alt="instagram icon"/></a>
@@ -24,7 +24,7 @@
                 <a style="color: white;" href="https://www.google.com/maps/dir//3+S+Black+Ave,+Bozeman,+MT+59715/@42.7897208,-112.40251,6z/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x5345445a168d9681:0x515932edd2633723" target="_blank"><p>3 S. Black Street, <br> Bozeman, MT, 59715</p></a>
                 <span class="footer-right-button-wrapper">
                     
-                    <a class="sqs-block-button-element--large drop-shadow" href="contact-us" style="padding: 10px 15px; color: white; ">Let's Chat</a>
+                    <a class="sqs-block-button-element--large drop-shadow" href="contact-us" style="padding: 15px 25px; color: white; text-transform: uppercase; ">Let's Chat</a>
                 </span>
                 
                 
@@ -79,6 +79,7 @@ function mediaQuery(x900) {
 var x900 = window.matchMedia("(max-width: 900px)")
 mediaQuery(x900) 
 x900.addListener(mediaQuery); 
+
 
 
 </script>

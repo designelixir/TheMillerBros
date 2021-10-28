@@ -11,31 +11,33 @@
       <header class="site-header" id="contact-header" >
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
-      <div class="site-header-image-container" id="contact-header-image" style="background-image: url('{collection.mainImage.assetUrl}')"><span style="height: 100%; width: 100%;" class="gradient-shadow"></span></div>
+      <div class="site-header-image-container" id="contact-header-image" style="background-image: url('{collection.mainImage.assetUrl}')"><span style="height: 100%; height: 40vh; width: 100%;"></span></div>
       
       <div class="contact-floating-container">
         <div class="contact-floating-container-left">
-            <div class="contact-floating-container-left-half"  >
+            <div class="contact-floating-container-left-half" id="top-half"  >
                 <span id="half-1">
-                <h6> Let's tell a <br><span id="contact-title-2" style="font-size: 62px; padding-bottom: 25px;"> story together</span></h6>
-                <img class="drop-shadow" src="assets/shapes/yellow-textured-line.svg"/>
+                  <h6 id="contact-title-1"> Let's tell a </h6><h6 id="contact-title-2"> story together</h6>
+                  <img class="drop-shadow" src="assets/shapes/yellow-textured-line.svg"/>
                 </span>
             </div>
             <div class="contact-floating-container-left-half">
-            
+            <div style="margin: 25px 0">
                 <squarespace:block-field id="contact-title" class="bold-paragraph" columns="1"/>
+                <squarespace:block-field id="contact-form" columns="1" />
+              </div>
             </div>
         </div>
         {#  CARD SIDE  }
-        <div class="contact-floating-container-right">
-            <span id="contact-card-holder">
+        <div class="contact-floating-container-right" >
+            <div id="contact-card-holder">
               <div class="contact-card tan-texture">
                 <div class="contact-card-wrapper">
 
-                  <div class="contact-card-column" style="border-right: 1px solid black;">
+                  <div class="contact-card-column" style="border-right: 4px solid #62abd0; border-radius: 2px; width: 90%;">
                     <span style="text-align: center;">
-                        <h4>Spencer &amp; Camden Miller </h4>
-                        <h5 style="font-size: 18px; padding-top: 5px;">The Miller Bros </h5>
+                        <h4 style="font-size: 18px;">Spencer &amp; Camden Miller </h4>
+                        <h5 style="font-size: 18px; padding-top: 5px;"><a id="email-link" style="color: black; font-weight: 300;" href="mailto:stories@themillerbros.com">stories@themillerbros.com</a> </h5>
                         <div class="social-navigation-footer">
                             <a href="https://vimeo.com/themillerbros" target="_blank" id="vimeo-f-a"><img class="social-icon " id="vimeo-f" src="../assets/social/vimeo-black.svg" alt="vimeo icon"/></a>
                             <a href="https://www.instagram.com/miller.bros/" target="_blank" id="insta-f-a"><img class="social-icon " id="insta-f" src="../assets/social/instagram-black.svg" alt="instagram icon"/></a>
@@ -50,17 +52,18 @@
 
                 </div>
               </div>
-            <span>
-            <span id="map-holder">
-                <img src="../assets/map.svg" style="width: 100%;"/>
-            </span>
+            </div>
+            <div id="map-holder">
+              
+                <img id="map-img" src="../assets/map.svg" style="width: 100%;"/>
+
+            </div>
         </div>
       </div>
 
       <!-- cms content injection point -->
-      <main class="content-container " id="contact-page-main-content" role="main" data-content-field="main-content" >
-        <h1 id="send-message-title" class="blue-text-shadow">Ask us anything!</h1>
-        <squarespace:block-field id="contact-form" columns="1"/>
+      <main class="content-container" id="contact-page-main-content" role="main" data-content-field="main-content" >
+        
 
        {squarespace.main-content}
       </main>
@@ -78,5 +81,22 @@
 
 
 </html>
+<script>
 
+$('#map-holder').hover(
+  function(){
+    $('#map-img').attr("src","assets/map-extend.svg"); 
+    $('#map-holder').css({"width":"95%"}); 
+    $('#map-img').css({"transform":"scale(1)"});  
+    },
+  function(){$('#map-img').attr("src","assets/map.svg");
+  $('#map-holder').css({"width":"100%"}); 
+    console.log('hovered out')}
+)
+
+$("#map-img").on('click', function(){
+     window.open('https://www.google.com/maps/dir//3+S+Black+Ave,+Bozeman,+MT+59715/@45.6797374,-111.0352918,35a,49.8y,212.88h,67.36t/data=!3m1!1e3!4m17!1m7!3m6!1s0x5345445a168d9681:0x515932edd2633723!2s3+S+Black+Ave,+Bozeman,+MT+59715!3b1!8m2!3d45.6791145!4d-111.035851!4m8!1m0!1m5!1m1!1s0x5345445a168d9681:0x515932edd2633723!2m2!1d-111.035851!2d45.6791145!3e0?hl=en', '_blank');    
+});
+
+</script>
 

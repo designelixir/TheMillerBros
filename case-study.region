@@ -8,22 +8,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-    <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture">
+    <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
         <header class="site-header">
             <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </header>
 
-     <div class="loader-wrapper texture">
-            <div class="loader-contents">
-
-                <img style="height: 100px; padding: 5px 50px;" src="assets/steering-wheel.svg"/>
-                <div class='progress' id="progress_div">
-                    <div class='bar' id='bar1'></div>
-                    <div class='percent' id='percent1'></div>
-                </div>                
-                <input type="hidden" id="progress_width" value="0">
-            </div>
-        </div>
+     
 
    
     <section id="featured-projects">
@@ -31,7 +21,7 @@
         {.repeated section items}
             <div class="slide">
                 <div class="project">
-                    <div class="project-wrapper" style="display: none;width: 100%; height: 100%; position: relative;">
+                    <div class="project-wrapper" style="z-index: 0; width: 100%; height: 100%; position: relative; ">
                         <div class="vimeo-bg-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');" >
                             <iframe class="vimeo-bg-iframe" src='https://player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
@@ -98,7 +88,7 @@
                                 <span class="case-study-block" id="summary-credits-block">
                                     <span class="summary">
                                         <h4 style="padding-bottom: 10px; width: 50%;" class="yellow-line">Project Summary </h4>   
-                                        <script>var fixed = body.stringify(); console.log(fixed) </script>
+                                        
                                         <p>{body}</p>
                                     </span>
                                     <span class="credits">
@@ -169,35 +159,21 @@
             <img id="slide-arrow" src="../assets/nav-arrow.svg" alt="next slide arrow" />
         </div>
     </section>
+
+    <section id="about-summary" class="texture" style="border: 4px solid lime;">
+    <div class="scroll-down-indicator-wrapper">
+
+    </div>
+
+        <squarespace:block-field id="about-summary-text" columns="1" />
+
+    </section>
   
 
 
 
 
-    <footer class="site-footer">
-      <div id="upper-footer-wrapper" class="texture">
-        <span id="footer-left" class="inset-bottom">
-            <img src="assets/miller-bros-lettermark-black.svg" style="height: 125px;" alt="the Miller Bros lettermark logo" />
-            <squarespace:block-field id="blockField1" columns="1"/>
-        </span>
-
-        <span id="footer-right">
-          <span>
-            <squarespace:block-field id="blockField2" columns="1"/>
-          </span>
-        <span> 
-    
-      </div>
-
-      {#  copyright and credits  }
-      <div id="lower-footer-wrapper" class="texture">
-        <p>Copyright The Miller Bros LLC &copy; 2021 </p>
-
-        <a class="hover-indication" href="https://designelixir.studio" target="_blank" style='font-size: 12px;'> Made with &hearts; by Design Elixir</a>
-      </div>
-      </footer>
-
-
+    <squarespace:navigation navigationId="footerNav" template="footer" />
 
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
@@ -210,19 +186,49 @@
 <script>
 
 
+
 var allSlides = document.getElementsByClassName('project');
 console.log(allSlides)
 var active = 0;
 var counter = allSlides.length;
 
+window.addEventListener('DOMContentLoaded', (event) => {
+    bringTheDivs()
+    
+
+});
 
 
-  $('.counter').click(function(){
-    console.log('something happened')
-  })
-  
-  $('#next-slide').click(function(){
-    $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
+document.addEventListener("load", function() {
+    setInterval(autoPlayTimer)
+});
+
+function bringTheDivs(){
+  console.log('called bring the divs')
+  $('#next-slide').fadeIn(1000);
+  $('#project-counter').fadeIn(1000);
+  $(".title-container").css("animation","fade-in 1s cubic-bezier(.39,.575,.565,1.000) both");
+  $(".project-wrapper").fadeIn(1000);
+  $("iframe").fadeIn(1000);
+  $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
+}
+
+  for (let i = 1; i < counter; i++) {
+    $("#project-counter").append($(".counter").last().clone(true));
+  }
+
+$('.back-to-top').click(function(){$('.project-case-study-window').scrollTop(0);})
+$('.expand-button').click(function() { let elem = document.getElementById("fullcut-iframe"); elem.requestFullscreen()})
+
+
+
+
+$('counter').click(function(){
+  console.log($('.counter:nth-child()') + "this")
+})
+
+function goToSlide(active){
+  $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
     if(counter > active + 1){active++;} 
     else {active = 0;}
     var activate = allSlides[active];
@@ -230,10 +236,14 @@ var counter = allSlides.length;
     activate.style.left = "0";
     $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
     clearInterval(timerID);
-  })
+}
+
+
   
-  var timerID = 
-  setInterval(function() {
+  
+
+  var autoPlayTimer = setInterval(function() {
+    console.log("starting timer")
   $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
       if(active >= counter - 1){active = 0;} 
       else {active = active + 1;}
@@ -268,54 +278,8 @@ $(window).scroll(function(){
 });
 
 
-// LOADING BAR 
-document.onreadystatechange = function(e){
-  if(document.readyState=="interactive"){
-    var all = document.getElementsByTagName("*");
-    for (var i=0, max=all.length; i < max; i++) {
-      set_ele(all[i]);
-    }
-  }
-}
-function check_element(ele){
-  var all = document.getElementsByTagName("*");
-  var totalele=all.length;
-  var per_inc=100/all.length;
-
-  if($(ele).on()){
-    var prog_width=per_inc+Number(document.getElementById("progress_width").value);
-    document.getElementById("progress_width").value=prog_width;
-    $("#bar1").animate({width:prog_width+"%"},10,function(){
-      if(document.getElementById("bar1").style.width=="100%")
-      {
-        $("header").fadeIn(1000);
-        $(".loader-wrapper").fadeOut(1000);
-        $(".loader-wrapper").css("display","none")
-        $('#next-slide').fadeIn(1000);
-        $('#project-counter').fadeIn(1000);
-        $(".loader-contents").css("display","none")
-        $(".title-container").css("animation","fade-in 1s cubic-bezier(.39,.575,.565,1.000) both");
-        $(".project-wrapper").fadeIn(1000);
-        $("iframe").fadeIn(1000);
-        $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
-
-      }			
-    });
-  }else{
-    set_ele(ele);}
-}
-function set_ele(set_element){check_element(set_element);}
-
-// //// //// //// //// //// //// //// //// //// //// //// //// //
 
 // counter dots
-  for (let i = 1; i < counter; i++) {
-    $("#project-counter").append($(".counter").last().clone(true));
-  }
-
-$('.back-to-top').click(function(){$('.project-case-study-window').scrollTop(0);})
-$('.expand-button').click(function() { let elem = document.getElementById("fullcut-iframe"); elem.requestFullscreen()})
-
 
 // MEDIA QUERY 
 function mediaQuery(x800) {

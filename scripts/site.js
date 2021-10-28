@@ -64,6 +64,8 @@ $('.mobile-navigation-button').click(function(){
   }
 });
 
+
+
 // MEDIA QUERIES 
 
 function mediaQuery(x800) {
