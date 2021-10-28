@@ -54,9 +54,10 @@
               </div>
             </div>
             <div id="map-holder">
-              
+              <span style="text-align: center; padding-bottom: 25px;">
                 <img id="map-img" src="../assets/map.svg" style="width: 100%;"/>
-
+                <p id="map-holder-address" class="bold-paragraph white-text" >3 S. Black Avenue,<br> Bozeman, MT</p>
+                </span>
             </div>
         </div>
       </div>
@@ -83,16 +84,6 @@
 </html>
 <script>
 
-$('#map-holder').hover(
-  function(){
-    $('#map-img').attr("src","assets/map-extend.svg"); 
-    $('#map-holder').css({"width":"95%"}); 
-    $('#map-img').css({"transform":"scale(1)"});  
-    },
-  function(){$('#map-img').attr("src","assets/map.svg");
-  $('#map-holder').css({"width":"100%"}); 
-    console.log('hovered out')}
-)
 
 $("#map-img").on('click', function(){
      window.open('https://www.google.com/maps/dir//3+S+Black+Ave,+Bozeman,+MT+59715/@45.6797374,-111.0352918,35a,49.8y,212.88h,67.36t/data=!3m1!1e3!4m17!1m7!3m6!1s0x5345445a168d9681:0x515932edd2633723!2s3+S+Black+Ave,+Bozeman,+MT+59715!3b1!8m2!3d45.6791145!4d-111.035851!4m8!1m0!1m5!1m1!1s0x5345445a168d9681:0x515932edd2633723!2m2!1d-111.035851!2d45.6791145!3e0?hl=en', '_blank');    

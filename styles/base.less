@@ -31,6 +31,7 @@ h4{font-size: 1.25rem; font-weight: 700; text-transform: uppercase;}
 h5{font-size: 1rem; font-weight: 300; font-style: italic; line-height: 1.25rem;}
 h6 {font-family: "TimberWolf-Regular", sans-serif; font-size: 2em; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);}
 
+.white-text {color: white!important;}
 button {border: none; background-color: transparent; color: white; padding: 10px 15px; font-family: museo-sans-rounded, sans-serif; font-size: 18px; text-transform: uppercase;}
 button:active{border: none; background-color: transparent;}
 button:hover {transform: scale(1.05); cursor: pointer}
@@ -198,8 +199,11 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 #contact-page-main-content {margin: 0 50px; width: 100vw; height: auto;}
 #contact-form {color: white; font-size: 12px;  }
 
-#map-holder {width: 90%; height: 300px;  z-index: 2; margin: -150px 0 0 15%; display: flex; justify-content: flex-end; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .5)); }
-#map-holder:hover {cursor: pointer;}
+#map-holder {width: 100%; height: 300px;  z-index: 2; margin: -150px 0 0 0%; display: flex; justify-content: flex-end; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .5)); }
+#map-holder:hover {cursor: pointer; transform: scale(1.25); justify-content: flex-start;}
+#map-holder-address {display: none; }
+
+#map-holder span:hover > #map-holder-address {display: block;}
 
 @media only screen and (max-width: 1000px) {
   // body {width: 100vw; overflow-x: hidden!important;}
@@ -208,9 +212,11 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
   #contact-title-1 {font-size: 36px;}
   #contact-title-2 {font-size: 42px;} 
   .contact-floating-container-right {width: 100vw;}
-  #map-holder {width: 100%; margin: -175px 0 0 0%;}
+  #map-holder {width: 100%; margin: -175px 0 0 0%; align-items: center; justify-content: center;}
+  #map-holder img {width: 110%;}
   .contact-card:hover {transform: rotate(15deg)}
   #contact-card-holder {overflow-x: hidden; }
+  #map-holder-address {display: block;}
 
 
   

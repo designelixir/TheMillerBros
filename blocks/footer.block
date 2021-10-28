@@ -19,7 +19,7 @@
 
         <div class="footer-right inset-box-shadow">
             <span class="footer-right-text">
-                <h3>Find Us at the Lab </h3>
+                <h3 style="font-size: 24px;">Find Us at the Lab </h3>
                 <img style="width: 80%; transform: rotate(180deg);" src="../assets/shapes/blue-textured-line.svg"/><br>
                 <a style="color: white;" href="https://www.google.com/maps/dir//3+S+Black+Ave,+Bozeman,+MT+59715/@42.7897208,-112.40251,6z/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x5345445a168d9681:0x515932edd2633723" target="_blank"><p>3 S. Black Street, <br> Bozeman, MT, 59715</p></a>
                 <span class="footer-right-button-wrapper">
@@ -30,7 +30,7 @@
                 
             </span>
             <span class="footer-right-logo" >
-                <span><a href="https://instagram.com/bozemanlab/" target="_blank"><img id="lab-logo" style="height: 125px" src="../assets/lab-circle.svg"/></a></span>
+                <span><a href="https://instagram.com/bozemanlab/" target="_blank"><img id="lab-logo" style="height: 100px" src="../assets/lab-circle.svg"/></a></span>
                 
             </span>
         </div>
