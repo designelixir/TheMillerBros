@@ -43,7 +43,7 @@
                             
                             <div class="title-wrapper toggle-case-study" id="salmon">
                                 <div class="summary-title " id="orange">
-                                    <div class="summary-title-button-wrapper drop-shadow"  style="border: 3px solid red;">
+                                    <div class="summary-title-button-wrapper drop-shadow">
                                         <div class="title-brand-wrapper" >
                                             <h1 class="project-title ">{title}</h1>
                                             <h4 class="project-brand">{customContent.brand}</h4> 
@@ -164,11 +164,11 @@
             <img id="slide-arrow" src="../assets/nav-arrow.svg" alt="next slide arrow" />
         </div>
     </section>
-    <section class="texture">
-      <div style="width: 100%; border: 2px solid lime; height: 50px; text-align: center; color: white;">
+    <section class="texture inset-box-shadow">
+      <div style="width: 100%; height: 50px; text-align: center; color: white;">
         <p class="bold-paragraph">HEY!!!!</p>
       </div>
-      <div style="height: calc(100% - 50px); width: 100%; padding: 50px; border: 4px solid red">
+      <div style=" width: 100vw; padding: 100px 50px;">
           <squarespace:block-field id="homepage-about-summary" class="bold-paragraph" columns="1"/>
           
 
