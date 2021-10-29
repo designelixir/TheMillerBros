@@ -63,7 +63,7 @@
             </div>
                 {#  CASE STUDY WINDOWS  }
                 {.equal? customContent.customType "Project"} 
-                    <div class="case-study-window texture" style=" position: absolute; top: 0; left: 0; z-index: 25; height: 100vh; width: 100vw;">
+                    <div class="case-study-window texture" style="display: none; position: absolute; top: 0; left: 0; z-index: 25; height: 100vh; width: 100vw;">
                         <div class="project-case-study-wrapper">
                             {#  project navigation  }
                             <div class="case-study-nav inset-box-shadow">
