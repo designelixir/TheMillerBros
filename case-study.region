@@ -42,18 +42,18 @@
                             <div id="traveling-button" class="case-study-button">
                               <img style="width: 150px;" src="assets/bus-icon.svg"/>
                             </div>
-                            <div class="title-wrapper" id="title-wrap" style="border: 4px solid salmon">
-                            
-                                <div class="summary-title toggle-case-study" style="border: 2px solid orange;">
-                                    <div class="summary-title-button-wrapper drop-shadow" id="title-text-wrap" style="border: 3px solid red;">
+                            <div class="title-wrapper" id="salmon">
+                              
+                                <div class="summary-title toggle-case-study" id="orange">
+                                    <div class="summary-title-button-wrapper drop-shadow"  style="border: 3px solid red;">
                                         <div class="title-brand-wrapper" >
                                             <h1 class="project-title ">{title}</h1>
                                             <h4 class="project-brand">{customContent.brand}</h4> 
                                         </div>
+                                      </div>
                                         
                                         
-                                        
-                                    </div>                    
+                                                     
                                 </div>
                             </div>
                             {.end}
@@ -199,47 +199,56 @@ var active = 0;
 var counter = allSlides.length;
 
 var travelingbutton = document.querySelector("#traveling-button");
-var container = document.querySelector('#featured-projects')
-var itemRect = container.getBoundingClientRect();
-var titleTextWrap = document.getElementById('title-text-wrap')
-var itemRect = titleTextWrap.getBoundingClientRect();
-var followMouseBool;
-var divRect = document.getElementById('title-wrap').getBoundingClientRect();
+
+
+var followMouseBool = true;
+var divRect = document.getElementById('salmon').getBoundingClientRect();
 
 {#  THINGS THAT HAPPEN WHEN PAGE LOADS  }
 
-$('#traveling-button').animate({
-        'top':'0', 'left':'0', 'margin': '-100px 0 0 -100px'
-      }, 35, function(){
-        travelingbutton.style.transform = "translate3d(" + itemRect.right + "px, " + itemRect.top + "px, 0)";
-      })
 
 window.addEventListener('DOMContentLoaded', (event) => {
     bringTheDivs ;
-    positionButton ;
     
     
 });
 
+$('#orange').mouseenter(function(){
+  console.log("entered title text")
+  followMouseBool = false ;
+})
+
+$('#orange').mouseleave(function(){
+  console.log("exited title text")
+  followMouseBool = true ;
+})
 
 $('.project').mousemove(followMouse)
-
+var container = document.querySelector('#featured-projects')
+var itemRect = container.getBoundingClientRect();
 function followMouse(e) {
-    
     if (e.pageX >= divRect.left && e.pageX <= divRect.right &&
-      e.pageY >= divRect.top && e.pageY <= divRect.bottom) {
-        var xPos = e.pageX - 100 ;
-        var yPos = e.pageY - 250 ;
+      e.pageY >= divRect.top && e.pageY <= divRect.bottom && followMouseBool) {
+        var xPos = e.pageX  - 50 ;
+        var yPos = e.pageY - 300 ;
         $('#traveling-button').animate({
-          'top':'0', 'left':'0', 'margin': '0 0 0 0'
+          'top':'0', 'left':'0', 'right':'0', 'bottom':'0'
         }, 0, function(){
           travelingbutton.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
         })
     } else {
+
+      var small = document.getElementById('orange');
+      var big = document.getElementById('salmon'); 
+      var smallRect = small.getBoundingClientRect();
+
+      var bigRect = big.getBoundingClientRect();
+      var x = smallRect.width - 100  ;
+      var y = bigRect.height - 50 ;
       $('#traveling-button').animate({
-        'top':'0', 'left':'0', 'margin': '-100px 0 0 -75px'
-      }, 35, function(){
-        travelingbutton.style.transform = "translate3d(" + itemRect.right + "px, " + itemRect.top + "px, 0)";
+        'top':'0', 'left':'0', 'right':'0', 'bottom':'0'
+      }, 0, function(){
+        travelingbutton.style.transform = "translate3d(" +  x + "px, " + y + "px, 0)";
       })
     }
 } 

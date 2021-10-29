@@ -1,27 +1,27 @@
 section { height: 95vh;  overflow: hidden; }
 
-#slide-container {height: 100%;  display: inline-flex; align-items: center; overflow-x: scroll;}
-.slide {height: 100%; width: 100vw; }
+#slide-container {height: 95vh;  display: inline-flex; align-items: center; overflow-x: scroll;}
+.slide {height: 95vh; width: 100vw; }
 .project { height: 100%; width: 100%;  display: flex; align-items: flex-start;}
 
 .vimeo-bg-wrapper {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background-size: cover; background-position: center center; background-repeat: no-repeat;}
 .vimeo-bg-iframe {width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
 .title-container{position: absolute; width: 90%; bottom: 0; left: 0; height: 75%; z-index: 2; display: flex; align-items: flex; }
-.title-wrapper {width: 100%;  margin: 0 0 75px 0px; display: flex; align-items: flex-end; cursor: pointer}
+.title-wrapper {border: 4px solid salmon; width: 100%; margin: 0 0 75px 0px; display: flex; align-items: flex-end; cursor: pointer}
 
 .link-title {font-size: 68px; text-shadow: 4px 4px #62abd0; border-left: 8px solid #62abd0; border-radius: 4px; padding-left: 7px;}
 
-.summary-title {  display: flex; align-items: flex-end; justify-content: flex-start; overflow-y: hidden;}
-.summary-title-button-wrapper {display: inline-flex; align-items: flex-end; justify-content: center; }
-.title-brand-wrapper {padding: 25px 150px 25px 25px;   }
+.summary-title {border: 2px solid orange;  display: flex; align-items: flex-end; justify-content: flex-start; overflow-y: hidden;}
+.summary-title-button-wrapper {display: inline-flex; align-items: flex-end; justify-content: center; padding-right: 150px; }
+#title-inner-wrapper {width: 100%; height: 100%; border: 2px solid aqual}
 .project-title {font-size: 100px!important; line-height: 75px; text-shadow: 4px 4px #C5843D; border-radius: 4px; padding-left: 7px; }
 .project-brand {font-size: 35px; color: white; margin: 5px 0 0 19px; text-shadow: 2px 2px rgba(0,0,0,0.5)}
 .summary-title:hover {cursor: pointer;}
 
 .case-study-toggle-arrow { background-image: url('../assets/yellow-textured-circle.svg');  background-size: contain; background-position: center center; background-repeat: no-repeat; width: 75px; height: 75px; margin: 0 25px 0 25px;  display: flex; align-items: center; justify-content: center;}
 
-#traveling-button {transition: transform 0.35s; width: 175px; height: 100px; position: absolute; z-index: 99999; border: 2px solid purple; display: flex; align-items: center; justify-content: center;}
+#traveling-button {transition: transform 0.5s;  pointer-events: none; width: 175px; height: 100px; position: absolute; z-index: 99999; border: 2px solid purple; display: flex; align-items: center; justify-content: center;}
 
 
 #next-slide {background-image: url('../assets/textured-strip.png'); background-size: 100%; background-position: top right; position: absolute; top: 0; right: 0;
