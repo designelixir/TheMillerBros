@@ -31,24 +31,30 @@
                         {.equal? customContent.customType "LinkedSlider"} 
                             <div class="title-wrapper" onclick="location.href='{customContent.clickthru}'">
                                 <a href='{customContent.clickthru}' style="text-decoration: none; ">
-                                    <span id="linked-slider-wrapper">
+                                    <div id="linked-slider-wrapper" >
                                         <h1 class="link-title">{title}</h1>
                                         <h4 style="color: white;">{body}</h4> 
-                                    </span>
+                                    </div>
                                 </a>
                             </div>
                             {.or}
                             {#  PROJECT SLIDERS}
-                            <div class="title-wrapper ">
-                                <span class="summary-title toggle-case-study">
-                                    <span id="summary-title-button-wrapper">
-                                        <span id="title-brand-wrapper">
-                                            <h1 class="project-title">{title}</h1>
+                            <div id="traveling-button" class="case-study-button">
+                              <img style="width: 150px;" src="assets/bus-icon.svg"/>
+                            </div>
+                            <div class="title-wrapper" id="title-wrap" style="border: 4px solid salmon">
+                            
+                                <div class="summary-title toggle-case-study" style="border: 2px solid orange;">
+                                    <div class="summary-title-button-wrapper drop-shadow" id="title-text-wrap" style="border: 3px solid red;">
+                                        <div class="title-brand-wrapper" >
+                                            <h1 class="project-title ">{title}</h1>
                                             <h4 class="project-brand">{customContent.brand}</h4> 
-                                        </span>
+                                        </div>
                                         
-                                    </span>                    
-                                </span>
+                                        
+                                        
+                                    </div>                    
+                                </div>
                             </div>
                             {.end}
                         </div>
@@ -57,12 +63,12 @@
             </div>
                 {#  CASE STUDY WINDOWS  }
                 {.equal? customContent.customType "Project"} 
-                    <div class="case-study-window texture" style="display: none; position: absolute; top: 0; left: 0; z-index: 25; height: 100vh; width: 100vw;">
+                    <div class="case-study-window texture" style=" position: absolute; top: 0; left: 0; z-index: 25; height: 100vh; width: 100vw;">
                         <div class="project-case-study-wrapper">
                             {#  project navigation  }
                             <div class="case-study-nav inset-box-shadow">
                                 <span>               
-                                    <img src="../assets/miller-bros-lettermark-white.svg" alt="Miller Bros Lettermark Logo" />
+                                    <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
                                 </span>
                                 <span style="justify-content: flex-end;">
                                     <button id="toggle-fullscreen-{id}" class="expand-button hover-indication" aria-label="Toggle Full Screen Video Window"></button>
@@ -192,16 +198,54 @@ console.log(allSlides)
 var active = 0;
 var counter = allSlides.length;
 
+var travelingbutton = document.querySelector("#traveling-button");
+var container = document.querySelector('#featured-projects')
+var itemRect = container.getBoundingClientRect();
+var titleTextWrap = document.getElementById('title-text-wrap')
+var itemRect = titleTextWrap.getBoundingClientRect();
+var followMouseBool;
+var divRect = document.getElementById('title-wrap').getBoundingClientRect();
+
+{#  THINGS THAT HAPPEN WHEN PAGE LOADS  }
+
+$('#traveling-button').animate({
+        'top':'0', 'left':'0', 'margin': '-100px 0 0 -100px'
+      }, 35, function(){
+        travelingbutton.style.transform = "translate3d(" + itemRect.right + "px, " + itemRect.top + "px, 0)";
+      })
+
 window.addEventListener('DOMContentLoaded', (event) => {
-    bringTheDivs()
+    bringTheDivs ;
+    positionButton ;
     
-
+    
 });
 
 
-document.addEventListener("load", function() {
-    setInterval(autoPlayTimer)
-});
+$('.project').mousemove(followMouse)
+
+function followMouse(e) {
+    
+    if (e.pageX >= divRect.left && e.pageX <= divRect.right &&
+      e.pageY >= divRect.top && e.pageY <= divRect.bottom) {
+        var xPos = e.pageX - 100 ;
+        var yPos = e.pageY - 250 ;
+        $('#traveling-button').animate({
+          'top':'0', 'left':'0', 'margin': '0 0 0 0'
+        }, 0, function(){
+          travelingbutton.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+        })
+    } else {
+      $('#traveling-button').animate({
+        'top':'0', 'left':'0', 'margin': '-100px 0 0 -75px'
+      }, 35, function(){
+        travelingbutton.style.transform = "translate3d(" + itemRect.right + "px, " + itemRect.top + "px, 0)";
+      })
+    }
+} 
+
+
+
 
 function bringTheDivs(){
   console.log('called bring the divs')
@@ -222,11 +266,6 @@ $('.expand-button').click(function() { let elem = document.getElementById("fullc
 
 
 
-
-$('counter').click(function(){
-  console.log($('.counter:nth-child()') + "this")
-})
-
 function goToSlide(active){
   $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
     if(counter > active + 1){active++;} 
@@ -235,26 +274,16 @@ function goToSlide(active){
     activate.scrollIntoView();
     activate.style.left = "0";
     $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
-    clearInterval(timerID);
+    clearInterval(autoPlayTimer);
 }
 
 
   
   
 
-  var autoPlayTimer = setInterval(function() {
-    console.log("starting timer")
-  $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
-      if(active >= counter - 1){active = 0;} 
-      else {active = active + 1;}
-      var activate = allSlides[active];
-      activate.scrollIntoView();
-      $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
-  }, 10000);
-
 
 $('.toggle-case-study').click(function(){
-  clearInterval(timerID);
+  clearInterval(autoPlayTimer);
   var count = $('.toggle-case-study').data("count") || 0;
   $('.toggle-case-study').data("count", ++count);
   console.log("count is "+count)
