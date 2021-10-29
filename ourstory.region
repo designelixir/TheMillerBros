@@ -57,15 +57,15 @@
         {.end}
         </div>
 
-        <div class="inset-box-shadow" style="width: 100%; padding: 200px 50px 100px 50px; ">
+        <div class="inset-box-shadow texture" style="width: 100%; padding: 200px 50px 100px 50px; ">
             <squarespace:block-field id="team-description" class="bold-paragraph" columns="1"/>
         </div>
 
-        <div class="our-story-gallery">
+        <div class="our-story-gallery texture">
             <squarespace:block-field id="our-story-gallery" columns="12"/>
         </div>
 
-      <div class="extended-family-intro inset-border-box" style="display: flex; justify-content: right; overflow: hidden;">
+      <div class="extended-family-intro inset-border-box texture" style="display: flex; justify-content: right; overflow: hidden;">
       <span style="width: 90%; margin: 5%;">
           <h1 class="yellow-text-shadow"> Our Extended Family</h1>
           <img src="assets/shapes/yellow-textured-line.svg" style="margin-bottom: 25px;"/>
@@ -105,7 +105,7 @@
           {.end}
           </div>
 
-          <div style="padding: 100px; width: 100%; height: 100%; text-align: center;">
+          <div class="texture" style="padding: 100px; width: 100%; height: 100%; text-align: center;">
             <h1 class="blue-text-shadow"> Select Partners</h1>
             <img src="assets/shapes/blue-textured-line-center.svg" style="margin-bottom: 25px;"/>
             <squarespace:block-field id="select-partners" columns="1"/>
@@ -118,7 +118,7 @@
 
             
 
-      <main class="content-container" id="our-story-content" role="main" data-content-field="main-content" >
+      <main class="content-container texture" id="our-story-content" role="main" data-content-field="main-content" >
        {squarespace.main-content}
       </main>
     
