@@ -1,3 +1,12 @@
+document.cookie = "name=oeschger; SameSite=Lax; Secure";
+document.cookie = "favorite_food=tripe; SameSite=Lax; Secure";
+
+var mobileDevice;
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  mobileDevice = true;
+ } else {mobileDevice = false;}
+
+
 (function() {
   'use strict';
 
@@ -64,6 +73,8 @@ $('.mobile-navigation-button').click(function(){
   }
 });
 
+$('.back-to-top').click(function(){$('.project-case-study-window').scrollTop(0);})
+$('.expand-button').click(function() { let elem = document.getElementById("fullcut-iframe"); elem.requestFullscreen()})
 
 
 // MEDIA QUERIES 

@@ -21,6 +21,7 @@
         {.repeated section items}
             <div class="slide">
                 <div class="project">
+                <div id="traveling-button" > </div>
                     <div class="project-wrapper" style="z-index: 0; width: 100%; height: 100%; position: relative; ">
                         <div class="vimeo-bg-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');" >
                             <iframe class="vimeo-bg-iframe" src='https://player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
@@ -39,12 +40,9 @@
                             </div>
                             {.or}
                             {#  PROJECT SLIDERS}
-                            <div id="traveling-button" class="case-study-button">
-                              <img style="width: 150px;" src="assets/bus-icon.svg"/>
-                            </div>
-                            <div class="title-wrapper" id="salmon">
-                              
-                                <div class="summary-title toggle-case-study" id="orange">
+                            
+                            <div class="title-wrapper toggle-case-study" id="salmon">
+                                <div class="summary-title " id="orange">
                                     <div class="summary-title-button-wrapper drop-shadow"  style="border: 3px solid red;">
                                         <div class="title-brand-wrapper" >
                                             <h1 class="project-title ">{title}</h1>
@@ -158,32 +156,29 @@
             {.end}
 
             <div id="project-counter">
-                <img src="../assets/tan-textured-circle.svg" class="counter">
+                <a onclick="(goToSlider(data))" class="counter"></a>
             </div>
+           
         </div>
         <div id="next-slide">
             <img id="slide-arrow" src="../assets/nav-arrow.svg" alt="next slide arrow" />
         </div>
     </section>
+    <section class="texture">
+      <div style="width: 100%; border: 2px solid lime; height: 50px; text-align: center; color: white;">
+        <p class="bold-paragraph">HEY!!!!</p>
+      </div>
+      <div style="height: calc(100% - 50px); width: 100%; padding: 50px; border: 4px solid red">
+          <squarespace:block-field id="homepage-about-summary" class="bold-paragraph" columns="1"/>
+          
 
-    <section id="about-summary" class="texture" style="border: 4px solid lime;">
-    <div class="scroll-down-indicator-wrapper">
-
-    </div>
-
-        <squarespace:block-field id="about-summary-text" columns="1" />
-
+      </div>
     </section>
-  
 
-
-
-
+   
     <squarespace:navigation navigationId="footerNav" template="footer" />
-
     <!-- combo and minify scripts when not logged in -->
     <squarespace:script src="site.js" combo="{.if authenticatedAccount}false{.or}true{.end}" />
-
     <!-- other scripts, and footer code injection -->
     {squarespace-footers}
 
@@ -194,108 +189,77 @@
 
 
 var allSlides = document.getElementsByClassName('project');
-console.log(allSlides)
 var active = 0;
 var counter = allSlides.length;
-
 var travelingbutton = document.querySelector("#traveling-button");
-
-
-var followMouseBool = true;
+var followMouseBool = false;
 var divRect = document.getElementById('salmon').getBoundingClientRect();
+var small = document.getElementById('orange');
+var big = document.getElementById('salmon'); 
+var smallRect = small.getBoundingClientRect();
+var bigRect = big.getBoundingClientRect();
+var itemRect = travelingbutton.getBoundingClientRect();
+
+let positionButtonTimer = setTimeout(positionButton, 0);
 
 {#  THINGS THAT HAPPEN WHEN PAGE LOADS  }
-
-
 window.addEventListener('DOMContentLoaded', (event) => {
-    bringTheDivs ;
-    
-    
+      $('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)")  
 });
 
-$('#orange').mouseenter(function(){
-  console.log("entered title text")
-  followMouseBool = false ;
-})
 
-$('#orange').mouseleave(function(){
-  console.log("exited title text")
-  followMouseBool = true ;
-})
 
-$('.project').mousemove(followMouse)
-var container = document.querySelector('#featured-projects')
-var itemRect = container.getBoundingClientRect();
-function followMouse(e) {
-    if (e.pageX >= divRect.left && e.pageX <= divRect.right &&
-      e.pageY >= divRect.top && e.pageY <= divRect.bottom && followMouseBool) {
-        var xPos = e.pageX  - 50 ;
-        var yPos = e.pageY - 300 ;
-        $('#traveling-button').animate({
-          'top':'0', 'left':'0', 'right':'0', 'bottom':'0'
-        }, 0, function(){
-          travelingbutton.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
-        })
-    } else {
 
-      var small = document.getElementById('orange');
-      var big = document.getElementById('salmon'); 
-      var smallRect = small.getBoundingClientRect();
+for (let i = 1; i < counter; i++) {$("#project-counter").append($(".counter").last().clone(true));}
+var cls = document.getElementsByClassName("counter"); 
+for (n=0, length = cls.length; n < length; n++) {cls[n].data = n ; }
 
+
+
+function positionButton(){
+  $('#traveling-button').css("display","block")
+  if (!followMouseBool){
       var bigRect = big.getBoundingClientRect();
-      var x = smallRect.width - 100  ;
-      var y = bigRect.height - 50 ;
+      var itemRect = travelingbutton.getBoundingClientRect();
+      var x = smallRect.right - 100 ;
+      var y = bigRect.bottom - 100 ;
       $('#traveling-button').animate({
         'top':'0', 'left':'0', 'right':'0', 'bottom':'0'
       }, 0, function(){
         travelingbutton.style.transform = "translate3d(" +  x + "px, " + y + "px, 0)";
       })
     }
+}
+
+
+function goToSlider(active){
+  positionButton
+  console.log("received " + active)
+  var activate = allSlides[active];
+  activate.scrollIntoView();
+  for (let i = 0; i < counter; i++) {
+      $('.counter').css("background-image", "url(assets/shapes/tan-textured-circle.svg)")  
+  }$('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)")  
+
 } 
 
+ var autoPlayTimer = setInterval(function() {
+      if(active >= counter - 1){active = 0;} 
+      else {active = active + 1;}
+      goToSlider(active)
+  }, 10000);
 
-
-
-function bringTheDivs(){
-  console.log('called bring the divs')
-  $('#next-slide').fadeIn(1000);
-  $('#project-counter').fadeIn(1000);
-  $(".title-container").css("animation","fade-in 1s cubic-bezier(.39,.575,.565,1.000) both");
-  $(".project-wrapper").fadeIn(1000);
-  $("iframe").fadeIn(1000);
-  $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
-}
-
-  for (let i = 1; i < counter; i++) {
-    $("#project-counter").append($(".counter").last().clone(true));
-  }
-
-$('.back-to-top').click(function(){$('.project-case-study-window').scrollTop(0);})
-$('.expand-button').click(function() { let elem = document.getElementById("fullcut-iframe"); elem.requestFullscreen()})
-
-
-
-function goToSlide(active){
-  $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
-    if(counter > active + 1){active++;} 
-    else {active = 0;}
-    var activate = allSlides[active];
-    activate.scrollIntoView();
-    activate.style.left = "0";
-    $('.counter:eq('+active+')').attr("src", "../assets/yellow-textured-circle.svg")  
-    clearInterval(autoPlayTimer);
-}
-
-
-  
-  
-
+$('#next-slide').click(function() {
+      if(active >= counter - 1){active = 0;} 
+      else {active = active + 1;}
+      goToSlider(active);
+      clearInterval(autoPlayTimer);
+  });
 
 $('.toggle-case-study').click(function(){
   clearInterval(autoPlayTimer);
   var count = $('.toggle-case-study').data("count") || 0;
   $('.toggle-case-study').data("count", ++count);
-  console.log("count is "+count)
   if ((count % 2) != 0 ){
     $('.case-study-window:eq('+active+')').slideDown(500);
   } else {
@@ -311,13 +275,9 @@ var sliderHeight = $("#featured-projects").outerHeight(); //gets height of heade
 
 $(window).scroll(function(){
     if($(window).scrollTop() > (sliderTop + sliderHeight)){
-      clearInterval(timerID);
+      clearInterval(autoPlayTimer);
     }
 });
-
-
-
-// counter dots
 
 // MEDIA QUERY 
 function mediaQuery(x800) {
