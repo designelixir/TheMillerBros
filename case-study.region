@@ -170,15 +170,15 @@
         <img id="scroll-down-arrow" src="../assets/nav-arrow.svg" alt="next slide arrow" />
       </div>
 
-      <div style="width: 100vw; padding: 100px 50px; border: 3px solid red; display: inline-flex; align-items: center; justify-content: center;">
-        <div class="tan-smudge" style="width: 40%; border: 2px solid magenta; z-index: 9; padding: 50px;">
-         <h6 id="contact-title-1"> A Lifetime of </h6><h6 id="contact-title-2"> Partnership</h6>
-        <img class="drop-shadow" src="assets/shapes/yellow-textured-line.svg"/>
-        <br>
-          <squarespace:block-field id="homepage-about-text" class="bold-paragraph" columns="1"/>
+      <div class="container-holder" >
+        <div class="container-half tan-smudge" id="left-container" style=" border: 2px solid magenta; z-index: 9; padding: 50px;">
+            <h6 id="contact-title-1"> A Lifetime of </h6><h6 id="contact-title-2"> Partnership</h6>
+            <img class="drop-shadow" src="assets/shapes/yellow-textured-line.svg"/>
+            <br>
+            <squarespace:block-field id="homepage-about-text" columns="1"/>
         </div>
-        <div style="width: 75%; border: 3px solid orange; margin-left: -15%;">
-          <squarespace:block-field id="homepage-about-image" class="bold-paragraph" columns="1"/>
+        <div class="container-half" style=" border: 3px solid orange; margin-left: -25%;">
+          <squarespace:block-field id="homepage-about-image" columns="1"/>
         </div>
 
 
