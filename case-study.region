@@ -61,7 +61,8 @@
             </div>
                 {#  CASE STUDY WINDOWS  }
                 {.equal? customContent.customType "Project"} 
-                    <div class="case-study-window texture" style="display: none; position: absolute; top: 0; left: 0; z-index: 25; height: 100vh; width: 100vw;">
+                
+                    <div class="case-study-window texture" style="display: none; position: absolute; top: 0; left: 0; z-index: 9999999; height: 100vh; width: 100vw;">
                         <div class="project-case-study-wrapper">
                             {#  project navigation  }
                             <div class="case-study-nav inset-box-shadow">
@@ -80,8 +81,7 @@
                                     <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.vimeocode}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%; height: 100%;  overflow-y: hidden; max-width: 1700px; max-height: 950px;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
-                            
-
+                        
 
                             {#  project details  }
                             <div class="case-study-title fade-in ">
@@ -152,6 +152,7 @@
                                 </div> 
                         </div>
                     </div>
+                
                 {.end}
             {.end}
 
@@ -166,13 +167,22 @@
     </section>
     <section class="texture inset-box-shadow">
       <div style="width: 100%; height: 50px; text-align: center; color: white;">
-        <p class="bold-paragraph">HEY!!!!</p>
+        <img id="scroll-down-arrow" src="../assets/nav-arrow.svg" alt="next slide arrow" />
       </div>
-      <div style=" width: 100vw; padding: 100px 50px;">
-          <squarespace:block-field id="homepage-about-summary" class="bold-paragraph" columns="1"/>
-          
+
+      <div style="width: 100vw; padding: 100px 50px; border: 3px solid red; display: inline-flex; align-items: center; justify-content: center;">
+        <div class="tan-smudge" style="width: 40%; border: 2px solid magenta; z-index: 9">
+         <h6 id="contact-title-1"> A Lifetime of </h6><h6 id="contact-title-2"> Partnership</h6>
+        <img class="drop-shadow" src="assets/shapes/yellow-textured-line.svg"/>
+          <squarespace:block-field id="homepage-about-text" class="bold-paragraph" columns="1"/>
+        </div>
+        <div style="width: 75%; border: 3px solid orange; margin-left: -15%;">
+          <squarespace:block-field id="homepage-about-image" class="bold-paragraph" columns="1"/>
+        </div>
+
 
       </div>
+      
     </section>
 
    
@@ -288,6 +298,7 @@ $('#next-slide').click(function() {
   });
 
 $('.toggle-case-study').click(function(){
+    $('body main').css("overflow", "hidden")
   clearInterval(autoPlayTimer);
   var count = $('.toggle-case-study').data("count") || 0;
   $('.toggle-case-study').data("count", ++count);
@@ -305,9 +316,9 @@ var sliderTop = $("#featured-projects").offset().top; //gets offset of header
 var sliderHeight = $("#featured-projects").outerHeight(); //gets height of header
 
 $(window).scroll(function(){
-    if($(window).scrollTop() > (sliderTop + sliderHeight)){
+    
       clearInterval(autoPlayTimer);
-    }
+    
 });
 
 // MEDIA QUERY 
