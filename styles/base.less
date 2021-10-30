@@ -16,6 +16,7 @@
   font-display: swap;
 }
 
+html {background: #1B1718; width: 100vw;}
 
 main { left: 0; width: 100vw; overflow-x: hidden; margin: 0; padding: 0;}
 body {font-family: museo-sans-rounded, sans-serif; width: 100vw; overflow-x: hidden!important; top: 0; left: 0;}
@@ -63,7 +64,7 @@ a:hover {transform: scale(1.15); cursor: pointer}
 
 
 .inset-box-shadow {box-shadow: inset 0 0 10px #000000; -moz-box-shadow: inset 0 0 10px #000000; -webkit-box-shadow: inset 0 0 10px #000000;}
-.texture {background-image: url("../assets/black-texture.jpg"); background-size: 100%;}
+.texture {background: #1B1718 url('../assets/black-texture.jpg') 100%; }
 .yellow-line { margin: 0 0 15px 0; background-image: url("../assets/shapes/yellow-textured-line.svg"); background-size: contain; background-repeat: no-repeat; background-position: 0 bottom;}
 .tan-texture {background-image: url("../assets/tan-texture.png"); background-size: 100%; background-color: tan; }
 
@@ -126,8 +127,9 @@ a:hover {transform: scale(1.15); cursor: pointer}
 #our-story-review-img {max-width: 100px; margin: -20px 0 0 0; padding: 0!important;}
 #review-name-wrapper {display: inline-flex; width: 100%;  align-items: center; justify-content: center; }
 
+#intro-review {width: 100vw;}
 #team-description {text-align: center;}
-.bio-container { display: inline-flex;}
+.bio-container { display: inline-flex; width: 100vw;}
 .bio-wrapper {width: 50%; height: 1050px; background-size: cover;  background-position: center center; background-repeat: no-repeat; display: flex; align-items: flex-end;}
 .bio-content-wrapper {width: 100%; height: 100%; display: flex; display: flex; align-items: flex-end;}
 .bio-content {background-image: url(../assets/shapes/tan-smudge.png); text-align: center; width: 90%; margin: 0 5% -75px 5%; background-size: 100% 100%; background-repeat: no-repeat; background-position: center center; padding: 25px 35px;}
@@ -138,22 +140,22 @@ a:hover {transform: scale(1.15); cursor: pointer}
 .bold-paragraph a:hover {font-weight: 900;}
 
 .our-story-gallery {width: 100%; height: 35%;}
-.extended-family-intro {width: 100%; display: inline-flex; padding: 50px;}
+.extended-family-intro {width: 100%; display: inline-flex; }
 
 
 .extended-family-grid {max-width: 100%; display: flex; flex-wrap: wrap;}
 .family-bio { height: 500px; flex: 1 1 350px;}
-.family-bio-text {display: inline-flex; align-items: flex-end; height: 100%; padding-bottom: 25px; background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0.039653361344537785) 100%);}
+.family-bio-wrapper {width: 100%; height: 100%;  display: flex; align-items: center; justify-content: center;}
+.family-bio-text {width: 100%; height: 100%; display: flex; align-items: flex-end; background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0.039653361344537785) 100%);}
 .family-bio-text h6 {font-size: 3em; text-align: center;}
 .family-bio-text h2 {font-size: 1em;  border-radius: 4px; padding-left: 7px; text-align: center; font-weight: 100; }
 
-.family-bio-description {height: 100%; padding: 25px; background-color: rgba(0, 0, 0, .35); backdrop-filter: blur(3px); width: 100%; border: 2px solid red; display: flex; align-items: center; text-align: center; justify-content: center;}
+.family-bio-description {height: 100%;  width: 100%; }
 
 
 .sqs-block-gallery {height: 100%;}
-.family-bio-text:hover > .family-bio-description {display: block;}
 
-#select-partners {margin: 0; padding: 0; border: 2px solid red;}
+#select-partners {margin: 0; padding: 0; }
 
 // footers
 footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; display: inline-block; }
@@ -206,8 +208,10 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 
 #map-holder span:hover > #map-holder-address {display: block;}
 
+.padding-control {padding: 100px; width: 100%;}
 @media only screen and (max-width: 1000px) {
   // body {width: 100vw; overflow-x: hidden!important;}
+  html {width: 100vw!important; overflow-x: hidden!important;}
   .contact-floating-container {display: block; width: 100vw; }
   .contact-floating-container-left {width: 100vw;}
   #contact-title-1 {font-size: 36px;}
@@ -218,9 +222,12 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
   .contact-card:hover {transform: rotate(15deg)}
   #contact-card-holder {overflow-x: hidden; justify-content: center;}
   #map-holder-address {display: block;}
-
-
   
+  .blue-text-shadow {font-size: 2rem;}
+  .padding-control {padding: 25px; }
+  .bold-paragraph p {font-size: 1.25em; line-height: 1.65em; }
+
+  #select-partners .sqs-gallery-block-grid {display: block!important;}
 }
 
 

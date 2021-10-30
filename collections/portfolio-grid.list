@@ -32,9 +32,9 @@
 
 $('.portfolio-item-title').hover(
     function(){
-    $(this).css({"transform":"scale(1.05)", "font-weight":"400", "backdrop-filter":"blur(0px)"})
+    $(this).css({"transform":"scale(1.1)", "font-weight":"500!important", "backdrop-filter":"blur(4px)", "background-color": "rgba(0,0,0,0.35)"})
 }, function(){
-    $(this).css({"transform":"scale(1)", "font-weight":"300", "backdrop-filter":"blur(3px)"})
+    $(this).css({"transform":"scale(1)", "font-weight":"300", "backdrop-filter":"blur(0px)", "background-color": "rgba(0,0,0,0.5)"})
 })
 
 
