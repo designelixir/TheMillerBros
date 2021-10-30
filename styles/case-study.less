@@ -1,19 +1,19 @@
 section { height: 95vh;  overflow: hidden; }
 
-#slide-container {height: 95vh;  display: inline-flex; align-items: center; overflow-x: scroll;}
-.slide {height: 95vh; width: 100vw; }
+#slide-container {height: 95vh;  display: inline-flex; align-items: center; overflow: hidden;}
+.slide {height: 95vh; width: 100vw; overflow: hidden; }
 .project { height: 100%; width: 100%;  display: flex; align-items: flex-start;}
 
 .vimeo-bg-wrapper {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background-size: cover; background-position: center center; background-repeat: no-repeat;}
 .vimeo-bg-iframe {width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
 .title-container{position: absolute; width: 90%; bottom: 0; left: 0; height: 75%; z-index: 2; display: flex; align-items: flex; }
-.title-wrapper { width: 95vw; margin: 0 0 75px 0px; display: flex; align-items: flex-end; cursor: pointer}
+.title-wrapper { width: 95vw; margin: 0 0 75px 50px; display: flex; align-items: flex-end; cursor: pointer}
 
-.link-title {font-size: 68px; text-shadow: 4px 4px #62abd0; border-left: 8px solid #62abd0; border-radius: 4px; padding-left: 7px;}
+.link-title {font-size: 3rem; text-shadow: 4px 4px #62abd0; width: 60%; }
 
 .summary-title {  display: flex; align-items: flex-end; justify-content: flex-start; overflow-y: hidden;}
-.summary-title-button-wrapper {display: inline-flex; align-items: flex-end; justify-content: center; padding: 25px 150px 25px 25px; }
+.summary-title-button-wrapper {display: inline-flex; align-items: flex-end; justify-content: center; padding: 25px 150px 25px 0px; }
 #title-inner-wrapper {width: 100%; height: 100%; }
 .project-title {font-size: 75px!important; line-height: 75px; text-shadow: 4px 4px #C5843D; border-radius: 4px; padding-left: 7px; }
 .project-brand {font-size: 35px; color: white; margin: 5px 0 0 19px; text-shadow: 2px 2px rgba(0,0,0,0.5)}
@@ -87,5 +87,5 @@ section { height: 95vh;  overflow: hidden; }
 @media only screen and (min-width: 1750px) {
   .fullcut-iframe-container {max-height: 950px; height: 100%; }
   .case-study-iframe {max-width: 1700px; max-height: 950px; margin: 0 ~"calc((100% - 1700px)/2)"}
-
+  .link-title {width: 90%;}
 }
