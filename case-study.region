@@ -171,9 +171,10 @@
       </div>
 
       <div style="width: 100vw; padding: 100px 50px; border: 3px solid red; display: inline-flex; align-items: center; justify-content: center;">
-        <div class="tan-smudge" style="width: 40%; border: 2px solid magenta; z-index: 9">
+        <div class="tan-smudge" style="width: 40%; border: 2px solid magenta; z-index: 9; padding: 50px;">
          <h6 id="contact-title-1"> A Lifetime of </h6><h6 id="contact-title-2"> Partnership</h6>
         <img class="drop-shadow" src="assets/shapes/yellow-textured-line.svg"/>
+        <br>
           <squarespace:block-field id="homepage-about-text" class="bold-paragraph" columns="1"/>
         </div>
         <div style="width: 75%; border: 3px solid orange; margin-left: -15%;">
