@@ -82,12 +82,5 @@
 
 
 </html>
-<script>
 
-
-$("#map-img").on('click', function(){
-     window.open('https://www.google.com/maps/dir//3+S+Black+Ave,+Bozeman,+MT+59715/@45.6797374,-111.0352918,35a,49.8y,212.88h,67.36t/data=!3m1!1e3!4m17!1m7!3m6!1s0x5345445a168d9681:0x515932edd2633723!2s3+S+Black+Ave,+Bozeman,+MT+59715!3b1!8m2!3d45.6791145!4d-111.035851!4m8!1m0!1m5!1m1!1s0x5345445a168d9681:0x515932edd2633723!2m2!1d-111.035851!2d45.6791145!3e0?hl=en', '_blank');    
-});
-
-</script>
 

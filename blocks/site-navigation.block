@@ -1,46 +1,69 @@
-<nav class="site-navigation fade-in">
+<nav class="site-navigation fade-in" style="padding: 25px">
   
-  <a href="/"><img id="site-navigation-logo" style="height: 100%; max-height: 75px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="{website.logoImageUrl}" alt="The Miller Bros Logo"/></a>
+    <div class="site-navigation-logo" style="width: 30%;">
+    <a href="/"><img id="site-navigation-logo" style="height: 100%; max-height: 75px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="{website.logoImageUrl}" alt="The Miller Bros Logo"/></a>
+    </div>
 
-  <ul class="site-navigation-list">
-    {.repeated section items}
+    <div class="site-navigation-main" style="width: 70%; display: flex; justify-content: flex-end;">
+      <ul class="site-navigation-list drop-shadow
+      ">
+        {.repeated section items}
 
-    {.equal? collection.navigationTitle "Home"}
+        {.equal? collection.navigationTitle "Home"}
 
-    <li id="home-link" class="site-navigation-item {.section active} active-link{.end}">
-      <a href="/"><img id="lil-bus" style="width: 45px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="../assets/Bus-Icon.svg"></a>
-    </li>
+        <li id="home-link" class="site-navigation-item {.section active} active-link{.end}">
+          <a href="/"><img id="lil-bus" style="width: 45px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="../assets/Bus-Icon.svg"></a>
+        </li>
 
-    {.or} 
+        {.or} 
 
-      <li class="site-navigation-item {.section active} active-link{.end}">
-        {.section collection}<a href="{fullUrl}">{navigationTitle}</a>{.end}
-      </li>
-      {.end}
-    {.end}
-  </ul>
+          <li class="site-navigation-item {.section active} active-link{.end}">
+            {.section collection}<a href="{fullUrl}">{navigationTitle}</a>{.end}
+          </li>
+          {.end}
+        {.end}
+      </ul>
+      <button class="mobile-navigation-button" style="display: none;"><img src="../assets/nav/Open-Mobile.svg" style=" height:40px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" /></button>
 
-  <button class="mobile-navigation-button"><img src="../assets/nav/Open-Mobile.svg" style="height:40px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" /></button>
-  <div class="mobile-navigation-container inset-box-shadow texture" style="display: none;">
-      <div class="mobile-navigation-list">
-        <li><a href="/"><img style="height: 40px;" class="van-home-icon" src="../assets/Bus-Icon.svg"></a></li><br>
-          <ul>
-            {.repeated section items}
-              <li class="site-navigation-item {.section active} active-link{.end}">
-                {.section collection}<a href="{fullUrl}">{navigationTitle}</a>{.end}
-              </li><br>
-            {.end}
-          </ul>
-      </div>
-      <div class="mobile-navigation-footer">
-          <a href="https://vimeo.com/themillerbros" target="_blank"><img class="social-icon" src="../assets/social/vimeo.svg" alt="vimeo icon"/></a>
-          <a href="https://www.instagram.com/miller.bros/" target="_blank"><img class="social-icon" src="../assets/social/instagram.svg" alt="instagram icon"/></a>
-          <a href="mailto:stories@themillerbros.com" target="_blank"><img class="social-icon" src="../assets/social/email.svg" alt="email icon"/></a>
-      </div>
-    
-  </div>
+    </div>
 
-  
 </nav>
-<script>console.log({@|json-pretty})</script>
 
+<div class="mobile-navigation-container inset-box-shadow texture" style="display: none;">
+    <div class="mobile-navigation-list">
+      <li><a href="/"><img style="height: 40px;" class="van-home-icon" src="../assets/Bus-Icon.svg"></a></li><br>
+        <ul>
+          {.repeated section items}
+            <li class="site-navigation-item {.section active} active-link{.end}">
+              {.section collection}<a href="{fullUrl}">{navigationTitle}</a>{.end}
+            </li><br>
+          {.end}
+        </ul>
+    </div>
+    <div class="mobile-navigation-footer">
+        <a href="https://vimeo.com/themillerbros" target="_blank"><img class="social-icon" src="../assets/social/vimeo.svg" alt="vimeo icon"/></a>
+        <a href="https://www.instagram.com/miller.bros/" target="_blank"><img class="social-icon" src="../assets/social/instagram.svg" alt="instagram icon"/></a>
+        <a href="mailto:stories@themillerbros.com" target="_blank"><img class="social-icon" src="../assets/social/email.svg" alt="email icon"/></a>
+    </div>
+  
+</div>
+
+
+<script> 
+function mediaQuery(x900) {
+  if (x900.matches) { 
+      $('.site-navigation-list').css({"display": "none"});
+      $('.mobile-navigation-button').css({"display": "block"});
+
+  } else {
+     $('.site-navigation-list').css({"display": "inline-flex"});
+      $('.mobile-navigation-button').css({"display": "none"});
+   
+
+  }
+}
+var x900 = window.matchMedia("(max-width: 900px)")
+mediaQuery(x900) 
+x900.addListener(mediaQuery); 
+
+</script>
