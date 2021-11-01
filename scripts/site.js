@@ -77,33 +77,3 @@ $('.back-to-top').click(function(){$('.project-case-study-window').scrollTop(0);
 $('.expand-button').click(function() { let elem = document.getElementById("fullcut-iframe"); elem.requestFullscreen()})
 
 
-// MEDIA QUERIES 
-
-function mediaQuery(x800) {
-  if (x800.matches) { 
-    $('.site-navigation-list').css({"display":"none"})
-    $('.mobile-navigation-button').css({"display":"block"})
-    $('.upper-footer-wrapper').css({"display":"block"})
-    $('.footer-left').css({"width":"100%"})
-    $('.footer-right').css({"width":"100%"})
-    $('.bio-container').css({"display":"block", "height":"2100px"});
-    $('.bio-wrapper').css("width", "100%")
- 
-
-  } else {
-    $('.site-navigation-list').css({"display":"inline-flex"})
-    $('.mobile-navigation-button').css({"display":"none"})
-    
-    $('.mobile-navigation-container').css("display","none");
-    $('.site-header').css({"background-color":"transparent"})
-    $('.footer-left').css({"display":"flex"})
-    $('.bio-container').css({"display":"inline-flex", "height":"1050px"});
-    $('.bio-wrapper').css("width", "50%")
-   
-
-  }
-}
-var x800 = window.matchMedia("(max-width: 800px)")
-mediaQuery(x800) 
-x800.addListener(mediaQuery); 
-
