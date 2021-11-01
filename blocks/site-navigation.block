@@ -5,8 +5,7 @@
     </div>
 
     <div class="site-navigation-main" style="width: 70%; display: flex; justify-content: flex-end;">
-      <ul class="site-navigation-list drop-shadow
-      ">
+      <ul class="site-navigation-list drop-shadow">
         {.repeated section items}
 
         {.equal? collection.navigationTitle "Home"}
