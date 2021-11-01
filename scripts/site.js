@@ -72,7 +72,6 @@ $('.mobile-navigation-button').click(function(){
       $('.mobile-navigation-button img').attr("src", "../assets/nav/Open-Mobile.svg");
       $('.mobile-navigation-container').slideUp(500);
       $('.site-header').css({"background-color":"transparent"})
-
   }
 });
 

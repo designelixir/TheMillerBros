@@ -21,8 +21,7 @@
         {.repeated section items}
             <div class="slide">
                 <div class="project">
-                
-                    <div class="project-wrapper" style="z-index: 0; width: 100%; height: 100%; position: relative; ">
+                    <div class="project-wrapper">
                         <div class="vimeo-bg-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');" >
                             <iframe class="vimeo-bg-iframe" src='https://player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
@@ -30,28 +29,30 @@
                         <div class="title-container">
                         {#  LINKED SLIDERS  }
                         {.equal? customContent.customType "LinkedSlider"} 
-                            <div class="title-wrapper" onclick="location.href='{customContent.clickthru}'">
-                                <a href='{customContent.clickthru}' style="text-decoration: none; ">
-                                    <div id="linked-slider-wrapper" >
-                                        <h1 class="link-title">{title}</h1>
-                                        <h4 style="color: white;">{body}</h4> 
+                                <a href='{customContent.clickthru}' class="title-wrapper" style="text-decoration: none; height: 100%; padding-left: 25px;">
+                                    <div id="linked-slider-wrapper">
+                                        <h6 class="link-title blue-text-shadow">{title}</h6>
+                                        <img src="assets/shapes/blue-textured-line.svg" style=" margin: 5px 0px 50px -15px; height: 5px;" />
                                     </div>
                                 </a>
-                            </div>
                             {.or}
                             {#  PROJECT SLIDERS}
-                            <div id="traveling-button" > </div>
-                            <div class="title-wrapper toggle-case-study" id="salmon">
-                                <div class="summary-title " id="orange">
+                            
+                            <div class="title-wrapper toggle-case-study">
+                                <div class="summary-title">
                                     <div class="summary-title-button-wrapper drop-shadow">
                                         <div class="title-brand-wrapper" >
-                                            <h1 class="project-title ">{title}</h1>
-                                            <h4 class="project-brand">{customContent.brand}</h4> 
+                                            <div class="project-button">
+                                                <span>
+                                                <h1 class="project-title gold-text-shadow">{title}</h1>
+                                                <h6 class="project-brand">{customContent.brand}</h6>
+                                                </span>
+                                                 <div class="project-button-circle">
+                                                    case study
+                                                </div>
+                                            </div>
                                         </div>
-                                      </div>
-                                        
-                                        
-                                                     
+                                    </div>             
                                 </div>
                             </div>
                             {.end}
@@ -62,7 +63,7 @@
                 {#  CASE STUDY WINDOWS  }
                 {.equal? customContent.customType "Project"} 
                 
-                    <div class="case-study-window texture" style="position: absolute; top: 0; left: 0; z-index: 9999999; height: 100vh; width: 100vw;">
+                    <div class="case-study-window texture" style="display: none; position: absolute; top: 0; left: 0; z-index: 9999999; height: 100vh; width: 100vw;">
                         <div class="project-case-study-wrapper">
                         <div class="project-top-wrapper" style="max-height: 90vh; border: 3px solid orange;">
                             {#  project navigation  }
@@ -83,78 +84,79 @@
                                 </div>
                             </div>
                         
-
-                            {#  project details  }
                             
                         </div>
-                            <div class="case-study-title fade-in ">
+                        <div class="texture fade-in inset-box-shadow" id="titlelogo" style=" display: inline-flex; align-items: center; justify-content: space-between; width: 100%;">
+                            <div style="width: calc(100% - 175px); padding: 25px 50px;">
                                 <h1>{title}</h1>
-                                <h5>{customContent.shortdescription}</h5>
                             </div>
-                            
-
-                            <div class="case-study-text tan-texture inset-box-shadow">
-                                <span class="case-study-block" id="summary-credits-block">
-                                    <span class="summary">
-                                        <h4 style="padding-bottom: 10px; width: 50%;" class="yellow-line">Project Summary </h4>   
-                                        
-                                        <p>{body}</p>
-                                    </span>
-                                    <span class="credits">
-                                        <h4 style="padding-bottom: 10px" class="yellow-line"> Credits </h4>
-                                        <p>{customContent.credits.html}</p>
-                                    </span>
-                                </span>
-                                
-                                {#  TESTIMONIAL  }
-                                <span class="case-study-block">
-                                    <span class="case-study-testimonial">
-                                        {.if customContent.testimonial}
+                            {.if customContent.brandlogo}
+                            <div id="brand-logo" class="hoverthis drop-shadow" style=" width: 200px; display: flex; justify-content: flex-end; align-items: flex-end;">
+                            <a href="{customContent.brandurl}" target="_blank" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                                <img src="{customContent.brandlogo.assetUrl}" style="width: 75%; max-width: 150px;"/>
+                            </a>
+                            </div>
+                            {.end}
+                        </div>
+                        <div class="case-study-section tan-texture">
+                                <div id="summary" style="width: 60%; margin-left: 25px;">
+                                    <p>{body}</p>
+                                    {.if customContent.testimonial}
+                                    <div class="tan-texture" style="padding: 0 25px;">
+                                        <div style="width: 100%; display: inline-flex; align-items: flex-start; justify-content: space-evenly; text-align: center;">
+                                        <h1 style="font-size: 100px; color: #C5843D">"</h1>
+                                        <span class="case-study-testimonial">
                                             <span id="testimonial">
                                                 <p>{customContent.testimonial}</p>
                                             </span>
                                             <h5>-{customContent.testimonial-name}</h5>
-                                        {.or}
-                                        
-                                        {.end}
-                                    </span>
-                                </span>
-
-                                <span class="case-study-text-block">
-                                    <span>
-                                        {.if customContent.additional-video1}
-                                        <h4>Additional Videos </h4>
-                                        <span class="yellow-line"></span>
-                                        <br>
-                                            <div class="extra-video">
-                                            <div style="padding:56.25% 0 0 0;position:relative;">
-                                                <iframe src="https://player.vimeo.com/video/{customContent.additional-video1}?h=a80429b32e&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-                                            </div>
-                                        {.or}
-                                        {.end}
-                                        {.if customContent.additional-video2}
-                                            <div class="extra-video">
-                                            <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.additional-video2}?h=a80429b32e&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-                                            </div>
-                                        {.or}
-                                        {.end}
-
-                                    </span>
-                                </span>
-                            </div>
-                            {#  BEHIND THE SCENES  }
-                                <div id="bts" class="inset-box-shadow">
-                                    <h6 style="text-align: center;"> Behind the Scenes </h6>
-
-                                    <div id="bts-photos-grid" >
-                                        {.repeated section customContent.behindthescenes}
-                                            <img class="bts-img" src="{assetUrl}"/>
-                                        {.end}
+                                        </span>
+                                        <h1 style="font-size: 100px; color: #C5843D">"</h1>
+                                        </div>
                                     </div>
-                                    <span style="display: flex; align-items: center; justify-content: center; padding: 50px; color: white;">
-                                        <button class="circle-button-blue toggle-case-study" id="toggle-close-{id}" style="width: 100%;" aria-label="Close Portfolio Video Window"></button>
-                                    </span>
-                                </div> 
+                                    {.end}
+                                </div>
+
+                                <div id="credits" style="width: 40%;  padding-left: 50px;">
+                                    <h6 class="yellow-line" style="color: black; font-size: 48px; max-width: 500px;">Credits </h6>
+                                    <p class="credit-name">{customContent.credits.html}</p>
+                                </div>
+                            </div>
+                            
+                            {.if customContent.additionalvideo1}
+                            <div class="case-study-section tan-texture" id="additional-videos" style=" width: 100%; padding: 0px 25px; align-items: flex-end;">
+                                
+                                <div class="extra-video">
+                                <h6 class="yellow-line" style="color: black; font-size: 48px; max-width: 500px;">Additional Videos </h6>
+                                <br>
+                                    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.additional-video1}?h=a80429b32e&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                {.if customContent.additionalvideo2}
+                                    <div class="extra-video">
+                                        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.additional-video2}?h=a80429b32e&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                {.end}
+                            </div>
+                            {.end}
+                            {#  BEHIND THE SCENES  }
+                            <div id="bts" class="inset-box-shadow">
+                                <h6 style="text-align: center;"> Behind the Scenes </h6>
+
+                                <div id="bts-photos-grid">
+                                    {.repeated section customContent.behindthescenes}
+                                        <img class="bts-img" src="{assetUrl}"/>
+                                    {.end}
+                                </div>
+                                <span style="display: flex; align-items: center; justify-content: center; padding: 50px; color: white;">
+                                    <button class="circle-button-blue toggle-case-study" id="toggle-close-{id}" style="width: 100%;" aria-label="Close Portfolio Video Window"></button>
+                                </span>
+                            </div> 
+
+
+                            
+                                
                         </div>
                     </div>
                 
@@ -213,14 +215,13 @@ var active = 0;
 var counter = allSlides.length;
 var travelingbutton = document.querySelector("#traveling-button");
 var followMouseBool = false;
-var divRect = document.getElementById('salmon').getBoundingClientRect();
-var small = document.getElementById('orange');
+{#  var divRect = document.getElementById('salmon').getBoundingClientRect();  }
+{#  var small = document.getElementById('orange');
 var big = document.getElementById('salmon'); 
 var smallRect = small.getBoundingClientRect();
 var bigRect = big.getBoundingClientRect();
-var itemRect = travelingbutton.getBoundingClientRect();
+var itemRect = travelingbutton.getBoundingClientRect();  }
 
-let positionButtonTimer = setTimeout(positionButton, 0);
 
 {#  THINGS THAT HAPPEN WHEN PAGE LOADS  }
 window.addEventListener('DOMContentLoaded', (event) => {
@@ -237,25 +238,10 @@ for (n=0, length = cls.length; n < length; n++) {cls[n].data = n ; }
 
 
 
-function positionButton(){
-  $('#traveling-button').css("display","block")
-  if (!followMouseBool){
-      var bigRect = big.getBoundingClientRect();
-      var itemRect = travelingbutton.getBoundingClientRect();
-      var x = smallRect.right - 100 ;
-      var y = bigRect.bottom - 100 ;
-      $('#traveling-button').animate({
-        'top':'0', 'left':'0', 'right':'0', 'bottom':'0'
-      }, 0, function(){
-        travelingbutton.style.transform = "translate3d(" +  x + "px, " + y + "px, 0)";
-      })
-    }
-}
+
 
 
 function goToSlider(active){
-  positionButton
-  console.log("received " + active)
   var activate = allSlides[active];
   activate.scrollIntoView();
   for (let i = 0; i < counter; i++) {
