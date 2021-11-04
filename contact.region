@@ -11,7 +11,9 @@
       <header class="site-header" id="contact-header" >
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
-      <div class="site-header-image-container" id="contact-header-image" style="background-image: url('{collection.mainImage.assetUrl}')"><span style="height: 100%; height: 40vh; width: 100%;"></span></div>
+      <div class="site-header-image-container" id="contact-header-image" style="background-image: url('{collection.mainImage.assetUrl}');">
+        <span style="height: 100%; height: 40vh; width: 100%;"></span>
+        </div>
       
       <div class="contact-floating-container">
         <div class="contact-floating-container-left">
@@ -82,5 +84,4 @@
 
 
 </html>
-
 

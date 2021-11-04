@@ -7,6 +7,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
  } else {mobileDevice = false;}
 
 
+
 (function() {
   'use strict';
 
@@ -25,6 +26,7 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   window.addEventListener('resize', loadAllImages);
 
 }());
+
 
 // Set a same-site cookie for first-party contexts
 document.cookie = 'cookie1=value1; SameSite=Lax';
@@ -77,5 +79,3 @@ $('.mobile-navigation-button').click(function(){
 
 $('.back-to-top').click(function(){$('.project-case-study-window').scrollTop(0);})
 $('.expand-button').click(function() { let elem = document.getElementById("fullcut-iframe"); elem.requestFullscreen()})
-
-
