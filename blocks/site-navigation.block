@@ -11,7 +11,7 @@
         {.equal? collection.navigationTitle "Home"}
 
         <li id="home-link" class="site-navigation-item {.section active} active-link{.end}">
-          <a href="/"><img id="lil-bus" style="width: 45px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="../assets/Bus-Icon.svg"></a>
+          <a href="/"><img id="lil-bus" style="width: 45px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="../assets/bus-icon.svg"></a>
         </li>
 
         {.or} 
