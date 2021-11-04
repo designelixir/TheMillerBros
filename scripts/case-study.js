@@ -6,6 +6,7 @@ var counter = allSlides.length;
 
 
   $('#next-slide').click(function(){
+    $('.project-case-study-window').scrollTop(0);
     $('.counter:eq('+active+')').attr("src", "../assets/tan-textured-circle.svg")  
     if(counter > active + 1){active++;} 
     else {active = 0;}

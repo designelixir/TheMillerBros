@@ -31,7 +31,7 @@
                                 <a href='{customContent.clickthru}' class="title-wrapper" style="text-decoration: none; padding-left: 25px;">
                                     <div id="linked-slider-wrapper">
                                         <h6 class="link-title blue-text-shadow">{title}</h6>
-                                        <img src="assets/shapes/blue-textured-line.svg" style=" margin: 5px 0px 50px -15px;" />
+                                        <img src="assets/shapes/blue-textured-line.svg" style=" margin: 5px 0px 50px 25px;" />
                                     </div>
                                 </a>
                             {.or}
@@ -47,7 +47,10 @@
                                                 <h6 class="project-brand">{customContent.brand}</h6>
                                                 </span>
                                                  <div class="project-button-circle">
-                                                    case study
+                                                    <div class="case-study-button-content">
+                                                           <img src="assets/shapes/steering-wheel.svg"/>
+                                                    </div>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -65,11 +68,11 @@
 
 
 
-                    <div class="case-study-window texture " id="csw-{id}" style="display: none;">
+                    <div class="case-study-window tan-texture " id="csw-{id}" style="display: none; overflow-y: scroll!important;">
                         <div class="project-case-study-wrapper">
                         <div class="project-top-wrapper">
                             {#  project navigation  }
-                            <div class="case-study-nav inset-box-shadow">
+                            <div class="case-study-nav inset-box-shadow texture">
                                 <span>               
                                     <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
                                 </span>
@@ -85,74 +88,77 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="texture fade-in inset-box-shadow" id="titlelogo">
-                            <div style="width: calc(100% - 175px); padding: 25px 50px;">
-                                <h1>{title}</h1>
+                            <div class="fade-in" id="titlelogo">
+                                <div class="texture" style="width: 100%;">
+                                    <h1 class="yellow-text-shadow">{title}</h1>
+                                </div>
+                            
+                                {.if customContent.brandlogo}
+                                <div id="brand-logo" class="hoverthis drop-shadow">
+                                    <a href="{customContent.brandurl}" target="_blank"><img src="{customContent.brandlogo.assetUrl}" style="width: 75%; max-width: 150px;"/></a>
+                                </div>
+                                {.end}
+                                
                             </div>
-                            {.if customContent.brandlogo}
-                            <div id="brand-logo" class="hoverthis drop-shadow" style=" width: 200px; display: flex; justify-content: flex-end; align-items: flex-end;">
-                            <a href="{customContent.brandurl}" target="_blank" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-                                <img src="{customContent.brandlogo.assetUrl}" style="width: 75%; max-width: 150px;"/>
-                            </a>
-                            </div>
-                            {.end}
-                        </div>
-                        <div class="case-study-section tan-texture">
-
-                                <div id="summary" style="width: 60%; margin-left: 25px;">
+                            <div class="case-study-section">
+                                <div id="summary">
                                     <p>{body}</p>
                                     {.if customContent.testimonial}
-                                    <div class="tan-texture" style="padding: 0 25px;">
-                                        <div style="width: 100%; display: inline-flex; align-items: flex-start; justify-content: space-evenly; text-align: center;">
-                                        <h1 style="font-size: 100px; color: #C5843D">"</h1>
-                                        <span class="case-study-testimonial">
-                                            <span id="testimonial">
-                                                <p>{customContent.testimonial}</p>
-                                            </span>
-                                            <h5>-{customContent.testimonial-name}</h5>
-                                        </span>
-                                        <h1 style="font-size: 100px; color: #C5843D">"</h1>
+                                        <div id="review">
+                                            <h1>"</h1> <span>
+                                                <p id="testimonial">{customContent.testimonial}</p>
+                                                <h5>-{customContent.testimonial-name}</h5>
+                                            </span> <h1>"</h1>
                                         </div>
-                                    </div>
                                     {.end}
                                 </div>
 
-                                <div id="credits" style="width: 40%;  padding-left: 50px;">
-                                    <h6 class="yellow-line" style="color: black; font-size: 48px; max-width: 500px;">Credits </h6>
-                                    <p class="credit-name">{customContent.credits.html}</p>
+                                <div id="credits" class="inset-box-shadow texture">
+                                    <div>
+                                        <h6 style="font-size: 36px; font-weight: 700;">Credits </h6>
+                                        <img src="assets/shapes/yellow-textured-line.svg"/>
+                                        <p>{customContent.credits.html}</p>
+                                    </div>
+                                    {.if customContent.additionalvideo1}
+                                    <div>
+                                        <h6 style="font-size: 36px; font-weight: 700; margin-top: 25px;">Additional Videos </h6>
+                                        <img src="assets/shapes/yellow-textured-line.svg"/>
+                                        
+                                        
+                                        <div class="fullcut-iframe-wrapper" style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden; margin: 25px 0px; height: 100%; ">
+                                            <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additionalvideo1}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0; width:100%; height: 100%;  overflow-y: hidden;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                        {.if customContent.additionalvideo2}
+                                            <div class="fullcut-iframe-wrapper" style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden;  height: 100%; ">
+                                                <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additionalvideo2}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0; width:100%; height: 100%;  overflow-y: hidden;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                                            </div>
+                                        {.end}
+                                        
+                                    </div>
+                                    {.end}
                                 </div>
                             </div>
                             
-                            {.if customContent.additionalvideo1}
-                            <div class="case-study-section tan-texture" id="additional-videos" style=" width: 100%; padding: 0px 25px; align-items: flex-end;">
-                                
-                                <div class="extra-video">
-                                <h6 class="yellow-line" style="color: black; font-size: 48px; max-width: 500px;">Additional Videos </h6>
-                                <br>
-                                    <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.additional-video1}?h=a80429b32e&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                                    </div>
-                                </div>
-                                {.if customContent.additionalvideo2}
-                                    <div class="extra-video">
-                                        <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.additional-video2}?h=a80429b32e&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                {.end}
-                            </div>
-                            {.end}
+                                    
+                            
                             {#  BEHIND THE SCENES  }
-                            <div id="bts" class="inset-box-shadow">
-                                <h6 style="text-align: center;"> Behind the Scenes </h6>
+                            {.if customContent.behindthescenes}
+                            <div id="bts" class="texture" style="text-align: center;">
+                                <span style="width: 50%;">
+                                    <h6 style="font-size: 48px; font-weight: 700; padding: 25px;"> Behind the Scenes </h6>
+                                    <img src="assets/shapes/yellow-textured-line-center.svg" style="max-width: 50%; margin-bottom: 25px;"/>
+                                </span>
 
                                 <div id="bts-photos-grid">
                                     {.repeated section customContent.behindthescenes}
-                                        <img class="bts-img" src="{assetUrl}"/>
+                                        <img class="bts-img drop-shadow" src="{assetUrl}"/>
                                     {.end}
                                 </div>
-                                <span style="display: flex; align-items: center; justify-content: center; padding: 50px; color: white;">
-                                    <button class="circle-button-blue toggle-case-study" id="toggle-close-{id}" style="width: 100%;" aria-label="Close Portfolio Video Window"></button>
+                                <span style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 50px; color: white;">
+                                    <button class="circle-button-blue csw-{id}" onclick="togglecsw(this)" aria-label="Close Portfolio Video Window"></button>
                                 </span>
                             </div> 
+                            {.end}
 
 
                             
@@ -172,6 +178,14 @@
             <img id="slide-arrow" src="../assets/nav-arrow.svg" alt="next slide arrow" />
         </div>
     </section>
+    <div style="width: 100%; height: 5vh; display: flex; align-items: center; justify-content: center;" class="inset-box-shadow texture">
+        <img src="assets/nav-arrow.svg" style="width: 15px; transform: rotate(90deg)"/>
+    </div>
+    <section>
+        <h6 style="font-size: 48px;"><squarespace:block-field id="story-summary" class="bold-paragraph" columns="1"/></h6>
+
+    </section>
+
     <main class="content-container texture" id="homepage-content" role="main" data-content-field="main-content" >
        {squarespace.main-content}
     </main>
@@ -201,6 +215,7 @@ function togglecsw(item){
     $(toggleThis).slideUp(500);
   } else {
     $(toggleThis).slideDown(500);
+    $('body').scrollTop(0);
     $('.case-study-iframe:eq('+active+')').attr("src", $('.case-study-iframe:eq('+active+')').attr("src"));
     $('.additional-video-iframe-one:eq('+active+')').attr("src", $('.additional-video-iframe-one:eq('+active+')').attr("src"));
     $('.additional-video-iframe-two:eq('+active+')').attr("src", $('.additional-video-iframe-two:eq('+active+')').attr("src"));
@@ -233,6 +248,8 @@ for (n=0, length = cls.length; n < length; n++) {cls[n].data = n ; }
 
 
 function goToSlider(active){
+    clearInterval(autoPlayTimer);
+
   var activate = allSlides[active];
   activate.scrollIntoView();
   for (let i = 0; i < counter; i++) {
@@ -254,20 +271,7 @@ $('#next-slide').click(function() {
       clearInterval(autoPlayTimer);
   });
 
-$('.toggle-case-study').click(function(){
-    $('main').css("overflow", "hidden")
-  clearInterval(autoPlayTimer);
-  var count = $('.toggle-case-study').data("count") || 0;
-  $('.toggle-case-study').data("count", ++count);
-  if ((count % 2) != 0 ){
-    $('.case-study-window:eq('+active+')').slideUp(500);
-  } else {
-    $('.case-study-window:eq('+active+')').slideDown(500);
-    $('.case-study-iframe:eq('+active+')').attr("src", $('.case-study-iframe:eq('+active+')').attr("src"));
-    $('.additional-video-iframe-one:eq('+active+')').attr("src", $('.additional-video-iframe-one:eq('+active+')').attr("src"));
-    $('.additional-video-iframe-two:eq('+active+')').attr("src", $('.additional-video-iframe-two:eq('+active+')').attr("src"));
-  }
-});
+
 
 
 $(window).scroll(function(){
