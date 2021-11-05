@@ -16,7 +16,7 @@
   font-display: swap;
 }
 
-html {background: #1B1718; width: 100vw;}
+html {background: #1B1718; width: 100vw; zoom: 1;}
 
 main { left: 0; width: 100%; overflow-x: hidden; margin: 0; padding: 0;}
 body {font-family: museo-sans-rounded, sans-serif; width: 100%; overflow-x: hidden!important; top: 0; left: 0;}
@@ -40,6 +40,8 @@ button a {color: white;}
 button a:hover {transform: scale(1)}
 
 .drop-shadow {filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .35));}
+.drop-shadow2 {filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .5));}
+
 .tan-text-shadow { font-size: 4rem; text-shadow: 4px 4px #f9e6c8;}
 .gold-text-shadow { font-size: 4rem; text-shadow: 4px 4px #EEBF70;}
 
@@ -279,6 +281,70 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 .project-button-circle {width: 150px; right: -50px; position: absolute; margin-top: -75px; height: 150px; background-image: url('../assets/shapes/tan-textured-circle.svg'); background-position: center center; }
 .case-study-button-content {display: flex; align-items: center; justify-content: center; transform: scale(0.85);}
 
+
+
+.circle {
+  stroke: #f8aa28;
+  stroke-dasharray: 650;
+  stroke-dashoffset: 650;
+  -webkit-transition: all 0.5s ease-in-out;
+  opacity: 0.3;
+}
+
+.playBut {
+/*  border: 1px solid red;*/
+  display: inline-block;
+  -webkit-transition: all 0.5s ease;
+  
+  .triangle {
+    -webkit-transition: all 0.7s ease-in-out;
+    stroke-dasharray: 240;
+    stroke-dashoffset: 480;
+    stroke: #000;
+    transform: translateY(0) 
+   }
+  
+  
+  &:hover {
+    
+    .triangle {
+      stroke-dashoffset: 0;
+      opacity: 1;
+      stroke: #f8aa28;
+      animation: nudge 0.7s ease-in-out;
+      
+      @keyframes nudge{
+        0% {
+          transform: translateX(0)  
+        }
+        30% {
+          transform: translateX(-5px)
+        }
+        50% {
+          transform: translateX(5px)
+        }
+        70% {
+          transform: translateX(-2px)
+        }
+        100% {
+          transform: translateX(0)
+        }
+      }
+    }
+    
+    .circle {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+    
+  }
+}
+  
+
+  
+  
+
+
 .case-study-window { position: fixed; top: 0; left: 0; z-index: 9999999; height: 100vh; width: 100vw;}
 .project-top-wrapper { max-height: 1025px; }
 
@@ -357,7 +423,7 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 }
 
 @media only screen and (max-width: 800px) {
-  .case-study-section {display: block;}
+  .case-study {display: block;}
   .case-study-section div {width: 100%!important; padding: 0px 25px; margin-top: 50px;}
   #additional-videos {height: 70%;}
   .project-title {font-size:5rem!important; line-height: 5rem; margin-bottom: -15px;width: 80%;}
