@@ -1,0 +1,95 @@
+<section id="featured-projects">
+        <div id="slide-container">
+        {.repeated section items}
+        {.if starred}
+            <div class="slide">
+                <div class="project">
+                    <div class="project-wrapper">
+                        <div class="vimeo-bg-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');" >
+                            <iframe class="vimeo-bg-iframe" src='https://player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        </div>
+
+                        <div class="title-container">
+                        {#  LINKED SLIDERS  }
+                        {.equal? customContent.customType "LinkedSlider"} 
+                                <a href='{customContent.clickthru}' class="title-wrapper" style="text-decoration: none; padding-left: 25px;">
+                                    <div id="linked-slider-wrapper">
+                                        <h6 class="link-title blue-text-shadow">{title}</h6>
+                                        <img src="assets/shapes/blue-textured-line.svg" style=" margin: 5px 0px 50px 25px;" />
+                                    </div>
+                                </a>
+                            {.or}
+                            {#  PROJECT SLIDERS}
+                            
+                            <div class="title-wrapper csw-{id}" onclick="togglecsw(this)">
+                                <div class="summary-title">
+                                    <div class="summary-title-button-wrapper drop-shadow">
+                                        <div class="title-brand-wrapper" >
+                                            <div class="project-button">
+                                                <span>
+                                                <h1 class="project-title gold-text-shadow drop-shadow2">{title}</h1>
+                                                <h6 class="project-brand drop-shadow2">{customContent.brand}</h6>
+                                                </span>
+                                                 <div class="project-button-circle">
+                                                    <div class="case-study-button-content">
+                                                            <a href='#'class='playBut'>
+    
+                                                            <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
+                                                            <svg version="1.1"
+                                                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+                                                                x="0px" y="0px" width="113.7px" height="113.7px" viewBox="0 0 113.7 113.7" enable-background="new 0 0 213.7 213.7"
+                                                                xml:space="preserve">
+
+                                                            <polygon class='triangle' id="XMLID_18_" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+                                                                73.5,62.5 148.5,105.8 73.5,149.1 "/>
+                                                            
+                                                            <circle class='circle' id="XMLID_17_" fill="none"  stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3"/>
+                                                            </svg>
+                                                            </a>
+                                                    </div>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>             
+                                </div>
+                            </div>
+                            {.end}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {.end}
+                {#  CASE STUDY WINDOWS  }
+                
+            {.end}
+
+            <div id="project-counter">
+                <a onclick="(goToSlider(data))" class="counter"></a>
+            </div>
+           
+        </div>
+        <div id="next-slide">
+            <img id="slide-arrow" src="../assets/nav-arrow.svg" alt="next slide arrow" />
+        </div>
+    </section>
+    
+    <div class="inset-box-shadow texture" style="padding: 0px 50px 10vh 50px;">
+        <div style="width: 100%; height: 5vh; display: flex; align-items: center; justify-content: center;" >
+            <img src="assets/nav-arrow.svg" style="width: 15px; transform: rotate(90deg)"/>
+        </div>
+        <span style="z-index: 4!important; width: 100%; margin-top: 50px;">
+            <h6><squarespace:block-field id="story-summary" columns="1"/></h6>
+            <img src="assets/shapes/yellow-textured-line.svg" style="margin-top: -25px; max-width: 800px;"/>
+        </span>
+            <div class="story-section">
+                <div style="height: 100%; width: auto;">
+                    <squarespace:block-field id="story-image" columns="1"/>
+                </div>
+                <div style="width: 100%; display: flex; align-items: flex-end; justify-content: left;">
+                    <span class="bio-content drop-shadow" id="story-content">
+                            <squarespace:block-field id="story-bio" columns="1"/>
+                    </span>
+                </div>
+            </div>
+    </div>

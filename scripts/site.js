@@ -29,18 +29,10 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
 window.addEventListener('resize', resize);
 
-function resize(){
-  console.log("resizing")
-  $('html').css("width", "100vw");
-  $('main').css("width", "100%");
-  $('body').css("width", "100%")
-  var activate = allSlides[active];
-  activate.scrollIntoView();
-}
 
 
 // Set a same-site cookie for first-party contexts
-document.cookie = 'cookie1=value1; SameSite=Lax';
+document.cookie = 'cookie1=value1; SameSite=Lax'; 
 // Set a cross-site cookie for third-party contexts
 document.cookie = 'cookie2=value2; SameSite=None; Secure';
 

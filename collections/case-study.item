@@ -1,138 +1,99 @@
 {.section item}
-<div class="project-case-study-window texture" style="display: block!important">
-  <div class="project-case-study-wrapper">
-    {#  project navigation  }
-    <div class="case-study-nav inset-box-shadow">
-      <span>               
-        <img src="../assets/miller-bros-lettermark.svg" alt="Miller Bros Lettermark Logo" />
-      </span>
-      <span style="justify-content: flex-end;">
-        <button id="toggle-fullscreen-{id}" class="expand-button hover-indication" aria-label="Toggle Full Screen Video Window"></button>
-        <button class="circle-button-blue hover-indication" id="toggle-close-{id}" aria-label="Close Portfolio Video Window"></button>
-      </span>
-    </div>
-
-      {#  iframe  }
-      <div  style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden;">
-        <iframe id="fullcut-iframe" src="https://player.vimeo.com/video/{customContent.vimeocode-iframe}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%; height: 100%;  overflow-y: hidden;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-      </div>
-      
-
-
-      {#  project details  }
-      <div class="case-study-title inset-box-shadow">
-          <h1>{title}</h1>
-          <h5>{customContent.shortdescription}</h5>
-      </div>
-       <div class="case-study-text texture">
-          <span class="case-study-block" id="summary-credits-block">
-              <span class="case-study-summary">
-                  <h4>Project Summary </h4>   
-                  <span class="yellow-line"></span>
-                  <p>{body}</p>
-              </span>
-              <span class="case-study-credits">
-                  <h4> Credits </h4>
-                  <span class="yellow-line"></span>
-                  <span>{customContent.credits.html}</span>
-              </span>
-          </span>
-          
-          {#  TESTIMONIAL  }
-          <span class="case-study-block">
-            <span class="case-study-testimonial">
-                {.if customContent.testimonial}
-                    <span id="testimonial">
-                        <p>{customContent.testimonial}</p>
-                    </span>
-                    <h5>-{customContent.testimonial-name}</h5>
-                {.or}
-                
-                {.end}
+<div class="case-study-window tan-texture " id="csw-{id}" style="display: block; overflow-y: scroll!important;">
+    <div class="project-case-study-wrapper">
+    <div class="project-top-wrapper">
+        {#  project navigation  }
+        <div class="case-study-nav inset-box-shadow texture">
+            <span>               
+                <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
             </span>
-          </span>
+            <span style="justify-content: flex-end;">
+                <button id="toggle-fullscreen-{id}" class="expand-button hover-indication" aria-label="Toggle Full Screen Video Window"></button>
+                <button class="circle-button-blue csw-{id}" onclick="togglecsw(this)" aria-label="Close Portfolio Video Window"></button>
+            </span>
+        </div>
+        {#  iframe  }
+        <div class="fullcut-iframe-container" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
+              <div class="fullcut-iframe-wrapper" style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden;  height: 100%; ">
+                <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.vimeocode}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0; bottom: 0; right: 0; width:100%; height: 100%; backdrop-filter: blur(10px); overflow-y: hidden; max-width: 1700px; max-height: 950px;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+        <div class="fade-in" id="titlelogo">
+            <div class="texture" style="width: 100%;">
+                <h1 class="yellow-text-shadow">{title}</h1>
+            </div>
+        
+            {.if customContent.brandlogo}
+            <div id="brand-logo" class="hoverthis drop-shadow">
+                <a href="{customContent.brandurl}" target="_blank"><img src="{customContent.brandlogo.assetUrl}" style="width: 75%; max-width: 150px;"/></a>
+            </div>
+            {.end}
+            
+        </div>
+        <div class="case-study-section">
+            <div id="summary">
+                <p>{body}</p>
+                {.if customContent.testimonial}
+                    <div id="review">
+                        <h1>"</h1> <span>
+                            <p id="testimonial">{customContent.testimonial}</p>
+                            <h5>-{customContent.testimonial-name}</h5>
+                        </span> <h1>"</h1>
+                    </div>
+                {.end}
+            </div>
 
-          <span class="case-study-text-block">
-            <span>
-                  {.if customContent.additional-video1}
-                  <h4>Additional Videos </h4>
-                  <span class="yellow-line"></span>
-                  <br>
-                      <div class="extra-video">
-                      <div style="padding:56.25% 0 0 0;position:relative;">
-                        <iframe src="https://player.vimeo.com/video/{customContent.additional-video1}?h=a80429b32e&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-                      </div>
-                  {.or}
-                  {.end}
-                  {.if customContent.additional-video2}
-                      <div class="extra-video">
-                      <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/{customContent.additional-video2}?h=a80429b32e&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-                      </div>
-                  {.or}
-                  {.end}
+            <div id="credits" class="inset-box-shadow texture">
+                <div>
+                    <h6 style="font-size: 36px; font-weight: 700;">Credits </h6>
+                    <img src="../assets/shapes/yellow-textured-line.svg"/>
+                    <p>{customContent.credits.html}</p>
+                </div>
+                {.if customContent.additionalvideo1}
+                <div>
+                    <h6 style="font-size: 36px; font-weight: 700; margin-top: 25px;">Additional Videos </h6>
+                    <img src="../assets/shapes/yellow-textured-line.svg"/>
+                    
+                    
+                    <div class="fullcut-iframe-wrapper" style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden; margin: 25px 0px; height: 100%; ">
+                        <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additionalvideo1}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0; width:100%; height: 100%;  overflow-y: hidden;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    {.if customContent.additionalvideo2}
+                        <div class="fullcut-iframe-wrapper" style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden;  height: 100%; ">
+                            <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additionalvideo2}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0; width:100%; height: 100%;  overflow-y: hidden;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    {.end}
+                    
+                </div>
+                {.end}
+            </div>
+        </div>
+        
+                
+        
+        {#  BEHIND THE SCENES  }
+        {.if customContent.behindthescenes}
+        <div id="bts" class="texture" style="text-align: center;">
+            <span style="width: 50%;">
+                <h6 style="font-size: 48px; font-weight: 700; padding: 25px;"> Behind the Scenes </h6>
+                <img src="../assets/shapes/yellow-textured-line-center.svg" style="max-width: 50%; margin-bottom: 25px;"/>
+            </span>
 
-              </span>
-          </span>
-      </div>
-      {#  BEHIND THE SCENES  }
-        <div id="bts" class="case-study-block inset-box-shadow fade-into-view-animation">
-        <h6> Behind the Scenes </h6>
-          <div id="bts-photos-grid" >
-            {.repeated section customContent.behindthescenes}
-                <img class="bts-img" src="{assetUrl}"/>
-              {.end}
-          </div>
-            <span style="display: flex; align-items: center; justify-content: center; padding: 50px; color: white;">
-              <span>
-              <h4 class="hover-indication back-to-top" > BACK TO TOP </h4>
-                <button class="circle-button-blue hover-indication" id="toggle-close-{id}" style="width: 100%;" aria-label="Close Portfolio Video Window"></button>
-              </span>
+            <div id="bts-photos-grid">
+                {.repeated section customContent.behindthescenes}
+                    <img class="bts-img drop-shadow" src="{assetUrl}"/>
+                {.end}
+            </div>
+            <span style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 50px; color: white;">
+                <button class="circle-button-blue csw-{id}" onclick="togglecsw(this)" aria-label="Close Portfolio Video Window"></button>
             </span>
         </div> 
-  </div>
+        {.end}
+
+
+        
+            
+    </div>
 </div>
-    {.end}
-
-
-
-<script>
-
-
-
-function mediaQuery(x) {
-  if (x.matches) { 
-    $('#summary-credits-block').css({"display":"block"})
-    $('.case-study-summary').css({"width":"100%"});
-    $('.case-study-credits').css({"width":"100%", "margin-top": "25px"})
-    $('#bts-photos-grid').css('column-count', '1')
-
-   
-
-  } else {
-
-    $('#summary-credits-block').css({"display":"inline-flex"})
-
-    $('.case-study-summary').css({"width":"60%"});
-    $('.case-study-credits').css({"width":"38%", "margin-top":"0px"})
-    $('#bts-photos-grid').css('column-count', '3')
-
-  }
-}
-
-var x = window.matchMedia("(max-width: 550px)")
-mediaQuery(x) 
-x.addListener(mediaQuery) 
-
-$('.back-to-top').click(function(){
-  $('.project-case-study-window').scrollTop(0);
-})
-
-$('.expand-button').click(function() {
-  console.log('ya')
-    let elem = document.getElementById("fullcut-iframe");
-
-  elem.requestFullscreen()
-
-})
-
-</script>
+{.end}
