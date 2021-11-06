@@ -203,6 +203,7 @@
 
     <script>
 
+
   
   var timerID = 
   setInterval(function() {
@@ -225,9 +226,7 @@ $(window).scroll(function(){
     }
 });
 
-$('.summary-title-link').click(function(){
-    alert("clicked " + this)
-})
+
 
 
 
@@ -262,6 +261,7 @@ var counter = allSlides.length;
 {#  THINGS THAT HAPPEN WHEN PAGE LOADS  }
 window.addEventListener('DOMContentLoaded', (event) => {
       $('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)") 
+     
 });
 
 

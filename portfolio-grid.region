@@ -21,6 +21,13 @@
        {squarespace.main-content}
     </main>
 
+    <div style="position: fixed; width: 100vw; height: 100vw; top: 0; left: 0; background: red; z-index: 99999; display: none" id="boob">
+
+    <iframe id="case-study-iframe" width="100%" height="100%"> 
+    
+    </iframe>
+    </div>
+
 
    
     <!-- combo and minify scripts when not logged in -->
@@ -31,6 +38,15 @@
   </body>
 </html>
 <script>
+
+
+
+$(".summary-title").click(function(){
+    
+    $('#boob').slideDown(500);
+    $('#case-study-iframe').attr("src","/home-1/starya")
+}
+)
 
 function togglecsw(item){
     var triggereddd = item.classList; 
