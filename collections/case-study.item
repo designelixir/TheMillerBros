@@ -1,5 +1,5 @@
 {.section item}
-<div class="project-case-study-window texture">
+<div class="project-case-study-window texture" style="display: block!important">
   <div class="project-case-study-wrapper">
     {#  project navigation  }
     <div class="case-study-nav inset-box-shadow">
