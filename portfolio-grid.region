@@ -12,7 +12,7 @@
             <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </header>
         <div style="border: 3px solid lime">
-                <squarespace:block-field id="portfolio-grid columns="1"/>
+                <squarespace:block-field id="portfolio-grid" columns="1"/>
         </div>
      
 
