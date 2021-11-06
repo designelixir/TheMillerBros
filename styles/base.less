@@ -18,7 +18,7 @@
 
 html {background: #1B1718; width: 100vw; zoom: 1;}
 
-main { left: 0; width: 100%; overflow-x: hidden; margin: 125px 0 0 0; padding: 0;}
+main { left: 0; width: 100%; overflow-x: hidden; margin: 0; padding: 0;}
 body {font-family: museo-sans-rounded, sans-serif; width: 100%; overflow-x: hidden!important; top: 0; left: 0;}
 
 
@@ -75,7 +75,7 @@ a:hover {cursor: pointer}
 
 .sqs-gallery-controls a{background-image: url('../assets/shapes/blue-button.png')!important; background-size: 95% 95%; }
 
-.site-header {width: 100vw; height: 125px; min-height: 125px; z-index: 12!important; position: absolute; top: 0; left: 0; bottom: 125px; }
+.site-header {width: 100vw; height: 125px; min-height: 125px; z-index: 12!important; position: absolute; top: 0; left: 0;  }
 .site-navigation {width: 100%; display: inline-flex; align-items: center; justify-content: space-between;} 
 .site-navigation-wrapper {width: 100%; height: 100%; display: inline-flex; padding: 25px 30px; align-items: center; justify-content: space-between; background-color: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.15730042016806722) 50%, rgba(0,0,0,0) 100%);}
 
@@ -237,7 +237,7 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 
 
 // HOMEPAGE 
-#featured-projects { height: 95vh;  overflow: hidden; }
+#featured-projects { height: 95vh;  overflow: hidden;}
 #slide-container {height: 95vh;  display: inline-flex; align-items: center; overflow: hidden;}
 .slide {height: 95vh; width: 100vw; overflow: hidden; }
 .project {z-index: 0; width: 100%; height: 100%; position: relative;}
@@ -387,7 +387,6 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 
 
 @media only screen and (max-width: 600px) {
-  .portfolio-item {width: 49%; height: calc(99% / 4); }
   #bts-photos-grid {-webkit-column-count: 1!important; -moz-column-count: 1; column-count: 1!important; column-gap: none;}
 
 }
@@ -398,10 +397,8 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
   #additional-videos {height: 70%;}
   .project-title {font-size:5rem!important; line-height: 5rem; margin-bottom: -15px;width: 80%;}
   .project-brand {font-size: 48px; color: white;}
-
   #credits {width: 100%; padding: 50px;}
   #summary {width: 100%; padding: 50px;}
-  #portfolio-grid {.summary-item {border: 1px solid white; flex-grow: 1; text-align: center; width: 48%!important;  background-size: cover; background-repeat: no-repeat; overflow: hidden; cursor: pointer;  }}
 }
 
 @media only screen and (max-width: 1000px) {
@@ -432,15 +429,12 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 }
 
 @media only screen and (min-width: 1750px) {
-  .portfolio-item {width: 24%; height: calc(99% / 3); max-width: 25%;}
-  
   #fullcut-iframe {margin-left: ~'calc((100% - 1688px)/2)'}
-  .portfolio-nav-title {text-align: center;}
 }
 
 #portfolio-grid-container {margin-top: 118px; height: ~'calc(100vh - 120px)'}
 #portfolio-grid-content {display: none!important;}
-#portfolio-grid {padding: 0px;  margin: 0!important; border: 1px solid salmon; ;
+#portfolio-grid {padding: 0px;  margin: 0!important; border: 1px solid salmon; width: 100%;
   .summary-item {border: 1px solid white; flex-grow: 1; display: flex;  justify-content: center; align-items: center; text-align: center; width: 33.15%!important; margin: 2px; height: ~'calc((100vh - 132px) /4 )'!important; background-size: cover; background-repeat: no-repeat; overflow: hidden; cursor: pointer; background-position: center center; 
     animation-delay: 5s; animation:slide-in-fwd-center 2s cubic-bezier(.25,.46,.45,.94) both; }
     .summary-block-wrapper {margin-top: 0!important; border: 2px solid magenta; width: 100%!important; display: flex; align-items: center; justify-content: center;}

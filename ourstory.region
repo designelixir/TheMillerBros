@@ -109,18 +109,6 @@
           {.end}
           </div>
 
-          <div class="texture padding-control" style=" width: 100vw; text-align: center;">
-            <h1 class="blue-text-shadow"> Select Partners</h1>
-            <img src="assets/shapes/blue-textured-line-center.svg" style="margin-bottom: 25px;"/>
-            <squarespace:block-field id="select-partners" columns="1"/>
-          </div>
-          
-      
-
-
-
-
-            
 
       <main class="content-container texture" id="our-story-content" role="main" data-content-field="main-content" >
        {squarespace.main-content}

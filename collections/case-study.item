@@ -43,13 +43,18 @@
                     </div>
                 {.end}
             </div>
-
+             {.if customContent.credits.html}
             <div id="credits" class="inset-box-shadow texture">
+                
                 <div>
+               
                     <h6 style="font-size: 36px; font-weight: 700;">Credits </h6>
                     <img src="../assets/shapes/yellow-textured-line.svg"/>
                     <p>{customContent.credits.html}</p>
+                  
                 </div>
+                {.end}
+                
                 {.if customContent.additionalvideo1}
                 <div>
                     <h6 style="font-size: 36px; font-weight: 700; margin-top: 25px;">Additional Videos </h6>

@@ -93,6 +93,114 @@
             </div>
     </div>
 
+{.repeated section item}
+<div class="case-study-window tan-texture " id="csw-{id}" style="display: block; overflow-y: scroll!important;">
+    <div class="project-case-study-wrapper">
+    <div class="project-top-wrapper">
+        {#  project navigation  }
+        <div class="case-study-nav inset-box-shadow texture">
+            <span>               
+                <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
+            </span>
+            <span style="justify-content: flex-end;">
+                <button id="toggle-fullscreen-{id}" class="expand-button hover-indication" aria-label="Toggle Full Screen Video Window"></button>
+                <button class="circle-button-blue csw-{id}" onclick="togglecsw(this)" aria-label="Close Portfolio Video Window"></button>
+            </span>
+        </div>
+        {#  iframe  }
+        <div class="fullcut-iframe-container" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
+              <div class="fullcut-iframe-wrapper" style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden;  height: 100%; ">
+                <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.vimeocode}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0; bottom: 0; right: 0; width:100%; height: 100%; backdrop-filter: blur(10px); overflow-y: hidden; max-width: 1700px; max-height: 950px;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+        <div class="fade-in" id="titlelogo">
+            <div class="texture" style="width: 100%;">
+                <h1 class="yellow-text-shadow">{title}</h1>
+            </div>
+        
+            {.if customContent.brandlogo}
+            <div id="brand-logo" class="hoverthis drop-shadow">
+                <a href="{customContent.brandurl}" target="_blank"><img src="{customContent.brandlogo.assetUrl}" style="width: 75%; max-width: 150px;"/></a>
+            </div>
+            {.end}
+            
+        </div>
+        <div class="case-study-section">
+            <div id="summary">
+                <p>{body}</p>
+                {.if customContent.testimonial}
+                    <div id="review">
+                        <h1>"</h1> <span>
+                            <p id="testimonial">{customContent.testimonial}</p>
+                            <h5>-{customContent.testimonial-name}</h5>
+                        </span> <h1>"</h1>
+                    </div>
+                {.end}
+            </div>
+             {.if customContent.credits.html}
+            <div id="credits" class="inset-box-shadow texture">
+                
+                <div>
+               
+                    <h6 style="font-size: 36px; font-weight: 700;">Credits </h6>
+                    <img src="../assets/shapes/yellow-textured-line.svg"/>
+                    <p>{customContent.credits.html}</p>
+                  
+                </div>
+                {.end}
+                
+                {.if customContent.additionalvideo1}
+                <div>
+                    <h6 style="font-size: 36px; font-weight: 700; margin-top: 25px;">Additional Videos </h6>
+                    <img src="../assets/shapes/yellow-textured-line.svg"/>
+                    
+                    
+                    <div class="fullcut-iframe-wrapper" style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden; margin: 25px 0px; height: 100%; ">
+                        <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additionalvideo1}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0; width:100%; height: 100%;  overflow-y: hidden;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    {.if customContent.additionalvideo2}
+                        <div class="fullcut-iframe-wrapper" style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden;  height: 100%; ">
+                            <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additionalvideo2}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0; width:100%; height: 100%;  overflow-y: hidden;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    {.end}
+                    
+                </div>
+                {.end}
+            </div>
+        </div>
+        
+                
+        
+        {#  BEHIND THE SCENES  }
+        {.if customContent.behindthescenes}
+        <div id="bts" class="texture" style="text-align: center;">
+            <span style="width: 50%;">
+                <h6 style="font-size: 48px; font-weight: 700; padding: 25px;"> Behind the Scenes </h6>
+                <img src="../assets/shapes/yellow-textured-line-center.svg" style="max-width: 50%; margin-bottom: 25px;"/>
+            </span>
+
+            <div id="bts-photos-grid">
+                {.repeated section customContent.behindthescenes}
+                    <img class="bts-img drop-shadow" src="{assetUrl}"/>
+                {.end}
+            </div>
+            <span style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 50px; color: white;">
+                <button class="circle-button-blue csw-{id}" onclick="togglecsw(this)" aria-label="Close Portfolio Video Window"></button>
+            </span>
+        </div> 
+        {.end}
+
+
+        
+            
+    </div>
+</div>
+{.end}
+
+
+
+
     <script>
 
 var allSlides = document.getElementsByClassName('project');
@@ -164,6 +272,81 @@ var counter1 = $('.counter:nth-child(1)');
 $('counter').click(function(){
   console.log($('.counter:nth-child()') + "this")
 })
+
+function togglecsw(item){
+    var triggereddd = item.classList; 
+    var selectId = triggereddd[1];
+    var toggleThis = document.getElementById(selectId)
+    clearInterval(autoPlayTimer);
+
+    var count = $(toggleThis).data("count") || 0;
+  $(toggleThis).data("count", ++count);
+
+  if ((count % 2) != 1 ){
+    $(toggleThis).slideUp(500);
+  } else {
+    $(toggleThis).slideDown(500);
+    $('body').scrollTop(0);
+    $('.case-study-iframe:eq('+active+')').attr("src", $('.case-study-iframe:eq('+active+')').attr("src"));
+    $('.additional-video-iframe-one:eq('+active+')').attr("src", $('.additional-video-iframe-one:eq('+active+')').attr("src"));
+    $('.additional-video-iframe-two:eq('+active+')').attr("src", $('.additional-video-iframe-two:eq('+active+')').attr("src"));
+  }
+}
+
+
+var allSlides = document.getElementsByClassName('project');
+var active = 0;
+var counter = allSlides.length;
+var travelingbutton = document.querySelector("#traveling-button");
+var followMouseBool = false;
+
+{#  THINGS THAT HAPPEN WHEN PAGE LOADS  }
+window.addEventListener('DOMContentLoaded', (event) => {
+      $('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)") 
+      
+});
+
+
+
+
+for (let i = 1; i < counter; i++) {$("#project-counter").append($(".counter").last().clone(true));}
+var cls = document.getElementsByClassName("counter"); 
+for (n=0, length = cls.length; n < length; n++) {cls[n].data = n ; }
+
+
+
+
+
+
+function goToSlider(active){
+    clearInterval(autoPlayTimer);
+
+  var activate = allSlides[active];
+  activate.scrollIntoView();
+  for (let i = 0; i < counter; i++) {
+      $('.counter').css("background-image", "url(assets/shapes/tan-textured-circle.svg)")  
+  }$('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)")  
+
+} 
+
+ var autoPlayTimer = setInterval(function() {
+      if(active >= counter - 1){active = 0;} 
+      else {active = active + 1;}
+      goToSlider(active)
+  }, 10000);
+
+$('#next-slide').click(function() {
+      if(active >= counter - 1){active = 0;} 
+      else {active = active + 1;}
+      goToSlider(active);
+      clearInterval(autoPlayTimer);
+  });
+
+window.addEventListener('scroll', function(){
+
+    clearInterval(autoPlayTimer)
+})
+
 
 
 
