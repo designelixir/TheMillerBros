@@ -121,7 +121,7 @@
         
             {.if customContent.brandlogo}
             <div id="brand-logo" class="hoverthis drop-shadow">
-                <a href="{customContent.brandurl}" target="_blank"><img src="{customContent.brandlogo.assetUrl}" style="width: 75%; max-width: 150px;"/></a>
+                <a href="{customContent.brandurl}" target="_blank"><img src="{customContent.brandlogo.assetUrl}" /></a>
             </div>
             {.end}
             
@@ -142,7 +142,6 @@
             <div id="credits" class="inset-box-shadow texture">
                 
                 <div>
-               
                     <h6 style="font-size: 36px; font-weight: 700;">Credits </h6>
                     <img src="../assets/shapes/yellow-textured-line.svg"/>
                     <p>{customContent.credits.html}</p>

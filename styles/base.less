@@ -110,7 +110,7 @@ a:hover {cursor: pointer}
 100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
 
 // Case STUDY WINDPW 
-.case-study-nav {width: 100%; height: 75px; display: flex; align-items: center; justify-content: center; z-index: 9; padding: 0px 25px;}
+.case-study-nav {width: 100%; height: 7%; min-height: 75px; display: flex; align-items: center; justify-content: center; z-index: 9; padding: 0px 25px;}
 .case-study-nav span {width: 50%;  display: flex; align-items: center;}
 .case-study-nav span img {height: 50px; width: auto;}
 .circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
@@ -246,35 +246,9 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 
 .title-container{position: absolute; width: 90%; bottom: 100px; left: 0; height: 75%; z-index: 2; display: flex; align-items: flex; }
 .title-wrapper { width: 100%; height: 100%; display: flex; align-items: flex-end; cursor: pointer;}
-.link-title {font-size: 6rem; line-height: 5.5rem; max-width: 700px; padding-left: 25px;}
+.link-title {font-size: 6rem; line-height: 5.5rem; max-width: 700px; padding-left: 25px; }
 
 .summary-title:hover {transform: scale(1.1)}
-
-.case-study-section {display: inline-flex; align-items: flex-start; justify-content: space-between;}
-
-
-#titlelogo {display: block; align-items: flex-start; justify-content: space-between; width: 100%; }
-#titlelogo h1 {padding: 25px 50px;}
-#brand-logo {width: 150px; right: 0; position: absolute; margin-top: -75px; height: 150px; background-image: url('../assets/shapes/tan-textured-circle.svg'); background-position: center center; }
-#brand-logo a {display: flex; align-items: center; justify-content: center;  height: 150px; width: 150px;}
-
-
-
-#summary {padding: 50px 25px 50px 50px; width: ~'calc(100% - 400px)'; height: 100%;}
-#summary p{font-size: 1.25rem; font-weight: 100; line-height: 1.75rem; }
-
-#review { padding: 50px 25px 25px 25px; width: 100%; display: inline-flex; align-items: flex-start; justify-content: space-evenly; text-align: center;}
-#review h1 {font-size: 100px; color: #C5843D!important;}
-#review h5 {opacity: 0.5; }
-#testimonial { font-style: italic; display: inline-flex; justify-content: space-evenly; width: 100%; padding: 5%; font-size: 36px!important; font-weight: 300;  line-height: 48px!important;}
-
-#credits {padding: 50px; max-width: 500px; width: 100%; height: 100%; color: white!important}
-
-#credits p {text-transform: uppercase!important; font-size: 1rem; padding: 5px 0px; opacity: 0.75; color: white!important}
-#credits strong {text-transform: none; color: white!important}
-#credits a { text-transform: none; color: white!important; text-decoration: none;}
-
-
 .project-title {font-size: 72px; max-width: 500px; line-height: 4.25rem;  width: 90%; margin-top: 25px;  }
 .project-brand {font-size: 36px; color: white;}
 .project-button {display: inline-flex; align-items: flex-end; background-image: url(../assets/shapes/yellow-half-button.png); padding: 25px 0px 25px 50px;  background-size: 500px 100px; width: 500px; background-position: left bottom; }
@@ -345,13 +319,7 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
   
 
 
-.case-study-window { position: fixed; top: 0; left: 0; z-index: 9999999; height: 100vh; width: 100vw;}
-.project-top-wrapper { max-height: 1025px; }
 
-
-#bts { width: 100%; padding: 25px; }
-#bts-photos-grid {-webkit-column-count: 3; -moz-column-count: 3; column-count: 3; column-gap: none; text-align: center;}
-#bts-photos-grid img { width: 100% !important; height: auto !important; margin: 5px;}
 
 
 #next-slide {background-image: url('../assets/textured-strip.png'); background-size: 100% 100%; background-position: top right; position: absolute; top: 0; right: 0; height: 95vh; width: 40px; z-index: 5;  display: flex; align-items: center; justify-content: center;}
@@ -394,11 +362,13 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 @media only screen and (max-width: 800px) {
   .case-study {display: block;}
   .case-study-section div {width: 100%!important; padding: 0px 25px; margin-top: 50px;}
-  #additional-videos {height: 70%;}
+
   .project-title {font-size:5rem!important; line-height: 5rem; margin-bottom: -15px;width: 80%;}
   .project-brand {font-size: 48px; color: white;}
-  #credits {width: 100%; padding: 50px;}
-  #summary {width: 100%; padding: 50px;}
+  .case-study-section {display: block!important;}
+ 
+  #portfolio-grid .summary-item {min-width: 50%!important; height: ~'calc((100vh - 132px) /6 )'!important;}
+
 }
 
 @media only screen and (max-width: 1000px) {
@@ -415,8 +385,6 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
   #contact-card-holder {overflow-x: hidden; justify-content: center; margin-right: -25px }
   #map-holder-address {display: block;}
   #bts-photos-grid {-webkit-column-count: 2; -moz-column-count: 2; column-count: 2; column-gap: none;}  
-
-  
   .blue-text-shadow {font-size: 2rem;}
   .padding-control {padding: 25px; }
   .bold-paragraph p {font-size: 1.25em; line-height: 1.65em; }
@@ -425,28 +393,29 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
   .container-holder {display: block}
   .container-half {width: 100%;}
   .link-title {font-size: 72px!important; line-height: 72px;}
-
+  #portfolio-grid .summary-item {width: 33.15%!important; height: ~'calc((100vh - 132px) / 4 )'!important; }
 }
 
-@media only screen and (min-width: 1750px) {
-  #fullcut-iframe {margin-left: ~'calc((100% - 1688px)/2)'}
+@media only screen and (max-width: 1750px) {
+  #portfolio-grid .summary-item {width: 25%!important;  }
 }
 
 #portfolio-grid-container {margin-top: 118px; height: ~'calc(100vh - 120px)'}
 #portfolio-grid-content {display: none!important;}
-#portfolio-grid {padding: 0px;  margin: 0!important; border: 1px solid salmon; width: 100%;
-  .summary-item {border: 1px solid white; flex-grow: 1; display: flex;  justify-content: center; align-items: center; text-align: center; width: 33.15%!important; margin: 2px; height: ~'calc((100vh - 132px) /4 )'!important; background-size: cover; background-repeat: no-repeat; overflow: hidden; cursor: pointer; background-position: center center; 
-    animation-delay: 5s; animation:slide-in-fwd-center 2s cubic-bezier(.25,.46,.45,.94) both; }
-    .summary-block-wrapper {margin-top: 0!important; border: 2px solid magenta; width: 100%!important; display: flex; align-items: center; justify-content: center;}
-    .summary-title {width: 90%; height: 90%; margin: 5%; border: 2px solid yellow; display: flex; align-items: center; justify-content: center;}
-    .summary-title-link { border: 2px solid green; }
-    .summary-thumbnail-container {position: absolute; overflow: hidden; border: 2px solid teal; width: 105%!important; height: 105%!important; padding: 0!important; z-index: 0!important;}
+#portfolio-grid {padding: 0px;  margin: 0!important; width: 100%; flex-wrap: wrap; justify-content: space-evenly;
+  .summary-item {border: 1px solid white; min-width: ~'calc(100vw / 3)'; min-height: ~'calc((100vh - 132px) / 4 )';height: 100%; width: 100%; display: flex; flex-grow: 1;  justify-content: center; align-items: center; text-align: center;  background-size: cover; background-repeat: no-repeat; overflow: hidden; cursor: pointer; background-position: center center; 
+    animation-delay: 5s; animation:slide-in-fwd-center 2s cubic-bezier(.25,.46,.45,.94) both; margin: 0; padding: 0; }
+    .summary-block-wrapper {margin-top: 0!important;  width: 100%!important; display: flex; align-items: center; justify-content: center; flex-wrap: wrap;}
+    .summary-title {width: 100%; height: 100%;display: flex; align-items: center; justify-content: center;}
+    .summary-title-link {pointer-events: none; }
+    .summary-thumbnail-container {position: absolute; overflow: hidden;  width: 105%!important; height: 105%!important; padding: 0!important; z-index: 0!important;}
     .sqs-video-wrapper {width: 100%!important; height: 100%!important;}
-    .intrinsic-inner {padding: 0!important; border: 2px solid red;}
+
+    
    .sqs-video-overlay {display: block; overflow: scroll!important;}
    .sqs-video-icon {display: none!important;}
-   .sqs-gallery-meta-container {z-index: 10!important; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);
-    display: flex; align-items: center; justify-content: center; color: white!important; padding: 25px; 
+   .sqs-gallery-meta-container {z-index: 10!important; width: 100%; height: 100%; min-height: 25vh; background-color: rgba(0,0,0,0.5);
+    display: flex; align-items: center; justify-content: center; color: white!important;
     text-transform: uppercase;
       a {color: white!important}}
 }
@@ -463,22 +432,52 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 .circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
 
 
-.portfolio-item {flex-grow: 1; display: flex;  justify-content: center; align-items: center; text-align: center; width: 32%; margin: 2px; height: calc(99% / 4); background-size: cover; background-repeat: no-repeat; overflow: hidden; cursor: pointer; background-position: center center; 
-    animation-delay: 5s; animation:slide-in-fwd-center 2s cubic-bezier(.25,.46,.45,.94) both; }
-.portfolio-item-title {width: 100%; height: 100%; background-color: rgba(0,0,0,0.5);
-    display: flex; align-items: center; justify-content: center; color: white; padding: 25px; 
-    text-transform: uppercase; background-repeat: no-repeat; background-size: cover; background-position: center center;
-}
-.title {font-size: 32px; font-weight: 500; animation: fade-in 3s cubic-bezier(.39,.575,.565,1.000) both}
+// CASE STUDY 
 
 
+.case-study-window {height: 100vh; width: 100vw;}
 
-.portfolio-item-window {display: none; width: 100vw; height: 100vh; background: rgba(0,0,0,0.15); backdrop-filter: blur(4px); position: fixed; z-index: 15; top: 0; left: 0; }
-  .vimeo-wrapper {background-size: cover; background-position: center center; background-repeat: no-repeat; z-index: -1!important;
-   height: ~'calc(100vh - 25px)'}
+.project-top-wrapper { max-height: 70vh; background-size: cover;}
 
-.portfolio-video iframe {min-width: 100%; min-height: 100%; padding: 2%; cursor: pointer;}
 
-// fullscreen iframe
 .fullcut-iframe-container {background-size: 200%; background-position: center center; overflow: hidden; max-height: 70vh;}
 
+#case-study-iframe-container {position: fixed; width: 100vw; height: 100vh; top: 0; left: 0; z-index: 99999;}
+#case-study-iframe {border: none;}
+
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background-size: cover; background-repeat: no-repeat; background-position: center center; max-height: 70vh!important;} 
+
+.embed-container iframe, 
+.embed-container object, 
+.embed-container embed { backdrop-filter: blur(3px); position: absolute;  top: 0; left: 0; width: 100%; height: 100%; max-height: 70vh!important;}
+
+#titlelogo {display: block; align-items: flex-start; justify-content: space-between; width: 100%; }
+#titlelogo h1 {padding: 25px 50px; font-size: 3.25rem;}
+#brand-logo {width: 150px; right: 0; position: absolute; margin-top: -75px; margin-right: 15px; height: 150px; z-index: 3; background-image: url('../assets/shapes/tan-textured-circle.svg'); background-position: center center; }
+#brand-logo a {display: flex; align-items: center; justify-content: center;  height: 150px; width: 150px; padding: 10px;}
+#summary {padding: 50px 25px 50px 50px; width: ~'calc(100% - 400px)'; height: 100%;}
+#summary p{font-size: 1.25rem; font-weight: 100; line-height: 1.75rem; }
+
+.case-study-section {display: inline-flex; align-items: flex-start; justify-content: space-between;}
+
+
+#review { padding: 50px 25px 25px 25px; width: 100%; display: inline-flex; align-items: flex-start; justify-content: space-evenly; text-align: center;}
+#review h1 {font-size: 100px; color: #C5843D!important;}
+#review h5 {opacity: 0.5; }
+#testimonial { font-style: italic; display: inline-flex; justify-content: space-evenly; width: 100%; padding: 5%; font-size: 36px!important; font-weight: 300;  line-height: 48px!important;}
+
+#credits {padding: 50px; max-width: 500px; width: 100%; height: 100%; color: white!important}
+
+#credits p {text-transform: uppercase!important; font-size: 1rem; padding: 5px 0px; opacity: 0.75; color: white!important}
+#credits strong {text-transform: none; color: white!important}
+#credits a { text-transform: none; color: white!important; text-decoration: none;}
+
+
+#bts { width: 100%; padding: 25px; }
+#bts-photos-grid {-webkit-column-count: 3; -moz-column-count: 3; column-count: 3; column-gap: none; text-align: center;}
+#bts-photos-grid img { width: 100% !important; height: auto !important; margin: 5px;}
+
+@media only screen and (max-width: 800px) {
+ #credits {width: 100vw!important; padding: 50px; max-width: 800px;}
+  #summary {width: 100vw!important; padding: 50px;}
+}

@@ -1,27 +1,18 @@
+
+
+
 {.section item}
-<div class="case-study-window tan-texture " id="csw-{id}" style="display: block; overflow-y: scroll!important;">
+<div class="case-study-window texture" style="overflow-y: scroll!important;">
     <div class="project-case-study-wrapper">
-    <div class="project-top-wrapper">
-        {#  project navigation  }
-        <div class="case-study-nav inset-box-shadow texture">
-            <span>               
-                <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
-            </span>
-            <span style="justify-content: flex-end;">
-                <button id="toggle-fullscreen-{id}" class="expand-button hover-indication" aria-label="Toggle Full Screen Video Window"></button>
-                <button class="circle-button-blue csw-{id}" onclick="togglecsw(this)" aria-label="Close Portfolio Video Window"></button>
-            </span>
-        </div>
+    <div class="project-top-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
         {#  iframe  }
-        <div class="fullcut-iframe-container" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
-              <div class="fullcut-iframe-wrapper" style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden;  height: 100%; ">
-                <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.vimeocode}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0; bottom: 0; right: 0; width:100%; height: 100%; backdrop-filter: blur(10px); overflow-y: hidden; max-width: 1700px; max-height: 950px;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-            </div>
+        <div class='embed-container' >
+            <iframe class="fade-in" src='https://player.vimeo.com/video/{customContent.vimeocode}?h=5d02ec9719&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
         </div>
     </div>
-        <div class="fade-in" id="titlelogo">
-            <div class="texture" style="width: 100%;">
-                <h1 class="yellow-text-shadow">{title}</h1>
+        <div id="titlelogo">
+            <div style="width: 100%;">
+                <h1 class="yellow-text-shadow fade-in">{title}</h1>
             </div>
         
             {.if customContent.brandlogo}
@@ -31,7 +22,8 @@
             {.end}
             
         </div>
-        <div class="case-study-section">
+        {.if body}
+        <div class="case-study-section inset-box-shadow fade-in tan-texture">
             <div id="summary">
                 <p>{body}</p>
                 {.if customContent.testimonial}
@@ -59,27 +51,26 @@
                 <div>
                     <h6 style="font-size: 36px; font-weight: 700; margin-top: 25px;">Additional Videos </h6>
                     <img src="../assets/shapes/yellow-textured-line.svg"/>
-                    
-                    
-                    <div class="fullcut-iframe-wrapper" style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden; margin: 25px 0px; height: 100%; ">
-                        <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additionalvideo1}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0; width:100%; height: 100%;  overflow-y: hidden;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <div class='embed-container additional-video' style="padding-top: 25px;">
+                        <iframe class="fade-in" src='https://player.vimeo.com/video/{customContent.additionalvideo1}?h=5d02ec9719&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                     </div>
+                  
                     {.if customContent.additionalvideo2}
-                        <div class="fullcut-iframe-wrapper" style="padding:56.25% 0 0 0; position:relative; overflow-y: hidden;  height: 100%; ">
-                            <iframe id="fullcut-iframe" class="case-study-iframe" src="https://player.vimeo.com/video/{customContent.additionalvideo2}?h=5d02ec9719&title=0&byline=0&portrait=0" style="position:absolute;top:0;left:0; width:100%; height: 100%;  overflow-y: hidden;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                        </div>
+                        <div class='embed-container additional-video' style="padding-top: 25px;">
+                            <iframe class="fade-in" src='https://player.vimeo.com/video/{customContent.additionalvideo2}?h=5d02ec9719&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                        </div>  
                     {.end}
                     
                 </div>
                 {.end}
             </div>
         </div>
-        
+        {.end}
                 
         
         {#  BEHIND THE SCENES  }
         {.if customContent.behindthescenes}
-        <div id="bts" class="texture" style="text-align: center;">
+        <div id="bts" class="texture" style="text-align: center; padding-bottom: 50px;">
             <span style="width: 50%;">
                 <h6 style="font-size: 48px; font-weight: 700; padding: 25px;"> Behind the Scenes </h6>
                 <img src="../assets/shapes/yellow-textured-line-center.svg" style="max-width: 50%; margin-bottom: 25px;"/>
@@ -90,15 +81,11 @@
                     <img class="bts-img drop-shadow" src="{assetUrl}"/>
                 {.end}
             </div>
-            <span style="display: flex; align-items: center; justify-content: center; width: 100%; padding: 50px; color: white;">
-                <button class="circle-button-blue csw-{id}" onclick="togglecsw(this)" aria-label="Close Portfolio Video Window"></button>
-            </span>
         </div> 
         {.end}
-
-
-        
-            
     </div>
+    
 </div>
+
 {.end}
+
