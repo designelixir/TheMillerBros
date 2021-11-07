@@ -56,11 +56,17 @@
               </div>
             </div>
             <div id="map-holder"><a href='https://goo.gl/maps/qS7Wx3kqAb2wvLRNA' target='_blank'>
+            
               <span style="text-align: center;">
                 <img id="map-img" src="../assets/map.svg" style="width: 100%;"/>
                 <p id="map-holder-address" class="bold-paragraph white-text" >3 S. Black Avenue,<br> Bozeman, MT</p>
                 </span></a>
+                
             </div>
+            <div id="review-holder">
+              <button class="sqs-block-button-element--large" ><a href="https://g.page/r/Ca_xcpYPJhOPEAg/review" target="_blank">Leave Us a Review</a></button>
+            </div>
+           
         </div>
       </div>
 
