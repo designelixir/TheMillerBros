@@ -74,15 +74,15 @@ var travelingbutton = document.querySelector("#traveling-button");
 var counter = allSlides.length;
 
 {#  THINGS THAT HAPPEN WHEN PAGE LOADS  }
-window.addEventListener('DOMContentLoaded', (event) => {
-      $('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)") 
-     
-});
+
 
 
 for (let i = 1; i < counter; i++) {$("#project-counter").append($(".counter").last().clone(true));}
 var cls = document.getElementsByClassName("counter"); 
 for (n=0, length = cls.length; n < length; n++) {cls[n].data = n ; }
+
+
+$('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)") 
 
 
 $(".summary-title").click(function(){
