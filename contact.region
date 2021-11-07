@@ -55,11 +55,11 @@
                 </div>
               </div>
             </div>
-            <div id="map-holder">
-              <span style="text-align: center; padding-bottom: 25px;">
+            <div id="map-holder"><a href='https://goo.gl/maps/qS7Wx3kqAb2wvLRNA' target='_blank'>
+              <span style="text-align: center;">
                 <img id="map-img" src="../assets/map.svg" style="width: 100%;"/>
                 <p id="map-holder-address" class="bold-paragraph white-text" >3 S. Black Avenue,<br> Bozeman, MT</p>
-                </span>
+                </span></a>
             </div>
         </div>
       </div>
