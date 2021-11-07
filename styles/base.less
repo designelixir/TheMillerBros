@@ -249,30 +249,31 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 .vimeo-bg-iframe {width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
 .title-container{position: absolute; width: 90%; bottom: 100px; left: 0; height: 75%; z-index: 2; display: flex; align-items: flex; }
-.title-wrapper { width: 100%; height: 100%; display: flex; align-items: flex-end; cursor: pointer;}
+.title-wrapper { width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: flex-start; cursor: pointer;}
 .link-title {font-size: 6rem; line-height: 5.5rem; max-width: 700px; padding-left: 25px; }
 
 .summary-title:hover {transform: scale(1.1)}
-.project-title {font-size: 72px; max-width: 500px; line-height: 4.25rem;  width: 90%; margin-top: 25px;  }
+.project-title {font-size: 72px;  line-height: 4.25rem;  width: 90%; margin-top: 25px; margin-right: 25px;  }
 .project-brand {font-size: 36px; color: white;}
-.project-button {display: inline-flex; align-items: flex-end; background-image: url(../assets/shapes/yellow-half-button.png); padding: 25px 0px 25px 50px;  background-size: 500px 100px; width: 500px; background-position: left bottom; }
+.project-button {display: inline-flex; align-items: flex-end; background-image: url(../assets/shapes/yellow-half-button.png); padding: 25px 0px 25px 50px;  background-size: 500px 100px; width: 550px; background-position: left bottom; }
 .project-button-circle {width: 150px; right: -50px; position: absolute; margin-top: -75px; height: 150px; background-image: url('../assets/shapes/tan-textured-circle.svg'); background-position: center center; }
 .case-study-button-content {display: flex; align-items: center; justify-content: center; transform: scale(0.85);}
 
 
 
 .circle {
-  stroke: #f8aa28;
+  stroke: #C5843D;
   stroke-dasharray: 650;
   stroke-dashoffset: 650;
   -webkit-transition: all 0.5s ease-in-out;
-  opacity: 0.3;
+  opacity: 0;
 }
 
 .playBut {
 /*  border: 1px solid red;*/
   display: inline-block;
   -webkit-transition: all 0.5s ease;
+  margin-top: 20px;
   
   .triangle {
     -webkit-transition: all 0.7s ease-in-out;
@@ -288,7 +289,7 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
     .triangle {
       stroke-dashoffset: 0;
       opacity: 1;
-      stroke: #f8aa28;
+      stroke: #C5843D;
       animation: nudge 0.7s ease-in-out;
       
       @keyframes nudge{
@@ -326,13 +327,15 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 
 
 
-#next-slide {background-image: url('../assets/textured-strip.png'); background-size: 100% 100%; background-position: top right; position: absolute; top: 0; right: 0; height: 95vh; width: 40px; z-index: 5;  display: flex; align-items: center; justify-content: center;}
+#next-slide { background-image: url('../assets/textured-strip.png'); background-size: 100% 100%; background-position: top right; position: absolute; top: 0; right: 0; height: 95vh; width: 60px; z-index: 5;  display: flex; align-items: center; justify-content: center;}
+#next-slide img {animation:jello-vertical 2s 5s infinite both; width: 25px;}
 #slide-arrow {margin-left: 10px; width: 15px;}
 #next-slide:hover {background-size: 105% 105%; cursor: pointer;}
 #next-slide:hover > img {transform: scale(1.1)}
 
-#project-counter { width: 100vw; padding: 0px 35px; position: absolute; bottom: 5vh; left: 0;  height: 50px; display: inline-flex; align-items: center; justify-content: flex-end;}
-.counter { margin: 0 10px; height: 20px; width: 20px; z-index: 9; background-image: url("../assets/shapes/tan-textured-circle.svg"); background-size: contain; background-position: center center; }
+#project-counter { width: 100vw; padding: 0px 35px; position: absolute; bottom: 5vh; left: 0;  height: 100px; display: inline-flex; align-items: center; justify-content: flex-end;}
+.counter { margin: 0 10px; height: 35px; width: 35px; z-index: 9; background-image: url("../assets/shapes/tan-textured-circle.svg"); background-size: contain; background-position: center center; }
+.counter:hover {transform: scale(1.1)}
 #scroll-down-arrow {transform: rotate(90deg); padding: 15px;}
 
 
@@ -351,6 +354,10 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
   
 
 // ANIMATIONS 
+
+.jello-vertical{-webkit-animation:jello-vertical 2s 5s infinite both;animation:jello-vertical 2s 5s infinite both}
+@-webkit-keyframes jello-vertical{0%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}30%{-webkit-transform:scale3d(.75,1.25,1);transform:scale3d(.75,1.25,1)}40%{-webkit-transform:scale3d(1.25,.75,1);transform:scale3d(1.25,.75,1)}50%{-webkit-transform:scale3d(.85,1.15,1);transform:scale3d(.85,1.15,1)}65%{-webkit-transform:scale3d(1.05,.95,1);transform:scale3d(1.05,.95,1)}75%{-webkit-transform:scale3d(.95,1.05,1);transform:scale3d(.95,1.05,1)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}@keyframes jello-vertical{0%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}30%{-webkit-transform:scale3d(.75,1.25,1);transform:scale3d(.75,1.25,1)}40%{-webkit-transform:scale3d(1.25,.75,1);transform:scale3d(1.25,.75,1)}50%{-webkit-transform:scale3d(.85,1.15,1);transform:scale3d(.85,1.15,1)}65%{-webkit-transform:scale3d(1.05,.95,1);transform:scale3d(1.05,.95,1)}75%{-webkit-transform:scale3d(.95,1.05,1);transform:scale3d(.95,1.05,1)}100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}}
+
 .slide-in-fwd-center{-webkit-animation:slide-in-fwd-center .4s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-fwd-center .4s cubic-bezier(.25,.46,.45,.94) both}
 @-webkit-keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}@keyframes slide-in-fwd-center{0%{-webkit-transform:translateZ(-1400px);transform:translateZ(-1400px);opacity:0}100%{-webkit-transform:translateZ(0);transform:translateZ(0);opacity:1}}
 
@@ -360,6 +367,7 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 
 @media only screen and (max-width: 600px) {
   #bts-photos-grid {-webkit-column-count: 1!important; -moz-column-count: 1; column-count: 1!important; column-gap: none;}
+  .title-wrapper {transform: scale(0.75); margin: 75px 0 0 -50px; z-index: 10;}
 
 }
 
@@ -371,7 +379,7 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
   .project-brand {font-size: 48px; color: white;}
   .case-study-section {display: block!important;}
   .summary-item {min-width: ~'calc((100vw - 2px) / 2)'!important; height: ~'calc(90vh / 6)'!important;}
-
+  #testimonial {font-size: 24px!important; line-height: 36px!important;}
 }
 
 @media only screen and (max-width: 1000px) {
@@ -433,9 +441,9 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 
 // CASE STUDY 
 
-#case-study-iframe-container {position: fixed; width: 100vw!important; height: 100vh!important; top: 0; left: 0;}
+.case-study-iframe-container {position: fixed; width: 100vw!important; height: 100vh!important; top: 0; left: 0; z-index: 99;}
 #case-study-iframe {border: none;}
-.case-study-window {height: 100vh; width: 100vw;}
+.case-study-window {height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; z-index: 12;}
 .project-top-wrapper { max-height: 70vh; background-size: cover;}
 .fullcut-iframe-container {background-size: 200%; background-position: center center; overflow: hidden; max-height: 70vh;}
 
@@ -457,7 +465,7 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 #review { padding: 50px 25px 25px 25px; width: 100%; display: inline-flex; align-items: flex-start; justify-content: space-evenly; text-align: center;}
 #review h1 {font-size: 100px; color: #C5843D!important;}
 #review h5 {opacity: 0.5; }
-#testimonial { font-style: italic; display: inline-flex; justify-content: space-evenly; width: 100%; padding: 5%; font-size: 36px!important; font-weight: 300;  line-height: 48px!important;}
+#testimonial { font-style: italic; display: inline-flex; justify-content: space-evenly; width: 100%; padding: 5%; font-weight: 300;  }
 
 #credits {padding: 50px; max-width: 500px; width: 100%; height: 100%; color: white!important}
 

@@ -29,7 +29,7 @@
                 {.if customContent.testimonial}
                     <div id="review">
                         <h1>"</h1> <span>
-                            <p id="testimonial">{customContent.testimonial}</p>
+                            <p style="font-size: 36px; line-height: 48px;" id="testimonial">{customContent.testimonial}</p>
                             <h5>-{customContent.testimonial-name}</h5>
                         </span> <h1>"</h1>
                     </div>
