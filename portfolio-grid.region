@@ -15,13 +15,7 @@
                 <squarespace:block-field id="portfolio-grid" columns="1"/>
         </div>
 
- 
-
-    <main class="content-container texture" id="portfolio-grid-content" role="main" data-content-field="main-content" >
-       {squarespace.main-content}
-    </main>
-
-    <div id="case-study-iframe-container" style="display: none">
+ <div id="case-study-iframe-container" style="display: none; border: 2px solid salmon;">
     <div class="case-study-nav inset-box-shadow texture">
             <span>               
                 <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
@@ -33,6 +27,12 @@
         </div>
         <iframe id="case-study-iframe" class=" fade-in" width="100%" height="93%"></iframe>
     </div>
+
+    <main class="content-container texture" id="portfolio-grid-content" role="main" data-content-field="main-content" >
+       {squarespace.main-content}
+    </main>
+
+    
 
 
    
