@@ -62,6 +62,29 @@
 
 <script>
 
+
+
+var sliderTop = $("#featured-projects").offset().top; //gets offset of header
+var sliderHeight = $("#featured-projects").outerHeight(); //gets height of header
+
+
+var allSlides = document.getElementsByClassName('project');
+var travelingbutton = document.querySelector("#traveling-button");
+
+var counter = allSlides.length;
+
+{#  THINGS THAT HAPPEN WHEN PAGE LOADS  }
+window.addEventListener('DOMContentLoaded', (event) => {
+      $('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)") 
+     
+});
+
+
+for (let i = 1; i < counter; i++) {$("#project-counter").append($(".counter").last().clone(true));}
+var cls = document.getElementsByClassName("counter"); 
+for (n=0, length = cls.length; n < length; n++) {cls[n].data = n ; }
+
+
 $(".summary-title").click(function(){
     var clickthru = $(this).attr('data-url')
     $('.case-study-iframe-container').slideDown(600);
