@@ -38,16 +38,16 @@
                 {.end}
             </div>
              {.if customContent.credits.html}
-            <div id="credits" class="texture inset-box-shadow">
-                
-                <div class="padding-control">
-                    <h6 style="font-size: 36px; font-weight: 700;">Credits </h6>
-                    <img src="../assets/shapes/yellow-textured-line.svg"/>
-                    <p>{customContent.credits.html}</p>
-                </div>
+                <div id="credits" class="texture inset-box-shadow">
+                    <div class="padding-control">
+                        <h6 style="font-size: 36px; font-weight: 700;">Credits </h6>
+                        <img src="../assets/shapes/yellow-textured-line.svg"/>
+                        <p>{customContent.credits.html}</p>
+                    </div>
+
                 {.end}
-                {.if customContent.additionalvideo1}
-                <div style="padding: 25px 50px 50px 25px; width: 100%;">
+                    {.if customContent.additionalvideo1}
+                    <div style="padding: 25px 50px 50px 25px; width: 100%;">
                         <h6 style="font-size: 36px; font-weight: 700;">Additional Videos </h6>
                         <img src="../assets/shapes/yellow-textured-line.svg" style="max-width: 500px;" alt="decorative line"/>
                     
@@ -61,7 +61,6 @@
                             </div>  
                         {.end}
                     </div>
-                    
                 </div>
                 {.end}
                 
