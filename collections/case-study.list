@@ -24,7 +24,7 @@
                             <div class="title-wrapper" >
                                 <div class="summary-title" style="border: 1px solid red;" data-url="{fullUrl}" onclick="showCaseStudy($(this).attr('data-url'))">
                                     <div class="drop-shadow">
-                                        <div class="title-brand-wrapper" >
+                                        <div>
                                             <div class="project-button">
                                                 <span>
                                                     <h1 class="project-title gold-text-shadow drop-shadow2">{title}</h1>
