@@ -26,13 +26,13 @@
                     <button class="circle-button-blue" onclick="toggleiframe()" aria-label="Close Portfolio Video Window"></button>
                 </span>
             </div>
-            <iframe id="case-study-iframe" class=" fade-in" width="100%" height="93%"></iframe>
+            <iframe id="case-study-iframe" class="fade-in" width="100%" height="93%"></iframe>
         </div>
         
 
         <div class="inset-box-shadow texture" style="padding: 0px 50px 10vh 50px;">
         <div style="width: 100%; height: 5vh; display: flex; align-items: center; justify-content: center;" >
-            <img src="assets/nav-arrow.svg" style="width: 15px; transform: rotate(90deg)"/>
+            <img src="assets/nav-arrow.svg" style="width: 15px; transform: rotate(90deg)" alt="Scroll Down to About Section"/>
         </div>
         <span style="z-index: 4!important; width: 100%; margin-top: 50px;">
             <h6><squarespace:block-field id="story-summary" columns="1"/></h6>
@@ -71,14 +71,14 @@ for (n=0, length = cls.length; n < length; n++) {cls[n].data = n ; }
 $('.counter:first-child').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)") 
 
 
-function showCaseStudy(){
-  var clickthru = $(this).attr('data-url')
+function showCaseStudy(thisurl){
+  $('body').css("overflow-y","hidden")
   $('#home-page-case-study-window').slideDown(600);
-  $('#home-page-case-study-window iframe').attr("src",clickthru)
+  $('#home-page-case-study-window iframe').attr("src",thisurl)
 }
 
 function toggleiframe(){
-  console.log("clicked that")
+  $('body').css("overflow-y","scroll")
   $('#home-page-case-study-window').slideUp(600);
   $('#home-page-case-study-window iframe').attr("src","")
 }

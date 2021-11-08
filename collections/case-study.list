@@ -1,6 +1,7 @@
 <section id="featured-projects">
         <div id="slide-container">
         {.repeated section items}
+
         {.if starred}
             <div class="slide">
                 <div class="project">
@@ -20,9 +21,8 @@
                                 </a>
                             {.or}
                             {#  PROJECT SLIDERS}
-                            <div class="title-wrapper">
-                            
-                                <div class="summary-title" data-url="{fullUrl}" onclick="showCaseStudy()")>
+                            <div class="title-wrapper" >
+                                <div class="summary-title" style="border: 1px solid red;" data-url="{fullUrl}" onclick="showCaseStudy($(this).attr('data-url'))">
                                     <div class="drop-shadow">
                                         <div class="title-brand-wrapper" >
                                             <div class="project-button">
@@ -54,12 +54,13 @@
             {.end}
 
             <div id="project-counter">
+
                 <a onclick="(sliderDot(data))" class="counter drop-shadow2"></a>
-            </div>
-           
+
+            </div>           
         </div>
         <div id="next-slide" onclick="nextslide()">
-            <img id="slide-arrow" style="" src="../assets/nav-arrow.png" alt="next slide arrow" />
+            <img id="slide-arrow" src="../assets/nav-arrow.png" alt="next slide arrow" />
         </div>
     </section>
     
