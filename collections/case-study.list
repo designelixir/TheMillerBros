@@ -21,7 +21,8 @@
                             {.or}
                             {#  PROJECT SLIDERS}
                             <div class="title-wrapper">
-                                <div class="summary-title" data-url="{sourceUrl}">
+                            
+                                <div class="summary-title" data-url="{fullUrl}" onclick="showCaseStudy()")>
                                     <div class="drop-shadow">
                                         <div class="title-brand-wrapper" >
                                             <div class="project-button">
@@ -57,7 +58,7 @@
             </div>
            
         </div>
-        <div id="next-slide">
+        <div id="next-slide" onclick="nextslide()">
             <img id="slide-arrow" style="" src="../assets/nav-arrow.png" alt="next slide arrow" />
         </div>
     </section>

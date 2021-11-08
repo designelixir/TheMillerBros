@@ -22,8 +22,8 @@
                     <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
                 </span>
                 <span style="justify-content: flex-end; width: 80%">
-                    <p class="toggle-iframe hoverthis" style="color: white; padding-right: 10px;">BACK TO PORTFOLIO</p>
-                    <button class="circle-button-blue toggle-iframe" aria-label="Close Portfolio Video Window"></button>
+                    <p class="hoverthis" style="color: white; padding-right: 10px;" onclick="toggleiframe()">BACK TO PORTFOLIO</p>
+                    <button class="circle-button-blue" onclick="toggleiframe()" aria-label="Close Portfolio Video Window"></button>
                 </span>
             </div>
             <iframe id="case-study-iframe" class=" fade-in" width="100%" height="93%"></iframe>
@@ -62,33 +62,14 @@
 
 <script>
 
-
-
-var sliderTop = $("#featured-projects").offset().top; //gets offset of header
-var sliderHeight = $("#featured-projects").outerHeight(); //gets height of header
-
-
 var allSlides = document.getElementsByClassName('project');
-var travelingbutton = document.querySelector("#traveling-button");
-
 var counter = allSlides.length;
-
-{#  THINGS THAT HAPPEN WHEN PAGE LOADS  }
-
-
 
 for (let i = 1; i < counter; i++) {$("#project-counter").append($(".counter").last().clone(true));}
 var cls = document.getElementsByClassName("counter"); 
 for (n=0, length = cls.length; n < length; n++) {cls[n].data = n ; }
+$('.counter:first-child').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)") 
 
-
-
-$('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)") 
-
-$(".summary-title").click(showCaseStudy)
-$(".summary-title").vclick(showCaseStudy)
-$(".toggle-iframe").click(hideCaseStudy)
-$(".toggle-iframe").vclick(hideCaseStudy)
 
 function showCaseStudy(){
   var clickthru = $(this).attr('data-url')
@@ -96,46 +77,39 @@ function showCaseStudy(){
   $('#home-page-case-study-window iframe').attr("src",clickthru)
 }
 
-function hideCaseStudy(){
+function toggleiframe(){
   console.log("clicked that")
   $('#home-page-case-study-window').slideUp(600);
   $('#home-page-case-study-window iframe').attr("src","")
 }
 
-
-
-var active;
-console.log(active)
-
+var active = 0;
 function goToSlider(active){
-  console.log(active)
   var activate = allSlides[active];
   activate.scrollIntoView();
-  for (let i = 0; i < counter; i++) {
-      $('.counter').css("background-image", "url(assets/shapes/tan-textured-circle.svg)")  
-  }$('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)")  
-
+  activate.style.left = "0!important;"
+  for (let i = 0; i < counter; i++) {$('.counter').css("background-image", "url(assets/shapes/tan-textured-circle.svg)")}
+  $('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)")  
 } 
 
 function sliderDot(data){
+  clearInterval(autoTimer);
   active = data ;
   goToSlider(active)
-
 }
 
-$('#next-slide').click(function(){
-  if(active  >= counter - 1 ){
-    active = 0;
-  } else {
-    active = active + 1;
-  }
-  
+function nextslide(){
+  if(active  >= counter - 1 ){active = 0;} 
+  else {active = active + 1;}
   goToSlider(active)
-  
-  
+}
 
+var autoTimer = setInterval(nextslide, 8000);
+
+
+
+$(window).scroll(function(){
+  if ($(window).scrollTop() > 100){clearInterval(autoTimer)}
 })
-
-
 
 </script>

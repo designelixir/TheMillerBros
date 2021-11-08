@@ -16,8 +16,10 @@
             </div>
         
             {.if customContent.brandlogo}
-            <div id="brand-logo" class="hoverthis drop-shadow">
-                <a href="{customContent.brandurl}" target="_blank"><img src="{customContent.brandlogo.assetUrl}" style="width: 75%; max-width: 150px;"/></a>
+            <div id="brand-logo" class="drop-shadow">
+            {.if customContent.brandurl}
+                <a href="{customContent.brandurl}" target="_blank" class="hoverthis"><img src="{customContent.brandlogo.assetUrl}?format=250" style="width: 75%; max-width: 150px;"/></a>
+                {.or}<span style="display: flex; align-items: center; justify-content: center; height: 125px; width: 125px;"><img src="{customContent.brandlogo.assetUrl}?format=250" style="max-height: 100px; max-width: 100px; margin-left: 25px; margin-top: 25px;"/></span>{.end}
             </div>
             {.end}
             
@@ -30,7 +32,7 @@
                     <div id="review" style="padding-top: 50px;">
                         <h1>"</h1> <span>
                             <p style="font-size: 36px; line-height: 48px; margin-top: 10px;" id="testimonial">{customContent.testimonial}</p>
-                            <h5>-{customContent.testimonial-name}</h5>
+                            <h5>-{customContent.testimonialname}</h5>
                         </span> <h1>"</h1>
                     </div>
                 {.end}
