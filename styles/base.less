@@ -71,7 +71,7 @@ a:hover {cursor: pointer}
 .inset-box-shadow {box-shadow: inset 0 0 10px #000000; -moz-box-shadow: inset 0 0 10px #000000; -webkit-box-shadow: inset 0 0 10px #000000;}
 .texture {background: #1B1718 url('../assets/black-texture.jpg'); background-size: 100%; }
 .yellow-line { margin: 0 0 15px 0; background-image: url("../assets/shapes/yellow-textured-line.svg"); background-size: contain; background-repeat: no-repeat; background-position: 0 bottom;}
-.tan-texture {background: tan url("../assets/tan-texture.png"); background-size: cover; }
+.tan-texture {background: #f9e6c8 url("../assets/tan-texture.jpg"); background-size: cover; }
 
 .sqs-gallery-controls a{background-image: url('../assets/shapes/blue-button.png')!important; background-size: 95% 95%; }
 
@@ -106,7 +106,8 @@ a:hover {cursor: pointer}
 
 
 
-
+.heartbeat{-webkit-animation:heartbeat 5s linear infinite both;animation:heartbeat 5s linear infinite both}
+@-webkit-keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}@keyframes heartbeat{from{-webkit-transform:scale(1);transform:scale(1);-webkit-transform-origin:center center;transform-origin:center center;-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}10%{-webkit-transform:scale(.91);transform:scale(.91);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}17%{-webkit-transform:scale(.98);transform:scale(.98);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}33%{-webkit-transform:scale(.87);transform:scale(.87);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}45%{-webkit-transform:scale(1);transform:scale(1);-webkit-animation-timing-function:ease-out;animation-timing-function:ease-out}}
 .fade-in{animation-delay: 1s; -webkit-animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both}
 @-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
 
@@ -255,15 +256,15 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 .vimeo-bg-wrapper {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background-size: cover; background-position: center center; background-repeat: no-repeat;}
 .vimeo-bg-iframe {width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
-.title-container{ border: 2px solid magenta;  width: 90%; margin-top: 12vh; left: 0; height:70vh; z-index: 2; display: inline-flex; align-items: flex-end; justify-content: flex-start; padding-bottom: 50px;}
-.title-wrapper { border: 2px solid lime;  width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: flex-start; cursor: pointer;}
+.title-container{width: 90%; margin-top: 12vh; left: 0; height:70vh; z-index: 2; display: inline-flex; align-items: flex-end; justify-content: flex-start; padding-bottom: 50px;}
+.title-wrapper {  width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: flex-start; cursor: pointer;}
 .link-title {font-size: 5rem; line-height: 4.25rem; max-width: 700px; }
 
 .summary-title:hover {transform: scale(1.05)}
 .project-title {font-size: 72px;  line-height: 4.25rem;  width: 90%; margin-top: 25px; margin-right: 25px;  }
 .project-brand {font-size: 36px; color: white;}
 .project-button {display: inline-flex; width: 500px; align-items: flex-end; background-image: url(../assets/shapes/yellow-half-button.png); padding: 25px 0px 25px 50px;  background-size: 500px 100px;  background-position: left bottom; }
-.project-button-circle {width: 150px; left: 425px; position: absolute; margin-bottom: 25px; height: 150px; background-image: url('../assets/shapes/tan-textured-circle.svg'); background-position: center center; }
+.project-button-circle {width: 150px; left: 425px; position: absolute; margin-bottom: 25px; height: 150px; background-image: url('../assets/shapes/tan-textured-circle.svg'); background-position: center center; animation-delay: 2s; animation: heartbeat 8s linear infinite both}
 .case-study-button-content {display: flex; align-items: center; justify-content: center; transform: scale(0.85);}
 
 
@@ -292,7 +293,7 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 #next-slide:hover {background-size: 105% 105%; cursor: pointer;}
 #next-slide:hover > img {transform: scale(1.1)}
 
-#project-counter {min-width: 300px; max-width: 25vw;   position: absolute; right: 55px; top: 82vh; border: 2px solid red; height: 40px; display: inline-flex;}
+#project-counter {min-width: 300px; max-width: 25vw;   position: absolute; right: 55px; top: 82vh;  height: 40px; display: inline-flex;}
 .counter { margin: 0 5px; height: 100%; width: 100%; z-index: 9; background-image: url("../assets/shapes/tan-textured-circle.svg"); background-size: contain; background-position: center center; }
 .counter:hover {transform: scale(1.1)}
 #scroll-down-arrow {transform: rotate(90deg); padding: 15px;}

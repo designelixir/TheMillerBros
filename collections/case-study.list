@@ -18,13 +18,13 @@
                                         <h6 class="link-title blue-text-shadow drop-shadow">{title}</h6>
                                         
                                         <img src="assets/shapes/blue-textured-line.svg" style=" margin: 5px 0px 0px 25px;" />
-                                        {.if customContent.clickthrubutton}<h3 style="color: white; margin: 15px 0px 50px 25px; ">This is a test</h3>{.end}
+                                        {.if customContent.clickthrubutton}<h3 style="color: white; margin: 0px 0px 50px 25px; ">{customContent.clickthrubutton}</h3>{.end}
                                     </div>
                                 </a>
                             {.or}
                             {#  PROJECT SLIDERS}
                             <div class="title-wrapper fade-in-fast" >
-                                <div class="summary-title" style="border: 1px solid red;" data-url="{fullUrl}" onclick="showCaseStudy($(this).attr('data-url'))">
+                                <div class="summary-title" data-url="{fullUrl}" onclick="showCaseStudy($(this).attr('data-url'))">
                                     <div class="drop-shadow">
                                         <div>
                                             <div class="project-button">
