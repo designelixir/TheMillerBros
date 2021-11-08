@@ -14,18 +14,18 @@
                 <a href="https://www.instagram.com/miller.bros/" target="_blank" id="insta-f-a"><img class="social-icon " id="insta-f" src="../assets/social/instagram-black.svg" alt="instagram icon"/></a>
                 <a href="mailto:stories@themillerbros.com" target="_blank" id="email-f-a"><img class="social-icon " id="email-f" src="../assets/social/email-black.svg" alt="email icon"/></a>
             </div>
+            <span class="footer-right-button-wrapper hoverthis">
+                <a class="sqs-block-button-element--large drop-shadow" href="/contact-us" style="padding: 15px 25px; color: white; text-transform: uppercase; ">Let's Chat</a>
+            </span>
             
         </div></div>
 
         <div class="footer-right inset-box-shadow">
             <span class="footer-right-text">
-                <h3 style="font-size: 24px;">Find Us at the Lab </h3>
+                <h3 style="font-size: 24px;">Find Us <br>at the Lab </h3>
                 <img style="width: 80%; transform: rotate(180deg);" src="../assets/shapes/blue-textured-line.svg"/><br>
                 <a style="color: white;" href="https://goo.gl/maps/hYKH19nub7pEKj4B7" target="_blank"><p>3 S. Black Avenue, <br> Bozeman, MT, 59715</p></a>
-                <span class="footer-right-button-wrapper">
-                    
-                    <a class="sqs-block-button-element--large drop-shadow" href="/contact-us" style="padding: 15px 25px; color: white; text-transform: uppercase; ">Let's Chat</a>
-                </span>
+                
                 
                 
             </span>

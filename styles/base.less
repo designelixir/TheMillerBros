@@ -187,7 +187,7 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 .footer-right-text h3 {text-shadow: -1px -1px #62abd0}
 
 .social-navigation-footer { width: 100%; display: inline-block; align-items: center; justify-content: left; margin-top: 15px; padding: 0;}
-.footer-right-button-wrapper {display: inline-flex; justify-content: right; width: 100%; padding: 15px 0; margin: 0;}
+.footer-right-button-wrapper {display: inline-flex; justify-content: center; width: 100%; padding: 15px 0; margin: 0;}
 .footer-right-logo { display: block; text-align: center;}
 
 #lab-logo:hover {transform: scale(1.01); cursor: pointer}
@@ -248,8 +248,8 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 .vimeo-bg-wrapper {position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; background-size: cover; background-position: center center; background-repeat: no-repeat;}
 .vimeo-bg-iframe {width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 
-.title-container{position: absolute; width: 90%; bottom: 100px; left: 0; height: 75%; z-index: 2; display: flex; align-items: flex; }
-.title-wrapper { width: 100%; height: 100%; display: flex; align-items: flex-end; justify-content: flex-start; cursor: pointer;}
+.title-container{ border: 2px solid magenta;  width: 90%; margin-top: 12vh; left: 0; height:75vh; z-index: 2; display: inline-flex; align-items: flex-end; justify-content: flex-start;}
+.title-wrapper { border: 2px solid lime;  display: flex; align-items: flex-end; justify-content: flex-start; cursor: pointer;}
 .link-title {font-size: 6rem; line-height: 5.5rem; max-width: 700px; padding-left: 25px; }
 
 .summary-title:hover {transform: scale(1.1)}
@@ -333,8 +333,8 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 #next-slide:hover {background-size: 105% 105%; cursor: pointer;}
 #next-slide:hover > img {transform: scale(1.1)}
 
-#project-counter { width: 100vw; padding: 0px 35px; position: absolute; bottom: 5vh; left: 0;  height: 100px; display: inline-flex; align-items: center; justify-content: flex-end;}
-.counter { margin: 0 10px; height: 35px; width: 35px; z-index: 9; background-image: url("../assets/shapes/tan-textured-circle.svg"); background-size: contain; background-position: center center; }
+#project-counter { width: 300px;  position: absolute; right: 10%; top: 90vh; border: 2px solid red; height: 50px; display: inline-flex; align-items: center; justify-content: flex-end;}
+.counter { margin: 0 10px; height: 100%; width: 100%; z-index: 9; background-image: url("../assets/shapes/tan-textured-circle.svg"); background-size: contain; background-position: center center; }
 .counter:hover {transform: scale(1.1)}
 #scroll-down-arrow {transform: rotate(90deg); padding: 15px;}
 
@@ -367,8 +367,8 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 
 @media only screen and (max-width: 600px) {
   #bts-photos-grid {-webkit-column-count: 1!important; -moz-column-count: 1; column-count: 1!important; column-gap: none;}
-  .title-wrapper {transform: scale(0.75); margin: 75px 0 0 -50px; z-index: 10;}
-  #project-counter {bottom: 2.5vh;}
+  .title-wrapper {transform: scale(0.8); margin-left: -75px; }
+
 }
 
 @media only screen and (max-width: 800px) {

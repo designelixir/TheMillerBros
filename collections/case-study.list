@@ -22,7 +22,7 @@
                             {#  PROJECT SLIDERS}
                             <div class="title-wrapper">
                                 <div class="summary-title" data-url="{sourceUrl}">
-                                    <div class="summary-title-button-wrapper drop-shadow">
+                                    <div class="drop-shadow">
                                         <div class="title-brand-wrapper" >
                                             <div class="project-button">
                                                 <span>
@@ -65,7 +65,7 @@
             {.end}
 
             <div id="project-counter">
-                <a onclick="(sliderDot(data))" class="counter"></a>
+                <a onclick="(sliderDot(data))" class="counter drop-shadow2"></a>
             </div>
            
         </div>
