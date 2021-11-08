@@ -72,6 +72,7 @@ $('.counter:first-child').css("background-image", "url(assets/shapes/yellow-text
 
 
 function showCaseStudy(thisurl){
+  clearInterval(autoTimer);
   $('body').css("overflow-y","hidden")
   $('#home-page-case-study-window').slideDown(600);
   $('#home-page-case-study-window iframe').attr("src",thisurl)
