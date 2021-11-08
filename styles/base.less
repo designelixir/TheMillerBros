@@ -263,61 +263,13 @@ footer {width: 100vw;  text-align: center; bottom: 0; margin: 0; padding: 0; dis
 
 
 
-.circle {
-  stroke: #C5843D;
-  stroke-dasharray: 650;
-  stroke-dashoffset: 650;
-  -webkit-transition: all 0.5s ease-in-out;
-  opacity: 0;
-}
-
-.playBut {
-/*  border: 1px solid red;*/
-  display: inline-block;
-  -webkit-transition: all 0.5s ease;
-  margin-top: 20px;
-  
-  .triangle {
-    -webkit-transition: all 0.7s ease-in-out;
-    stroke-dasharray: 240;
-    stroke-dashoffset: 480;
-    stroke: #000;
-    transform: translateY(0) 
-   }
-  
-  
+.circle {stroke: #C5843D; stroke-dasharray: 650; stroke-dashoffset: 650; -webkit-transition: all 0.5s ease-in-out; opacity: 0;}
+.playBut {display: inline-block; -webkit-transition: all 0.5s ease; margin-top: 20px;
+  .triangle {-webkit-transition: all 0.7s ease-in-out; stroke-dasharray: 240; stroke-dashoffset: 480; stroke: #000; transform: translateY(0) }
   &:hover {
-    
-    .triangle {
-      stroke-dashoffset: 0;
-      opacity: 1;
-      stroke: #C5843D;
-      animation: nudge 0.7s ease-in-out;
-      
-      @keyframes nudge{
-        0% {
-          transform: translateX(0)  
-        }
-        30% {
-          transform: translateX(-5px)
-        }
-        50% {
-          transform: translateX(5px)
-        }
-        70% {
-          transform: translateX(-2px)
-        }
-        100% {
-          transform: translateX(0)
-        }
-      }
-    }
-    
-    .circle {
-      stroke-dashoffset: 0;
-      opacity: 1;
-    }
-    
+    .triangle {stroke-dashoffset: 0; opacity: 1; stroke: #C5843D; animation: nudge 0.7s ease-in-out;
+      @keyframes nudge{0% {transform: translateX(0)} 30% {transform: translateX(-5px)} 50% {transform: translateX(5px)} 70% {transform: translateX(-2px)} 100% {transform: translateX(0)}}}
+    .circle {stroke-dashoffset: 0; opacity: 1;}
   }
 }
   

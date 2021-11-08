@@ -30,7 +30,7 @@
 
 <div class="mobile-navigation-container inset-box-shadow texture" style="display: none;">
     <div class="mobile-navigation-list">
-      <li><a href="/"><img style="height: 40px;" class="van-home-icon" src="../assets/Bus-Icon.svg"></a></li><br>
+      <li><a href="/"><img style="height: 40px;" class="van-home-icon" src="../assets/bus-icon.svg"></a></li><br>
         <ul>
           {.repeated section items}
             <li class="site-navigation-item {.section active} active-link{.end}">
