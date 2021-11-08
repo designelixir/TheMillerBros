@@ -24,12 +24,12 @@
         </div>
         {.if body}
         <div class="case-study-section inset-box-shadow fade-in tan-texture">
-            <div id="summary">
+            <div id="summary" class="padding-control">
                 <p>{body}</p>
                 {.if customContent.testimonial}
-                    <div id="review">
+                    <div id="review" style="padding-top: 50px;">
                         <h1>"</h1> <span>
-                            <p style="font-size: 36px; line-height: 48px;" id="testimonial">{customContent.testimonial}</p>
+                            <p style="font-size: 36px; line-height: 48px; margin-top: 10px;" id="testimonial">{customContent.testimonial}</p>
                             <h5>-{customContent.testimonial-name}</h5>
                         </span> <h1>"</h1>
                     </div>
@@ -38,12 +38,10 @@
              {.if customContent.credits.html}
             <div id="credits" class="inset-box-shadow texture">
                 
-                <div>
-               
+                <div class="padding-control">
                     <h6 style="font-size: 36px; font-weight: 700;">Credits </h6>
                     <img src="../assets/shapes/yellow-textured-line.svg"/>
                     <p>{customContent.credits.html}</p>
-                  
                 </div>
                 {.end}
                 
