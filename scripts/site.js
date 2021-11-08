@@ -67,20 +67,7 @@ function requestFullscreen(el){
       }
   }
 
-$('.mobile-navigation-button').click(function(){
-  var count = $('.mobile-navigation-button').data("count") || 0;
-  $('.mobile-navigation-button').data("count", ++count);
-  if ((count % 2) != 0 ){
-    $('.mobile-navigation-button img').attr("src", "../assets/nav/Close-Mobile.svg");
-    $('.mobile-navigation-container').slideDown(500);
-    $('.site-header').css({"background-color":"#241E1F"})
 
-  } else {
-      $('.mobile-navigation-button img').attr("src", "../assets/nav/Open-Mobile.svg");
-      $('.mobile-navigation-container').slideUp(500);
-      $('.site-header').css({"background-color":"transparent"})
-  }
-});
 
 $('.back-to-top').click(function(){$('.project-case-study-window').scrollTop(0);})
 $('.expand-button').click(function() { let elem = document.getElementById("fullcut-iframe"); elem.requestFullscreen()})

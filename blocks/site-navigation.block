@@ -22,7 +22,7 @@
           {.end}
         {.end}
       </ul>
-      <button class="mobile-navigation-button" style="display: none;"><img src="../assets/nav/Open-Mobile.svg" style=" height:40px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" /></button>
+      <button class="mobile-navigation-button" onclick="toggleMobileMenu()" style="display: none;"><img src="../assets/nav/Open-Mobile.svg" style=" height:40px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" /></button>
 
     </div>
 
@@ -49,20 +49,21 @@
 
 
 <script> 
-function mediaQuery(x900) {
-  if (x900.matches) { 
-      $('.site-navigation-list').css({"display": "none"});
-      $('.mobile-navigation-button').css({"display": "block"});
+
+function toggleMobileMenu(){
+  var count = $('.mobile-navigation-button').data("count") || 0;
+  $('.mobile-navigation-button').data("count", ++count);
+  if ((count % 2) != 0 ){
+    $('.mobile-navigation-button img').attr("src", "../assets/nav/Close-Mobile.svg");
+    $('.mobile-navigation-container').slideDown(500);
+    $('.site-header').css({"background-color":"#241E1F"})
 
   } else {
-     $('.site-navigation-list').css({"display": "inline-flex"});
-      $('.mobile-navigation-button').css({"display": "none"});
-   
-
+      $('.mobile-navigation-button img').attr("src", "../assets/nav/Open-Mobile.svg");
+      $('.mobile-navigation-container').slideUp(500);
+      $('.site-header').css({"background-color":"transparent"})
   }
 }
-var x900 = window.matchMedia("(max-width: 900px)")
-mediaQuery(x900) 
-x900.addListener(mediaQuery); 
+
 
 </script>

@@ -71,12 +71,12 @@
         <div id="bts" class="texture" style="text-align: center; padding-bottom: 50px;">
             <span style="width: 50%;">
                 <h6 style="font-size: 48px; font-weight: 700; padding: 25px;"> Behind the Scenes </h6>
-                <img src="../assets/shapes/yellow-textured-line-center.svg" style="max-width: 50%; margin-bottom: 25px;"/>
+                <img src="../assets/shapes/yellow-textured-line-center.svg" style="max-width: 500px; min-width: 200px; margin-bottom: 25px;"/>
             </span>
 
             <div id="bts-photos-grid">
                 {.repeated section customContent.behindthescenes}
-                    <img class="bts-img drop-shadow" src="{assetUrl}"/>
+                    <img class="bts-img drop-shadow" src="{assetUrl}?format=750"/>
                 {.end}
             </div>
         </div> 
