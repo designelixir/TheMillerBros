@@ -11,7 +11,7 @@
         </div>
     </div>
         <div id="titlelogo">
-            <div style="width: 100%;">
+            <div style="width: 90%;">
                 <h1 class="yellow-text-shadow fade-in">{title}</h1>
             </div>
         
