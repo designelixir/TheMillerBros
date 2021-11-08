@@ -82,10 +82,18 @@ var cls = document.getElementsByClassName("counter");
 for (n=0, length = cls.length; n < length; n++) {cls[n].data = n ; }
 
 
+
 $('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)") 
 
 
+
 $(".summary-title").click(function(){
+    var clickthru = $(this).attr('data-url')
+    $('.case-study-iframe-container').slideDown(600);
+    $('.case-study-iframe-container iframe').attr("src",clickthru)
+})
+
+$(".summary-title").vclick(function(){
     var clickthru = $(this).attr('data-url')
     $('.case-study-iframe-container').slideDown(600);
     $('.case-study-iframe-container iframe').attr("src",clickthru)
