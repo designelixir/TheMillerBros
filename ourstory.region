@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" style="left: 0; overflow-x: hidden; width: 100vw;">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" style="width: 100vw; overflow-x: hidden!important; ">
 
     
       <header class="site-header gradient-shadow">
@@ -18,12 +18,10 @@
       <div style="width: 100%; height: 60vh; min-height: 400px; background-image: url('{collection.mainImage.assetUrl}'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
   {#  header photo  }
       </div>
-      <div style="width: 100%; height: 40vh; margin-top: -20vh; display: flex; align-items: flex-end; justify-content: center;  ">
-        {#  header-illustration  }
-      </div>
+      {#  <div style="width: 100%; height: 40vh; margin-top: -20vh; display: flex; align-items: flex-end; justify-content: center;  "></div>  }
 
 
-      <div class="padding-control" id="intro-review" >
+      <div class="padding-control" id="intro-review" style="width: 100vw; overflow-x: hidden;" >
       <h1 class="blue-text-shadow"><squarespace:block-field id="our-story-page-title" columns="1"/></h1> 
         <div id="review-wrapper">
             <h1>&rdquo;</h1>
@@ -40,7 +38,7 @@
       </div>
     
 
-      <div class="bio-container">
+      <div class="bio-container" >
         {.repeated section items}
         {.if starred}
         <div class="bio-wrapper inset-box-shadow" style="background-image: url({assetUrl}?format=original); ">
@@ -64,7 +62,7 @@
             <squarespace:block-field id="our-story-gallery" columns="12"/>
         </div>
 
-      <div class="extended-family-intro inset-border-box texture" style="display: flex; justify-content: right; overflow: hidden; width: 100vw;">
+      <div class="extended-family-intro inset-border-box texture" style="display: flex; justify-content: right; overflow: hidden; width: 100%;">
       <span class="padding-control">
           <h1 class="yellow-text-shadow" style="text-align: center;"> Our Extended Family</h1>
           <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
@@ -73,11 +71,11 @@
       </div>
 
      
-      <div style="width: 100vw; height: 650px; display: inline-flex; align-items: center; justify-content: flex-start;">
-      <div style="width: 50px; border: 2px solid teal; position: absolute; left: 0; height: 39vh;" id="stuff-left">
+      <div style="width: 98%; height: 650px; display: inline-flex; align-items: center; justify-content: flex-start;">
+      <div style="width: 2%; border: 2px solid teal;left: 0; height: 39vh;" id="stuff-left">
           <img src="../assets/textured-strip.png" style="height: 100%; width: 100%; transform: rotate(180deg)"/>
       </div>
-      <div id="bio-container" style="width: 96vw; margin: 0 2vw; height: 600px; overflow-x: scroll!important; overflow-y: hidden; border: 2px solid yellow; display: flex; ">
+      <div id="bio-container" style="width: 96%; margin: 0 2%; height: 600px; overflow-y: hidden; border: 2px solid yellow; display: flex; ">
           
         {.repeated section items}{.if starred}{.or}
             <div class=" inset-box-shadow" id="bio-{id}" style="min-height: 400px; margin: 2px; min-width: 350px; background-size: cover; background-image: url({assetUrl}?format=750); background-position: center center ">
@@ -116,7 +114,7 @@
     
     
     </div>
-    <div style="width: 50px; border: 2px solid teal; position: absolute; right: 0; height: 39vh;" id="stuff-right">
+    <div style="width: 2%; border: 2px solid teal;  right: 0; height: 39vh;" id="stuff-right">
         <img src="../assets/textured-strip.png" style="height: 100%; width: 100%; "/>
     </div>
     </div>

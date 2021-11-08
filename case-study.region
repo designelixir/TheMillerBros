@@ -109,8 +109,6 @@ function nextslide(){
 
 var autoTimer = setInterval(nextslide, 8000);
 
-
-
 $(window).scroll(function(){
   if ($(window).scrollTop() > 100){clearInterval(autoTimer)}
 })
