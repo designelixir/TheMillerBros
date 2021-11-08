@@ -80,6 +80,7 @@ function showCaseStudy(thisurl){
 
 function toggleiframe(){
   $('body').css("overflow-y","scroll")
+  $('#featured-projects').scrollTop(0)
   $('#home-page-case-study-window').slideUp(600);
   $('#home-page-case-study-window iframe').attr("src","")
 }
