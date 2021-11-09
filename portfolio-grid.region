@@ -15,18 +15,18 @@
                 <squarespace:block-field id="portfolio-grid" columns="1"/>
         </div>
 
- <div id="case-study-iframe-container" style="display: none; border: 2px solid salmon;">
-    <div class="case-study-nav inset-box-shadow texture">
-            <span>               
-                <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
-            </span>
-            <span style="justify-content: flex-end;">
-                <p class="toggle-iframe hoverthis" style="color: white; padding-right: 10px;">BACK TO PORTFOLIO</p>
-                <button class="circle-button-blue toggle-iframe" aria-label="Close Portfolio Video Window"></button>
-            </span>
+        <div class="case-study-iframe-container texture" id="portfolio-page-case-study-window" style="display: none;">
+            <div class="case-study-nav inset-box-shadow ">
+                <span style="width: 20%;">               
+                    <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
+                </span>
+                <span style="justify-content: flex-end; width: 80%">
+                    <p class="hoverthis" style="color: white; padding-right: 10px;" onclick="toggleiframe()">BACK TO PORTFOLIO</p>
+                    <button class="circle-button-blue" onclick="toggleiframe()" aria-label="Close Portfolio Video Window"></button>
+                </span>
+            </div>
+            <iframe id="case-study-iframe" class="fade-in" width="100%" height="93%"></iframe>
         </div>
-        <iframe id="case-study-iframe" class=" fade-in" width="100%" height="93%"></iframe>
-    </div>
 
     <main class="content-container texture" id="portfolio-grid-content" role="main" data-content-field="main-content" >
        {squarespace.main-content}
@@ -45,22 +45,25 @@
 </html>
 <script>
 
- $(".summary-title a").each(function(){
+$(".summary-title a").each(function(){
     var link = $(this).attr('href'); 
     $(this).attr('data-url', link);
     $(this).removeAttr("href")
 });
+ 
 
 $(".summary-title").click(function(){
+    $('body').css("overflow-y","hidden")
     var clickthru = $(this).children().attr('data-url')
-    $('#case-study-iframe-container').slideDown(300);
-    $('#case-study-iframe').attr("src",clickthru)
+    $('#portfolio-page-case-study-window').slideDown(300);
+    $('#portfolio-page-case-study-window iframe').attr("src",clickthru)
 })
 
-$(".toggle-iframe").click(function(){
-    $('#case-study-iframe-container').slideUp(300);
-    $('#case-study-iframe').attr("src","")
-})
+function toggleiframe(){
+    $('body').css("overflow-y","scroll")
+ $('#portfolio-page-case-study-window').slideUp(300);
+$('#portfolio-page-case-study-window iframe').attr("src","")
+}
 
 
 
