@@ -97,11 +97,7 @@
                       </div>
                     </div>
                 </div>
-                  <div id="holder" style="display: none">
-                    <div class="livenow">
-                        <div></div><div></div><div></div><div></div>
-                    </div>
-                  </div>
+                  
                 <div class="family-bio-title fade-in" style=" width: 100%; height: 50%;  display: flex; align-items: flex-end; justify-content: center;">
                   
                   <div style="margin-bottom: 15px; text-align: center; width: 100%;  ">
@@ -123,9 +119,9 @@
 
     
     </div>
-      <div style="width: 100%; text-align: center; margin-bottom: 50px;">
+      <div style="width: 100%; text-align: center; margin-bottom: 100px;">
       <squarespace:block-field id="contact-us-title" class="yellow-text-shadow" columns="1"/>
-      <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px; max-width: 700px;"/>
+      <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
 
       <squarespace:block-field id="contact-us-text" class="bold-paragraph" columns="1"/>
       </div>
@@ -188,7 +184,6 @@ function biosRight(cancelTimer){
 
 function biosLeft(canceltimer){
   var measurediv = bios[1].getBoundingClientRect(); 
-  var divwidth = measurediv.width * biosnum 
   var biocontainer = document.getElementById('bio-container')
   biocontainer.scrollLeft -= measurediv.width ;
   if(cancelTimer){
@@ -196,10 +191,6 @@ function biosLeft(canceltimer){
     }
 }
 
-
-if (mobileDevice) {
-  $('#holder').css("display","block");
-}
 
 var autoTimerBios = setInterval(biosRight, 4000);
 
