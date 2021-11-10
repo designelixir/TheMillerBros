@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="overflow-x: hidden!important; width: 100vw;">
+<html>
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -8,10 +8,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" >
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" style="overflow-x: hidden!important;">
 
     
-      <header class="site-header gradient-shadow">
+      <header class="site-header gradient-shadow" >
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
 
@@ -55,7 +55,7 @@
 
       {#  GALLERY  }
 
-        <div class="our-story-gallery texture">
+        <div class="our-story-gallery texture" >
             <squarespace:block-field id="our-story-gallery" columns="12"/>
         </div>
 
@@ -70,7 +70,7 @@
       </div>
 
      
-      <div class="family">
+      <div class="family" style="overflow-x: hidden!important;">
           <div class="bio-grid-button"  id="stuff-left" onclick='biosLeft(true)' style="transform: rotate(180deg); left: 2px;"><img class="hoverthis" src="../assets/nav-arrow.svg"/></div>
           <div class="bio-grid-button" id="stuff-right" onclick='biosRight(true)' style="margin-left: calc(100% - 32px);"> <img class="hoverthis" src="../assets/nav-arrow.svg" style="max-width: 40px;"/></div>
           <div id="bio-container">
@@ -110,7 +110,7 @@
       </div>
 
 
-      <div style="width: 100%; text-align: center; margin-bottom: 100px;">
+      <div style="width: 100%; text-align: center; margin-bottom: 100px; overflow-x: hidden;">
         <squarespace:block-field id="contact-us-title" class="yellow-text-shadow" columns="1"/>
         <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
         <squarespace:block-field id="contact-us-text" class="bold-paragraph padding-control" columns="1"/>
