@@ -8,20 +8,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" style="overflow-x: hidden!important; max-width: 100vw;">
 
     
       <header class="site-header gradient-shadow">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
 
-      <div style="width: 100%; height: 60vh; min-height: 400px; background-image: url('{collection.mainImage.assetUrl}'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+      <div class="header-photo" style="background-image: url('{collection.mainImage.assetUrl}');">
   {#  header photo  }
       </div>
       {#  <div style="width: 100%; height: 40vh; margin-top: -20vh; display: flex; align-items: flex-end; justify-content: center;  "></div>  }
 
 
-      <div class="padding-control" id="intro-review" style="width: 100%; overflow-x: hidden;" >
+      <div class="padding-control" id="intro-review" >
         <div id="review-wrapper">
             <h1>&rdquo;</h1>
             <squarespace:block-field id="our-story-review" columns="1"/>
@@ -29,17 +29,17 @@
         </div>
         <div id="review-name-wrapper">
           <div style='width: 125px;'><squarespace:block-field id="our-story-review-img" columns="1"/></div>
-          <span style="padding: 25px 0 0 10px;">
+          <span style="padding: 0px 0 0 10px;">
             <squarespace:block-field id="our-story-reviewer" columns="1"/>
             <squarespace:block-field id="our-story-reviewer-company" columns="1"/>
           </span>
         </div>
       </div>
     
+      {#  SPENCER & CAMDEN  }
 
-      <div class="bio-container" >
-        {.repeated section items}
-        {.if starred}
+      <div class="bio-container">
+        {.repeated section items}{.if starred}
         <div class="bio-wrapper inset-box-shadow" style="background-image: url({assetUrl}?format=original); ">
             <div class="bio-content-wrapper">
                 <span class="bio-content drop-shadow">
@@ -47,19 +47,19 @@
                   <img class="signature-img" src="{customContent.signature.assetUrl}"/>
                 </span>
             </div>
-        </div>
-        
-        {.end}
-        {.end}
-        </div>
+        </div>{.end}{.end}
+      </div>
+      <div class="inset-box-shadow texture" style="padding: 200px 50px 100px 50px; ">
+          <squarespace:block-field id="team-description" class="bold-paragraph" columns="1"/>
+      </div>
 
-        <div class="inset-box-shadow texture" style="width: 100%; padding: 200px 50px 100px 50px; ">
-            <squarespace:block-field id="team-description" class="bold-paragraph" columns="1"/>
-        </div>
+      {#  GALLERY  }
 
         <div class="our-story-gallery texture">
             <squarespace:block-field id="our-story-gallery" columns="12"/>
         </div>
+
+      {#  EXTENDED FAMILY  }
 
       <div class="extended-family-intro inset-border-box texture" style="padding-top: 50px;">
         <div class="padding-control">
@@ -71,59 +71,49 @@
 
      
       <div class="family">
-      <div class="bio-grid-button drop-shadow2"  id="stuff-left" onclick='biosLeft(true)' style="transform: rotate(180deg); left: 0;"><img class="hoverthis" src="../assets/nav-arrow.svg"/></div>
-      <div class="bio-grid-button drop-shadow2" id="stuff-right" onclick='biosRight(true)' style="margin-left: calc(100% - 30px);"> <img class="hoverthis" src="../assets/nav-arrow.svg" style="max-width: 40px;"/></div>
-      
-
-      <div id="bio-container">
-          
-        {.repeated section items}{.if starred}{.or}
-            <div class="family-bio-wrapper inset-box-shadow" onclick="clickBio()" style="background-image: url({assetUrl}?format=750);">
-                <div class="family-bio" style=" height: 100%; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0) 72%, rgba(0,0,0,0) 100%);">
-                <div class="family-bio-text drop-shadow gradient-shadow" style="width: 100%;" onclick="clickBio()">
-                <div class="family-bio-description fade-in"style="color: white; display: none;">
-                  <div style="padding: 35px; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;" >
-                      <div style="text-align: center;">
-                        
-                        {body}
-                        <span style="display: inline-flex; width: 100%; align-items: center; justify-content: center; padding-top: 15px;">
-                        {.if customContent.instagram}
-                          <a href="https://www.instagram.com/{customContent.instagram}/" target="_blank"><img class="social-icon" src="assets/social/instagram.svg"/></a>
-                        {.end}
-                        {.if customContent.instagram}
-                          <a href="{customContent.websiteurl}" target="_blank"><img class="social-icon" src="assets/social/globe.svg"/></a>
-                        {.end}
-                        </span>
+          <div class="bio-grid-button"  id="stuff-left" onclick='biosLeft(true)' style="transform: rotate(180deg); left: 2px;"><img class="hoverthis" src="../assets/nav-arrow.svg"/></div>
+          <div class="bio-grid-button" id="stuff-right" onclick='biosRight(true)' style="margin-left: calc(100% - 32px);"> <img class="hoverthis" src="../assets/nav-arrow.svg" style="max-width: 40px;"/></div>
+          <div id="bio-container">
+            {.repeated section items}{.if starred}{.or}
+                <div class="family-bio-wrapper inset-box-shadow" onclick="clickBio()" style="background-image: url({assetUrl}?format=750);">
+                    <div class="family-bio">
+                    <div class="family-bio-text drop-shadow gradient-shadow" style="width: 100%;" onclick="clickBio()">
+                    <div class="family-bio-description fade-in"style="color: white; display: none;">
+                      <div style="padding: 35px; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;" >
+                          <div style="text-align: center;">
+                            
+                            {body}
+                            <div class="bio-icons-container" >
+                            {.if customContent.instagram}
+                              <a href="https://www.instagram.com/{customContent.instagram}/" target="_blank"><img class="social-icon" src="assets/social/instagram.svg"/></a>
+                            {.end}
+                            {.if customContent.instagram}
+                              <a href="{customContent.websiteurl}" target="_blank"><img class="social-icon" src="assets/social/globe.svg"/></a>
+                            {.end}
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="family-bio-title fade-in">
+                      <div class="family-bio-title-wrapper">
+                        <h6>{title}</h6>
+                        <h2>{customContent.jobtitle}</h2>
                       </div>
                     </div>
-                </div>
-                  
-                <div class="family-bio-title fade-in" style=" width: 100%; height: 50%;  display: flex; align-items: flex-end; justify-content: center;">
-                  
-                  <div style="margin-bottom: 15px; text-align: center; width: 100%;  ">
-                  
-                    <h6 style="margin:15px 25px">{title}</h6>
-                    <h2 style="padding: 0px 25px 25px 25px">{customContent.jobtitle}</h2>
+                  </div>
                   </div>
                 </div>
-              </div>
-              
-              </div>
-            </div>
-            {.end}
-          {.end}
-  
-    
-    
-    </div>
+                {.end}
+              {.end}
 
-    
-    </div>
+          </div>
+      </div>
+
+
       <div style="width: 100%; text-align: center; margin-bottom: 100px;">
-      <squarespace:block-field id="contact-us-title" class="yellow-text-shadow" columns="1"/>
-      <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
-
-      <squarespace:block-field id="contact-us-text" class="bold-paragraph" columns="1"/>
+        <squarespace:block-field id="contact-us-title" class="yellow-text-shadow" columns="1"/>
+        <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
+        <squarespace:block-field id="contact-us-text" class="bold-paragraph padding-control" columns="1"/>
       </div>
 
 

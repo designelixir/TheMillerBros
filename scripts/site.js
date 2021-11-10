@@ -6,6 +6,9 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   mobileDevice = true;
  } else {mobileDevice = false;}
 
+ if (mobileDevice){
+   $('html').css('overflow-x','hidden')
+ }
 
 
 

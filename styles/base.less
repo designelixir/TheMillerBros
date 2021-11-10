@@ -134,7 +134,8 @@ a:hover {cursor: pointer}
 
 
 // OUR STORY PAGE 
-
+.header-photo {width: 100%; height: 60vh; min-height: 400px; background-size: cover; background-position: center center; background-repeat: no-repeat;}
+#review-name-wrapper {display: inline-flex; width: 100%;  align-items: center; justify-content: center; }
 #our-story-content {width: 100%; height: auto;}
 #review-wrapper {width: 100%; display: inline-flex; align-items: flex-start; justify-content: space-evenly;}
 #review-wrapper h1 {font-size: 5rem; color: white; text-shadow: -3px -3px #62abd0; padding: 0; margin: 0;}
@@ -142,44 +143,38 @@ a:hover {cursor: pointer}
 #our-story-reviewer p {font-size: 2rem; font-family: "TimberWolf-Regular", serif; color: white;}
 #our-story-reviewer-company p {color: white; font-size: 1rem;  font-weight: 100; margin-top: -10px;}
 
-#review-name-wrapper {display: inline-flex; width: 100%;  align-items: center; justify-content: center; }
-
-#intro-review {width: 100%;}
-#team-description {text-align: center;}
-
+.bio-container {width: 100%; display: inline-flex; justify-content: center; align-items: center;}
 .bio-wrapper {width: 50%; max-height: 1050px; min-height: 700px; background-size: cover;  background-position: center center; background-repeat: no-repeat; display: flex; align-items: flex-end;}
 .bio-content-wrapper {width: 100%; height: 100%; display: flex; display: flex; align-items: flex-end;}
 .bio-content {background-image: url(../assets/shapes/tan-smudge.png); text-align: center; width: 90%; margin: 0 5% -75px 5%; background-size: 100% 100%; background-repeat: no-repeat; background-position: center center; padding: 25px 35px;}
 .signature-img {min-width: 200px; width: 40%;}
-.bio-container {width: 100%; display: inline-flex; justify-content: center; align-items: center;}
 .bold-paragraph p {font-size: 1.5em; line-height: 1.75em; color: white;  font-weight: 100;}
 .bold-paragraph a {color: white; font-weight: 700;}
 .bold-paragraph a:hover {font-weight: 900;}
 
-.our-story-gallery {width: 100%; height: 35%; max-height: 700px; margin-bottom: 50px;}
-
-
+.our-story-gallery {width: 100%; height: 35%; max-height: 700px;}
+.sqs-block-gallery {height: 100%;}
 // OUR EXTENDED FAMILY SECTION
-.extended-family-intro {width: 100%;  overflow-y: hidden; margin: 0px 0px 50px 0px; display: flex; justify-content: right; overflow: hidden; }
-
-.family {width: 100%; height: 600px; display: inline-flex; align-items: center; justify-content: flex-start; margin: 0px 0px 100px 0px;}
+.extended-family-intro {width: 100%;  overflow-y: hidden; margin: 0px 0px 50px 0px; display: flex; justify-content: right; overflow-x: hidden; }
+.family {width: 100%; height: 600px; display: inline-flex; align-items: center; justify-content: flex-start; margin: 0px 0px 100px 0px; overflow-x: hidden!important;}
 .bio-grid-button {background-image: url('../assets/shapes/yellow-smudge-button.png'); z-index: 3; position: absolute;  padding: 10px; background-size: 100% 90%; background-position: center center;  width: 30px; left: 0; height: 300px; display: flex; align-items: center; justify-content: center;}
 #bio-container {width: 100%; height: 600px; overflow-y: hidden;  display: flex; align-items: center;}
 .family-bio-wrapper {margin: 2px; min-width: 350px; width: 100%; height: 100%; background-size: cover;width: 100%; height: 100%;  display: flex; align-items: center; justify-content: center;  background-position: center center }
 
-.family-bio { height: 500px; flex: 1 1 350px;}
+.family-bio {flex: 1 1 350px; height: 100%; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0) 72%, rgba(0,0,0,0) 100%);}
 .family-bio-text {width: 100%; height: 100%; display: flex; align-items: flex-end; background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0.039653361344537785) 100%);}
 .family-bio-text h6 {font-size: 48px; line-height: 42px!important; text-align: center;}
 .family-bio-text h2 {font-size: 1em;  border-radius: 4px; padding-left: 7px; text-align: center; font-weight: 100; }
-
 .family-bio-description {height: 100%;  width: 100%; }
 
+.bio-icons-container {display: inline-flex; width: 100%; align-items: center; justify-content: center; padding-top: 15px;}
 
-.sqs-block-gallery {height: 100%;}
+.family-bio-title { width: 100%; height: 50%;  display: flex; align-items: flex-end; justify-content: center;}
+.family-bio-title-wrapper {margin-bottom: 15px; text-align: center; width: 100%;}
+.family-bio-title-wrapper h6 {margin: 15px 25px;}
+.family-bio-title-wrapper h2 {padding: 0px 25px 25px 25px}
 
-#select-partners {margin: 0; padding: 0; }
 
-.bio-item {min-height: 400px; min-width: 350px;}
 
 
 @media only screen and (max-width: 1000px) { 
