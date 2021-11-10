@@ -28,7 +28,7 @@
             <h1>&rdquo;</h1>
         </div>
         <div id="review-name-wrapper">
-          <div style='width: 125px; height: 125px;'><squarespace:block-field id="our-story-review-img" columns="1"/></div>
+          <div style='width: 125px;'><squarespace:block-field id="our-story-review-img" columns="1"/></div>
           <span style="padding: 25px 0 0 10px;">
             <squarespace:block-field id="our-story-reviewer" columns="1"/>
             <squarespace:block-field id="our-story-reviewer-company" columns="1"/>
