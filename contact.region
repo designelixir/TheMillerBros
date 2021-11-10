@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" style="width: 100vw; overflow-x: hidden!important; ">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture">
       <header class="site-header" id="contact-header" >
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
@@ -72,8 +72,6 @@
 
       <!-- cms content injection point -->
       <main class="content-container" id="contact-page-main-content" role="main" data-content-field="main-content" >
-        
-
        {squarespace.main-content}
       </main>
 
