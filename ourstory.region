@@ -8,7 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     {squarespace-headers}
   </head>
-  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" style="width: 100%; overflow-x: hidden; ">
+  <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture">
 
     
       <header class="site-header gradient-shadow">
