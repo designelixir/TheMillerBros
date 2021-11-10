@@ -123,9 +123,9 @@
 
     
     </div>
-      <div style="width: 100%;">
+      <div style="width: 100%; text-align: center; margin-bottom: 50px;">
       <squarespace:block-field id="contact-us-title" class="yellow-text-shadow" columns="1"/>
-      <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
+      <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px; max-width: 700px;"/>
 
       <squarespace:block-field id="contact-us-text" class="bold-paragraph" columns="1"/>
       </div>
