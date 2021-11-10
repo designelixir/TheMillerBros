@@ -68,7 +68,11 @@ $('#portfolio-page-case-study-window iframe').attr("src","")
 $('.sqs-gallery-meta-container').hover(
     function(){$(this).css("backdrop-filter","blur(3px)")}, 
     function(){$(this).css("backdrop-filter","blur(0px)")}
-
 )
 
+document.addEventListener('DOMContentLoaded', function(){
+    $('.summary-item').each(function(){
+        $('.summary-item').css({'animation':'tilt-in-tl 1s cubic-bezier(.25,.46,.45,.94) both'})
+    })
+})
 </script>
