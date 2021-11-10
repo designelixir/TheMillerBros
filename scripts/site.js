@@ -69,5 +69,5 @@ function requestFullscreen(el){
 
 
 $('.back-to-top').click(function(){$('.project-case-study-window').scrollTop(0);})
-$('.expand-button').click(function() { let elem = document.getElementById("fullcut-iframe"); elem.requestFullscreen()})
+$('.expand-button').click(function() { let elem = document.getElementById("fullcut-iframe"); elem.requestFullscreen()});
 
