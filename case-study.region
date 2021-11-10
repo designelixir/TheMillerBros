@@ -30,22 +30,18 @@
         </div>
         
 
-        <div class="inset-box-shadow texture" style="padding: 0px 50px 10vh 50px;">
-        <div style="width: 100%; height: 5vh; display: flex; align-items: center; justify-content: center;" >
-            <img src="assets/nav-arrow.svg" style="width: 15px; transform: rotate(90deg)" alt="Scroll Down to About Section"/>
+        <div class="inset-box-shadow texture">
+        <div style="width: 100%; height: 50px; display: flex; align-items: center; justify-content: center;" >
+            <img src="assets/nav-arrow.png" style="width: 15px; transform: rotate(90deg)" alt="Scroll Down to About Section"/>
         </div>
-        <span style="z-index: 4!important; width: 100%; margin-top: 50px;">
-            <h6><squarespace:block-field id="story-summary" columns="1"/></h6>
-            <img src="assets/shapes/yellow-textured-line.svg" style="margin-top: -25px; max-width: 800px;"/>
-        </span>
+        <div class="padding-control" style="z-index: 4!important; width: 100%;">
+            <squarespace:block-field class="blue-text-shadow" id="story-summary" columns="1"/>
+            <img src="assets/shapes/blue-textured-line.svg" style="margin-top: -25px; max-width: 800px;"/>
+            <squarespace:block-field id="story-bio" class="bold-paragraph" columns="1"/>
+        </div>
             <div class="story-section">
-                <div style="height: 100%; width: auto;">
+                <div style="width: 100%;">
                     <squarespace:block-field id="story-image" columns="1"/>
-                </div>
-                <div style="width: 100%; display: flex; align-items: flex-end; justify-content: left;">
-                    <span class="bio-content drop-shadow" id="story-content">
-                            <squarespace:block-field id="story-bio" columns="1"/>
-                    </span>
                 </div>
             </div>
     </div>
