@@ -44,6 +44,9 @@
                     <squarespace:block-field id="story-image" columns="1"/>
                 </div>
             </div>
+
+            <squarespace:block-field id="our-story-button" columns="1"/>
+
     </div>
 
    
