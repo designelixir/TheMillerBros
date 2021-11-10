@@ -21,15 +21,14 @@
       {#  <div style="width: 100%; height: 40vh; margin-top: -20vh; display: flex; align-items: flex-end; justify-content: center;  "></div>  }
 
 
-      <div class="padding-control" id="intro-review" style="width: 100vw; overflow-x: hidden;" >
-      <h1 class="blue-text-shadow"><squarespace:block-field id="our-story-page-title" columns="1"/></h1> 
+      <div class="padding-control" id="intro-review" style="width: 100%; overflow-x: hidden;" >
         <div id="review-wrapper">
             <h1>&rdquo;</h1>
             <squarespace:block-field id="our-story-review" columns="1"/>
             <h1>&rdquo;</h1>
         </div>
         <div id="review-name-wrapper">
-          <span style='width: 100px; height: 100px;'><squarespace:block-field id="our-story-review-img" columns="1"/></span>
+          <div style='width: 125px; height: 125px;'><squarespace:block-field id="our-story-review-img" columns="1"/></div>
           <span style="padding: 25px 0 0 10px;">
             <squarespace:block-field id="our-story-reviewer" columns="1"/>
             <squarespace:block-field id="our-story-reviewer-company" columns="1"/>
@@ -62,30 +61,30 @@
             <squarespace:block-field id="our-story-gallery" columns="12"/>
         </div>
 
-      <div class="extended-family-intro inset-border-box texture" style="display: flex; justify-content: right; overflow: hidden; width: 100%;">
-      <span class="padding-control">
-          <h1 class="yellow-text-shadow" style="text-align: center;"> Our Extended Family</h1>
-          <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
-          <squarespace:block-field id="extended-family-text" class="bold-paragraph" columns="1"/>
-          </span>
+      <div class="extended-family-intro inset-border-box texture" style="padding-top: 50px;">
+        <div class="padding-control">
+            <squarespace:block-field id="extended-family-title" class="yellow-text-shadow" columns="1"/>
+            <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
+            <squarespace:block-field id="extended-family-text" class="bold-paragraph" columns="1"/>
+          </div>
       </div>
 
      
-      <div style="width: 98%; height: 650px; display: inline-flex; align-items: center; justify-content: flex-start;">
-      <div style="width: 2%; border: 2px solid teal;left: 0; height: 39vh;" id="stuff-left">
-          <img src="../assets/textured-strip.png" style="height: 100%; width: 100%; transform: rotate(180deg)"/>
-      </div>
-      <div id="bio-container" style="width: 96%; margin: 0 2%; height: 600px; overflow-y: hidden; border: 2px solid yellow; display: flex; ">
+      <div class="family">
+      <div class="bio-grid-button drop-shadow2"  id="stuff-left" onclick='biosLeft(true)' style="transform: rotate(180deg); left: 0;"><img class="hoverthis" src="../assets/nav-arrow.svg"/></div>
+      <div class="bio-grid-button drop-shadow2" id="stuff-right" onclick='biosRight(true)' style="margin-left: calc(100% - 30px);"> <img class="hoverthis" src="../assets/nav-arrow.svg" style="max-width: 40px;"/></div>
+      
+
+      <div id="bio-container">
           
         {.repeated section items}{.if starred}{.or}
-            <div class=" inset-box-shadow" id="bio-{id}" style="min-height: 400px; margin: 2px; min-width: 350px; background-size: cover; background-image: url({assetUrl}?format=750); background-position: center center ">
-                
-                <div  style=" height: 100%; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0) 72%, rgba(0,0,0,0) 100%);">
-                <div class="family-bio-text drop-shadow gradient-shadow" style="width: 100%;">
-                <div class="family-bio-description fade-in" style="color: white; display: none;">
-                  <div style="padding: 25px; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;">
-                      <span style="text-align: center;">
-                  
+            <div class="family-bio-wrapper inset-box-shadow" onclick="clickBio()" style="background-image: url({assetUrl}?format=750);">
+                <div class="family-bio" style=" height: 100%; width: 100%; background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0) 72%, rgba(0,0,0,0) 100%);">
+                <div class="family-bio-text drop-shadow gradient-shadow" style="width: 100%;" onclick="clickBio()">
+                <div class="family-bio-description fade-in"style="color: white; display: none;">
+                  <div style="padding: 35px; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;" >
+                      <div style="text-align: center;">
+                        
                         {body}
                         <span style="display: inline-flex; width: 100%; align-items: center; justify-content: center; padding-top: 15px;">
                         {.if customContent.instagram}
@@ -95,14 +94,21 @@
                           <a href="{customContent.websiteurl}" target="_blank"><img class="social-icon" src="assets/social/globe.svg"/></a>
                         {.end}
                         </span>
-                      </span>
+                      </div>
                     </div>
                 </div>
+                  <div id="holder" style="display: none">
+                    <div class="livenow">
+                        <div></div><div></div><div></div><div></div>
+                    </div>
+                  </div>
                 <div class="family-bio-title fade-in" style=" width: 100%; height: 50%;  display: flex; align-items: flex-end; justify-content: center;">
-                  <span style="margin-bottom: 15px; text-align: center; width: 100%;  ">
+                  
+                  <div style="margin-bottom: 15px; text-align: center; width: 100%;  ">
+                  
                     <h6 style="margin:15px 25px">{title}</h6>
                     <h2 style="padding: 0px 25px 25px 25px">{customContent.jobtitle}</h2>
-                  </span>
+                  </div>
                 </div>
               </div>
               
@@ -114,9 +120,8 @@
     
     
     </div>
-    <div style="width: 2%; border: 2px solid teal;  right: 0; height: 39vh;" id="stuff-right">
-        <img src="../assets/textured-strip.png" style="height: 100%; width: 100%; "/>
-    </div>
+
+    
     </div>
 
 
@@ -146,12 +151,13 @@ $('.family-bio div').hover(
 }, function(){
     $(this).css({"backdrop-filter":"blur(0px)"})
     $('.family-bio-description', this).css({"display":"none"});
-    $('.family-bio-title', this).css({"display":"block"})
+    $('.family-bio-title', this).css({"display":"inline-flex"})
 })
 
-$('.family-bio div').click(function(){
-  var count = $(this).data("count") || 0;
-  $(this).data("count", ++count);
+var count = 0;
+function clickBio(){
+  count++;
+  clearInterval(autoTimerBios)
   if ((count % 2) != 0) {
      $(this).css({"backdrop-filter":"blur(4px)"})
     $('.family-bio-description', this).css({"display":"block"});
@@ -161,19 +167,36 @@ $('.family-bio div').click(function(){
     $('.family-bio-description', this).css({"display":"none"});
     $('.family-bio-title', this).css({"display":"block"})
   }
-})
+}
 
 
-$('#stuff-right').click(function(){
-    console.log("going right")
-    document.getElementById('bio-container').scrollLeft += 600;
+var bios = document.getElementsByClassName('family-bio-wrapper');
 
-})
+function biosRight(cancelTimer){
+    var measurediv = bios[1].getBoundingClientRect();
+    var biocontainer = document.getElementById('bio-container')
+    biocontainer.scrollLeft += measurediv.width ;
+    if(cancelTimer){
+      clearInterval(autoTimerBios)
+    }
+}
+
+function biosLeft(canceltimer){
+  var measurediv = bios[1].getBoundingClientRect(); 
+  var divwidth = measurediv.width * biosnum 
+  var biocontainer = document.getElementById('bio-container')
+  biocontainer.scrollLeft -= measurediv.width ;
+  if(cancelTimer){
+      clearInterval(autoTimerBios)
+    }
+}
 
 
-$('#stuff-left').click(function(){
-    document.getElementById('bio-container').scrollLeft -= 600;
-})
+if (mobileDevice) {
+  $('#holder').css("display","block");
+}
+
+var autoTimerBios = setInterval(biosRight, 4000);
 
 </script>
 

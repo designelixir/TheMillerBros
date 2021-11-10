@@ -139,30 +139,38 @@ a:hover {cursor: pointer}
 #review-wrapper {width: 100%; display: inline-flex; align-items: flex-start; justify-content: space-evenly;}
 #review-wrapper h1 {font-size: 5rem; color: white; text-shadow: -3px -3px #62abd0; padding: 0; margin: 0;}
 #our-story-review p {font-size: 1.5rem; font-weight: 100; font-style: italic; line-height: 2.25rem; padding: 50px; color: white; text-align: center; padding: 0; margin: 15px; }
-#our-story-reviewer p {font-size: 2rem; font-family: "Sacramento-Regular", serif; color: white;}
+#our-story-reviewer p {font-size: 2rem; font-family: "TimberWolf-Regular", serif; color: white;}
 #our-story-reviewer-company p {color: white; font-size: 1rem;  font-weight: 100; margin-top: -10px;}
-#our-story-review-img {max-width: 100px; margin: -20px 0 0 0; padding: 0!important;}
+
 #review-name-wrapper {display: inline-flex; width: 100%;  align-items: center; justify-content: center; }
 
 #intro-review {width: 100%;}
 #team-description {text-align: center;}
-.bio-container { display: inline-flex; width: 100%;}
+
 .bio-wrapper {width: 50%; max-height: 1050px; min-height: 700px; background-size: cover;  background-position: center center; background-repeat: no-repeat; display: flex; align-items: flex-end;}
 .bio-content-wrapper {width: 100%; height: 100%; display: flex; display: flex; align-items: flex-end;}
 .bio-content {background-image: url(../assets/shapes/tan-smudge.png); text-align: center; width: 90%; margin: 0 5% -75px 5%; background-size: 100% 100%; background-repeat: no-repeat; background-position: center center; padding: 25px 35px;}
 .signature-img {min-width: 200px; width: 40%;}
-
+.bio-container {width: 100%; display: inline-flex; justify-content: center; align-items: center;}
 .bold-paragraph p {font-size: 1.5em; line-height: 1.75em; color: white;  font-weight: 100;}
 .bold-paragraph a {color: white; font-weight: 700;}
 .bold-paragraph a:hover {font-weight: 900;}
 
-.our-story-gallery {width: 100%; height: 35%;}
-.extended-family-intro {width: 100%; display: inline-flex; }
+.our-story-gallery {width: 100%; height: 35%; max-height: 700px; margin-bottom: 50px;}
 
 
-.extended-family-grid {width: 200vw; overflow-x: scroll!important; display: inline-flex; flex-wrap: wrap;}
+// OUR EXTENDED FAMILY SECTION
+.extended-family-intro {width: 100%;  overflow-y: hidden; margin: 0px 0px 50px 0px; display: flex; justify-content: right; overflow: hidden; }
+
+.family {width: 100%; height: 600px; display: inline-flex; align-items: center; justify-content: flex-start; margin: 0px 0px 100px 0px;}
+.bio-grid-button {background-image: url('../assets/shapes/yellow-smudge-button.png'); z-index: 3; position: absolute;  padding: 10px; background-size: 100% 90%; background-position: center center;  width: 30px; left: 0; height: 300px; display: flex; align-items: center; justify-content: center;}
+#bio-container {width: 100%; height: 600px; overflow-y: hidden;  display: flex; align-items: center;}
+.family-bio-wrapper {margin: 2px; min-width: 350px; width: 100%; height: 100%; background-size: cover;width: 100%; height: 100%;  display: flex; align-items: center; justify-content: center;  background-position: center center }
+
+#holder {height: 100%; padding: 25px; width: 100%; position: absolute; display: flex; align-items: center; justify-content: center; pointer-events: none}
+.livenow>div{vertical-align:middle;width:22px;height:22px;border-radius:100%;position:absolute;margin:0 auto;border:3px solid #fff;-webkit-animation:live 1.4s infinite ease-in-out;animation:live 1.4s infinite ease-in-out;-webkit-animation-fill-mode:both;animation-fill-mode:both}@-webkit-keyframes live{0%,100%,80%{-webkit-transform:scale(.6)}40%{-webkit-transform:scale(1)}}@keyframes live{0%,100%,80%{transform:scale(.6);-webkit-transform:scale(.6)}40%{transform:scale(1);-webkit-transform:scale(1)}}
+
 .family-bio { height: 500px; flex: 1 1 350px;}
-.family-bio-wrapper {width: 100%; height: 100%;  display: flex; align-items: center; justify-content: center;}
 .family-bio-text {width: 100%; height: 100%; display: flex; align-items: flex-end; background: linear-gradient(0deg, rgba(0,0,0,0.15730042016806722) 0%, rgba(0,0,0,0.039653361344537785) 100%);}
 .family-bio-text h6 {font-size: 48px; line-height: 42px!important; text-align: center;}
 .family-bio-text h2 {font-size: 1em;  border-radius: 4px; padding-left: 7px; text-align: center; font-weight: 100; }
@@ -322,6 +330,7 @@ footer {width: 100%;  text-align: center; bottom: 0; margin: 0; padding: 0; disp
   #testimonial {font-size: 24px!important; line-height: 36px!important;}
   #additional-video-container {display: block!important;}
   .additional-video {width: 100%;}
+
 }
 
 @media only screen and (max-width: 1000px) {
