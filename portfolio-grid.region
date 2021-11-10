@@ -65,6 +65,10 @@ function toggleiframe(){
 $('#portfolio-page-case-study-window iframe').attr("src","")
 }
 
+$('.sqs-gallery-meta-container').hover(
+    function(){$(this).css("backdrop-filter","blur(3px)")}, 
+    function(){$(this).css("backdrop-filter","blur(0px)")}
 
+)
 
 </script>

@@ -29,7 +29,6 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 
 }());
 
-window.addEventListener('resize', resize);
 
 
 
