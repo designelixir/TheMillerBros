@@ -18,10 +18,10 @@
       <div class="contact-floating-container">
         <div class="contact-floating-container-left">
             <div class="contact-floating-container-left-half" id="top-half"  >
-                <span id="half-1">
+                <div id="half-1">
                   <h6 id="contact-title-1" class="drop-shadow2"> Let's tell a </h6><h6 class="drop-shadow2" id="contact-title-2"> story together</h6>
                   <img class="drop-shadow" src="assets/shapes/yellow-textured-line.svg"/>
-                </span>
+                </div>
             </div>
             <div class="contact-floating-container-left-half">
             <div style="margin: 25px 0">
