@@ -68,8 +68,11 @@
 <div style="width: 100%;">
 {.if customContent.additionalvideo1}
                     <div style="padding: 50px 25px; width: 100%; ">
-                        <h6 style="font-size: 36px; font-weight: 700;">Additional Videos </h6>
-                        <img src="../assets/shapes/yellow-textured-line.svg" style="max-width: 500px;" alt="decorative line"/>
+                        
+                            <h6 style="font-size: 36px; font-weight: 700; text-align: center;">Additional Videos </h6>
+                            <span style="display: flex; align-items: center; justify-content: center; width: 100%;">
+                            <img src="../assets/shapes/yellow-textured-line-center.svg" style="max-width: 500px;" alt="decorative line"/>
+                        </span>
                         <div id="additional-video-container">
                             <div class="additional-video-wrapper">
                                    <div class='embed-container'>
