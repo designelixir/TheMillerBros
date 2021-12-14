@@ -5,7 +5,7 @@
         {.if starred}
             <div class="slide">
                 <div class="project">
-                    <div class="project-wrapper">
+                    <div class="project-wrapper" >
                         <div class="vimeo-bg-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');" >
                             <iframe class="vimeo-bg-iframe fade-in-fast" src='https://player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
@@ -23,6 +23,16 @@
                                 </a>
                             {.or}
                             {#  PROJECT SLIDERS}
+                            <div class="project-button-circle hoverthis" data-url="{fullUrl}" onclick="showCaseStudy($(this).attr('data-url'))">
+                                <div class="case-study-button-content">
+                                    <span class='playBut'>
+                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="113.7px" height="113.7px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7" xml:space="preserve">
+                                            <polygon class='triangle' id="XMLID_18_" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="73.5,62.5 149.1,105.8 73.5,149.1 "/>
+                                            <circle class='circle' id="XMLID_17_" fill="none"  stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3"/>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
                             <div class="title-wrapper fade-in-fast" >
                                 <div class="summary-title" data-url="{fullUrl}" onclick="showCaseStudy($(this).attr('data-url'))">
                                     <div class="drop-shadow">
@@ -32,16 +42,7 @@
                                                     <h1 class="project-title gold-text-shadow drop-shadow2">{title}</h1>
                                                     <h6 class="project-brand drop-shadow2">{customContent.brand}</h6>
                                                 </span>
-                                                 <div class="project-button-circle">
-                                                    <div class="case-study-button-content">
-                                                        <span class='playBut'>
-                                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="113.7px" height="113.7px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7" xml:space="preserve">
-                                                                <polygon class='triangle' id="XMLID_18_" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="73.5,62.5 149.1,105.8 73.5,149.1 "/>
-                                                                <circle class='circle' id="XMLID_17_" fill="none"  stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" cx="106.8" cy="106.8" r="103.3"/>
-                                                            </svg>
-                                                        </span>
-                                                    </div>
-                                                </div>
+                                                 
                                             </div>
                                         </div>
                                     </div>             
@@ -54,15 +55,18 @@
             </div>
             {.end}
             {.end}
-
-            <div id="project-counter">
-
+            {#  ORIGINAL PROJECT SLIDER  }
+            {#  <div id="project-counter">
                 <a onclick="(sliderDot(data))" class="counter drop-shadow2"></a>
-
-            </div>           
+            </div>             }
         </div>
         <div id="next-slide" onclick="nextslide()">
             <img id="slide-arrow" src="../assets/nav-arrow.png" alt="next slide arrow" />
         </div>
     </section>
+    <div class="inset-box-shadow texture" style="height: 10vh; display: flex; align-items: center; justify-content: center; ">
+            <div id="project-counter">
+                <a onclick="(sliderDot(data))" class="counter drop-shadow2"></a>
+            </div>
+    </div>
     

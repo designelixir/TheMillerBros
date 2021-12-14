@@ -18,7 +18,7 @@
 
         <div class="case-study-iframe-container texture" id="home-page-case-study-window" style="display: none;">
             <div class="case-study-nav inset-box-shadow ">
-                <span style="width: 20%;">               
+                <span style="width: 20%;" onclick="toggleiframe()" class="hoverthis">               
                     <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
                 </span>
                 <span style="justify-content: flex-end; width: 80%">
@@ -30,24 +30,7 @@
         </div>
         
 
-        <div class="inset-box-shadow texture">
-        <div style="width: 100%; height: 50px; display: flex; align-items: center; justify-content: center;" ><a href="#story-summary">
-            <img src="assets/nav-arrow.png" style="width: 15px; transform: rotate(90deg)" alt="Scroll Down to About Section"/></a>
-        </div>
-        <div class="padding-control" style="z-index: 4!important; width: 100%;">
-            <squarespace:block-field class="blue-text-shadow" id="story-summary" columns="1"/>
-            <img src="assets/shapes/blue-textured-line.svg" style="margin-top: -25px; max-width: 800px;"/>
-            <squarespace:block-field id="story-bio" class="bold-paragraph" columns="1"/>
-        </div>
-            <div class="story-section">
-                <div style="width: 100%;">
-                    <squarespace:block-field id="story-image" columns="1"/>
-                </div>
-            </div>
-
-            <squarespace:block-field id="our-story-button" columns="1"/>
-
-    </div>
+        
 
    
     <squarespace:navigation navigationId="footerNav" template="footer" />
@@ -104,6 +87,7 @@ function nextslide(){
   if(active  >= counter - 1 ){active = 0;} 
   else {active = active + 1;}
   goToSlider(active)
+  clearInterval(autoTimer)
 }
 
 var autoTimer = setInterval(nextslide, 8000);

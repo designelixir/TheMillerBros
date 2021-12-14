@@ -7,7 +7,7 @@
     <div class="project-top-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
         {#  iframe  }
         <div class='embed-container' >
-            <iframe class="fade-in" src='https://player.vimeo.com/video/{customContent.vimeocode}?h=5d02ec9719&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            <iframe class="fade-in" src='https://player.vimeo.com/video/{customContent.vimeocodeiframe}?h=5d02ec9719&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
         </div>
     </div>
         <div id="titlelogo">
@@ -28,6 +28,7 @@
         <div class="case-study-section fade-in tan-texture">
             <div id="summary" class="padding-control">
                 <p>{body}</p>
+                <div id="testimonial-block-wide">
                 {.if customContent.testimonial}
                     <div id="review" style="padding-top: 50px;">
                         <h1>"</h1> <span>
@@ -36,7 +37,18 @@
                         </span> <h1>"</h1>
                     </div>
                 {.end}
+                </div>
             </div>
+            <div id="testimonial-block-narrow" class="padding-control" style="display: none;">
+                {.if customContent.testimonial}
+                    <div id="review" >
+                        <h1>"</h1> <span>
+                            <p style="font-size: 36px; line-height: 48px; margin-top: 10px;" id="testimonial">{customContent.testimonial}</p>
+                            <h5>-{customContent.testimonialname}</h5>
+                        </span> <h1>"</h1>
+                    </div>
+                {.end}
+                </div>
              {.if customContent.credits.html}
                 <div id="credits" class="texture inset-box-shadow">
                     <div class="padding-control">
@@ -46,29 +58,38 @@
                     </div>
 
                 {.end}
-                    {.if customContent.additionalvideo1}
-                    <div style="padding: 25px 50px 50px 25px; width: 100%;">
-                        <h6 style="font-size: 36px; font-weight: 700;">Additional Videos </h6>
-                        <img src="../assets/shapes/yellow-textured-line.svg" style="max-width: 500px;" alt="decorative line"/>
                     
-                            <div class='embed-container' style="margin: 25px 0 0 0">
-                                <iframe class="fade-in" src='https://player.vimeo.com/video/{customContent.additionalvideo1}?h=5d02ec9719&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                            </div>
-                        
-                        {.if customContent.additionalvideo2}
-                            <div class='embed-container' style="margin: 25px 0 0 0;" >
-                                <iframe class="fade-in" src='https://player.vimeo.com/video/{customContent.additionalvideo2}?h=5d02ec9719&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                            </div>  
-                        {.end}
-                    </div>
-                </div>
-                {.end}
                 
                 
             </div>
         </div>
         {.end}
+        
+<div style="width: 100%;">
+{.if customContent.additionalvideo1}
+                    <div style="padding: 50px 25px; width: 100%; ">
+                        <h6 style="font-size: 36px; font-weight: 700;">Additional Videos </h6>
+                        <img src="../assets/shapes/yellow-textured-line.svg" style="max-width: 500px;" alt="decorative line"/>
+                        <div id="additional-video-container">
+                            <div class="additional-video-wrapper">
+                                   <div class='embed-container'>
+                                        <iframe class="fade-in" src='https://player.vimeo.com/video/{customContent.additionalvideo1}?h=5d02ec9719&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                                    </div>
+                            </div>
+                            
+                            {.if customContent.additionalvideo2}
+                            <div class="additional-video-wrapper">
+                                   <div class='embed-container' >
+                                        <iframe class="fade-in" src='https://player.vimeo.com/video/{customContent.additionalvideo2}?h=5d02ec9719&title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                                    </div>
+                            </div>
+                            
+                        {.end}
+                    </div>
+                </div>
+                {.end}
 
+</div>
         
         
         

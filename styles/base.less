@@ -253,7 +253,10 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
 .project-title {font-size: 72px;  line-height: 4.25rem;  width: 90%; margin-top: 25px; margin-right: 25px;  }
 .project-brand {font-size: 36px; color: white;}
 .project-button {display: inline-flex; width: 500px; align-items: flex-end; background-image: url(../assets/shapes/yellow-half-button.png); padding: 25px 0px 25px 50px;  background-size: 500px 100px;  background-position: left bottom; }
-.project-button-circle {width: 150px; left: 425px; position: absolute; margin-bottom: 25px; height: 150px; background-image: url('../assets/shapes/tan-textured-circle.svg'); background-position: center center; animation-delay: 2s; animation: heartbeat 8s linear infinite both}
+
+.project-button-circle {width: 150px; z-index: 11; position: absolute; margin: auto; top: 0; left: 0; right: 0; bottom: 0; height: 150px; background-image: url('../assets/shapes/tan-textured-circle.svg'); background-position: center center; animation-delay: 2s; animation: heartbeat 8s linear infinite both}
+
+// ORIGINAL CODE .project-button-circle {width: 150px; left: 425px; position: absolute; margin-bottom: 25px; height: 150px; background-image: url('../assets/shapes/tan-textured-circle.svg'); background-position: center center; animation-delay: 2s; animation: heartbeat 8s linear infinite both}
 .case-study-button-content {display: flex; align-items: center; justify-content: center; transform: scale(0.85);}
 .circle {stroke: #C5843D; stroke-dasharray: 650; stroke-dashoffset: 650; -webkit-transition: all 0.5s ease-in-out; opacity: 0;}
 .playBut {display: inline-block; -webkit-transition: all 0.5s ease; margin-top: 20px;
@@ -265,14 +268,17 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
   }
 }
 
-#next-slide { background-image: url('../assets/textured-strip.png'); background-size: 100% 100%; background-position: top right; position: absolute; top: 0; right: 0; height: 90vh; width: 60px;  display: flex; align-items: center; justify-content: center;}
+#next-slide { position: absolute; top: 0; right: 0; height: 90vh; width: 60px;  display: flex; align-items: center; justify-content: center;}
 #next-slide img {animation:jello-vertical 2s 5s infinite both; width: 25px;}
 #slide-arrow {margin-left: 10px; width: 15px;}
 #next-slide:hover {background-size: 105% 105%; cursor: pointer;}
 #next-slide:hover > img {transform: scale(1.1)}
 
-#project-counter {min-width: 300px; max-width: 25vw;   position: absolute; right: 55px; top: 82vh;  height: 40px; display: inline-flex;}
-.counter { margin: 0 5px; height: 100%; width: 100%; z-index: 9; background-image: url("../assets/shapes/tan-textured-circle.svg"); background-size: contain; background-position: center center; }
+//ORIGINAL PROJECT COUNTER CODE #project-counter {min-width: 300px; max-width: 25vw;   position: absolute; right: 55px; top: 82vh;  height: 40px; display: inline-flex;}
+#project-counter {width: 50%; max-width: 300px; height: 10vh; display: flex; align-items: center; justify-content: center; }
+
+// original: change height back to 100%;
+.counter { margin: 0 5px; height: 40%; width: 100%; z-index: 9; background-image: url("../assets/shapes/tan-textured-circle.svg"); background-size: contain; background-position: center center; }
 .counter:hover {transform: scale(1.1)}
 #scroll-down-arrow {transform: rotate(90deg); padding: 15px;}
 
@@ -308,11 +314,11 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
   .site-navigation-list {display: none!important;}
   #next-slide {width: 40px; img{width: 20px;}}
   .project-brand {font-size: 48px; color: white;}
-  .case-study-section {display: block!important;}
+
   .summary-item {min-width: ~'calc((100vw - 2px) / 2)'!important; height: ~'calc(90vh / 6)'!important;}
   #testimonial {font-size: 24px!important; line-height: 36px!important;}
   #additional-video-container {display: block!important;}
-  .additional-video {width: 100%;}
+
 
 }
 
@@ -332,12 +338,14 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
   #bts-photos-grid {-webkit-column-count: 2; -moz-column-count: 2; column-count: 2; column-gap: none;}  
   .blue-text-shadow {font-size: 2rem;}
   .bold-paragraph p {font-size: 1.25em; line-height: 1.65em; }
-
+  #testimonial-block-wide {display: none;}
+  #testimonial-block-narrow {display: block!important;}
   .container-holder {display: block}
   .container-half {width: 100%;}
   .link-title {font-size: 4rem; line-height: 3.25rem;}
   .summary-item {min-width: ~'calc((100vw - 2px) / 3)'; height: ~'calc(90vh / 4)';}
-
+  .case-study-section {display: block!important;}
+  #credits {max-width: 100%!important;}
 } 
 
 
@@ -403,7 +411,9 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
 #credits strong {text-transform: none; color: white!important}
 #credits a { text-transform: none; color: white!important; text-decoration: none;}
 
-
+#additional-video-container {display: inline-flex;  width: 100%;}
+.additional-video-wrapper {width: 100%; padding: 25px;}
+.additional-video-wrapper iframe {max-height: 300px;}
 
 
 #bts { width: 100%; padding: 25px; }
