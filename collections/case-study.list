@@ -1,3 +1,5 @@
+<script>console.log({@|json-pretty})</script>
+
 <section id="featured-projects">
         <div id="slide-container">
         {.repeated section items}

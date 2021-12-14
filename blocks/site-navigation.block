@@ -8,7 +8,7 @@
       <ul class="site-navigation-list drop-shadow">
         {.repeated section items}
 
-        {.equal? collection.navigationTitle "Home"}
+        {.equal? collection.urlId "home"}
 
         <li id="home-link" class="site-navigation-item {.section active} active-link{.end}">
           <a href="/"><img id="lil-bus" style="width: 45px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="../assets/bus-icon.svg"></a>
