@@ -116,8 +116,8 @@ a:hover {cursor: pointer}
 100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}@keyframes slide-in-top{0%{-webkit-transform:translateY(-1000px);transform:translateY(-1000px);opacity:0}
 100%{-webkit-transform:translateY(0);transform:translateY(0);opacity:1}}
 
-// Case STUDY WINDPW 
-.case-study-nav {width: 100%; height: 7%; min-height: 75px; display: flex; align-items: center; justify-content: center; z-index: 9; padding: 0px 10px 0px 25px;}
+// Case STUDY WINDOW 
+.case-study-nav {width: 100%; height: 7%; min-height: 75px; display: flex; align-items: center; justify-content: center; z-index: 20; padding: 0px 10px 0px 25px; position: fixed; top: 0; left: 0;}
 .case-study-nav span {width: 50%;  display: flex; align-items: center;}
 .case-study-nav span img {height: 50px; width: auto;}
 .circle-button-blue { margin: 5px; width: 60px; height: 60px; display: block; background-color: transparent; background-image: url('../assets/blue-textured-circle-close-nofill.svg'); background-repeat: no-repeat; background-size: contain; background-position: 50% 50%;color: white;}
@@ -301,11 +301,14 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
   .project-button {transform: scale(0.75); margin-left: -75px;  }
   .project-button-circle {display: none;}
   #titlelogo h1 {font-size: 36px!important; }
-  #featured-projects { height: 80vh; }
-  #slide-container {height: 80vh; }
-  .slide {height: 80vh;  }
-  .title-container{height:70vh;}
-}
+  #featured-projects { height: 75vh; }
+  #slide-container {height: 75vh; }
+  .slide {height: 75vh;  }
+  .title-container{height:65vh;}
+
+
+} 
+
 
 @media only screen and (max-width: 800px) {
   .case-study {display: block;}
@@ -313,8 +316,9 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
   .site-navigation-list {display: none!important;}
   #next-slide {width: 40px; img{width: 20px;}}
   .project-brand {font-size: 48px; color: white;}
-
   .summary-item {min-width: ~'calc((100vw - 2px))'!important; height: ~'calc(90vh / 6)'!important;}
+  #portfolio-grid-container {overflow-y: scroll!important;}
+
   #testimonial {font-size: 24px!important; line-height: 36px!important;}
   #additional-video-container {display: block!important;}
 
@@ -348,18 +352,18 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
 } 
 
 
-#portfolio-grid-container {margin-top: 118px; max-width: 100vw; overflow-x: hidden; height: ~'calc(100vh - 130px)'}
+#portfolio-grid-container {margin-top: 118px; max-width: 100vw; overflow-x: hidden; overflow-y: hidden; height: ~'calc(100vh - 130px)'}
 #portfolio-grid-content {display: none!important;}
 #portfolio-grid {
   .summary-item {border: 2px solid #1B1718; min-width: ~'calc((100vw - 2px) / 4)'; height: ~'calc(90vh / 3)'!important; width: 100%; display: flex; flex-grow: 1;   justify-content: center; align-items: center; text-align: center;  background-size: cover; background-repeat: no-repeat; overflow: hidden; cursor: pointer; background-position: center center;  margin: 0; padding: 0; }
     .summary-block-wrapper {margin-top: 0!important;  max-height: ~'calc(100vh - 125px)'; width: 100vw!important; display: flex; align-items: center; justify-content: center; flex-wrap: wrap;}
-    .summary-title {width: 100%; height: 100%; font-size: 24px!important; overflow: hidden!important; display: flex; align-items: center; justify-content: center;}
+    .summary-title {width: 100%; height: 100%; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .35)); font-family: 'TimberWolf-Regular'; font-size: 3rem!important; font-weight: 900!important; text-shadow: 2px 2px #C5843D; overflow: hidden!important; display: flex; align-items: center; justify-content: center;}
     .summary-title-link {pointer-events: none; }
     .summary-thumbnail-container {position: absolute; overflow: hidden;  width: 105%!important; height: 105%!important; padding: 0!important; z-index: 0!important;}
     .sqs-video-wrapper {width: 100%!important; height: 100%!important;}
    .sqs-video-overlay {display: block; overflow: scroll!important;}
    .sqs-video-icon {display: none!important;}
-   .sqs-gallery-meta-container {z-index: 10!important; width: 100%; height: 100%; min-height: 33vh; overflow: hidden!important; background-color: rgba(0,0,0,0.5);
+   .sqs-gallery-meta-container {z-index: 10!important; width: 100%; height: 100%; min-height: 33vh; overflow: hidden!important; background-color: rgba(0,0,0,0.25);
     display: flex; align-items: center; justify-content: center; color: white!important;
     text-transform: uppercase;
       a {color: white!important}}
@@ -380,7 +384,7 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
 
 .case-study-iframe-container {position: fixed; width: 100vw!important; height: 100vh!important; top: 0; left: 0; z-index: 99;}
 #case-study-iframe {border: none;}
-.case-study-window {height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; z-index: 12; overflow-x: hidden;}
+.case-study-window {height: ~'calc(100vh - 75px)'; width: 100vw; position: fixed; left: 0; top: 75px; z-index: 12; overflow-x: hidden;}
 .project-top-wrapper { max-height: 70vh; background-size: cover;}
 .fullcut-iframe-container {background-size: 200%; background-position: center center; overflow: hidden; max-height: 70vh;}
 

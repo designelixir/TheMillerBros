@@ -1,7 +1,16 @@
-
-
+<div class="case-study-nav inset-box-shadow texture">
+              <span style="width: 20%;" >               
+                  <a href="/"><img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" /></a>
+              </span>
+              <span style="justify-content: flex-end; width: 80%">
+                  <p class="hoverthis" style="color: white; padding-right: 10px;" ><a href="/portfolio" style="color: white;">VIEW ALL PROJECTS</a></p>
+                  <a href="/" style="color: white;"><button class="circle-button-blue" aria-label="Close Portfolio Video Window"></button></a>
+              </span>
+              
+          </div>
 
 {.section item}
+
 <div class="case-study-window texture" style="overflow-y: scroll!important;">
     <div class="project-case-study-wrapper">
     <div class="project-top-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');">
@@ -120,4 +129,13 @@
 </div>
 
 {.end}
+
+<script>
+function toggleiframe(){
+  $('body').css("overflow-y","scroll")
+  $('#featured-projects').scrollTop(0)
+  $('#home-page-case-study-window').slideUp(600);
+  $('#home-page-case-study-window iframe').attr("src","")
+}
+</script>
 

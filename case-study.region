@@ -17,16 +17,16 @@
         </main>
 
         <div class="case-study-iframe-container texture" id="home-page-case-study-window" style="display: none;">
-            <div class="case-study-nav inset-box-shadow ">
-                <span style="width: 20%;" onclick="toggleiframe()" class="hoverthis">               
-                    <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
-                </span>
-                <span style="justify-content: flex-end; width: 80%">
-                    <p class="hoverthis" style="color: white; padding-right: 10px;" onclick="toggleiframe()">BACK TO PORTFOLIO</p>
-                    <button class="circle-button-blue" onclick="toggleiframe()" aria-label="Close Portfolio Video Window"></button>
-                </span>
-            </div>
-            <iframe id="case-study-iframe" class="fade-in" width="100%" height="93%"></iframe>
+            <div class="case-study-nav inset-box-shadow texture">
+              <span style="width: 20%;" onclick="toggleiframe()" class="hoverthis">               
+                  <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
+              </span>
+              <span style="justify-content: flex-end; width: 80%">
+                  <p class="hoverthis" style="color: white; padding-right: 10px;" onclick="toggleiframe()">BACK TO PORTFOLIO</p>
+                  <button class="circle-button-blue" onclick="toggleiframe()" aria-label="Close Portfolio Video Window"></button>
+              </span>
+          </div>
+            <iframe id="case-study-iframe" class="fade-in" width="100%" height="100%"></iframe>
         </div>
         
 
