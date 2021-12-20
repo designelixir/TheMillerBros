@@ -31,13 +31,32 @@
       <div class="bio-container">
         {.repeated section items}{.if starred}
         <div class="bio-wrapper inset-box-shadow" style="background-image: url({assetUrl}?format=original); ">
-            <div class="bio-content-wrapper"> 
-               <span class="padding-control" style="text-align: center; width:100%;">  
-              {#  <span class="padding-control" style="background-image: url(../assets/shapes/tan-smudge.png); text-align: center; background-size: 100% 100%; width: 50%; margin: 0px 0px 25px 25%;">  }
-                  <h6 style="font-size: 48px;">{title}</h6>
-                  <h3 style="color: white;">{customContent.jobtitle}</h3>
-              </span>       
-            </div>
+           <div class="family-bio">
+                    <div class="family-bio-text drop-shadow gradient-shadow" style="width: 100%;" onclick="clickBio()">
+                    <div class="family-bio-description fade-in"style="color: white; display: none;">
+                      <div style="padding: 35px; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;" >
+                          <div style="text-align: center;">
+                            
+                            {body}
+                            <div class="bio-icons-container" >
+                            {.if customContent.instagram}
+                              <a href="https://www.instagram.com/{customContent.instagram}/" target="_blank"><img class="social-icon" src="assets/social/instagram.svg"/></a>
+                            {.end}
+                            {.if customContent.instagram}
+                              <a href="{customContent.websiteurl}" target="_blank"><img class="social-icon" src="assets/social/globe.svg"/></a>
+                            {.end}
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="family-bio-title fade-in">
+                      <div class="family-bio-title-wrapper">
+                        <h6>{title}</h6>
+                        <h2>{customContent.jobtitle}</h2>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
         </div>
         {.end}{.end}
       </div>
