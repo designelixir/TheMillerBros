@@ -90,6 +90,11 @@ function nextslide(){
   clearInterval(autoTimer)
 }
 
+function backslide(){
+  if(active  >= counter - 1 ){active = 0;} 
+  else {active = active - 1;}
+}
+
 var autoTimer = setInterval(nextslide, 8000);
 
 $(window).scroll(function(){

@@ -101,11 +101,12 @@ function handleTouchMove(evt) {
                                                                          
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
         if ( xDiff > 0 ) {
-            {#  right  }
-           sliderDot(data - 1);
+            {#  left }
+            nextslide();
         } else {
-            {#  left  }
-           nextslide();
+            {#  right  }
+            backslide();
+           
         }                       
     } else {
         if ( yDiff > 0 ) {
