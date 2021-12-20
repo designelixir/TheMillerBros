@@ -100,14 +100,15 @@ function handleTouchMove(evt) {
                                                                          
     if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
         if ( xDiff > 0 ) {
-            sliderDot(data - 1)
+           nextslide();
         } else {
-            nextslide
+           nextslide();
         }                       
     } else {
         if ( yDiff > 0 ) {
-           
+         nextslide();  
         } else { 
+            nextslide();
         }                                                                 
     }
     /* reset values */
