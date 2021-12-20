@@ -98,20 +98,20 @@ function handleTouchMove(evt) {
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
                                                                          
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
         if ( xDiff > 0 ) {
-           alert('fuck!!!')
+            sliderDot(data - 1)
         } else {
-            alert('fuck!!!')
+            nextslide
         }                       
     } else {
         if ( yDiff > 0 ) {
-            alert('fuck!!!')
+            /* down swipe */ 
         } else { 
-           alert('fuck!!!')
+            /* up swipe */
         }                                                                 
     }
-
+    /* reset values */
     xDown = null;
     yDown = null;                                             
 };
