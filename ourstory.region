@@ -20,7 +20,8 @@
       </div>
       <div style="width: 100%; height: 40vh; margin-top: -20vh; display: flex; align-items: flex-end; justify-content: center;  "></div>
       <div class="padding-control">
-                <squarespace:block-field id="miller-bros-summary-title" columns="1"/>
+                <squarespace:block-field id="miller-bros-summary-title" class="yellow-text-shadow" columns="1"/>
+                <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
                 <squarespace:block-field id="miller-bros-summary" class="bold-paragraph" columns="1"/>
       </div>
       
@@ -31,12 +32,15 @@
       <div class="bio-container">
         {.repeated section items}{.if starred}
         <div class="bio-wrapper inset-box-shadow" style="background-image: url({assetUrl}?format=original); ">
-            <div class="bio-content-wrapper">
-                <span class="bio-content drop-shadow">
-                  {title}
-                </span>
+            <div class="bio-content-wrapper"> 
+              {#  <span class="padding-control" style="text-align: center; width:100%;">  OPTION 1} 
+              <span class="padding-control" style="background-image: url(../assets/shapes/tan-smudge.png); text-align: center; background-size: 100% 100%; width: 50%; margin: 0px 0px 25px 25%;">
+                  <h6 style="font-size: 48px;">{title}</h6>
+                  <h3 style="color: white;">{customContent.jobtitle}</h3>
+              </span>       
             </div>
-        </div>{.end}{.end}
+        </div>
+        {.end}{.end}
       </div>
       <div class="inset-box-shadow texture" style="padding: 200px 50px 100px 50px; ">
           <squarespace:block-field id="team-description" class="bold-paragraph" columns="1"/>
