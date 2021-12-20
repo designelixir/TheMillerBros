@@ -18,23 +18,11 @@
       <div class="header-photo" style="background-image: url('{collection.mainImage.assetUrl}');">
   {#  header photo  }
       </div>
-      {#  <div style="width: 100%; height: 40vh; margin-top: -20vh; display: flex; align-items: flex-end; justify-content: center;  "></div>  }
-
-
-      <div class="padding-control" id="intro-review" >
-        <div id="review-wrapper">
-            <h1>&rdquo;</h1>
-            <squarespace:block-field id="our-story-review" columns="1"/>
-            <h1>&rdquo;</h1>
-        </div>
-        <div id="review-name-wrapper">
-          <div style='width: 125px;'><squarespace:block-field id="our-story-review-img" columns="1"/></div>
-          <span style="padding: 0px 0 0 10px;">
-            <squarespace:block-field id="our-story-reviewer" columns="1"/>
-            <squarespace:block-field id="our-story-reviewer-company" columns="1"/>
-          </span>
-        </div>
+      <div style="width: 100%; height: 40vh; margin-top: -20vh; display: flex; align-items: flex-end; justify-content: center;  "></div>
+      <div class="padding-control">
+                <squarespace:block-field id="miller-bros-summary" class="bold-paragraph" columns="1"/>
       </div>
+      
     
       {#  SPENCER & CAMDEN  }
 
