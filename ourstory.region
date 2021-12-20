@@ -20,19 +20,20 @@
       </div>
       <div style="width: 100%; height: 40vh; margin-top: -20vh; display: flex; align-items: flex-end; justify-content: center;  "></div>
       <div class="padding-control">
+                <squarespace:block-field id="miller-bros-summary-title" columns="1"/>
                 <squarespace:block-field id="miller-bros-summary" class="bold-paragraph" columns="1"/>
       </div>
       
     
       {#  SPENCER & CAMDEN  }
+                  {#  <img class="signature-img" src="{customContent.signature.assetUrl}"/>  }
 
       <div class="bio-container">
         {.repeated section items}{.if starred}
         <div class="bio-wrapper inset-box-shadow" style="background-image: url({assetUrl}?format=original); ">
             <div class="bio-content-wrapper">
                 <span class="bio-content drop-shadow">
-                  {body}
-                  <img class="signature-img" src="{customContent.signature.assetUrl}"/>
+                  {title}
                 </span>
             </div>
         </div>{.end}{.end}
