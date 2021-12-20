@@ -98,7 +98,7 @@ function handleTouchMove(evt) {
     var xDiff = xDown - xUp;
     var yDiff = yDown - yUp;
                                                                          
-    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
         if ( xDiff > 0 ) {
             sliderDot(data - 1)
         } else {
@@ -106,9 +106,8 @@ function handleTouchMove(evt) {
         }                       
     } else {
         if ( yDiff > 0 ) {
-            /* down swipe */ 
+           
         } else { 
-            /* up swipe */
         }                                                                 
     }
     /* reset values */
