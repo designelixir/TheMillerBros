@@ -149,8 +149,8 @@ a:hover {cursor: pointer}
 .bio-title-wrapper {margin-bottom: 15px; text-align: center; width: 100%;}
 
 
-.our-story-gallery {width: 100%; height: 35%; max-height: 700px;}
-.sqs-block-gallery {height: 100%;}
+.our-story-gallery {width: 100%;  }
+.sqs-block-gallery {height: 100%!important; }
 // OUR EXTENDED FAMILY SECTION
 .extended-family-intro {width: 100%;  overflow-y: hidden; margin: 0px 0px 50px 0px; display: flex; justify-content: right; overflow-x: hidden; }
 .family {width: 100%; height: 600px; display: inline-flex; align-items: center; justify-content: flex-start; margin: 0px 0px 100px 0px; overflow-x: hidden!important;}
@@ -176,17 +176,16 @@ a:hover {cursor: pointer}
 
 @media only screen and (max-width: 1000px) { 
   .bio-container {display: block;}
-  .bio-wrapper {width: 100%; margin-top: 100px; }
-
+  .bio-wrapper {width: 100%; }
 }
 
 // footers
 footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin: 0; padding: 0; display: inline-block; }
 .footer-wrapper {width: 100%; height: 100%; display: inline-flex; justify-content: space-between; align-items: center; }
-.footer-nav-wrapper {width: 100%; display: inline-flex; justify-content: center; align-items: center;}
+.footer-nav-wrapper {width: 100%; display: inline-flex; justify-content: center; align-items: center; }
 .footer-nav-wrapper a {color: black; text-align: center; text-transform: uppercase}
-.footer-nav-wrapper span { color: #47AAD5; font-weight: 900;}
-.footer-left {width: 60%; height: 100%;  display: inline-flex; align-items: center; justify-content: center; }
+.footer-nav-wrapper span { color: #47AAD5; font-weight: 900;} 
+.footer-left {width: 60%; height: 300px;  display: inline-flex; align-items: center; justify-content: center; background-image: url('../assets/footer3.png'); background-size: 100% 90%; background-position: center bottom; }
 .footer-right {width: 40%; height: 100%; padding: 25px; color: white; display: flex; align-items: center; height: 300px; justify-content: center; background-image: url('../assets/background-footer.png'); background-size: cover; background-repeat: no-repeat; background-position: center 75%; }
 .footer-right-text {text-align: right; padding-right: 15px; width: 60%;  }
 .footer-right-text h3 {text-shadow: -1px -1px #62abd0}
@@ -225,7 +224,7 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
 #map-holder:hover {cursor: pointer; transform: scale(1.15); justify-content: center;}
 #map-holder-address {display: none; }
 #map-holder span:hover > #map-holder-address {display: block;}
-#review-holder {display: flex; height: 125px; padding: 25px; align-items: flex-end; justify-content: center; background-image: url('../assets/stars.svg'); background-size: contain; background-position: center center;}
+#review-holder {display: flex; height: 150px; padding: 25px; align-items: flex-end; justify-content: center; background-image: url('../assets/stars.svg'); background-size: contain; background-position: center center;}
 .padding-control {padding: 50px; width: 100%;}
 
 .container-half {height: 100%;}     
@@ -312,7 +311,7 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
   #next-slide {width: 40px; img{width: 20px;}}
   .project-brand {font-size: 48px; color: white;}
 
-  .summary-item {min-width: ~'calc((100vw - 2px) / 2)'!important; height: ~'calc(90vh / 6)'!important;}
+  .summary-item {min-width: ~'calc((100vw - 2px))'!important; height: ~'calc(90vh / 6)'!important;}
   #testimonial {font-size: 24px!important; line-height: 36px!important;}
   #additional-video-container {display: block!important;}
 
@@ -346,7 +345,7 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
 } 
 
 
-#portfolio-grid-container {margin-top: 118px; max-width: 100vw; overflow-x: hidden; height: ~'calc(100vh - 120px)'}
+#portfolio-grid-container {margin-top: 118px; max-width: 100vw; overflow-x: hidden; height: ~'calc(100vh - 130px)'}
 #portfolio-grid-content {display: none!important;}
 #portfolio-grid {
   .summary-item {border: 2px solid #1B1718; min-width: ~'calc((100vw - 2px) / 4)'; height: ~'calc(90vh / 3)'!important; width: 100%; display: flex; flex-grow: 1;   justify-content: center; align-items: center; text-align: center;  background-size: cover; background-repeat: no-repeat; overflow: hidden; cursor: pointer; background-position: center center;  margin: 0; padding: 0; }

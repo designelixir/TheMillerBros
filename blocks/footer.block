@@ -1,6 +1,6 @@
 <footer class="inset-box-shadow tan-texture">
     <div>
-    <div class="footer-wrapper">
+    <div class="footer-wrapper"  >
         <div class="footer-left">
             <img class="drop-shadow hoverthis" onclick="location.href='/';" style="height: 150px; padding: 15px;" src="../assets/miller-bros-stacked-black.svg" alt="The Miller Bros Lettermark Logo"/>
             <div>

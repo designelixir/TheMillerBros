@@ -42,7 +42,7 @@
         </div>
         {.end}{.end}
       </div>
-      <div class="inset-box-shadow texture" style="padding: 200px 50px 100px 50px; ">
+      <div class="inset-box-shadow texture" style="padding: 100px 50px; ">
           <squarespace:block-field id="team-description" class="bold-paragraph" columns="1"/>
       </div>
 
@@ -64,8 +64,8 @@
 
      
       <div class="family" style="overflow-x: hidden!important;">
-          <div class="bio-grid-button"  id="stuff-left" onclick='biosLeft(true)' style="transform: rotate(180deg); left: 2px;"><img class="hoverthis" src="../assets/nav-arrow.svg"/></div>
-          <div class="bio-grid-button" id="stuff-right" onclick='biosRight(true)' style="margin-left: calc(100% - 32px);"> <img class="hoverthis" src="../assets/nav-arrow.svg" style="max-width: 40px;"/></div>
+          <div class="bio-grid-button"  id="stuff-left" onclick='biosLeft()' style="transform: rotate(180deg); left: 2px;"><img class="hoverthis" src="../assets/nav-arrow.svg"/></div>
+          <div class="bio-grid-button" id="stuff-right" onclick='biosRight()' style="margin-left: calc(100% - 32px);"> <img class="hoverthis" src="../assets/nav-arrow.svg" style="max-width: 40px;"/></div>
           <div id="bio-container">
             {.repeated section items}{.if starred}{.or}
                 <div class="family-bio-wrapper inset-box-shadow" onclick="clickBio()" style="background-image: url({assetUrl}?format=750);">
@@ -103,11 +103,7 @@
       </div>
 
 
-      <div style="width: 100%; text-align: center; margin-bottom: 100px; overflow-x: hidden;">
-        <squarespace:block-field id="contact-us-title" class="yellow-text-shadow" columns="1"/>
-        <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
-        <squarespace:block-field id="contact-us-text" class="bold-paragraph padding-control" columns="1"/>
-      </div>
+     
 
 
       <main class="content-container texture" id="our-story-content" role="main" data-content-field="main-content" >
@@ -156,22 +152,21 @@ function clickBio(){
 
 var bios = document.getElementsByClassName('family-bio-wrapper');
 
-function biosRight(cancelTimer){
+function biosRight(){
     var measurediv = bios[1].getBoundingClientRect();
     var biocontainer = document.getElementById('bio-container')
     biocontainer.scrollLeft += measurediv.width ;
-    if(cancelTimer){
+    
       clearInterval(autoTimerBios)
-    }
+    
 }
 
 function biosLeft(canceltimer){
   var measurediv = bios[1].getBoundingClientRect(); 
   var biocontainer = document.getElementById('bio-container')
   biocontainer.scrollLeft -= measurediv.width ;
-  if(cancelTimer){
-      clearInterval(autoTimerBios)
-    }
+        clearInterval(autoTimerBios)
+
 }
 
 
