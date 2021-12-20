@@ -27,14 +27,13 @@
       
     
       {#  SPENCER & CAMDEN  }
-                  {#  <img class="signature-img" src="{customContent.signature.assetUrl}"/>  }
 
       <div class="bio-container">
         {.repeated section items}{.if starred}
         <div class="bio-wrapper inset-box-shadow" style="background-image: url({assetUrl}?format=original); ">
             <div class="bio-content-wrapper"> 
-              {#  <span class="padding-control" style="text-align: center; width:100%;">  OPTION 1} 
-              <span class="padding-control" style="background-image: url(../assets/shapes/tan-smudge.png); text-align: center; background-size: 100% 100%; width: 50%; margin: 0px 0px 25px 25%;">
+               <span class="padding-control" style="text-align: center; width:100%;">  
+              {#  <span class="padding-control" style="background-image: url(../assets/shapes/tan-smudge.png); text-align: center; background-size: 100% 100%; width: 50%; margin: 0px 0px 25px 25%;">  }
                   <h6 style="font-size: 48px;">{title}</h6>
                   <h3 style="color: white;">{customContent.jobtitle}</h3>
               </span>       
