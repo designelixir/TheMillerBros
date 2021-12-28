@@ -68,12 +68,12 @@
 
   var ohSheActive = document.getElementById('home-link').classList.contains('active-link');
   if (ohSheActive){
-    console.log("bus active")
+
     $('#lil-bus').attr("src","../assets/bus-hover-icon.svg");
     $('#lil-bus').css("margin-bottom","0px")
 
   } else {
-    console.log("bus inactive")
+
     $('#lil-bus').attr("src","../assets/bus-icon.svg");
     $('#lil-bus').css("margin-bottom","-5px")
   }

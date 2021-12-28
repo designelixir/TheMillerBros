@@ -36,15 +36,12 @@
                     <div class="family-bio-description fade-in"style="color: white; display: none;">
                       <div style="padding: 35px; height: 100%; width: 100%; display: flex; align-items: center; justify-content: center;" >
                           <div style="text-align: center;">
-                            
                             {body}
                             <div class="bio-icons-container" >
                             {.if customContent.instagram}
                               <a href="https://www.instagram.com/{customContent.instagram}/" target="_blank"><img class="social-icon" src="assets/social/instagram.svg"/></a>
                             {.end}
-                            {.if customContent.instagram}
-                              <a href="{customContent.websiteurl}" target="_blank"><img class="social-icon" src="assets/social/globe.svg"/></a>
-                            {.end}
+                            
                             </div>
                           </div>
                         </div>
@@ -82,8 +79,8 @@
 
      
       <div class="family" style="overflow-x: hidden!important;">
-          <div class="bio-grid-button"  id="stuff-left" onclick='biosLeft()' style="transform: rotate(180deg); left: 2px;"><img class="hoverthis" src="../assets/nav-arrow.svg"/></div>
-          <div class="bio-grid-button" id="stuff-right" onclick='biosRight()' style="margin-left: calc(100% - 32px);"> <img class="hoverthis" src="../assets/nav-arrow.svg" style="max-width: 40px;"/></div>
+          <div class="bio-grid-button hoverthis"  id="stuff-left" onclick='biosLeft(true)' style="transform: rotate(180deg); left: 2px;"><img src="../assets/nav-arrow.svg"/></div>
+          <div class="bio-grid-button hoverthis" id="stuff-right" onclick='biosRight(true)' style="margin-left: calc(100% - 32px);"> <img src="../assets/nav-arrow.svg" style="max-width: 40px;"/></div>
           <div id="bio-container">
             {.repeated section items}{.if starred}{.or}
                 <div class="family-bio-wrapper inset-box-shadow" onclick="clickBio()" style="background-image: url({assetUrl}?format=750);">
@@ -115,11 +112,13 @@
                   </div>
                 </div>
                 {.end}
+                
               {.end}
-
+               
           </div>
-      </div>
+                   
 
+      </div>
 
      
 
@@ -155,7 +154,6 @@ $('.family-bio div').hover(
 var count = 0;
 function clickBio(){
   count++;
-  clearInterval(autoTimerBios)
   if ((count % 2) != 0) {
      $(this).css({"backdrop-filter":"blur(4px)"})
     $('.family-bio-description', this).css({"display":"block"});
@@ -169,26 +167,45 @@ function clickBio(){
 
 
 var bios = document.getElementsByClassName('family-bio-wrapper');
+var biocontainer = document.getElementById('bio-container')
+var familylistSize = bios.length * 354; 
+var bioContainerWidth = $('#bio-container').outerWidth();
+var match = familylistSize - bioContainerWidth;
+var intervalID = setInterval(biosRight,4000);
+var endOfDiv = false;
 
-function biosRight(){
-    var measurediv = bios[1].getBoundingClientRect();
-    var biocontainer = document.getElementById('bio-container')
-    biocontainer.scrollLeft += measurediv.width ;
+function biosRight(canceltimer){
+    if (endOfDiv){biocontainer.scrollLeft -= match ;}
+    else {biocontainer.scrollLeft += 354;}
+
+    if (canceltimer) {clearInterval(intervalID)}
+}
+
+
+var scrolled;
+
+$('#bio-container').scroll(function(){
     
-      clearInterval(autoTimerBios)
-    
+    scrolled = $('#bio-container').scrollLeft(); 
+    if(scrolled >= match ) {
+        endOfDiv = true 
+    } else {endOfDiv = false}
+});
+
+if (endOfDiv){
+  $('#bio-container').scroll(function(){biocontainer.scrollLeft -= match; console.log("back")})
 }
 
 function biosLeft(canceltimer){
-  var measurediv = bios[1].getBoundingClientRect(); 
-  var biocontainer = document.getElementById('bio-container')
-  biocontainer.scrollLeft -= measurediv.width ;
-        clearInterval(autoTimerBios)
-
+  if (canceltimer) {clearInterval(intervalID)}
+  biocontainer.scrollLeft -= 354 ;
+  if (scrolled < 100 ) {biocontainer.scrollLeft += familylistSize; console.log('ya')} 
+  
+  
 }
 
 
-var autoTimerBios = setInterval(biosRight, 4000);
+
 
 </script>
 
