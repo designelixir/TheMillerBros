@@ -21,7 +21,7 @@
                     <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
                 </span>
                 <span style="justify-content: flex-end; width: 80%">
-                    <p class="hoverthis" style="color: white; padding-right: 10px;" onclick="toggleiframe()">......BACK TO PORTFOLIO</p>
+                    <p class="hoverthis" style="color: white; padding-right: 10px;" onclick="toggleiframe()">BACK TO PORTFOLIO</p>
                     <button class="circle-button-blue" onclick="toggleiframe()" aria-label="Close Portfolio Video Window"></button>
                 </span>
             </div>
