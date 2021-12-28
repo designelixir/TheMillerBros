@@ -199,7 +199,7 @@ if (endOfDiv){
 function biosLeft(canceltimer){
   if (canceltimer) {clearInterval(intervalID)}
   biocontainer.scrollLeft -= 354 ;
-  if (scrolled < 100 ) {biocontainer.scrollLeft += familylistSize; console.log('ya')} 
+  if (scrolled < 100 ) {biocontainer.scrollLeft += familylistSize;} 
   
   
 }
