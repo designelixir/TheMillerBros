@@ -20,7 +20,7 @@
 
       </div>
       <div style="width: 100%; height: 40vh; margin-top: -20vh; display: flex; align-items: flex-end; justify-content: center;">
-                      <squarespace:block-field id="miller-bros-illustration"  style="width: 100%; height: 100%;" columns="1"/>
+                      <squarespace:block-field id="miller-bros-illustration" columns="1"/>
 
       </div>
       <div class="padding-control">
