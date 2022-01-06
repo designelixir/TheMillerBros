@@ -15,16 +15,12 @@
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
 
-      <div class="header-photo" style="background-image: url('{collection.mainImage.assetUrl}');">
-        
+      <div class="header-photo inset-box-shadow" >
+        <img class="fade-in" id="ourstory-header" src='{collection.mainImage.assetUrl}'  />
 
       </div>
-      <div style="width: 100%; height: 40vh; margin-top: -20vh; display: flex; align-items: flex-end; justify-content: center; z-index: 22;">
-                      <squarespace:block-field id="header-illustration" columns="1"/>
-
-
-      </div>
-      <div class="padding-control">
+     
+      <div class="padding-control" style="margin-top: 25px;">
                 <squarespace:block-field id="miller-bros-summary-title" class="yellow-text-shadow" columns="1"/>
                 <img src="assets/shapes/yellow-textured-line-center.svg" style="margin-bottom: 25px;"/>
                 <squarespace:block-field id="miller-bros-summary" class="bold-paragraph" columns="1"/>
