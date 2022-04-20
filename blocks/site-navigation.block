@@ -10,8 +10,8 @@
 
         {.equal? collection.homepage true}
 
-        <li id="home-link" class="site-navigation-item {.section active} active-link{.end}">
-          <a href="/"><img id="lil-bus" style="width: 45px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="../assets/bus-icon.svg"></a>
+        <li class="home-link site-navigation-item {.section active} active-link{.end}">
+          <a href="/"><img class="lil-bus" style="width: 45px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25));" src="../assets/bus-icon.svg"></a>
         </li>
 
         {.or} 
@@ -30,12 +30,22 @@
 
 <div class="mobile-navigation-container inset-box-shadow texture" style="display: none;">
     <div class="mobile-navigation-list">
-      <li><a href="/"><img style="height: 40px;" class="van-home-icon" src="../assets/bus-icon.svg"></a></li><br>
+      
         <ul>
           {.repeated section items}
+
+            {.equal? collection.homepage true}
+
+              <li class="home-link site-navigation-item {.section active} active-link{.end}">
+                <a href="/"><img class="lil-bus" style="width: 45px; filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .25)); padding-bottom: 10px;" src="../assets/bus-icon.svg"></a>
+              </li>
+
+            {.or} 
+
             <li class="site-navigation-item {.section active} active-link{.end}">
               {.section collection}<a href="{fullUrl}">{navigationTitle}</a>{.end}
             </li><br>
+            {.end}
           {.end}
         </ul>
     </div>
@@ -66,15 +76,15 @@
     }
   }
 
-  var ohSheActive = document.getElementById('home-link').classList.contains('active-link');
+  var ohSheActive = document.querySelector('.home-link').classList.contains('active-link');
   if (ohSheActive){
 
-    $('#lil-bus').attr("src","../assets/bus-hover-icon.svg");
-    $('#lil-bus').css("margin-bottom","0px")
+    $('.lil-bus').attr("src","../assets/bus-hover-icon.svg");
+    $('.lil-bus').css("margin-bottom","0px")
 
   } else {
 
-    $('#lil-bus').attr("src","../assets/bus-icon.svg");
-    $('#lil-bus').css("margin-bottom","-5px")
+    $('.lil-bus').attr("src","../assets/bus-icon.svg");
+    $('.lil-bus').css("margin-bottom","-5px")
   }
 </script>

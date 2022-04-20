@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://use.typekit.net/ctq0biw.css">
     <link rel="stylesheet" href="styles/our-story.less">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
+
     {squarespace-headers}
   </head>
   <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" style="overflow-x: hidden!important;">

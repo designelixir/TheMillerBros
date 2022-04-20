@@ -5,7 +5,7 @@
         {.repeated section items}
 
         {.if starred}
-            <div class="slide">
+            <div class="slide" style="">
                 <div class="project">
                     <div class="project-wrapper" >
                         <div class="vimeo-bg-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');" >
@@ -58,13 +58,13 @@
             {.end}
             {.end}
         </div>
-        <div id="next-slide" onclick="nextslide()">
+        <div id="next-slide" onclick="javascript:nextslide()">
             <img id="slide-arrow" src="../assets/nav-arrow.png" alt="next slide arrow" />
         </div>
     </section>
     <div class="inset-box-shadow texture" style="height: 10vh; display: flex; align-items: center; justify-content: center; ">
             <div id="project-counter">
-                <a onclick="(sliderDot(data))" class="counter drop-shadow2"></a>
+                <a onclick="javascript:sliderDot(data)" class="counter drop-shadow2"></a>
             </div>
     </div>
     
