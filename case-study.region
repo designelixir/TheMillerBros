@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/ctq0biw.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.3/gsap.min.js"></script>
-
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/Draggable3.min.js?r=897"></script>
     {squarespace-headers}
   </head>
     <body id="{squarespace.page-id}" class="{squarespace.page-classes}">
@@ -14,21 +14,26 @@
             <squarespace:navigation navigationId="siteNav" template="site-navigation" />
         </header>   
 
-        <main class="content-container texture" id="homepage-content" role="main" data-content-field="main-content" >
-          {squarespace.main-content}
+        <main class="content-container texture" id="homepage-content" role="main" data-content-field="main-content">
+          <div style="width: 100vw; height: 100vh; overflow-x: clip;">
+            {squarespace.main-content}
+          </div>
+          
         </main>
 
         <div class="case-study-iframe-container texture" id="home-page-case-study-window" style="display: none;">
-            <div class="case-study-nav inset-box-shadow texture">
-              <span style="width: 20%;" onclick="toggleiframe()" class="hoverthis">               
+        <div id="case-study-iframe-container-wrapper" style="width: 100vw; height: 100vh;" class="delay-show">
+            <div class="case-study-nav inset-box-shadow texture delay-show">
+              <span style="width: 20%;" onclick="toggleiframe()" class="hoverthis close-case-study">               
                   <img src="../assets/Miller-Bros-Lettermark-White.svg" alt="Miller Bros Lettermark Logo" />
               </span>
               <span style="justify-content: flex-end; width: 80%">
-                  <p class="hoverthis" style="color: white; padding-right: 10px;" onclick="toggleiframe()">BACK TO PORTFOLIO</p>
-                  <button class="circle-button-blue" onclick="toggleiframe()" aria-label="Close Portfolio Video Window"></button>
+                  <p class="hoverthis close-case-study" style="color: white; padding-right: 10px;" onclick="toggleiframe()">BACK TO PORTFOLIO</p>
+                  <button class="circle-button-blue close-case-study" onclick="toggleiframe()" aria-label="Close Portfolio Video Window"></button>
               </span>
           </div>
-            <iframe id="case-study-iframe" class="fade-in" width="100%" height="100%"></iframe>
+            <iframe id="case-study-iframe" class="delay-show" width="100%" height="100%"></iframe>
+            </div>
         </div>
         
 
@@ -42,69 +47,9 @@
     {squarespace-footers}
 
   </body>
+  <script type="application/javascript" src="scripts/slide-animator.js"></script>
 </html>
 
-<script>
-
-var allSlides = document.getElementsByClassName('project');
-var counter = allSlides.length;
-
-for (let i = 1; i < counter; i++) {$("#project-counter").append($(".counter").last().clone(true));}
-var cls = document.getElementsByClassName("counter"); 
-for (n=0, length = cls.length; n < length; n++) {cls[n].data = n ; }
-$('.counter:first-child').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)") 
 
 
-function showCaseStudy(thisurl){
-  clearInterval(autoTimer);
-  $('body').css("overflow-y","hidden")
-  $('#home-page-case-study-window').slideDown(600);
-  $('#home-page-case-study-window iframe').attr("src",thisurl)
-}
 
-function toggleiframe(){
-  $('body').css("overflow-y","scroll")
-  $('#featured-projects').scrollTop(0)
-  $('#home-page-case-study-window').slideUp(600);
-  $('#home-page-case-study-window iframe').attr("src","")
-}
-
-var active = 0;
-function goToSlider(active){
-  console.log("clicked")
-  let activate = allSlides[active];
-  gsap.to(activate, { duration: 2.5, ease: "power3.out", x: -500 });
-  {#  activate.scrollIntoView();  }
-  activate.style.left = "0!important;"
-  activate.style.animation = "fade-in 2s cubic-bezier(.39,.575,.565,1.000) both"
-  for (let i = 0; i < counter; i++) {$('.counter').css("background-image", "url(assets/shapes/tan-textured-circle.svg)")}
-  $('.counter:eq('+active+')').css("background-image", "url(assets/shapes/yellow-textured-circle.svg)")  
-} 
-
-function sliderDot(data){
-  clearInterval(autoTimer);
-  active = data ;
-  goToSlider(active)
-}
-
-function nextslide(){
-  if(active  >= counter - 1 ){active = 0;} 
-  else {active = active + 1;}
-  goToSlider(active)
-  clearInterval(autoTimer)
-}
-
-function backslide(){
-  if(active  >= counter - 1 ){active = 0;} 
-  else {active = active - 1;}
-  goToSlider(active)
-  clearInterval(autoTimer)
-}
-
-var autoTimer = setInterval(nextslide, 8000);
-
-$(window).scroll(function(){
-  if ($(window).scrollTop() > 100){clearInterval(autoTimer)}
-})
-
-</script>

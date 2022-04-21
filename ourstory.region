@@ -13,7 +13,7 @@
   <body id="{squarespace.page-id}" class="{squarespace.page-classes} texture" style="overflow-x: hidden!important;">
 
     
-      <header class="site-header gradient-shadow" >
+      <header class="site-header">
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
 

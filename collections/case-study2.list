@@ -1,14 +1,13 @@
-
-
-<div id="container">
-    <div id="featured-projects">
+<section id="featured-projects">
+        <div id="slide-container">
         {.repeated section items}
-            {.if starred}
-            <div class="slide">
+
+        {.if starred}
+            <div class="slide" style="">
                 <div class="project">
                     <div class="project-wrapper" >
                         <div class="vimeo-bg-wrapper" style="background-image: url('{structuredContent.oembed.thumbnailUrl}?format=original');" >
-                            <iframe class="vimeo-bg-iframe fade-in-fast" loading="lazy" src='https://player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            <iframe class="vimeo-bg-iframe fade-in-fast" src='https//player.vimeo.com/video/{customContent.vimeocode}?background=1&autoplay=1&loop=1&byline=0&title=0' frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
                         </div>
 
                         <div class="title-container">
@@ -25,7 +24,7 @@
                             {.or}
                             {#  PROJECT SLIDERS}
                             <div class="project-button-circle hoverthis" data-url="{fullUrl}" onclick="showCaseStudy($(this).attr('data-url'))">
-                                <div class="case-study-button-content drop-shadow">
+                                <div class="case-study-button-content">
                                     <span class='playBut'>
                                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" x="0px" y="0px" width="113.7px" height="113.7px" viewBox="0 0 213.7 213.7" enable-background="new 0 0 213.7 213.7" xml:space="preserve">
                                             <polygon class='triangle' id="XMLID_18_" fill="none" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="73.5,62.5 149.1,105.8 73.5,149.1 "/>
@@ -43,7 +42,7 @@
                                                     <h1 class="project-title gold-text-shadow drop-shadow2">{title}</h1>
                                                     <h6 class="project-brand drop-shadow2">{customContent.brand}</h6>
                                                 </span>
-                                                
+                                                 
                                             </div>
                                         </div>
                                     </div>             
@@ -55,18 +54,67 @@
                 </div>
             </div>
             {.end}
-        {.end}
+            {.end}
+        </div>
+        <div id="next-slide" onclick="javascript:nextslide()">
+            <img id="slide-arrow" src="../assets/nav-arrow.png" alt="next slide arrow" />
+        </div>
+    </section>
+    <div class="inset-box-shadow texture" style="height: 10vh; display: flex; align-items: center; justify-content: center; ">
+            <div id="project-counter">
+                <a onclick="javascript:sliderDot(data)" class="counter drop-shadow2"></a>
+            </div>
     </div>
-</div>
-
-<div id="next-slide" class="arrow"><img id="slide-arrow" class="drop-shadow" src="../assets/nav-arrow.svg" alt="next slide arrow"/></div>
-<div class="dots inset-box-shadow texture" id="dots-container"></div>
     
+    <script>
 
+{#  handle swiping on page  }
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
 
+var xDown = null;                                                        
+var yDown = null;
 
+function getTouches(evt) {
+  return evt.touches ||            
+    evt.originalEvent.touches;
+}                                                     
+                                                                         
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+};                                                
+                                                                         
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
 
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
 
-  
-
-
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+                                                                         
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
+        if ( xDiff > 0 ) {
+            {#  left }
+            nextslide();
+        } else {
+            {#  right  }
+            backslide();
+           
+        }                       
+    } else {
+        if ( yDiff > 0 ) {
+         console.log('')
+        } else { 
+        console.log('')
+        }                                                                 
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
+    </script>

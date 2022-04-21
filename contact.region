@@ -13,16 +13,18 @@
       <header class="site-header" id="contact-header" >
         <squarespace:navigation navigationId="siteNav" template="site-navigation" />
       </header>
-      <div class="site-header-image-container" id="contact-header-image" style="background-image: url('{collection.mainImage.assetUrl}');">
-        <span style="height: 100%; height: 40vh; width: 100%;"></span>
+      <div class="site-header-image-container" id="contact-header-image" style=" background-image: url('{collection.mainImage.assetUrl}');">
+        <div class="header-image-container-gradient-wrapper">
+          <span style="height: 40vh; width: 100vw; border: 2px solid red;"></span>
         </div>
+      </div>
       
       <div class="contact-floating-container">
         <div class="contact-floating-container-left">
             <div class="contact-floating-container-left-half" id="top-half"  >
                 <div id="half-1">
                   <h6 id="contact-title-1" class="drop-shadow2"> Let's tell a </h6><h6 class="drop-shadow2" id="contact-title-2"> story together</h6>
-                  <img class="drop-shadow" src="assets/shapes/yellow-textured-line.svg"/>
+                  <img class="drop-shadow" src="assets/shapes/yellow-textured-line.svg" style="max-width: 900px"/>
                 </div>
             </div>
             <div class="contact-floating-container-left-half">

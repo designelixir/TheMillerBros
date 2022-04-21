@@ -10,7 +10,7 @@
                     <a href="mailto:stories@themillerbros.com" target="_blank" id="email-f-a"><img class="social-icon " id="email-f" src="../assets/social/email-black.svg" alt="email icon"/></a>
                 </div>
                 <span class="footer-right-button-wrapper hoverthis">
-                    <a class="sqs-block-button-element--large drop-shadow" href="/contact-us" style="padding: 15px 25px; color: white; text-transform: uppercase; ">Let's Chat</a>
+                    <button class="sqs-block-button-element--large drop-shadow" ><a href="/contact-us">Let's Chat!</a></button>
                 </span>
             </div>
         </div>
