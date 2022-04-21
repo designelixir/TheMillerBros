@@ -16,7 +16,7 @@
   font-display: swap;
 }
 
-html {background: #1B1718;  zoom: 1; }
+html {background: #1B1718;  zoom: 1; max-width: 100vw; overflow-x: hidden; }
 
 main { left: 0; width: 100%; overflow-x: hidden!important; margin: 0; padding: 0;}
 body {font-family: museo-sans-rounded, sans-serif; width: 100%;  top: 0; left: 0;}
@@ -313,11 +313,14 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
   .project-button {transform: scale(0.75); margin-left: -75px;  }
   .project-button-circle {display: none;}
   #titlelogo h1 {font-size: 36px!important; }
-  #featured-projects { height: 75vh; }
-  #slide-container {height: 75vh; }
-  .slide {height: 75vh;  }
-  .title-container{height:65vh;}
+  // #featured-projects { height: 75vh!important; }
+  // #slide-container {height: 75vh; }
+  .slide {height: 90vh;  }
+  .title-container{height:85vh;}
   .summary-item {width: ~'calc((100vw - 2px))'!important; height: ~'calc(90vh / 6)'!important;}
+  .titleandlogo h1 {font-size: 32px!important;}
+  
+
 
 
 
@@ -406,10 +409,12 @@ footer {width: 100%; overflow-x: hidden;  text-align: center; bottom: 0; margin:
 .embed-container object, 
 .embed-container embed { backdrop-filter: blur(3px); position: absolute;  top: 0; left: 0; width: 100%; height: 100%; max-height: 70vh!important;}
 
-#titlelogo {display: block; align-items: flex-start; justify-content: space-between; width: 100%; }
-#titlelogo h1 {padding: 25px 50px; font-size: 3.25rem;}
-#brand-logo {width: 150px; right: 0; position: absolute; margin-top: -100px; margin-right: 15px; height: 150px; z-index: 3; background-image: url('../assets/shapes/tan-textured-circle.svg'); background-position: center center; }
-#brand-logo a {display: flex; align-items: center; justify-content: center;  height: 150px; width: 150px; padding: 10px;}
+.titleandlogo {display: inline-flex; align-items: center; justify-content: space-between; width: 100%;}
+.titleandlogo h1 {padding: 25px 50px; font-size: 3rem;}
+#brand-logo { right: 0; z-index: 3; min-width: 125px; min-height: 125px; max-width: 150px; transform: rotate(10deg); margin: 0 0 -50px -20px; padding: 25px; display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; background-image: url('../assets/shapes/tan-textured-circle.svg'); background-position: center center; background-repeat: no-repeat; background-size: contain; }
+#brand-logo:hover {transform: rotate(0deg); cursor: pointer}
+
+
 #summary { width: ~'calc(100% - 400px)'; height: 100%;}
 #summary p{font-size: 1.25rem; font-weight: 100; line-height: 1.75rem; }
 
